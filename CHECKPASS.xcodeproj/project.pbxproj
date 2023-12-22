@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
+		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
 		5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */; };
 		5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7F2B33F3AD004C6501 /* ContentView.swift */; };
 		5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E812B33F3AE004C6501 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHECKPASS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHECKPASSApp.swift; sourceTree = "<group>"; };
 		5C561E7F2B33F3AD004C6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +46,55 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5C32B2462B352AB90036CDF2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
+				5C32B24D2B352F330036CDF2 /* LaunchScreen */,
+				5C32B2472B352AEB0036CDF2 /* SignIn */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5C32B2472B352AEB0036CDF2 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				5C32B2492B352AF90036CDF2 /* ViewModel */,
+				5C32B2482B352AF30036CDF2 /* View */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		5C32B2482B352AF30036CDF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C32B24A2B352B090036CDF2 /* SignInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C32B2492B352AF90036CDF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C32B24C2B352B3C0036CDF2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5C32B24D2B352F330036CDF2 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		5C561E712B33F3AD004C6501 = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +114,9 @@
 		5C561E7C2B33F3AD004C6501 /* CHECKPASS */ = {
 			isa = PBXGroup;
 			children = (
+				5C32B24C2B352B3C0036CDF2 /* Data */,
+				5C32B2462B352AB90036CDF2 /* Presentation */,
 				5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */,
-				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
 				5C32B2452B3517A40036CDF2 /* Resources */,
 				5C561E832B33F3AE004C6501 /* Preview Content */,
 			);
@@ -153,8 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
+				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
