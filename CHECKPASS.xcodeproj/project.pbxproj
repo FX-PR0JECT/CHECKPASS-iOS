@@ -14,6 +14,8 @@
 		5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E812B33F3AE004C6501 /* Assets.xcassets */; };
 		5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */; };
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
+		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
+		5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5C561E7F2B33F3AD004C6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C561E812B33F3AE004C6501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
+		5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				5C32B24A2B352B090036CDF2 /* SignInView.swift */,
+				5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */,
+				5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,9 +214,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
+				5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
+				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             if isNextViewPresented {
-                EmptyView()    //SignInView OR MainView
+                SignInView()
             } else {
                 LaunchScreenView()
             }
