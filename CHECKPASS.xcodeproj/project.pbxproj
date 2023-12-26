@@ -16,6 +16,9 @@
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
 		5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */; };
+		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
+		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
+		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
+		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
+		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +59,10 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */,
+				5CA5B1E02B3AAB6200DD707C /* Color */,
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
+				5CA5B1DF2B3AAA8900DD707C /* Keyboard */,
 				5C32B24D2B352F330036CDF2 /* LaunchScreen */,
 				5C32B2472B352AEB0036CDF2 /* SignIn */,
 			);
@@ -137,6 +146,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5CA5B1DF2B3AAA8900DD707C /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		5CA5B1E02B3AAB6200DD707C /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */,
+			);
+			path = ViewModelProtocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,11 +246,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
+				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
+				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

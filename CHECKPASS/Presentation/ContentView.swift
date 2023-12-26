@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView<KVM: KeyboardVM>: View {
+    @StateObject var keyboardViewModel: KVM
     @State private var isNextViewPresented: Bool = false
     
     var body: some View {
         NavigationStack {
             if isNextViewPresented {
-                SignInView()
+                SignInView<KVM>()
+                    .environmentObject(keyboardViewModel)
             } else {
                 LaunchScreenView()
             }
@@ -29,5 +31,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(keyboardViewModel: KeyboardViewModel())
 }

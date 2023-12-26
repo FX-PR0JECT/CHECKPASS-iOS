@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignInView<KVM: KeyboardVM>: View {
+    @EnvironmentObject private var keyboardViewModel: KVM
     @State private var id: String = ""
     @State private var pw: String = ""
     
@@ -23,6 +24,7 @@ struct SignInView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width * 0.56)
+                .offset(y: keyboardViewModel.isKeyboardVisible ? -UIScreen.main.bounds.width * 0.3 : -UIScreen.main.bounds.width * 0.5)
             
             VStack(spacing: 15) {
                 //MARK: - Id input TextField
@@ -63,10 +65,12 @@ struct SignInView: View {
                 .padding(.top, 20)
             }
             .padding()
+            .offset(y: keyboardViewModel.isKeyboardVisible ? UIScreen.main.bounds.width * 0.2 : 0)
         }
     }
 }
 
 #Preview {
-    SignInView()
+    SignInView<KeyboardViewModel>()
+        .environmentObject(KeyboardViewModel())
 }
