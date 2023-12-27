@@ -16,6 +16,10 @@
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
 		5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */; };
+		5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */; };
+		5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A602B3BAB6E006B176E /* PickerContents.swift */; };
+		5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */; };
+		5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */; };
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
 		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
@@ -31,6 +35,10 @@
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
+		5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		5C9A2A602B3BAB6E006B176E /* PickerContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerContents.swift; sourceTree = "<group>"; };
+		5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
+		5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPickerView.swift; sourceTree = "<group>"; };
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
@@ -59,9 +67,9 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */,
-				5CA5B1E02B3AAB6200DD707C /* Color */,
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
+				5C9A2A582B3B9C92006B176E /* SignUp */,
+				5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */,
 				5CA5B1DF2B3AAA8900DD707C /* Keyboard */,
 				5C32B24D2B352F330036CDF2 /* LaunchScreen */,
 				5C32B2472B352AEB0036CDF2 /* SignIn */,
@@ -95,13 +103,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		5C32B24C2B352B3C0036CDF2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		5C32B24D2B352F330036CDF2 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +130,7 @@
 		5C561E7C2B33F3AD004C6501 /* CHECKPASS */ = {
 			isa = PBXGroup;
 			children = (
-				5C32B24C2B352B3C0036CDF2 /* Data */,
+				5C9A2A642B3BE36C006B176E /* Commons */,
 				5C32B2462B352AB90036CDF2 /* Presentation */,
 				5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */,
 				5C32B2452B3517A40036CDF2 /* Resources */,
@@ -146,20 +147,39 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5C9A2A582B3B9C92006B176E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				5C9A2A592B3B9CA2006B176E /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		5C9A2A592B3B9CA2006B176E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */,
+				5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */,
+				5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C9A2A642B3BE36C006B176E /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				5C9A2A602B3BAB6E006B176E /* PickerContents.swift */,
+				5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		5CA5B1DF2B3AAA8900DD707C /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
 				5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */,
 			);
 			path = Keyboard;
-			sourceTree = "<group>";
-		};
-		5CA5B1E02B3AAB6200DD707C /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */,
-			);
-			path = Color;
 			sourceTree = "<group>";
 		};
 		5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */ = {
@@ -247,11 +267,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
+				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */,
+				5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
+				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
+				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
@@ -313,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -370,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

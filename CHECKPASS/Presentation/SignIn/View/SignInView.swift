@@ -11,6 +11,7 @@ struct SignInView<KVM: KeyboardVM>: View {
     @EnvironmentObject private var keyboardViewModel: KVM
     @State private var id: String = ""
     @State private var pw: String = ""
+    @State private var isSignUpVisible: Bool = false
     
     var body: some View {
         ZStack {
@@ -46,7 +47,9 @@ struct SignInView<KVM: KeyboardVM>: View {
                 
                 HStack(spacing: 15) {
                     //MARK: - Create new account Button
-                    Button(action: {}, label: {
+                    Button(action: {
+                        isSignUpVisible.toggle()
+                    }, label: {
                         Text("새 계정 만들기")
                             .foregroundColor(CustomColor.SignInGray)
                     })
@@ -67,6 +70,9 @@ struct SignInView<KVM: KeyboardVM>: View {
             .padding()
             .offset(y: keyboardViewModel.isKeyboardVisible ? UIScreen.main.bounds.width * 0.2 : 0)
         }
+        .navigationDestination(isPresented: $isSignUpVisible, destination: {
+            SignUpView()
+        })
     }
 }
 
