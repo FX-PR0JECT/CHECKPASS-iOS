@@ -12,8 +12,19 @@ enum TextFieldStyle {
     case secure
 }
 
+extension CustomColor {
+    static func getSignUpInputGray(_ colorMode: ColorScheme) -> Color {
+        if colorMode == .light {
+            return Color(red: 244 / 255, green: 244 / 255, blue: 244 / 255)
+        } else {
+            return Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255)
+        }
+    }
+}
+
 struct SignUpInputView: View {
     @Binding var text: String
+    @Binding var inputStatus: InputStatus
     @Environment(\.colorScheme) private var colorScheme
     
     var header: String
@@ -31,8 +42,7 @@ struct SignUpInputView: View {
             .offset(x: 16)
             
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255))
-                .opacity(0.2)
+                .fill(CustomColor.getSignUpInputGray(colorScheme))
                 .frame(height: UIScreen.main.bounds.width * 0.13)
                 .overlay {
                     switch style {
@@ -48,8 +58,7 @@ struct SignUpInputView: View {
                     }
                     
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255), lineWidth: 1)
-                        .opacity(0.2)
+                        .stroke(inputStatus == .isValid || inputStatus == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
         }
@@ -57,5 +66,5 @@ struct SignUpInputView: View {
 }
 
 #Preview {
-    SignUpInputView(text: .constant(""), header: "header", placeholder: "placeholder", style: .normal)
+    SignUpInputView(text: .constant(""), inputStatus: .constant(.isInitial), header: "header", placeholder: "placeholder", style: .normal)
 }

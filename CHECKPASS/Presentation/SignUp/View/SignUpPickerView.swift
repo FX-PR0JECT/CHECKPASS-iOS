@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct SignUpPickerView: View {
+    @EnvironmentObject var signUpViewModel: SignUpViewModel
     @Binding var selection: String
     @Environment(\.colorScheme) private var colorScheme
     
     var header: String
     var title: String
     var contents: [String]
+    var pos: Int
     
     var body: some View {
         VStack {
@@ -26,8 +28,7 @@ struct SignUpPickerView: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255))
-                    .opacity(0.2)
+                    .fill(CustomColor.getSignUpInputGray(colorScheme))
                     .frame(height: UIScreen.main.bounds.width * 0.13)
                 
                 HStack {
@@ -45,14 +46,33 @@ struct SignUpPickerView: View {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255), lineWidth: 1)
-                    .opacity(0.2)
+                    .stroke(signUpViewModel.statuses[pos] == .isValid || signUpViewModel.statuses[pos] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
+            }
+            
+            if signUpViewModel.statuses[pos] == .isBlank {
+                HStack(spacing: 5) {
+                    Image(systemName: "info.circle")
+                    
+                    Text("\(header)(을)를 입력해 주세요")
+                    
+                    Spacer()
+                }
+                .font(.caption)
+                .foregroundColor(.red)
+            }
+        }
+        .onChange(of: selection) { newValue in
+            if newValue == "선택" {
+                signUpViewModel.statuses[pos] = .isBlank
+            } else {
+                signUpViewModel.statuses[pos] = .isValid
             }
         }
     }
 }
 
 #Preview {
-    SignUpPickerView(selection: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"])
+    SignUpPickerView(selection: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"], pos: 6)
+        .environmentObject(SignUpViewModel())
 }

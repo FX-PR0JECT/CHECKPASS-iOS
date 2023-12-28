@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */; };
+		5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */; };
+		5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */; };
+		5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21244A2B3CF7DC00D237D4 /* EmailInputView.swift */; };
+		5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21244C2B3D172000D237D4 /* SignUpVM.swift */; };
+		5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21244E2B3D415F00D237D4 /* IdInputView.swift */; };
+		5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124502B3D438B00D237D4 /* NameInputView.swift */; };
 		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
 		5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */; };
@@ -26,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
+		5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmInputView.swift; sourceTree = "<group>"; };
+		5C21244A2B3CF7DC00D237D4 /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
+		5C21244C2B3D172000D237D4 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		5C21244E2B3D415F00D237D4 /* IdInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdInputView.swift; sourceTree = "<group>"; };
+		5C2124502B3D438B00D237D4 /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHECKPASS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C2124432B3CE5DA00D237D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5C32B2452B3517A40036CDF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +172,7 @@
 		5C9A2A582B3B9C92006B176E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				5C2124432B3CE5DA00D237D4 /* ViewModel */,
 				5C9A2A592B3B9CA2006B176E /* View */,
 			);
 			path = SignUp;
@@ -161,6 +184,11 @@
 				5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */,
 				5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */,
 				5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */,
+				5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */,
+				5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */,
+				5C21244A2B3CF7DC00D237D4 /* EmailInputView.swift */,
+				5C21244E2B3D415F00D237D4 /* IdInputView.swift */,
+				5C2124502B3D438B00D237D4 /* NameInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */,
+				5C21244C2B3D172000D237D4 /* SignUpVM.swift */,
 			);
 			path = ViewModelProtocol;
 			sourceTree = "<group>";
@@ -267,18 +296,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
+				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
+				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
 				5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */,
 				5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */,
+				5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
+				5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */,
+				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
 				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
+				5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
+				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

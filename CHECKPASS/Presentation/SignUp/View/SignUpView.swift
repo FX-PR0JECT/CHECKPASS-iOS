@@ -7,34 +7,43 @@
 
 import SwiftUI
 
-struct SignUpView: View {  
+struct SignUpView<SVM: SignUpVM>: View {
+    @StateObject var signUpViewModel: SVM
     @State private var idInput: String = ""
     @State private var pwInput: String = ""
-    @State private var pwConfirmationInput: String = ""
+    @State private var pwConfirmInput: String = ""
     @State private var nameInput: String = ""
     @State private var emailInput: String = ""
     @State private var pickedType: String = ""
-    @State private var pickedCollege: String = "단과대"
+    @State private var pickedCollege: String = "선택"
     @State private var pickedDepartment: String = ""
     
     var body: some View {        
         ScrollView {
-            VStack(spacing: 30) {
-                SignUpInputView(text: $idInput, header: "아이디", placeholder: "학번 또는 교직원 번호를 입력해 주세요", keyboardType: .numberPad)
+            VStack(spacing: 18) {
+                IdInputView(idInput: $idInput)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpInputView(text: $pwInput, header: "비밀번호", placeholder: "비밀번호를 입력해 주세요", style: .secure)
+                PasswordInputView(pwInput: $pwInput)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpInputView(text: $pwConfirmationInput, header: "비밀번호 확인", placeholder: "비밀번호를 다시 한번 입력해 주세요", style: .secure)
+                PasswordConfirmInputView(pwConfirmInput: $pwConfirmInput)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpInputView(text: $nameInput, header: "이름", placeholder: "이름을 입력해 주세요")
+                NameInputView(nameInput: $nameInput)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpInputView(text: $emailInput, header: "이메일", placeholder: "이메일을 입력해 주세요", keyboardType: .URL)
+                EmailInputView(emailInput: $emailInput)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedType, header: "구분", title: "구분을 선택해 주세요", contents: PickerContents.userTypes)
+                SignUpPickerView(selection: $pickedType, header: "구분", title: "구분을 선택해 주세요", contents: PickerContents.userTypes, pos: 5)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges)
+                SignUpPickerView(selection: $pickedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: 6)
+                    .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[pickedCollege]!)
+                SignUpPickerView(selection: $pickedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[pickedCollege]!, pos: 7)
+                    .environmentObject(signUpViewModel)
                 
                 Button(action: {}, label: {
                     Text("회원가입")
@@ -51,9 +60,18 @@ struct SignUpView: View {
         }
         .navigationTitle("회원가입")
         .navigationBarTitleDisplayMode(.large)
+        .onChange(of: pwConfirmInput) { newValue in
+            if pwInput == pwConfirmInput {
+                signUpViewModel.statuses[2] = .isValid
+            } else if newValue.isEmpty {
+                signUpViewModel.statuses[2] = .isBlank
+            } else {
+                signUpViewModel.statuses[2] = .isNotValid
+            }
+        }
     }
 }
 
 #Preview {
-    SignUpView()
+    SignUpView(signUpViewModel: SignUpViewModel())
 }

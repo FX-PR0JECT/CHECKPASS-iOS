@@ -71,7 +71,7 @@ struct SignInView<KVM: KeyboardVM>: View {
             .offset(y: keyboardViewModel.isKeyboardVisible ? UIScreen.main.bounds.width * 0.2 : 0)
         }
         .navigationDestination(isPresented: $isSignUpVisible, destination: {
-            SignUpView()
+            SignUpView(signUpViewModel: SignUpViewModel())
         })
     }
 }
