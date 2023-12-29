@@ -69,7 +69,7 @@ struct SignUpView<SVM: SignUpVM>: View {
             } else if newValue.isEmpty {
                 signUpViewModel.statuses[2] = .isBlank
             } else {
-                signUpViewModel.statuses[2] = .isNotValid
+                signUpViewModel.statuses[2] = .isInvalid
             }
         }
     }

@@ -16,11 +16,11 @@ struct PasswordInputView: View {
             SignUpInputView(text: $pwInput, inputStatus: $signUpViewModel.statuses[1], header: "비밀번호", placeholder: "비밀번호를 입력해 주세요", style: .secure)
             
             //MARK: - Warning Message
-            if signUpViewModel.statuses[1] == .isNotValid || signUpViewModel.statuses[1] == .isBlank {
+            if signUpViewModel.statuses[1] == .isInvalid || signUpViewModel.statuses[1] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.statuses[1] == .isNotValid {
+                    if signUpViewModel.statuses[1] == .isInvalid {
                         Text("비밀번호는 영문, 숫자, 특수문자 포함 8~16자리")
                     } else if signUpViewModel.statuses[1] == .isBlank {
                         Text("비밀번호를 입력해 주세요")

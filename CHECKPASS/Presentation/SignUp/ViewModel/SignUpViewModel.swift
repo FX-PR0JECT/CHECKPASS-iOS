@@ -14,6 +14,6 @@ final class SignUpViewModel: SignUpVM {
 enum InputStatus {
     case isInitial
     case isBlank
-    case isNotValid
+    case isInvalid
     case isValid
 }

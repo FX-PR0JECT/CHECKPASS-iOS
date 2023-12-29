@@ -16,11 +16,11 @@ struct EmailInputView: View {
             SignUpInputView(text: $emailInput, inputStatus: $signUpViewModel.statuses[4], header: "이메일", placeholder: "이메일을 입력해 주세요", keyboardType: .URL)
             
             //MARK: - Warning Message
-            if signUpViewModel.statuses[4] == .isNotValid || signUpViewModel.statuses[4] == .isBlank {
+            if signUpViewModel.statuses[4] == .isInvalid || signUpViewModel.statuses[4] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.statuses[4] == .isNotValid {
+                    if signUpViewModel.statuses[4] == .isInvalid {
                         Text("이메일 형식이 올바르지 않아요")
                     } else if signUpViewModel.statuses[4] == .isBlank {
                         Text("이메일을 입력 해주세요")

@@ -23,7 +23,7 @@ extension SignUpVM {
         if isValid {
             statuses[1] = .isValid
         } else {
-            statuses[1] = .isNotValid
+            statuses[1] = .isInvalid
         }
     }
     
@@ -36,7 +36,7 @@ extension SignUpVM {
         if isValid {
             statuses[4] = .isValid
         } else {
-            statuses[4] = .isNotValid
+            statuses[4] = .isInvalid
         }
     }
 }
