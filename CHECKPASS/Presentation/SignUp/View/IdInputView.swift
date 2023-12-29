@@ -30,10 +30,12 @@ struct IdInputView: View {
             }
         }
         .onChange(of: idInput) { newValue in
-            if newValue.isEmpty {
-                signUpViewModel.statuses[0] = .isBlank
-            } else {
-                signUpViewModel.statuses[0] = .isValid
+            withAnimation {
+                if newValue.isEmpty {
+                    signUpViewModel.statuses[0] = .isBlank
+                } else {
+                    signUpViewModel.statuses[0] = .isValid
+                }
             }
         }
     }

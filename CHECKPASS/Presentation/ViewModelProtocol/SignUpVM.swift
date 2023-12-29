@@ -12,6 +12,24 @@ protocol SignUpVM: ObservableObject {
     var statuses: [InputStatus] { get set }
 }
 
+//MARK: - Check Invalid InputStatus
+extension SignUpVM {
+    func containsInvalidStatus() -> Bool {
+        var result: Bool = true
+        
+        for i in 0..<statuses.count {
+            if statuses[i] == .isBlank || statuses[i] == .isInitial {
+                statuses[i] = .isBlank
+                result = false
+            } else if statuses[i] == .isInvalid {
+                result = false
+            }
+        }
+        
+        return result
+    }
+}
+
 //MARK: - Regular Expression
 extension SignUpVM {
     //Password Validation Checking

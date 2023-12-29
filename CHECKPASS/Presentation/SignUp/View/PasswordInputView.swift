@@ -34,10 +34,12 @@ struct PasswordInputView: View {
             }
         }
         .onChange(of: pwInput) { newValue in
-            if newValue.isEmpty {
-                signUpViewModel.statuses[1] = .isBlank
-            } else {
-                signUpViewModel.checkPwValidation(newValue)
+            withAnimation {
+                if newValue.isEmpty {
+                    signUpViewModel.statuses[1] = .isBlank
+                } else {
+                    signUpViewModel.checkPwValidation(newValue)
+                }
             }
         }
     }

@@ -34,10 +34,12 @@ struct EmailInputView: View {
             }
         }
         .onChange(of: emailInput) { newValue in
-            if newValue.isEmpty {
-                signUpViewModel.statuses[4] = .isBlank
-            } else {
-                signUpViewModel.checkEmailValidation(newValue)
+            withAnimation {
+                if newValue.isEmpty {
+                    signUpViewModel.statuses[4] = .isBlank
+                } else {
+                    signUpViewModel.checkEmailValidation(newValue)
+                }
             }
         }
     }

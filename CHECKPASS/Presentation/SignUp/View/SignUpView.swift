@@ -48,7 +48,15 @@ struct SignUpView<SVM: SignUpVM>: View {
                 TermsAgreementView()
                     .environmentObject(signUpViewModel)
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    withAnimation {
+                        if signUpViewModel.containsInvalidStatus() {
+                            print("all clear")
+                        } else {
+                            print("There is an invalid input")
+                        }
+                    }
+                }, label: {
                     Text("회원가입")
                         .bold()
                         .padding(.all, 15)
@@ -64,12 +72,14 @@ struct SignUpView<SVM: SignUpVM>: View {
         .navigationTitle("회원가입")
         .navigationBarTitleDisplayMode(.large)
         .onChange(of: pwConfirmInput) { newValue in
-            if pwInput == pwConfirmInput {
-                signUpViewModel.statuses[2] = .isValid
-            } else if newValue.isEmpty {
-                signUpViewModel.statuses[2] = .isBlank
-            } else {
-                signUpViewModel.statuses[2] = .isInvalid
+            withAnimation {
+                if pwInput == pwConfirmInput {
+                    signUpViewModel.statuses[2] = .isValid
+                } else if newValue.isEmpty {
+                    signUpViewModel.statuses[2] = .isBlank
+                } else {
+                    signUpViewModel.statuses[2] = .isInvalid
+                }
             }
         }
     }

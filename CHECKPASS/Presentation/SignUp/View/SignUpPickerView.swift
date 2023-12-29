@@ -64,10 +64,12 @@ struct SignUpPickerView: View {
             }
         }
         .onChange(of: selection) { newValue in
-            if newValue == "선택" {
-                signUpViewModel.statuses[pos] = .isBlank
-            } else {
-                signUpViewModel.statuses[pos] = .isValid
+            withAnimation {
+                if newValue == "선택" {
+                    signUpViewModel.statuses[pos] = .isBlank
+                } else {
+                    signUpViewModel.statuses[pos] = .isValid
+                }
             }
         }
     }

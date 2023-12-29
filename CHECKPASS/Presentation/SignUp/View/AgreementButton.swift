@@ -12,11 +12,14 @@ struct AgreementButton: View {
     
     var body: some View {
         Button(action: {
-            if status == .isValid {
-                status = .isBlank
-            } else {
-                status = .isValid
+            withAnimation {
+                if status == .isValid {
+                    status = .isBlank
+                } else {
+                    status = .isValid
+                }
             }
+                
         }, label: {
             switch status {
             case .isValid:
