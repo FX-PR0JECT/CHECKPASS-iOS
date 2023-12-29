@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */; };
+		5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */; };
 		5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */; };
 		5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */; };
 		5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
+		5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementButton.swift; sourceTree = "<group>"; };
 		5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmInputView.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				5C21244A2B3CF7DC00D237D4 /* EmailInputView.swift */,
 				5C21244E2B3D415F00D237D4 /* IdInputView.swift */,
 				5C2124502B3D438B00D237D4 /* NameInputView.swift */,
+				5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */,
+				5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			files = (
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
+				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
+				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,

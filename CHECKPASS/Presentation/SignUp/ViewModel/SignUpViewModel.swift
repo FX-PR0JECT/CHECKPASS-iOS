@@ -8,7 +8,7 @@
 import Combine
 
 final class SignUpViewModel: SignUpVM {
-    @Published var statuses: [InputStatus] = [.isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial]
+    @Published var statuses: [InputStatus] = [.isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial]
 }
 
 enum InputStatus {

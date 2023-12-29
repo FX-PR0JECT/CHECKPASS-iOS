@@ -41,7 +41,7 @@ struct SignUpInputView: View {
             }
             .offset(x: 16)
             
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 30)
                 .fill(CustomColor.getSignUpInputGray(colorScheme))
                 .frame(height: UIScreen.main.bounds.width * 0.13)
                 .overlay {
@@ -57,7 +57,7 @@ struct SignUpInputView: View {
                             .padding()
                     }
                     
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 30)
                         .stroke(inputStatus == .isValid || inputStatus == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }

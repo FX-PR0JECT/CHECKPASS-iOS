@@ -27,7 +27,7 @@ struct SignUpPickerView: View {
             .offset(x: 16)
             
             ZStack {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 30)
                     .fill(CustomColor.getSignUpInputGray(colorScheme))
                     .frame(height: UIScreen.main.bounds.width * 0.13)
                 
@@ -45,7 +45,7 @@ struct SignUpPickerView: View {
                 .padding([.trailing, .leading])
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 30)
                     .stroke(signUpViewModel.statuses[pos] == .isValid || signUpViewModel.statuses[pos] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
             }
@@ -58,6 +58,7 @@ struct SignUpPickerView: View {
                     
                     Spacer()
                 }
+                .offset(x: 16)
                 .font(.caption)
                 .foregroundColor(.red)
             }

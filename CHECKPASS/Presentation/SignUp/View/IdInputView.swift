@@ -24,6 +24,7 @@ struct IdInputView: View {
                     
                     Spacer()
                 }
+                .offset(x: 16)
                 .font(.caption)
                 .foregroundColor(.red)
             }

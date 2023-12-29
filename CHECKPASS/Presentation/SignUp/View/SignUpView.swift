@@ -20,7 +20,7 @@ struct SignUpView<SVM: SignUpVM>: View {
     
     var body: some View {        
         ScrollView {
-            VStack(spacing: 18) {
+            VStack(spacing: 25) {
                 IdInputView(idInput: $idInput)
                     .environmentObject(signUpViewModel)
                 
@@ -43,6 +43,9 @@ struct SignUpView<SVM: SignUpVM>: View {
                     .environmentObject(signUpViewModel)
                 
                 SignUpPickerView(selection: $pickedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[pickedCollege]!, pos: 7)
+                    .environmentObject(signUpViewModel)
+                
+                TermsAgreementView()
                     .environmentObject(signUpViewModel)
                 
                 Button(action: {}, label: {
