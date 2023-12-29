@@ -77,6 +77,7 @@
 		5C2124432B3CE5DA00D237D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5C21244C2B3D172000D237D4 /* SignUpVM.swift */,
 				5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
@@ -95,7 +96,6 @@
 			children = (
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
 				5C9A2A582B3B9C92006B176E /* SignUp */,
-				5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */,
 				5CA5B1DF2B3AAA8900DD707C /* Keyboard */,
 				5C32B24D2B352F330036CDF2 /* LaunchScreen */,
 				5C32B2472B352AEB0036CDF2 /* SignIn */,
@@ -211,18 +211,10 @@
 		5CA5B1DF2B3AAA8900DD707C /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */,
 				5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */,
 			);
 			path = Keyboard;
-			sourceTree = "<group>";
-		};
-		5CA5B1E32B3AB0CD00DD707C /* ViewModelProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */,
-				5C21244C2B3D172000D237D4 /* SignUpVM.swift */,
-			);
-			path = ViewModelProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -50,7 +50,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                 
                 Button(action: {
                     withAnimation {
-                        if signUpViewModel.containsInvalidStatus() {
+                        if signUpViewModel.isvalidState() {
                             print("all clear")
                         } else {
                             print("There is an invalid input")

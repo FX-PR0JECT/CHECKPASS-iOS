@@ -14,7 +14,7 @@ protocol SignUpVM: ObservableObject {
 
 //MARK: - Check Invalid InputStatus
 extension SignUpVM {
-    func containsInvalidStatus() -> Bool {
+    func isvalidState() -> Bool {
         var result: Bool = true
         
         for i in 0..<statuses.count {
