@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FindPwEmailInput: View {
     @Binding var text: String
-    @Binding var inputState: InputStatus
+    @Binding var inputState: InputState
     @Environment(\.colorScheme) private var colorScheme
     @FocusState private var isFocused: Bool?
     

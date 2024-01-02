@@ -24,7 +24,7 @@ extension CustomColor {
 
 struct SignUpInputView: View {
     @Binding var text: String
-    @Binding var inputStatus: InputStatus
+    @Binding var inputState: InputState
     @Environment(\.colorScheme) private var colorScheme
     
     var header: String
@@ -58,7 +58,7 @@ struct SignUpInputView: View {
                     }
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(inputStatus == .isValid || inputStatus == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(inputState == .isValid || inputState == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
         }
@@ -66,5 +66,5 @@ struct SignUpInputView: View {
 }
 
 #Preview {
-    SignUpInputView(text: .constant(""), inputStatus: .constant(.isInitial), header: "header", placeholder: "placeholder", style: .normal)
+    SignUpInputView(text: .constant(""), inputState: .constant(.isInitial), header: "header", placeholder: "placeholder", style: .normal)
 }

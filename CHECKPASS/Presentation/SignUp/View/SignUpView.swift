@@ -74,11 +74,11 @@ struct SignUpView<SVM: SignUpVM>: View {
         .onChange(of: pwConfirmInput) { newValue in
             withAnimation {
                 if pwInput == pwConfirmInput {
-                    signUpViewModel.statuses[2] = .isValid
+                    signUpViewModel.states[2] = .isValid
                 } else if newValue.isEmpty {
-                    signUpViewModel.statuses[2] = .isBlank
+                    signUpViewModel.states[2] = .isBlank
                 } else {
-                    signUpViewModel.statuses[2] = .isInvalid
+                    signUpViewModel.states[2] = .isInvalid
                 }
             }
         }

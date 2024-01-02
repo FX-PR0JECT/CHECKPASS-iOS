@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AgreementButton: View {
-    @Binding var status: InputStatus
+    @Binding var status: InputState
     
     var body: some View {
         Button(action: {

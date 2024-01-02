@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol SignUpVM: ObservableObject {
-    var statuses: [InputStatus] { get set }
+    var states: [InputState] { get set }
 }
 
 //MARK: - Check Invalid InputStatus
@@ -17,11 +17,11 @@ extension SignUpVM {
     func isvalidState() -> Bool {
         var result: Bool = true
         
-        for i in 0..<statuses.count {
-            if statuses[i] == .isBlank || statuses[i] == .isInitial {
-                statuses[i] = .isBlank
+        for i in 0..<states.count {
+            if states[i] == .isBlank || states[i] == .isInitial {
+                states[i] = .isBlank
                 result = false
-            } else if statuses[i] == .isInvalid {
+            } else if states[i] == .isInvalid {
                 result = false
             }
         }
@@ -39,9 +39,9 @@ extension SignUpVM {
         let isValid = passwordPredicate.evaluate(with: pw)
         
         if isValid {
-            statuses[1] = .isValid
+            states[1] = .isValid
         } else {
-            statuses[1] = .isInvalid
+            states[1] = .isInvalid
         }
     }
     
@@ -52,9 +52,9 @@ extension SignUpVM {
         let isValid = emailPredicate.evaluate(with: email)
         
         if isValid {
-            statuses[4] = .isValid
+            states[4] = .isValid
         } else {
-            statuses[4] = .isInvalid
+            states[4] = .isInvalid
         }
     }
 }

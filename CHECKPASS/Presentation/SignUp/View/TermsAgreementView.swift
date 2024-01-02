@@ -26,7 +26,7 @@ struct TermsAgreementView: View {
                     .frame(height: UIScreen.main.bounds.width * 0.13)
                 
                 HStack {
-                    AgreementButton(status: $signUpViewModel.statuses[8])
+                    AgreementButton(status: $signUpViewModel.states[8])
                     
                     Text("개인정보 수집 및 이용에 동의합니다")
                     
@@ -35,12 +35,12 @@ struct TermsAgreementView: View {
                 .padding()
                 .overlay {
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(signUpViewModel.statuses[8] == .isValid || signUpViewModel.statuses[8] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(signUpViewModel.states[8] == .isValid || signUpViewModel.states[8] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
             }
             
-            if signUpViewModel.statuses[8] == .isBlank {
+            if signUpViewModel.states[8] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     

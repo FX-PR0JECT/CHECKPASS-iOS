@@ -8,10 +8,10 @@
 import Combine
 
 final class SignUpViewModel: SignUpVM {
-    @Published var statuses: [InputStatus] = [.isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial]
+    @Published var states: [InputState] = [.isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial]
 }
 
-enum InputStatus {
+enum InputState {
     case isInitial
     case isBlank
     case isInvalid

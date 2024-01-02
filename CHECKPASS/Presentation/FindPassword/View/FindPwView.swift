@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FindPwView: View {
     @State private var emailInput: String = ""
-    @State private var inputStatus: InputStatus = .isInitial
+    @State private var inputStatus: InputState = .isInitial
     
     var body: some View {
         VStack(spacing: 20) {

@@ -13,16 +13,16 @@ struct PasswordConfirmInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $pwConfirmInput, inputStatus: $signUpViewModel.statuses[2], header: "비밀번호 확인", placeholder: "비밀번호를 다시 한번 입력해 주세요", style: .secure)
+            SignUpInputView(text: $pwConfirmInput, inputState: $signUpViewModel.states[2], header: "비밀번호 확인", placeholder: "비밀번호를 다시 한번 입력해 주세요", style: .secure)
             
             //MARK: - Warning Message
-            if signUpViewModel.statuses[2] == .isInvalid || signUpViewModel.statuses[2] == .isBlank {
+            if signUpViewModel.states[2] == .isInvalid || signUpViewModel.states[2] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.statuses[2] == .isInvalid {
+                    if signUpViewModel.states[2] == .isInvalid {
                         Text("비밀번호가 일치하지 않아요")
-                    } else if signUpViewModel.statuses[2] == .isBlank {
+                    } else if signUpViewModel.states[2] == .isBlank {
                         Text("비밀번호를 확인해 주세요")
                     }
                     

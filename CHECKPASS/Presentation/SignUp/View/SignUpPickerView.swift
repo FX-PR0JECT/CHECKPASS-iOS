@@ -46,11 +46,11 @@ struct SignUpPickerView: View {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 30)
-                    .stroke(signUpViewModel.statuses[pos] == .isValid || signUpViewModel.statuses[pos] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                    .stroke(signUpViewModel.states[pos] == .isValid || signUpViewModel.states[pos] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
             }
             
-            if signUpViewModel.statuses[pos] == .isBlank {
+            if signUpViewModel.states[pos] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -66,9 +66,9 @@ struct SignUpPickerView: View {
         .onChange(of: selection) { newValue in
             withAnimation {
                 if newValue == "선택" {
-                    signUpViewModel.statuses[pos] = .isBlank
+                    signUpViewModel.states[pos] = .isBlank
                 } else {
-                    signUpViewModel.statuses[pos] = .isValid
+                    signUpViewModel.states[pos] = .isValid
                 }
             }
         }

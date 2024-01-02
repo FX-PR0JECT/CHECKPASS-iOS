@@ -13,16 +13,16 @@ struct EmailInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $emailInput, inputStatus: $signUpViewModel.statuses[4], header: "이메일", placeholder: "이메일을 입력해 주세요", keyboardType: .URL)
+            SignUpInputView(text: $emailInput, inputState: $signUpViewModel.states[4], header: "이메일", placeholder: "이메일을 입력해 주세요", keyboardType: .URL)
             
             //MARK: - Warning Message
-            if signUpViewModel.statuses[4] == .isInvalid || signUpViewModel.statuses[4] == .isBlank {
+            if signUpViewModel.states[4] == .isInvalid || signUpViewModel.states[4] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.statuses[4] == .isInvalid {
+                    if signUpViewModel.states[4] == .isInvalid {
                         Text("이메일 형식이 올바르지 않아요")
-                    } else if signUpViewModel.statuses[4] == .isBlank {
+                    } else if signUpViewModel.states[4] == .isBlank {
                         Text("이메일을 입력 해주세요")
                     }
                     
@@ -36,7 +36,7 @@ struct EmailInputView: View {
         .onChange(of: emailInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.statuses[4] = .isBlank
+                    signUpViewModel.states[4] = .isBlank
                 } else {
                     signUpViewModel.checkEmailValidation(newValue)
                 }
