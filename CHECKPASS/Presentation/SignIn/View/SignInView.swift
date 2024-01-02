@@ -12,6 +12,7 @@ struct SignInView<KVM: KeyboardVM>: View {
     @State private var id: String = ""
     @State private var pw: String = ""
     @State private var isSignUpVisible: Bool = false
+    @State private var isFindPwVisible: Bool = false
     
     var body: some View {
         ZStack {
@@ -60,7 +61,9 @@ struct SignInView<KVM: KeyboardVM>: View {
                         .frame(width: 2, height: 20)
                     
                     //MARK: - Find Password Button
-                    Button(action: {}, label: {
+                    Button(action: {
+                        isFindPwVisible.toggle()
+                    }, label: {
                         Text("비밀번호 찾기")
                             .foregroundColor(CustomColor.SignInGray)
                     })
@@ -72,6 +75,9 @@ struct SignInView<KVM: KeyboardVM>: View {
         }
         .navigationDestination(isPresented: $isSignUpVisible, destination: {
             SignUpView(signUpViewModel: SignUpViewModel())
+        })
+        .navigationDestination(isPresented: $isFindPwVisible, destination: {
+            FindPwView()
         })
     }
 }

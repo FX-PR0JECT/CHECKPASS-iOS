@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */; };
 		5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */; };
+		5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144AE12B3E90EC007E2E23 /* FindPwView.swift */; };
 		5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */; };
 		5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */; };
 		5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */; };
@@ -23,6 +24,7 @@
 		5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E812B33F3AE004C6501 /* Assets.xcassets */; };
 		5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */; };
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
+		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
 		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
 		5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */; };
 		5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */; };
@@ -37,6 +39,7 @@
 /* Begin PBXFileReference section */
 		5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
 		5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementButton.swift; sourceTree = "<group>"; };
+		5C144AE12B3E90EC007E2E23 /* FindPwView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwView.swift; sourceTree = "<group>"; };
 		5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmInputView.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		5C561E7F2B33F3AD004C6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C561E812B33F3AE004C6501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
 		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C144ADE2B3E7F2E007E2E23 /* FindPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CAE2B438227006A2580 /* ViewModel */,
+				5C987CAF2B43822D006A2580 /* View */,
+			);
+			path = FindPassword;
+			sourceTree = "<group>";
+		};
 		5C2124432B3CE5DA00D237D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
+				5C144ADE2B3E7F2E007E2E23 /* FindPassword */,
 				5C9A2A582B3B9C92006B176E /* SignUp */,
 				5CA5B1DF2B3AAA8900DD707C /* Keyboard */,
 				5C32B24D2B352F330036CDF2 /* LaunchScreen */,
@@ -171,6 +185,22 @@
 				5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C987CAE2B438227006A2580 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C987CAF2B43822D006A2580 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C144AE12B3E90EC007E2E23 /* FindPwView.swift */,
+				5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5C9A2A582B3B9C92006B176E /* SignUp */ = {
@@ -296,6 +326,7 @@
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
+				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
@@ -315,6 +346,7 @@
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
+				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
