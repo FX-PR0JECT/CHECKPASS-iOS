@@ -13,16 +13,24 @@ struct PasswordInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $pwInput, inputState: $signUpViewModel.states[1], header: "비밀번호", placeholder: "비밀번호를 입력해 주세요", style: .secure)
+            SignUpInputView(text: $pwInput,
+                            inputState: Binding(
+                                get: {
+                                    self.signUpViewModel.states["pw"] ?? .isInitial
+                                }, set: { newValue in
+                                    self.signUpViewModel.states["pw"] = newValue
+                                }
+                            ),
+                            header: "비밀번호", placeholder: "비밀번호를 입력해 주세요", style: .secure)
             
             //MARK: - Warning Message
-            if signUpViewModel.states[1] == .isInvalid || signUpViewModel.states[1] == .isBlank {
+            if signUpViewModel.states["pw"] == .isInvalid || signUpViewModel.states["pw"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.states[1] == .isInvalid {
+                    if signUpViewModel.states["pw"] == .isInvalid {
                         Text("비밀번호는 영문, 숫자, 특수문자 포함 8~16자리")
-                    } else if signUpViewModel.states[1] == .isBlank {
+                    } else if signUpViewModel.states["pw"] == .isBlank {
                         Text("비밀번호를 입력해 주세요")
                     }
                     
@@ -36,7 +44,7 @@ struct PasswordInputView: View {
         .onChange(of: pwInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.states[1] = .isBlank
+                    signUpViewModel.states["pw"] = .isBlank
                 } else {
                     signUpViewModel.checkPwValidation(newValue)
                 }

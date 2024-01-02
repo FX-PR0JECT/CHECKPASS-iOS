@@ -13,10 +13,17 @@ struct NameInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $nameInput, inputState: $signUpViewModel.states[3], header: "이름", placeholder: "이름을 입력해 주세요")
+            SignUpInputView(text: $nameInput,
+                            inputState: Binding(
+                            get: {
+                                self.signUpViewModel.states["name"] ?? .isInitial
+                            }, set: { newValue in
+                                self.signUpViewModel.states["name"] = newValue
+                            }),
+                            header: "이름", placeholder: "이름을 입력해 주세요")
             
             //MARK: - Warning Message
-            if signUpViewModel.states[3] == .isBlank {
+            if signUpViewModel.states["name"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -32,9 +39,9 @@ struct NameInputView: View {
         .onChange(of: nameInput) { newValue in
             withAnimation {
                 if nameInput.isEmpty {
-                    signUpViewModel.states[3] = .isBlank
+                    signUpViewModel.states["name"] = .isBlank
                 } else {
-                    signUpViewModel.states[3] = .isValid
+                    signUpViewModel.states["name"] = .isValid
                 }
             }
         }

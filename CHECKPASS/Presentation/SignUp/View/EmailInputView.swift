@@ -13,16 +13,24 @@ struct EmailInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $emailInput, inputState: $signUpViewModel.states[4], header: "이메일", placeholder: "이메일을 입력해 주세요", keyboardType: .URL)
+            SignUpInputView(text: $emailInput,
+                            inputState: Binding(
+                                get: {
+                                    self.signUpViewModel.states["email"] ?? .isInitial
+                                },
+                                set: { newValue in
+                                    self.signUpViewModel.states["email"] = newValue
+                                }),
+                            header: "이메일", placeholder: "이메일을 입력해 주세요", keyboardType: .emailAddress)
             
-            //MARK: - Warning Message
-            if signUpViewModel.states[4] == .isInvalid || signUpViewModel.states[4] == .isBlank {
+            //MARK: - Warning Message"
+            if signUpViewModel.states["email"] == .isInvalid || signUpViewModel.states["email"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.states[4] == .isInvalid {
+                    if signUpViewModel.states["email"] == .isInvalid {
                         Text("이메일 형식이 올바르지 않아요")
-                    } else if signUpViewModel.states[4] == .isBlank {
+                    } else if signUpViewModel.states["email"] == .isBlank {
                         Text("이메일을 입력 해주세요")
                     }
                     
@@ -36,7 +44,7 @@ struct EmailInputView: View {
         .onChange(of: emailInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.states[4] = .isBlank
+                    signUpViewModel.states["email"] = .isBlank
                 } else {
                     signUpViewModel.checkEmailValidation(newValue)
                 }

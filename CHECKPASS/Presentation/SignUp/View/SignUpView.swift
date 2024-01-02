@@ -36,13 +36,13 @@ struct SignUpView<SVM: SignUpVM>: View {
                 EmailInputView(emailInput: $emailInput)
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedType, header: "구분", title: "구분을 선택해 주세요", contents: PickerContents.userTypes, pos: 5)
+                SignUpPickerView(selection: $pickedType, header: "구분", title: "구분을 선택해 주세요", contents: PickerContents.userTypes, pos: "type")
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: 6)
+                SignUpPickerView(selection: $pickedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: "college")
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[pickedCollege]!, pos: 7)
+                SignUpPickerView(selection: $pickedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[pickedCollege]!, pos: "department")
                     .environmentObject(signUpViewModel)
                 
                 TermsAgreementView()
@@ -50,7 +50,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                 
                 Button(action: {
                     withAnimation {
-                        if signUpViewModel.isvalidState() {
+                        if signUpViewModel.verifyState() {
                             print("all clear")
                         } else {
                             print("There is an invalid input")
@@ -74,11 +74,11 @@ struct SignUpView<SVM: SignUpVM>: View {
         .onChange(of: pwConfirmInput) { newValue in
             withAnimation {
                 if pwInput == pwConfirmInput {
-                    signUpViewModel.states[2] = .isValid
+                    signUpViewModel.states["pwConfirmation"] = .isValid
                 } else if newValue.isEmpty {
-                    signUpViewModel.states[2] = .isBlank
+                    signUpViewModel.states["pwConfirmation"] = .isBlank
                 } else {
-                    signUpViewModel.states[2] = .isInvalid
+                    signUpViewModel.states["pwConfirmation"] = .isInvalid
                 }
             }
         }

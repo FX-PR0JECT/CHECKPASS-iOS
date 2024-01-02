@@ -8,7 +8,7 @@
 import Combine
 
 final class SignUpViewModel: SignUpVM {
-    @Published var states: [InputState] = [.isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial, .isInitial]
+    @Published var states: Dictionary<String, InputState> = ["id": .isInitial, "pw": .isInitial, "pwConfirmation": .isInitial, "name": .isInitial, "email": .isInitial, "type": .isInitial, "college": .isInitial, "department": .isInitial, "agreement": .isInitial]
 }
 
 enum InputState {

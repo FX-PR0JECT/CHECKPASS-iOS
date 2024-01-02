@@ -13,10 +13,18 @@ struct IdInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $idInput, inputState: $signUpViewModel.states[0], header: "아이디", placeholder: "학번 또는 교직원 번호를 입력해 주세요", keyboardType: .numberPad)
+            SignUpInputView(text: $idInput,
+                            inputState: Binding(
+                                get: {
+                                    self.signUpViewModel.states["id"] ?? .isInitial
+                                }, set: { newValue in
+                                    self.signUpViewModel.states["id"] = newValue
+                                }
+                            ),
+                            header: "아이디", placeholder: "학번 또는 교직원 번호를 입력해 주세요", keyboardType: .numberPad)
             
             //MARK: - Warning Message
-            if signUpViewModel.states[0] == .isBlank {
+            if signUpViewModel.states["id"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -32,9 +40,9 @@ struct IdInputView: View {
         .onChange(of: idInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.states[0] = .isBlank
+                    signUpViewModel.states["id"] = .isBlank
                 } else {
-                    signUpViewModel.states[0] = .isValid
+                    signUpViewModel.states["id"] = .isValid
                 }
             }
         }
