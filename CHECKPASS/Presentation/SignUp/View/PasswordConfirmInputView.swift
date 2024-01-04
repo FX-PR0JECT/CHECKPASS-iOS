@@ -46,5 +46,5 @@ struct PasswordConfirmInputView: View {
 
 #Preview {
     PasswordConfirmInputView(pwConfirmInput: .constant(""))
-        .environmentObject(AppDI.shared.getSignUpViewModel())
+        .environmentObject(AppDI.shared().getSignUpViewModel())
 }

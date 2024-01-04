@@ -51,5 +51,5 @@ struct IdInputView: View {
 
 #Preview {
     IdInputView(idInput: .constant(""))
-        .environmentObject(AppDI.shared.getSignUpViewModel())
+        .environmentObject(AppDI.shared().getSignUpViewModel())
 }

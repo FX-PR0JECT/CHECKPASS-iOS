@@ -7,9 +7,13 @@
 
 class AppDI {
     //singleton instance
-    static let shared: AppDI = AppDI()
+    private static let instance: AppDI = AppDI()
     
     private init() {}
+    
+    static func shared() -> AppDI {
+        return instance
+    }
     
     //get SignUpViewModel
     func getSignUpViewModel() -> SignUpViewModel {

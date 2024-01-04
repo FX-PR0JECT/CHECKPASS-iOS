@@ -55,5 +55,5 @@ struct PasswordInputView: View {
 
 #Preview {
     PasswordInputView(pwInput: .constant(""))
-        .environmentObject(AppDI.shared.getSignUpViewModel())
+        .environmentObject(AppDI.shared().getSignUpViewModel())
 }

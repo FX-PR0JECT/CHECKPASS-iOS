@@ -86,5 +86,5 @@ struct SignUpView<SVM: SignUpVM>: View {
 }
 
 #Preview {
-    SignUpView(signUpViewModel: AppDI.shared.getSignUpViewModel())
+    SignUpView(signUpViewModel: AppDI.shared().getSignUpViewModel())
 }
