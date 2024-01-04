@@ -63,5 +63,5 @@ struct TermsAgreementView: View {
 
 #Preview {
     TermsAgreementView()
-        .environmentObject(SignUpViewModel())
+        .environmentObject(AppDI.shared.getSignUpViewModel())
 }

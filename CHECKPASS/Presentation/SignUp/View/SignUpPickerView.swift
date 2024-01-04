@@ -77,5 +77,5 @@ struct SignUpPickerView: View {
 
 #Preview {
     SignUpPickerView(selection: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"], pos: "type")
-        .environmentObject(SignUpViewModel())
+        .environmentObject(AppDI.shared.getSignUpViewModel())
 }

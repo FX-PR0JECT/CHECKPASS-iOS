@@ -10,6 +10,12 @@ import Combine
 
 protocol SignUpVM: ObservableObject {
     var states: Dictionary<String, InputState> { get set }
+    var signUpResult: Bool? { get set }
+    var isAlertVisible: Bool { get set }
+    
+    func executeStudentRegister(id: String, pw: String, name: String, job: String, collage: String,
+                                department: String, grade: String, dayOrNight: String, semester: String)
+    func executeStaffRegister(id: String, pw: String, name: String, job: String, collage: String, department: String, hireDate: String)
 }
 
 //MARK: - Check Invalid InputStatus

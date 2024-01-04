@@ -50,5 +50,5 @@ struct NameInputView: View {
 
 #Preview {
     NameInputView(nameInput: .constant(""))
-        .environmentObject(SignUpViewModel())
+        .environmentObject(AppDI.shared.getSignUpViewModel())
 }

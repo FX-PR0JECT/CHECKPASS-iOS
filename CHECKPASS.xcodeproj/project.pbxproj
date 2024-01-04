@@ -25,6 +25,13 @@
 		5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */; };
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
+		5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */; };
+		5C987CBC2B44D10C006A2580 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBB2B44D10C006A2580 /* SignUpRepository.swift */; };
+		5C987CBE2B44E455006A2580 /* DefaultSignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBD2B44E455006A2580 /* DefaultSignUpRepository.swift */; };
+		5C987CC02B44E534006A2580 /* SignUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBF2B44E534006A2580 /* SignUpDataSource.swift */; };
+		5C987CC22B44EE1B006A2580 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC12B44EE1B006A2580 /* DTO.swift */; };
+		5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC72B4521EF006A2580 /* AppDI.swift */; };
+		5C987CCA2B45361A006A2580 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC92B45361A006A2580 /* SignUpResult.swift */; };
 		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
 		5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */; };
 		5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */; };
@@ -55,6 +62,13 @@
 		5C561E812B33F3AE004C6501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
+		5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
+		5C987CBB2B44D10C006A2580 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
+		5C987CBD2B44E455006A2580 /* DefaultSignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpRepository.swift; sourceTree = "<group>"; };
+		5C987CBF2B44E534006A2580 /* SignUpDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataSource.swift; sourceTree = "<group>"; };
+		5C987CC12B44EE1B006A2580 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
+		5C987CC72B4521EF006A2580 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
+		5C987CC92B45361A006A2580 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -170,9 +184,11 @@
 		5C561E7C2B33F3AD004C6501 /* CHECKPASS */ = {
 			isa = PBXGroup;
 			children = (
+				5C987CB62B43E499006A2580 /* Data */,
+				5C987CB22B43C9FC006A2580 /* Domain */,
 				5C9A2A642B3BE36C006B176E /* Commons */,
 				5C32B2462B352AB90036CDF2 /* Presentation */,
-				5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */,
+				5C987CC62B4521E0006A2580 /* Application */,
 				5C32B2452B3517A40036CDF2 /* Resources */,
 				5C561E832B33F3AE004C6501 /* Preview Content */,
 			);
@@ -201,6 +217,83 @@
 				5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5C987CB22B43C9FC006A2580 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CB92B44D0E4006A2580 /* Interfaces */,
+				5C987CB32B43CA07006A2580 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5C987CB32B43CA07006A2580 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5C987CB62B43E499006A2580 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CC32B451CF1006A2580 /* Entities */,
+				5C987CB82B43E63E006A2580 /* Repositories */,
+				5C987CB72B43E49E006A2580 /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5C987CB72B43E49E006A2580 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CBF2B44E534006A2580 /* SignUpDataSource.swift */,
+				5C987CC12B44EE1B006A2580 /* DTO.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5C987CB82B43E63E006A2580 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CBD2B44E455006A2580 /* DefaultSignUpRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5C987CB92B44D0E4006A2580 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CBA2B44D0F5006A2580 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		5C987CBA2B44D0F5006A2580 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CBB2B44D10C006A2580 /* SignUpRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5C987CC32B451CF1006A2580 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5C987CC92B45361A006A2580 /* SignUpResult.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5C987CC62B4521E0006A2580 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */,
+				5C987CC72B4521EF006A2580 /* AppDI.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		5C9A2A582B3B9C92006B176E /* SignUp */ = {
@@ -326,16 +419,22 @@
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
+				5C987CBC2B44D10C006A2580 /* SignUpRepository.swift in Sources */,
+				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
 				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
+				5C987CCA2B45361A006A2580 /* SignUpResult.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
+				5C987CC22B44EE1B006A2580 /* DTO.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
+				5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */,
 				5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */,
 				5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */,
 				5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
+				5C987CBE2B44E455006A2580 /* DefaultSignUpRepository.swift in Sources */,
 				5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */,
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
@@ -346,6 +445,7 @@
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
+				5C987CC02B44E534006A2580 /* SignUpDataSource.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

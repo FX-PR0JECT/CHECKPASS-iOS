@@ -14,7 +14,7 @@ struct SignUpView<SVM: SignUpVM>: View {
     @State private var pwConfirmInput: String = ""
     @State private var nameInput: String = ""
     @State private var emailInput: String = ""
-    @State private var pickedType: String = ""
+    @State private var pickedJob: String = ""
     @State private var pickedCollege: String = "선택"
     @State private var pickedDepartment: String = ""
     
@@ -36,7 +36,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                 EmailInputView(emailInput: $emailInput)
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView(selection: $pickedType, header: "구분", title: "구분을 선택해 주세요", contents: PickerContents.userTypes, pos: "type")
+                SignUpPickerView(selection: $pickedJob, header: "구분", title: "구분을 선택해 주세요", contents: PickerContents.userTypes, pos: "job")
                     .environmentObject(signUpViewModel)
                 
                 SignUpPickerView(selection: $pickedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: "college")
@@ -86,5 +86,5 @@ struct SignUpView<SVM: SignUpVM>: View {
 }
 
 #Preview {
-    SignUpView(signUpViewModel: SignUpViewModel())
+    SignUpView(signUpViewModel: AppDI.shared.getSignUpViewModel())
 }
