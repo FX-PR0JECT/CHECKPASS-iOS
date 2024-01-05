@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct IdInputView: View {
+struct IdInputView<SVM: SignUpVM>: View {
     @Binding var idInput: String
-    @EnvironmentObject var signUpViewModel: SignUpViewModel
+    @EnvironmentObject var signUpViewModel: SVM
     
     var body: some View {
         VStack {
             SignUpInputView(text: $idInput,
                             inputState: Binding(
                                 get: {
-                                    self.signUpViewModel.states["id"] ?? .isInitial
+                                    self.signUpViewModel.defaultStates["id"] ?? .isInitial
                                 }, set: { newValue in
-                                    self.signUpViewModel.states["id"] = newValue
+                                    self.signUpViewModel.defaultStates["id"] = newValue
                                 }
                             ),
                             header: "아이디", placeholder: "학번 또는 교직원 번호를 입력해 주세요", keyboardType: .numberPad)
             
             //MARK: - Warning Message
-            if signUpViewModel.states["id"] == .isBlank {
+            if signUpViewModel.defaultStates["id"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -40,9 +40,9 @@ struct IdInputView: View {
         .onChange(of: idInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.states["id"] = .isBlank
+                    signUpViewModel.defaultStates["id"] = .isBlank
                 } else {
-                    signUpViewModel.states["id"] = .isValid
+                    signUpViewModel.defaultStates["id"] = .isValid
                 }
             }
         }
@@ -50,6 +50,6 @@ struct IdInputView: View {
 }
 
 #Preview {
-    IdInputView(idInput: .constant(""))
+    IdInputView<SignUpViewModel>(idInput: .constant(""))
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

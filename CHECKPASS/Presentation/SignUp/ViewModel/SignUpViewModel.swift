@@ -15,7 +15,9 @@ enum InputState {
 }
 
 final class SignUpViewModel {
-    @Published var states: Dictionary<String, InputState> = ["id": .isInitial, "pw": .isInitial, "pwConfirmation": .isInitial, "name": .isInitial, "email": .isInitial, "job": .isInitial, "college": .isInitial, "department": .isInitial, "agreement": .isInitial]
+    @Published var defaultStates: Dictionary<String, InputState> = ["id": .isInitial, "pw": .isInitial, "pwConfirmation": .isInitial, "name": .isInitial, "job": .isInitial, "college": .isInitial, "department": .isInitial, "agreement": .isInitial]
+    @Published var studentStates: Dictionary<String, InputState> = ["grade": .isInitial, "dayOrNight": .isInitial, "semester": .isInitial]    //only Student Input
+    @Published var staffStates: Dictionary<String, InputState> = ["hireDate": .isInitial]    //only Staff Input
     @Published var signUpResult: Bool?    //Sign up Response result (true or false)
     @Published var isAlertVisible: Bool = false
     
@@ -76,7 +78,7 @@ extension SignUpViewModel: SignUpVM {
                 
                 if $0.result {    //Sign up Success
                     self?.signUpResult = true
-                } else {    //Sign up Fail
+                } else {    //Sign up failed
                     self?.signUpResult = false
                 }
             })

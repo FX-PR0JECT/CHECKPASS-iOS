@@ -11,8 +11,8 @@ struct SignInView<KVM: KeyboardVM>: View {
     @EnvironmentObject private var keyboardViewModel: KVM
     @State private var id: String = ""
     @State private var pw: String = ""
-    @State private var isSignUpVisible: Bool = false
-    @State private var isFindPwVisible: Bool = false
+    @State private var showSignUpView: Bool = false
+    @State private var showFindPwView: Bool = false
     
     var body: some View {
         ZStack {
@@ -49,7 +49,7 @@ struct SignInView<KVM: KeyboardVM>: View {
                 HStack(spacing: 15) {
                     //MARK: - Create new account Button
                     Button(action: {
-                        isSignUpVisible.toggle()
+                        showSignUpView.toggle()
                     }, label: {
                         Text("새 계정 만들기")
                             .foregroundColor(CustomColor.SignInGray)
@@ -62,7 +62,7 @@ struct SignInView<KVM: KeyboardVM>: View {
                     
                     //MARK: - Find Password Button
                     Button(action: {
-                        isFindPwVisible.toggle()
+                        showFindPwView.toggle()
                     }, label: {
                         Text("비밀번호 찾기")
                             .foregroundColor(CustomColor.SignInGray)
@@ -73,10 +73,10 @@ struct SignInView<KVM: KeyboardVM>: View {
             .padding()
             .offset(y: keyboardViewModel.isKeyboardVisible ? UIScreen.main.bounds.width * 0.2 : 0)
         }
-        .navigationDestination(isPresented: $isSignUpVisible, destination: {
-            SignUpView(signUpViewModel: AppDI.shared().getSignUpViewModel())
+        .navigationDestination(isPresented: $showSignUpView, destination: {
+            SignUpStartView(signUpViewModel: AppDI.shared().getSignUpViewModel(), showSignUpView: $showSignUpView)
         })
-        .navigationDestination(isPresented: $isFindPwVisible, destination: {
+        .navigationDestination(isPresented: $showFindPwView, destination: {
             FindPwView()
         })
     }

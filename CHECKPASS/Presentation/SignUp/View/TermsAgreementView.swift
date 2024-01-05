@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TermsAgreementView: View {
-    @EnvironmentObject var signUpViewModel: SignUpViewModel
+struct TermsAgreementView<SVM: SignUpVM>: View {
+    @EnvironmentObject var signUpViewModel: SVM
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -28,9 +28,9 @@ struct TermsAgreementView: View {
                 HStack {
                     AgreementButton(status: Binding(
                         get: {
-                            self.signUpViewModel.states["agreement"] ?? .isInvalid
+                            self.signUpViewModel.defaultStates["agreement"] ?? .isInvalid
                         }, set: { newValue in
-                            self.signUpViewModel.states["agreement"] = newValue
+                            self.signUpViewModel.defaultStates["agreement"] = newValue
                         }))
                     
                     Text("개인정보 수집 및 이용에 동의합니다")
@@ -40,12 +40,12 @@ struct TermsAgreementView: View {
                 .padding()
                 .overlay {
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(signUpViewModel.states["agreement"] == .isValid || signUpViewModel.states["agreement"] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(signUpViewModel.defaultStates["agreement"] == .isValid || signUpViewModel.defaultStates["agreement"] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
             }
             
-            if signUpViewModel.states["agreement"] == .isBlank {
+            if signUpViewModel.defaultStates["agreement"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -62,6 +62,6 @@ struct TermsAgreementView: View {
 }
 
 #Preview {
-    TermsAgreementView()
+    TermsAgreementView<SignUpViewModel>()
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

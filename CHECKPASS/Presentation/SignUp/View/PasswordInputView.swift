@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PasswordInputView: View {
-    @EnvironmentObject var signUpViewModel: SignUpViewModel
+struct PasswordInputView<SVM: SignUpVM>: View {
+    @EnvironmentObject var signUpViewModel: SVM
     @Binding var pwInput: String
     
     var body: some View {
@@ -16,21 +16,21 @@ struct PasswordInputView: View {
             SignUpInputView(text: $pwInput,
                             inputState: Binding(
                                 get: {
-                                    self.signUpViewModel.states["pw"] ?? .isInitial
+                                    self.signUpViewModel.defaultStates["pw"] ?? .isInitial
                                 }, set: { newValue in
-                                    self.signUpViewModel.states["pw"] = newValue
+                                    self.signUpViewModel.defaultStates["pw"] = newValue
                                 }
                             ),
                             header: "비밀번호", placeholder: "비밀번호를 입력해 주세요", style: .secure)
             
             //MARK: - Warning Message
-            if signUpViewModel.states["pw"] == .isInvalid || signUpViewModel.states["pw"] == .isBlank {
+            if signUpViewModel.defaultStates["pw"] == .isInvalid || signUpViewModel.defaultStates["pw"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.states["pw"] == .isInvalid {
+                    if signUpViewModel.defaultStates["pw"] == .isInvalid {
                         Text("비밀번호는 영문, 숫자, 특수문자 포함 8~16자리")
-                    } else if signUpViewModel.states["pw"] == .isBlank {
+                    } else if signUpViewModel.defaultStates["pw"] == .isBlank {
                         Text("비밀번호를 입력해 주세요")
                     }
                     
@@ -44,7 +44,7 @@ struct PasswordInputView: View {
         .onChange(of: pwInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.states["pw"] = .isBlank
+                    signUpViewModel.defaultStates["pw"] = .isBlank
                 } else {
                     signUpViewModel.checkPwValidation(newValue)
                 }
@@ -54,6 +54,6 @@ struct PasswordInputView: View {
 }
 
 #Preview {
-    PasswordInputView(pwInput: .constant(""))
+    PasswordInputView<SignUpViewModel>(pwInput: .constant(""))
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

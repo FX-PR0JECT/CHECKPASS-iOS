@@ -9,7 +9,9 @@ import Foundation
 import Combine
 
 protocol SignUpVM: ObservableObject {
-    var states: Dictionary<String, InputState> { get set }
+    var defaultStates: Dictionary<String, InputState> { get set }
+    var studentStates: Dictionary<String, InputState> { get set }
+    var staffStates: Dictionary<String, InputState> { get set }
     var signUpResult: Bool? { get set }
     var isAlertVisible: Bool { get set }
     
@@ -20,19 +22,59 @@ protocol SignUpVM: ObservableObject {
 
 //MARK: - Check Invalid InputStatus
 extension SignUpVM {
-    func verifyState() -> Bool {
+    func verifyState(job: JobType) -> Bool {
         var result: Bool = true
 
-        for key in states.keys {
-            if states[key] == .isBlank || states[key] == .isInitial {
-                states[key] = .isBlank
+        for key in defaultStates.keys {
+            if defaultStates[key] == .isBlank || defaultStates[key] == .isInitial {
+                defaultStates[key] = .isBlank
                 result = false
-            } else if states[key] == .isInvalid {
+            } else if defaultStates[key] == .isInvalid {
                 result = false
             }
         }
         
+        switch job {
+        case .professor, .staff:
+            for key in staffStates.keys {
+                if staffStates[key] == .isBlank || staffStates[key] == .isInitial {
+                    staffStates[key] = .isBlank
+                    result = false
+                } else if staffStates[key] == .isInvalid {
+                    result = false
+                }
+            }
+        case .student:
+            for key in studentStates.keys {
+                if studentStates[key] == .isBlank || studentStates[key] == .isInitial {
+                    studentStates[key] = .isBlank
+                    result = false
+                } else if studentStates[key] == .isInvalid {
+                    result = false
+                }
+            }
+        default:
+            fatalError("job is none")
+        }
+        
         return result
+    }
+    
+    func initializeStates() {
+        //defaultStates initialize
+        defaultStates.keys.forEach {
+            defaultStates[$0] = .isInitial
+        }
+        
+        //studentStates initiallize
+        studentStates.keys.forEach {
+            studentStates[$0] = .isInitial
+        }
+        
+        //staffStates initiallize
+        staffStates.keys.forEach {
+            staffStates[$0] = .isInitial
+        }
     }
 }
 
@@ -45,9 +87,9 @@ extension SignUpVM {
         let isValid = passwordPredicate.evaluate(with: pw)
         
         if isValid {
-            states["pw"] = .isValid
+            defaultStates["pw"] = .isValid
         } else {
-            states["pw"] = .isInvalid
+            defaultStates["pw"] = .isInvalid
         }
     }
     
@@ -58,9 +100,9 @@ extension SignUpVM {
         let isValid = emailPredicate.evaluate(with: email)
         
         if isValid {
-            states["email"] = .isValid
+            defaultStates["email"] = .isValid
         } else {
-            states["email"] = .isInvalid
+            defaultStates["email"] = .isInvalid
         }
     }
 }
