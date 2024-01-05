@@ -209,6 +209,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5C5EBD3A2B47C46500100FAF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5C5EBD3D2B47C58C00100FAF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5C987CAE2B438227006A2580 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +259,7 @@
 		5C987CB62B43E499006A2580 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5C5EBD3D2B47C58C00100FAF /* Services */,
 				5C987CC32B451CF1006A2580 /* Entities */,
 				5C987CB82B43E63E006A2580 /* Repositories */,
 				5C987CB72B43E49E006A2580 /* DataSource */,
@@ -272,6 +287,7 @@
 		5C987CB92B44D0E4006A2580 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				5C5EBD3A2B47C46500100FAF /* Services */,
 				5C987CBA2B44D0F5006A2580 /* Repositories */,
 			);
 			path = Interfaces;

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView<SVM: SignUpVM>: View {
-    @EnvironmentObject var signUpViewModel: SVM
+    @EnvironmentObject private var signUpViewModel: SVM
     @State private var idInput: String = ""
     @State private var pwInput: String = ""
     @State private var pwConfirmInput: String = ""
@@ -20,9 +20,15 @@ struct SignUpView<SVM: SignUpVM>: View {
     @State private var selectedGrade: String = ""
     @State private var selectedDayOrNight: String = ""
     @State private var selectedSemester: String = ""
-    @Binding var selectedJob: JobType
-    @Binding var showNextView: Bool
-    @Binding var showSignUpView: Bool
+    @Binding private var selectedJob: JobType
+    @Binding private var showNextView: Bool
+    @Binding private var showSignUpView: Bool
+    
+    init(selectedJob: Binding<JobType>, showNextView: Binding<Bool>, showSignUpView: Binding<Bool>) {
+        _selectedJob = selectedJob
+        _showNextView = showNextView
+        _showSignUpView = showSignUpView
+    }
     
     var body: some View {        
         ScrollView {

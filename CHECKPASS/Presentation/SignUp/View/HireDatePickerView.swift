@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct HireDatePickerView<SVM: SignUpVM>: View {
-    @EnvironmentObject var signUpViewModel: SVM
-    @Binding var selection: Date
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Binding private var selection: Date
     @Environment(\.colorScheme) private var colorScheme
     
     var header: String
     var title: String
+    
+    init(selection: Binding<Date>, header: String, title: String) {
+        _selection = selection
+        self.header = header
+        self.title = title
+    }
     
     var body: some View {
         VStack {

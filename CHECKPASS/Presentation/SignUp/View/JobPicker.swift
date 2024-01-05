@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct JobPicker: View {
-    @Environment(\.colorScheme) var colorScheme
-    @Binding var selectedJob: JobType
+    @Environment(\.colorScheme) private var colorScheme
+    @Binding private var selectedJob: JobType
     
     var type: JobType
+    
+    init(selectedJob: Binding<JobType>, type: JobType) {
+        _selectedJob = selectedJob
+        self.type = type
+    }
     
     var body: some View {
         Button(action: {

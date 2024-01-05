@@ -15,11 +15,16 @@ enum JobType: String {
 }
 
 struct SignUpStartView<SVM: SignUpVM>: View {
-    @StateObject var signUpViewModel: SVM
+    @StateObject private var signUpViewModel: SVM
     @Environment(\.colorScheme) private var colorScheme
     @State private var selectedJob: JobType = .none
     @State private var showNextView: Bool = false
-    @Binding var showSignUpView: Bool
+    @Binding private var showSignUpView: Bool
+    
+    init(viewModel: SVM, showSignUpView: Binding<Bool>) {
+        _signUpViewModel = StateObject(wrappedValue: viewModel)
+        _showSignUpView = showSignUpView
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -84,5 +89,5 @@ struct SignUpStartView<SVM: SignUpVM>: View {
 }
 
 #Preview {
-    SignUpStartView(signUpViewModel: AppDI.shared().getSignUpViewModel(), showSignUpView: .constant(true))
+    SignUpStartView(viewModel: AppDI.shared().getSignUpViewModel(), showSignUpView: .constant(true))
 }

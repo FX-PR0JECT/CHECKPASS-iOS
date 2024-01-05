@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct NameInputView<SVM: SignUpVM>: View {
-    @Binding var nameInput: String
-    @EnvironmentObject var signUpViewModel: SVM
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Binding private var nameInput: String
+    
+    init(nameInput: Binding<String>) {
+        _nameInput = nameInput
+    }
     
     var body: some View {
         VStack {

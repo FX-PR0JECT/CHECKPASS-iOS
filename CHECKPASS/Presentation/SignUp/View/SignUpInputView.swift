@@ -23,14 +23,25 @@ extension CustomColor {
 }
 
 struct SignUpInputView: View {
-    @Binding var text: String
-    @Binding var inputState: InputState
+    @Binding private var text: String
+    @Binding private var inputState: InputState
     @Environment(\.colorScheme) private var colorScheme
     
     var header: String
     var placeholder: String
-    var style: TextFieldStyle = .normal
-    var keyboardType: UIKeyboardType = .default
+    var style: TextFieldStyle
+    var keyboardType: UIKeyboardType
+    
+    init(text: Binding<String>, inputState: Binding<InputState>,
+         header: String, placeholder: String, style: TextFieldStyle = .normal,
+         keyboardType: UIKeyboardType = .default) {
+        _text = text
+        _inputState = inputState
+        self.header = header
+        self.placeholder = placeholder
+        self.style = style
+        self.keyboardType = keyboardType
+    }
     
     var body: some View {
         VStack {

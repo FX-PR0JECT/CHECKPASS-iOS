@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct EmailInputView: View {
-    @EnvironmentObject var signUpViewModel: SignUpViewModel
-    @Binding var emailInput: String
+    @EnvironmentObject private var signUpViewModel: SignUpViewModel
+    @Binding private var emailInput: String
+    
+    init(emailInput: Binding<String>) {
+        _emailInput = emailInput
+    }
     
     var body: some View {
         VStack {

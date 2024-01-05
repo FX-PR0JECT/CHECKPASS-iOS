@@ -16,7 +16,7 @@ struct SignInView<KVM: KeyboardVM>: View {
     
     var body: some View {
         ZStack {
-        //MARK: - Background Image
+            //MARK: - Background Image
             Image("SignIn_Background")
                 .resizable()
                 .ignoresSafeArea()
@@ -74,7 +74,7 @@ struct SignInView<KVM: KeyboardVM>: View {
             .offset(y: keyboardViewModel.isKeyboardVisible ? UIScreen.main.bounds.width * 0.2 : 0)
         }
         .navigationDestination(isPresented: $showSignUpView, destination: {
-            SignUpStartView(signUpViewModel: AppDI.shared().getSignUpViewModel(), showSignUpView: $showSignUpView)
+            SignUpStartView(viewModel: AppDI.shared().getSignUpViewModel(), showSignUpView: $showSignUpView)
         })
         .navigationDestination(isPresented: $showFindPwView, destination: {
             FindPwView()

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct PasswordConfirmInputView<SVM: SignUpVM>: View {
-    @EnvironmentObject var signUpViewModel: SVM
-    @Binding var pwConfirmInput: String
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Binding private var pwConfirmInput: String
+    
+    init(pwConfirmInput: Binding<String>) {
+        _pwConfirmInput = pwConfirmInput
+    }
     
     var body: some View {
         VStack {

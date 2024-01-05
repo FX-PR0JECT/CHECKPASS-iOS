@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct PasswordInputView<SVM: SignUpVM>: View {
-    @EnvironmentObject var signUpViewModel: SVM
-    @Binding var pwInput: String
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Binding private var pwInput: String
+    
+    init(pwInput: Binding<String>) {
+        _pwInput = pwInput
+    }
     
     var body: some View {
         VStack {

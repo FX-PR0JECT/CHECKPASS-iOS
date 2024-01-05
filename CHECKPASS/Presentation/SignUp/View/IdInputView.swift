@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct IdInputView<SVM: SignUpVM>: View {
-    @Binding var idInput: String
-    @EnvironmentObject var signUpViewModel: SVM
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Binding private var idInput: String
+    
+    init(idInput: Binding<String>) {
+        _idInput = idInput
+    }
     
     var body: some View {
         VStack {

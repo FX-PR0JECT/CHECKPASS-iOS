@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct SignUpPickerView<SVM: SignUpVM>: View {
-    @EnvironmentObject var signUpViewModel: SVM
-    @Binding var selection: String
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Binding private var selection: String
     @Environment(\.colorScheme) private var colorScheme
     
     var header: String
     var title: String
     var contents: [String]
     var pos: String
-    var type: JobType = .none
+    var type: JobType
+    
+    init(selection: Binding<String>, header: String, title: String,
+         contents: [String], pos: String, type: JobType = .none) {
+        _selection = selection
+        self.header = header
+        self.title = title
+        self.contents = contents
+        self.pos = pos
+        self.type = type
+    }
     
     var body: some View {
         VStack {

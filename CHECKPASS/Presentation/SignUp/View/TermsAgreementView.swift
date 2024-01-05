@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TermsAgreementView<SVM: SignUpVM>: View {
-    @EnvironmentObject var signUpViewModel: SVM
-    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject private var signUpViewModel: SVM
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         VStack {
