@@ -45,7 +45,18 @@
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
 		5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */; };
 		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
+		5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CAA867A2B4D144200357564 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C561E722B33F3AD004C6501 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C561E792B33F3AD004C6501;
+			remoteInfo = CHECKPASS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C030D1C2B464738004B19AB /* SignUpStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStartView.swift; sourceTree = "<group>"; };
@@ -86,6 +97,8 @@
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
 		5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCase.swift; sourceTree = "<group>"; };
 		5CAA86702B4C03D200357564 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +107,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CAA86732B4D144200357564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				5C561E7C2B33F3AD004C6501 /* CHECKPASS */,
+				5CAA86772B4D144200357564 /* CHECKPASSTests */,
 				5C561E7B2B33F3AD004C6501 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -185,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */,
+				5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,6 +374,22 @@
 			path = Keyboard;
 			sourceTree = "<group>";
 		};
+		5CAA86772B4D144200357564 /* CHECKPASSTests */ = {
+			isa = PBXGroup;
+			children = (
+				5CAA86822B4D1D7E00357564 /* Usecases */,
+			);
+			path = CHECKPASSTests;
+			sourceTree = "<group>";
+		};
+		5CAA86822B4D1D7E00357564 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,6 +413,24 @@
 			productReference = 5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5CAA86752B4D144200357564 /* CHECKPASSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CAA867C2B4D144200357564 /* Build configuration list for PBXNativeTarget "CHECKPASSTests" */;
+			buildPhases = (
+				5CAA86722B4D144200357564 /* Sources */,
+				5CAA86732B4D144200357564 /* Frameworks */,
+				5CAA86742B4D144200357564 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CAA867B2B4D144200357564 /* PBXTargetDependency */,
+			);
+			name = CHECKPASSTests;
+			productName = CHECKPASSTests;
+			productReference = 5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -382,11 +438,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					5C561E792B33F3AD004C6501 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					5CAA86752B4D144200357564 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 5C561E792B33F3AD004C6501;
 					};
 				};
 			};
@@ -407,6 +467,7 @@
 			projectRoot = "";
 			targets = (
 				5C561E792B33F3AD004C6501 /* CHECKPASS */,
+				5CAA86752B4D144200357564 /* CHECKPASSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -418,6 +479,13 @@
 			files = (
 				5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */,
 				5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CAA86742B4D144200357564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +534,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CAA86722B4D144200357564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CAA867B2B4D144200357564 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C561E792B33F3AD004C6501 /* CHECKPASS */;
+			targetProxy = 5CAA867A2B4D144200357564 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5C561E862B33F3AE004C6501 /* Debug */ = {
@@ -656,6 +740,44 @@
 			};
 			name = Release;
 		};
+		5CAA867D2B4D144200357564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QHK65XFL8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.CHECKPASSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHECKPASS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CHECKPASS";
+			};
+			name = Debug;
+		};
+		5CAA867E2B4D144200357564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QHK65XFL8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.CHECKPASSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHECKPASS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CHECKPASS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -673,6 +795,15 @@
 			buildConfigurations = (
 				5C561E892B33F3AE004C6501 /* Debug */,
 				5C561E8A2B33F3AE004C6501 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CAA867C2B4D144200357564 /* Build configuration list for PBXNativeTarget "CHECKPASSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CAA867D2B4D144200357564 /* Debug */,
+				5CAA867E2B4D144200357564 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
