@@ -29,12 +29,11 @@
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
 		5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */; };
-		5C987CBC2B44D10C006A2580 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBB2B44D10C006A2580 /* SignUpRepository.swift */; };
-		5C987CBE2B44E455006A2580 /* DefaultSignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBD2B44E455006A2580 /* DefaultSignUpRepository.swift */; };
-		5C987CC02B44E534006A2580 /* SignUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBF2B44E534006A2580 /* SignUpDataSource.swift */; };
+		5C987CBE2B44E455006A2580 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */; };
+		5C987CC02B44E534006A2580 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBF2B44E534006A2580 /* DataSource.swift */; };
 		5C987CC22B44EE1B006A2580 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC12B44EE1B006A2580 /* DTO.swift */; };
 		5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC72B4521EF006A2580 /* AppDI.swift */; };
-		5C987CCA2B45361A006A2580 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC92B45361A006A2580 /* SignUpResult.swift */; };
+		5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC92B45361A006A2580 /* AuthResult.swift */; };
 		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
 		5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */; };
 		5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */; };
@@ -44,6 +43,8 @@
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
 		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
+		5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */; };
+		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,12 +70,11 @@
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
 		5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
-		5C987CBB2B44D10C006A2580 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
-		5C987CBD2B44E455006A2580 /* DefaultSignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpRepository.swift; sourceTree = "<group>"; };
-		5C987CBF2B44E534006A2580 /* SignUpDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataSource.swift; sourceTree = "<group>"; };
+		5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
+		5C987CBF2B44E534006A2580 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		5C987CC12B44EE1B006A2580 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 		5C987CC72B4521EF006A2580 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
-		5C987CC92B45361A006A2580 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
+		5C987CC92B45361A006A2580 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
 		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A00872B39AFF50037FC3E /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		5C9A2A5A2B3B9F18006B176E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
+		5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCase.swift; sourceTree = "<group>"; };
+		5CAA86702B4C03D200357564 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,20 +211,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5C5EBD3A2B47C46500100FAF /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		5C5EBD3D2B47C58C00100FAF /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		5C987CAE2B438227006A2580 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */,
+				5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -259,7 +248,6 @@
 		5C987CB62B43E499006A2580 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5C5EBD3D2B47C58C00100FAF /* Services */,
 				5C987CC32B451CF1006A2580 /* Entities */,
 				5C987CB82B43E63E006A2580 /* Repositories */,
 				5C987CB72B43E49E006A2580 /* DataSource */,
@@ -270,7 +258,7 @@
 		5C987CB72B43E49E006A2580 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				5C987CBF2B44E534006A2580 /* SignUpDataSource.swift */,
+				5C987CBF2B44E534006A2580 /* DataSource.swift */,
 				5C987CC12B44EE1B006A2580 /* DTO.swift */,
 			);
 			path = DataSource;
@@ -279,7 +267,7 @@
 		5C987CB82B43E63E006A2580 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				5C987CBD2B44E455006A2580 /* DefaultSignUpRepository.swift */,
+				5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -287,7 +275,6 @@
 		5C987CB92B44D0E4006A2580 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				5C5EBD3A2B47C46500100FAF /* Services */,
 				5C987CBA2B44D0F5006A2580 /* Repositories */,
 			);
 			path = Interfaces;
@@ -296,7 +283,7 @@
 		5C987CBA2B44D0F5006A2580 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				5C987CBB2B44D10C006A2580 /* SignUpRepository.swift */,
+				5CAA86702B4C03D200357564 /* AuthRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -304,7 +291,7 @@
 		5C987CC32B451CF1006A2580 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				5C987CC92B45361A006A2580 /* SignUpResult.swift */,
+				5C987CC92B45361A006A2580 /* AuthResult.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -445,11 +432,10 @@
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
-				5C987CBC2B44D10C006A2580 /* SignUpRepository.swift in Sources */,
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
 				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
-				5C987CCA2B45361A006A2580 /* SignUpResult.swift in Sources */,
+				5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5C987CC22B44EE1B006A2580 /* DTO.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
@@ -461,7 +447,7 @@
 				5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */,
 				5C3EB8982B4795C800014394 /* HireDatePickerView.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
-				5C987CBE2B44E455006A2580 /* DefaultSignUpRepository.swift in Sources */,
+				5C987CBE2B44E455006A2580 /* DefaultAuthRepository.swift in Sources */,
 				5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */,
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
@@ -471,9 +457,11 @@
 				5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
+				5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
-				5C987CC02B44E534006A2580 /* SignUpDataSource.swift in Sources */,
+				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,
+				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

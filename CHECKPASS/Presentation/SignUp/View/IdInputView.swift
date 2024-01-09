@@ -24,31 +24,33 @@ struct IdInputView<SVM: SignUpVM>: View {
                                 }, set: { newValue in
                                     self.signUpViewModel.defaultStates["id"] = newValue
                                 }
-                            ),
-                            header: "아이디", placeholder: "학번 또는 교직원 번호를 입력해 주세요", keyboardType: .numberPad)
+                            ), header: "아이디", placeholder: "학번 또는 교직원 번호를 입력해 주세요", keyboardType: .numberPad)
             
             //MARK: - Warning Message
-            if signUpViewModel.defaultStates["id"] == .isBlank {
+            if signUpViewModel.defaultStates["id"] == .isBlank ||
+                signUpViewModel.defaultStates["id"] == .isInvalid ||
+                signUpViewModel.defaultStates["id"] == .isValid
+            {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    Text("아이디를 입력해 주세요")
+                    if signUpViewModel.defaultStates["id"] == .isBlank {
+                        Text("아이디를 입력해 주세요")
+                    } else if signUpViewModel.defaultStates["id"] == .isInvalid {
+                        Text("이미 존재하는 회원이에요")
+                    } else {
+                        Text("사용할 수 있는 아이디에요")
+                    }
                     
                     Spacer()
                 }
                 .offset(x: 16)
                 .font(.caption)
-                .foregroundColor(.red)
+                .foregroundColor(signUpViewModel.defaultStates["id"] == .isValid ? .blue : .red)
             }
         }
         .onChange(of: idInput) { newValue in
-            withAnimation {
-                if newValue.isEmpty {
-                    signUpViewModel.defaultStates["id"] = .isBlank
-                } else {
-                    signUpViewModel.defaultStates["id"] = .isValid
-                }
-            }
+            signUpViewModel.executeIdDuplicationCheck(for: newValue)
         }
     }
 }

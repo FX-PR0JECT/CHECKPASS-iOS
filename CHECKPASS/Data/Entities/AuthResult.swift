@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct SignUpResult {
+struct AuthResult {
     var result: Bool
+    var resultSet: String
 }

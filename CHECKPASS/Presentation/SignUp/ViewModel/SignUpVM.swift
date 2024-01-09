@@ -18,6 +18,7 @@ protocol SignUpVM: ObservableObject {
     func executeStudentRegister(id: String, pw: String, name: String, job: String, collage: String,
                                 department: String, grade: String, dayOrNight: String, semester: String)
     func executeStaffRegister(id: String, pw: String, name: String, job: String, collage: String, department: String, hireDate: String)
+    func executeIdDuplicationCheck(for id: String)
 }
 
 //MARK: - Check Invalid InputStatus

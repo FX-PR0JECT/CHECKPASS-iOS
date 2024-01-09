@@ -8,20 +8,19 @@
 import Combine
 
 protocol SignUpUseCase {
-    func execute(_ data: Dictionary<String, String>) -> AnyPublisher<SignUpResult, Error>
+    func execute(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error>
 }
 
 final class DefaultSignUpUseCase {
-    private let repository: SignUpRepository
+    private let repository: AuthRepository
     
-    init(repository: SignUpRepository) {
+    init(repository: AuthRepository) {
         self.repository = repository
     }
 }
 
 extension DefaultSignUpUseCase: SignUpUseCase {
-    //MARK: - 
-    func execute(_ data: Dictionary<String, String>) -> AnyPublisher<SignUpResult, Error> {
-        return repository.registerUserInfo(params: data)
+    func execute(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
+        return repository.sendUserInfo(params: data, for: .signUp)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 
 enum InputState {
     case isInitial
@@ -22,20 +23,56 @@ final class SignUpViewModel {
     @Published var isAlertVisible: Bool = false
     
     private let signUpUseCase: SignUpUseCase
+    private let idDuplicationCheckUseCase: IdDuplicationCheckUseCase
     private var cancellables = Set<AnyCancellable>()
+    private var isRequestPossible: Bool = true    //id duplication check flag variable
     
-    init(signUpUseCase: SignUpUseCase) {
+    init(signUpUseCase: SignUpUseCase, idDuplicationCheckUseCase: IdDuplicationCheckUseCase) {
         self.signUpUseCase = signUpUseCase
+        self.idDuplicationCheckUseCase = idDuplicationCheckUseCase
     }
 }
 
 extension SignUpViewModel: SignUpVM {
+    //MARK: - check input id duplication
+    func executeIdDuplicationCheck(for id: String) {
+        guard !id.isEmpty else {    //id is empty
+            withAnimation {
+                defaultStates["id"] = .isBlank
+            }
+            isRequestPossible = false
+            return
+        }
+        
+        isRequestPossible = true
+            
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) { [weak self] in
+            self?.idDuplicationCheckUseCase.execute(id)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        print("successfully checked ID duplication")
+                    case .failure(let error):
+                        print("SignUpViewModel.executeIdDuplicationConfirm(for:) error", error)
+                    }
+                }, receiveValue: { authResult in
+                    if self?.isRequestPossible == true {
+                        withAnimation {
+                            self?.defaultStates["id"] = authResult.result ? .isValid : .isInvalid
+                        }
+                    }
+                })
+                .store(in: &self!.cancellables)
+        }
+    }
+    
     //MARK: - register for Student
     func executeStudentRegister(id: String, pw: String, name: String, job: String, collage: String,
                                 department: String, grade: String, dayOrNight: String, semester: String) {
         let data = [
-            "signUpId": id, "signUpPassword": pw, "signUpName": name, "signUpJob": job, "signUpCollege": collage,
-            "signUpDepartment": department, "signUpGrade": grade, "signUpDayOrNight": dayOrNight, "signUpSemester": semester
+            "signUpId": id, "signUpPassword": pw, "signUpName": name,
+            "signUpJob": job, "signUpCollege": collage, "signUpDepartment": department,
+            "signUpGrade": grade, "signUpDayOrNight": dayOrNight, "signUpSemester": semester
         ]
         
         signUpUseCase.execute(data)

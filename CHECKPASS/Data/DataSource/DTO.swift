@@ -5,12 +5,13 @@
 //  Created by 이정훈 on 1/3/24.
 //
 
-struct SignUpResponseDTO: Codable {
+struct AuthResponseDTO: Codable {
     var state: String
-    var code: String
+    var code: Int
+    var title: String
     var resultSet: String
     
-    func toEntity() -> SignUpResult {
-        return SignUpResult(result: state == "success" ? true : false)
+    func toEntity() -> AuthResult {
+        return AuthResult(result: state == "SUCCESS" ? true : false, resultSet: resultSet)
     }
 }

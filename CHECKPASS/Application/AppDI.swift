@@ -18,13 +18,14 @@ class AppDI {
     //get SignUpViewModel
     func getSignUpViewModel() -> SignUpViewModel {
         //DataSource
-        let dataSource = DefaultSignUpDataSource()
+        let dataSource = DefaultDataSource()
         //Repository
-        let repository = DefaultSignUpRepository(dataSource: dataSource)
+        let repository = DefaultAuthRepository(dataSource: dataSource)
         //UseCase
-        let useCase = DefaultSignUpUseCase(repository: repository)
+        let signUpUseCase = DefaultSignUpUseCase(repository: repository)
+        let idDuplicationCheckUseCase = DefaultIdDuplicationCheckUseCase(repository: repository)
         //ViewModel
-        let viewModel = SignUpViewModel(signUpUseCase: useCase)
+        let viewModel = SignUpViewModel(signUpUseCase: signUpUseCase, idDuplicationCheckUseCase: idDuplicationCheckUseCase)
         
         return viewModel
     }
