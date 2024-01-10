@@ -12,6 +12,19 @@ enum JobType: String {
     case student = "학생"
     case professor = "교수"
     case staff = "교직원"
+    
+    func getEnglishData() -> String {
+        switch self {
+        case .none:
+            return "NONE"
+        case .professor:
+            return "PROFESSOR"
+        case .staff:
+            return "STAFF"
+        case .student:
+            return "STUDENT"
+        }
+    }
 }
 
 struct SignUpStartView<SVM: SignUpVM>: View {

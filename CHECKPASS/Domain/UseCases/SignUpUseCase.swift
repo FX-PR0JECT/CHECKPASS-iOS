@@ -8,7 +8,8 @@
 import Combine
 
 protocol SignUpUseCase {
-    func execute(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error>
+    func executeForStudent(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error>
+    func executeForStaff(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error>
 }
 
 final class DefaultSignUpUseCase {
@@ -20,7 +21,11 @@ final class DefaultSignUpUseCase {
 }
 
 extension DefaultSignUpUseCase: SignUpUseCase {
-    func execute(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
-        return repository.sendUserInfo(params: data, for: .signUp)
+    func executeForStudent(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
+        return repository.sendUserInfo(params: data, for: .signUpForStudent)
+    }
+    
+    func executeForStaff(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
+        return repository.sendUserInfo(params: data, for: .signUpForStaff)
     }
 }

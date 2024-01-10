@@ -13,7 +13,6 @@ struct SignUpView<SVM: SignUpVM>: View {
     @State private var pwInput: String = ""
     @State private var pwConfirmInput: String = ""
     @State private var nameInput: String = ""
-    @State private var emailInput: String = ""
     @State private var selectedCollege: String = "선택"
     @State private var selectedDepartment: String = ""
     @State private var selectedHireDate: Date = Date(timeIntervalSince1970: 0)
@@ -81,9 +80,28 @@ struct SignUpView<SVM: SignUpVM>: View {
                 Button(action: {
                     withAnimation {
                         if signUpViewModel.verifyState(job: selectedJob) {
-                            print("all clear")
+                            switch selectedJob {
+                            case .none:
+                                fatalError("selectedJob error")
+                            case .student:
+                                signUpViewModel.executeStudentRegister(id: idInput,
+                                                                       pw: pwInput, name: nameInput,
+                                                                       job: selectedJob.getEnglishData(),
+                                                                       collage: selectedCollege,
+                                                                       department: selectedDepartment,
+                                                                       grade: selectedGrade,
+                                                                       dayOrNight: selectedDayOrNight,
+                                                                       semester: selectedSemester)
+                            case .professor, .staff:
+                                signUpViewModel.executeStaffRegister(id: idInput, pw: pwInput, name: nameInput, 
+                                                                     job: selectedJob.getEnglishData(),
+                                                                     collage: selectedCollege,
+                                                                     department: selectedDepartment,
+                                                                     hireDate: selectedHireDate.toYearMonthDay())
+                            }
                         } else {
-                            print("There is an invalid input")
+                            signUpViewModel.alertType = .inValidInput
+                            signUpViewModel.isAlertVisible = true
                         }
                     }
                 }, label: {
@@ -115,6 +133,32 @@ struct SignUpView<SVM: SignUpVM>: View {
         .onDisappear {
             signUpViewModel.initializeStates()
         }
+        .alert(isPresented: $signUpViewModel.isAlertVisible) {
+            switch signUpViewModel.alertType {
+            case .signUpSucceed:
+                return Alert(title: Text("환영합니다!"),
+                             message: Text("회원가입에 성공했어요"),
+                             dismissButton: .default(Text("확인")) {
+                                showNextView = false
+                                showSignUpView = false
+                            })
+            case .signUpFailed:
+                return Alert(title: Text("알림"),
+                             message: Text("회원가입에 실패했어요"))
+            case .inValidInput:
+                return Alert(title: Text("알림"),
+                             message: Text("잘못된 입력값이 있어요"))
+            }
+        }
+    }
+}
+
+extension Date {
+    func toYearMonthDay() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        return dateFormatter.string(from: self)
     }
 }
 

@@ -15,12 +15,19 @@ enum InputState {
     case isValid
 }
 
+enum AlertType {
+    case signUpSucceed
+    case signUpFailed
+    case inValidInput
+}
+
 final class SignUpViewModel {
     @Published var defaultStates: Dictionary<String, InputState> = ["id": .isInitial, "pw": .isInitial, "pwConfirmation": .isInitial, "name": .isInitial, "job": .isInitial, "college": .isInitial, "department": .isInitial, "agreement": .isInitial]
     @Published var studentStates: Dictionary<String, InputState> = ["grade": .isInitial, "dayOrNight": .isInitial, "semester": .isInitial]    //only Student Input
     @Published var staffStates: Dictionary<String, InputState> = ["hireDate": .isInitial]    //only Staff Input
     @Published var signUpResult: Bool?    //Sign up Response result (true or false)
     @Published var isAlertVisible: Bool = false
+    @Published var alertType: AlertType = .signUpSucceed
     
     private let signUpUseCase: SignUpUseCase
     private let idDuplicationCheckUseCase: IdDuplicationCheckUseCase
@@ -75,7 +82,7 @@ extension SignUpViewModel: SignUpVM {
             "signUpGrade": grade, "signUpDayOrNight": dayOrNight, "signUpSemester": semester
         ]
         
-        signUpUseCase.execute(data)
+        signUpUseCase.executeForStudent(data)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -87,8 +94,10 @@ extension SignUpViewModel: SignUpVM {
                 self?.isAlertVisible = true
                 
                 if $0.result {    //Sign up successful
+                    self?.alertType = .signUpSucceed
                     self?.signUpResult = true
                 } else {    //Sign up failed
+                    self?.alertType = .signUpFailed
                     self?.signUpResult = false
                 }
             })
@@ -102,7 +111,7 @@ extension SignUpViewModel: SignUpVM {
             "signUpCollege": collage, "signUpDepartment": department, "signUpHireDate": hireDate
         ]
         
-        signUpUseCase.execute(data)
+        signUpUseCase.executeForStaff(data)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -114,8 +123,10 @@ extension SignUpViewModel: SignUpVM {
                 self?.isAlertVisible = true
                 
                 if $0.result {    //Sign up Success
+                    self?.alertType = .signUpSucceed
                     self?.signUpResult = true
                 } else {    //Sign up failed
+                    self?.alertType = .signUpFailed
                     self?.signUpResult = false
                 }
             })

@@ -9,7 +9,8 @@ import Alamofire
 import Combine
 
 enum RequestPostUrl: String {
-    case signUp
+    case signUpForStudent = "http://localhost:8080/users/studentSignup"
+    case signUpForStaff = "http://localhost:8080/users/professorSignup"
     case signIn
 }
 

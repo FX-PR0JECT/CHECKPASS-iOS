@@ -46,6 +46,7 @@
 		5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */; };
 		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
 		5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */; };
+		5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		5CAA86702B4C03D200357564 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCaseTest.swift; sourceTree = "<group>"; };
+		5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */,
+				5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */,
+				5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

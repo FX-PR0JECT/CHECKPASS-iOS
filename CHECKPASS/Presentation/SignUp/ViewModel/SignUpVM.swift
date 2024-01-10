@@ -14,6 +14,7 @@ protocol SignUpVM: ObservableObject {
     var staffStates: Dictionary<String, InputState> { get set }
     var signUpResult: Bool? { get set }
     var isAlertVisible: Bool { get set }
+    var alertType: AlertType { get set }
     
     func executeStudentRegister(id: String, pw: String, name: String, job: String, collage: String,
                                 department: String, grade: String, dayOrNight: String, semester: String)
