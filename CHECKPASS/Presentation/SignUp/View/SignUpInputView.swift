@@ -65,6 +65,7 @@ struct SignUpInputView: View {
                     case .secure:
                         SecureField(placeholder, text: $text)
                             .keyboardType(keyboardType)
+                            .textContentType(.newPassword)
                             .padding()
                     }
                     

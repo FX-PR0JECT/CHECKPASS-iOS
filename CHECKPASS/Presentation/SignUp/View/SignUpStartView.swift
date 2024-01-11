@@ -8,21 +8,18 @@
 import SwiftUI
 
 enum JobType: String {
-    case none
     case student = "학생"
     case professor = "교수"
     case staff = "교직원"
     
     func getEnglishData() -> String {
         switch self {
-        case .none:
-            return "NONE"
         case .professor:
             return "PROFESSOR"
         case .staff:
             return "STAFF"
         case .student:
-            return "STUDENT"
+            return "STUDENTS"
         }
     }
 }
@@ -30,7 +27,7 @@ enum JobType: String {
 struct SignUpStartView<SVM: SignUpVM>: View {
     @StateObject private var signUpViewModel: SVM
     @Environment(\.colorScheme) private var colorScheme
-    @State private var selectedJob: JobType = .none
+    @State private var selectedJob: JobType?
     @State private var showNextView: Bool = false
     @Binding private var showSignUpView: Bool
     

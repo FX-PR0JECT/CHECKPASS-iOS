@@ -12,7 +12,6 @@ protocol SignUpVM: ObservableObject {
     var defaultStates: Dictionary<String, InputState> { get set }
     var studentStates: Dictionary<String, InputState> { get set }
     var staffStates: Dictionary<String, InputState> { get set }
-    var signUpResult: Bool? { get set }
     var isAlertVisible: Bool { get set }
     var alertType: AlertType { get set }
     
@@ -55,8 +54,6 @@ extension SignUpVM {
                     result = false
                 }
             }
-        default:
-            fatalError("job is none")
         }
         
         return result

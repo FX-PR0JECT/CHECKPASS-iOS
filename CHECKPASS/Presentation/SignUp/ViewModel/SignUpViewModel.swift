@@ -25,7 +25,6 @@ final class SignUpViewModel {
     @Published var defaultStates: Dictionary<String, InputState> = ["id": .isInitial, "pw": .isInitial, "pwConfirmation": .isInitial, "name": .isInitial, "job": .isInitial, "college": .isInitial, "department": .isInitial, "agreement": .isInitial]
     @Published var studentStates: Dictionary<String, InputState> = ["grade": .isInitial, "dayOrNight": .isInitial, "semester": .isInitial]    //only Student Input
     @Published var staffStates: Dictionary<String, InputState> = ["hireDate": .isInitial]    //only Staff Input
-    @Published var signUpResult: Bool?    //Sign up Response result (true or false)
     @Published var isAlertVisible: Bool = false
     @Published var alertType: AlertType = .signUpSucceed
     
@@ -91,15 +90,13 @@ extension SignUpViewModel: SignUpVM {
                     print("SignUpViewModel.executeStudentRegister(id:pw:name:job:collage:department:grade:dayOrNight:semester:) error: ", error)
                 }
             }, receiveValue: { [weak self] in
-                self?.isAlertVisible = true
-                
                 if $0.result {    //Sign up successful
                     self?.alertType = .signUpSucceed
-                    self?.signUpResult = true
                 } else {    //Sign up failed
                     self?.alertType = .signUpFailed
-                    self?.signUpResult = false
                 }
+                
+                self?.isAlertVisible = true
             })
             .store(in: &cancellables)
     }
@@ -120,15 +117,13 @@ extension SignUpViewModel: SignUpVM {
                     print("SignUpViewModel.executeStaffRegister(id:pw:name:type:collage:department:) error: ", error)
                 }
             }, receiveValue: { [weak self] in
-                self?.isAlertVisible = true
-                
                 if $0.result {    //Sign up Success
                     self?.alertType = .signUpSucceed
-                    self?.signUpResult = true
                 } else {    //Sign up failed
                     self?.alertType = .signUpFailed
-                    self?.signUpResult = false
                 }
+                
+                self?.isAlertVisible = true
             })
             .store(in: &cancellables)
     }

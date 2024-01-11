@@ -8,6 +8,6 @@
 import Combine
 
 protocol AuthRepository {
-    func sendUserInfo(params: Dictionary<String, String>, for classification: RequestPostUrl) -> AnyPublisher<AuthResult, Error>
+    func sendUserInfo(params: Dictionary<String, String>, for classification: PostRequestUrl) -> AnyPublisher<AuthResult, Error>
     func sendIdInfo(id: String) -> AnyPublisher<AuthResult, Error>
 }

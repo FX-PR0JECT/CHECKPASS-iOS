@@ -17,7 +17,7 @@ final class DefaultAuthRepository {
 
 extension DefaultAuthRepository: AuthRepository {
     //MARK: - send User information to sign up & sign in
-    func sendUserInfo(params: Dictionary<String, String>, for classification: RequestPostUrl) -> AnyPublisher<AuthResult, Error> {
+    func sendUserInfo(params: Dictionary<String, String>, for classification: PostRequestUrl) -> AnyPublisher<AuthResult, Error> {
         return dataSource.sendPostRequest(params, for: classification, resultType: AuthResponseDTO.self)
             .map {
                 $0.toEntity()

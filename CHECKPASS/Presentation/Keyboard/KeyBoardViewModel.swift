@@ -26,8 +26,10 @@ final class KeyboardViewModel: KeyboardVM {
             name: UIResponder.keyboardWillShowNotification
         )
         .sink { [weak self] notification in
-            withAnimation(.bouncy) {
-                self?.isKeyboardVisible = true
+            DispatchQueue.main.async {
+                withAnimation(.bouncy) {
+                    self?.isKeyboardVisible = true
+                }
             }
         }
         .store(in: &subscriptions)
@@ -40,8 +42,10 @@ final class KeyboardViewModel: KeyboardVM {
             name: UIResponder.keyboardWillHideNotification
         )
         .sink { [weak self] notification in
-            withAnimation(.bouncy) {
-                self?.isKeyboardVisible = false
+            DispatchQueue.main.async {
+                withAnimation(.bouncy) {
+                    self?.isKeyboardVisible = false
+                }
             }
         }
         .store(in: &subscriptions)

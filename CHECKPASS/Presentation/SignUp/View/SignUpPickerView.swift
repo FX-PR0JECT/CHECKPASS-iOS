@@ -12,14 +12,14 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
     @Binding private var selection: String
     @Environment(\.colorScheme) private var colorScheme
     
-    var header: String
-    var title: String
-    var contents: [String]
-    var pos: String
-    var type: JobType
+    private var header: String
+    private var title: String
+    private var contents: [String]
+    private var pos: String
+    private var type: JobType?
     
     init(selection: Binding<String>, header: String, title: String,
-         contents: [String], pos: String, type: JobType = .none) {
+         contents: [String], pos: String, type: JobType? = nil) {
         _selection = selection
         self.header = header
         self.title = title
@@ -48,6 +48,8 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
                     Spacer()
                     
                     Picker(title, selection: $selection) {
+                        Text("선택").tag("선택")
+                        
                         ForEach(contents, id: \.self) { content in
                             Text(content)
                         }

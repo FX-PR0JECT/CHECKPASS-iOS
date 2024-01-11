@@ -8,21 +8,21 @@
 import Alamofire
 import Combine
 
-enum RequestPostUrl: String {
+enum PostRequestUrl: String {
     case signUpForStudent = "http://localhost:8080/users/studentSignup"
     case signUpForStaff = "http://localhost:8080/users/professorSignup"
     case signIn
 }
 
 protocol DataSource {
-    func sendPostRequest<DTO: Codable>(_ params: Parameters, for type: RequestPostUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPostRequest<DTO: Codable>(_ params: Parameters, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
 final class DefaultDataSource: DataSource {
     //MARK: - request POST api
-    func sendPostRequest<DTO: Codable>(_ params: Parameters, for classification: RequestPostUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
-        return AF.request(classification.rawValue,
+    func sendPostRequest<DTO: Codable>(_ params: Parameters, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+        return AF.request(url.rawValue,
                           method: .post,
                           parameters: params,
                           encoding: JSONEncoding.default)

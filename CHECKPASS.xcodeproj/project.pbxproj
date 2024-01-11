@@ -57,6 +57,13 @@
 			remoteGlobalIDString = 5C561E792B33F3AD004C6501;
 			remoteInfo = CHECKPASS;
 		};
+		5CD6E4FF2B4E5D2400C02305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C561E722B33F3AD004C6501 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C561E792B33F3AD004C6501;
+			remoteInfo = CHECKPASS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +108,7 @@
 		5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCaseTest.swift; sourceTree = "<group>"; };
 		5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseTest.swift; sourceTree = "<group>"; };
+		5CD6E4F92B4E5D2400C02305 /* CHECKPASSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5CAA86732B4D144200357564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CD6E4F62B4E5D2400C02305 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,6 +224,7 @@
 			children = (
 				5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */,
 				5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */,
+				5CD6E4F92B4E5D2400C02305 /* CHECKPASSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,6 +450,24 @@
 			productReference = 5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5CD6E4F82B4E5D2400C02305 /* CHECKPASSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CD6E5012B4E5D2400C02305 /* Build configuration list for PBXNativeTarget "CHECKPASSUITests" */;
+			buildPhases = (
+				5CD6E4F52B4E5D2400C02305 /* Sources */,
+				5CD6E4F62B4E5D2400C02305 /* Frameworks */,
+				5CD6E4F72B4E5D2400C02305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CD6E5002B4E5D2400C02305 /* PBXTargetDependency */,
+			);
+			name = CHECKPASSUITests;
+			productName = CHECKPASSUITests;
+			productReference = 5CD6E4F92B4E5D2400C02305 /* CHECKPASSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -448,6 +482,10 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					5CAA86752B4D144200357564 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 5C561E792B33F3AD004C6501;
+					};
+					5CD6E4F82B4E5D2400C02305 = {
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = 5C561E792B33F3AD004C6501;
 					};
@@ -471,6 +509,7 @@
 			targets = (
 				5C561E792B33F3AD004C6501 /* CHECKPASS */,
 				5CAA86752B4D144200357564 /* CHECKPASSTests */,
+				5CD6E4F82B4E5D2400C02305 /* CHECKPASSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -486,6 +525,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5CAA86742B4D144200357564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CD6E4F72B4E5D2400C02305 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -546,6 +592,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CD6E4F52B4E5D2400C02305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -553,6 +606,11 @@
 			isa = PBXTargetDependency;
 			target = 5C561E792B33F3AD004C6501 /* CHECKPASS */;
 			targetProxy = 5CAA867A2B4D144200357564 /* PBXContainerItemProxy */;
+		};
+		5CD6E5002B4E5D2400C02305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C561E792B33F3AD004C6501 /* CHECKPASS */;
+			targetProxy = 5CD6E4FF2B4E5D2400C02305 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -782,6 +840,42 @@
 			};
 			name = Release;
 		};
+		5CD6E5022B4E5D2400C02305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QHK65XFL8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.CHECKPASSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CHECKPASS;
+			};
+			name = Debug;
+		};
+		5CD6E5032B4E5D2400C02305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QHK65XFL8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.CHECKPASSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CHECKPASS;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -808,6 +902,15 @@
 			buildConfigurations = (
 				5CAA867D2B4D144200357564 /* Debug */,
 				5CAA867E2B4D144200357564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CD6E5012B4E5D2400C02305 /* Build configuration list for PBXNativeTarget "CHECKPASSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD6E5022B4E5D2400C02305 /* Debug */,
+				5CD6E5032B4E5D2400C02305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

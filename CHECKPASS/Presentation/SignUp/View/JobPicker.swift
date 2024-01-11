@@ -9,11 +9,11 @@ import SwiftUI
 
 struct JobPicker: View {
     @Environment(\.colorScheme) private var colorScheme
-    @Binding private var selectedJob: JobType
+    @Binding private var selectedJob: JobType?
     
-    var type: JobType
+    private var type: JobType
     
-    init(selectedJob: Binding<JobType>, type: JobType) {
+    init(selectedJob: Binding<JobType?>, type: JobType) {
         _selectedJob = selectedJob
         self.type = type
     }
@@ -35,5 +35,5 @@ struct JobPicker: View {
 }
 
 #Preview {
-    JobPicker(selectedJob: .constant(.none), type: .none)
+    JobPicker(selectedJob: .constant(nil), type: .professor)
 }

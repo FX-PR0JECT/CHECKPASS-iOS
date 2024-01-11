@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SignUpView<SVM: SignUpVM>: View {
     @EnvironmentObject private var signUpViewModel: SVM
@@ -14,16 +15,16 @@ struct SignUpView<SVM: SignUpVM>: View {
     @State private var pwConfirmInput: String = ""
     @State private var nameInput: String = ""
     @State private var selectedCollege: String = "선택"
-    @State private var selectedDepartment: String = ""
+    @State private var selectedDepartment: String = "선택"
     @State private var selectedHireDate: Date = Date(timeIntervalSince1970: 0)
-    @State private var selectedGrade: String = ""
-    @State private var selectedDayOrNight: String = ""
-    @State private var selectedSemester: String = ""
-    @Binding private var selectedJob: JobType
+    @State private var selectedGrade: String = "선택"
+    @State private var selectedDayOrNight: String = "선택"
+    @State private var selectedSemester: String = "선택"
+    @Binding private var selectedJob: JobType?
     @Binding private var showNextView: Bool
     @Binding private var showSignUpView: Bool
     
-    init(selectedJob: Binding<JobType>, showNextView: Binding<Bool>, showSignUpView: Binding<Bool>) {
+    init(selectedJob: Binding<JobType?>, showNextView: Binding<Bool>, showSignUpView: Binding<Bool>) {
         _selectedJob = selectedJob
         _showNextView = showNextView
         _showSignUpView = showSignUpView
@@ -48,7 +49,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                 SignUpPickerView<SVM>(selection: $selectedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: "college")
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[selectedCollege]!, pos: "department")
+                SignUpPickerView<SVM>(selection: $selectedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[selectedCollege] ?? [], pos: "department")
                     .environmentObject(signUpViewModel)
                 
                 //MARK: - Staff Only
@@ -79,10 +80,10 @@ struct SignUpView<SVM: SignUpVM>: View {
                 
                 Button(action: {
                     withAnimation {
-                        if signUpViewModel.verifyState(job: selectedJob) {
+                        dismissKeyboard()
+                        
+                        if let selectedJob = selectedJob, signUpViewModel.verifyState(job: selectedJob) {
                             switch selectedJob {
-                            case .none:
-                                fatalError("selectedJob error")
                             case .student:
                                 signUpViewModel.executeStudentRegister(id: idInput,
                                                                        pw: pwInput, name: nameInput,
@@ -93,7 +94,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                                                                        dayOrNight: selectedDayOrNight,
                                                                        semester: selectedSemester)
                             case .professor, .staff:
-                                signUpViewModel.executeStaffRegister(id: idInput, pw: pwInput, name: nameInput, 
+                                signUpViewModel.executeStaffRegister(id: idInput, pw: pwInput, name: nameInput,
                                                                      job: selectedJob.getEnglishData(),
                                                                      collage: selectedCollege,
                                                                      department: selectedDepartment,
@@ -137,7 +138,7 @@ struct SignUpView<SVM: SignUpVM>: View {
             switch signUpViewModel.alertType {
             case .signUpSucceed:
                 return Alert(title: Text("환영합니다!"),
-                             message: Text("회원가입에 성공했어요"),
+                             message: Text("회원가입이 완료 되었어요"),
                              dismissButton: .default(Text("확인")) {
                                 showNextView = false
                                 showSignUpView = false
@@ -150,6 +151,13 @@ struct SignUpView<SVM: SignUpVM>: View {
                              message: Text("잘못된 입력값이 있어요"))
             }
         }
+    }
+}
+
+extension SignUpView {
+    //MARK: - keyboard dismiss method
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
