@@ -6,19 +6,20 @@
 //
 
 class AppDI {
-    //singleton instance
-    private static let instance: AppDI = AppDI()
+    private static let instance: AppDI = AppDI()    //singleton instance
+    private let dataSource = DefaultDataSource()    //DataSource
+    private let repository: Repository
     
-    private init() {}
+    private init() {
+        repository = DefaultRepository(dataSource: dataSource)
+    }
     
     static func shared() -> AppDI {
         return instance
     }
     
-    //get SignUpViewModel
+    //get SignUp ViewModel
     func getSignUpViewModel() -> SignUpViewModel {
-        //DataSource
-        let dataSource = DefaultDataSource()
         //Repository
         let repository = DefaultAuthRepository(dataSource: dataSource)
         //UseCase
@@ -26,6 +27,16 @@ class AppDI {
         let idDuplicationCheckUseCase = DefaultIdDuplicationCheckUseCase(repository: repository)
         //ViewModel
         let viewModel = SignUpViewModel(signUpUseCase: signUpUseCase, idDuplicationCheckUseCase: idDuplicationCheckUseCase)
+        
+        return viewModel
+    }
+    
+    //get SignIn ViewModel
+    func getSignInViewModel() -> DefaultSignInViewModel {
+        //UseCase
+        let signInUseCase = DefaultSignInUseCase(repository: repository)
+        //ViewModel
+        let viewModel = DefaultSignInViewModel(usecase: signInUseCase)
         
         return viewModel
     }

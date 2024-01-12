@@ -27,6 +27,10 @@
 		5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E812B33F3AE004C6501 /* Assets.xcassets */; };
 		5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */; };
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
+		5C962EFF2B50B450007862B1 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962EFE2B50B450007862B1 /* DefaultRepository.swift */; };
+		5C962F012B50B58C007862B1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F002B50B58C007862B1 /* Repository.swift */; };
+		5C962F032B50BDB9007862B1 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F022B50BDB9007862B1 /* UserDTO.swift */; };
+		5C962F052B50C13A007862B1 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F042B50C13A007862B1 /* SimpleUser.swift */; };
 		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
 		5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */; };
 		5C987CBE2B44E455006A2580 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */; };
@@ -40,6 +44,9 @@
 		5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A602B3BAB6E006B176E /* PickerContents.swift */; };
 		5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */; };
 		5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */; };
+		5C9C5D302B4FB27A00F87F5F /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D2F2B4FB27A00F87F5F /* SignInViewModel.swift */; };
+		5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */; };
+		5C9C5D382B4FBDF400F87F5F /* SignInUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D372B4FBDF400F87F5F /* SignInUseCaseTest.swift */; };
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
 		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
@@ -87,6 +94,10 @@
 		5C561E7F2B33F3AD004C6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C561E812B33F3AE004C6501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C962EFE2B50B450007862B1 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
+		5C962F002B50B58C007862B1 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5C962F022B50BDB9007862B1 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		5C962F042B50C13A007862B1 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
 		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
 		5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
@@ -100,6 +111,9 @@
 		5C9A2A602B3BAB6E006B176E /* PickerContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerContents.swift; sourceTree = "<group>"; };
 		5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
 		5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPickerView.swift; sourceTree = "<group>"; };
+		5C9C5D2F2B4FB27A00F87F5F /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
+		5C9C5D372B4FBDF400F87F5F /* SignInUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCaseTest.swift; sourceTree = "<group>"; };
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
@@ -198,6 +212,7 @@
 		5C32B2492B352AF90036CDF2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5C9C5D2F2B4FB27A00F87F5F /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -281,6 +296,7 @@
 			children = (
 				5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */,
 				5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */,
+				5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -300,6 +316,7 @@
 			children = (
 				5C987CBF2B44E534006A2580 /* DataSource.swift */,
 				5C987CC12B44EE1B006A2580 /* DTO.swift */,
+				5C962F022B50BDB9007862B1 /* UserDTO.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -308,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */,
+				5C962EFE2B50B450007862B1 /* DefaultRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -324,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				5CAA86702B4C03D200357564 /* AuthRepository.swift */,
+				5C962F002B50B58C007862B1 /* Repository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -332,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				5C987CC92B45361A006A2580 /* AuthResult.swift */,
+				5C962F042B50C13A007862B1 /* SimpleUser.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -405,6 +425,7 @@
 			children = (
 				5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */,
 				5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */,
+				5C9C5D372B4FBDF400F87F5F /* SignInUseCaseTest.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -549,6 +570,7 @@
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
+				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
 				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
@@ -569,16 +591,21 @@
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
+				5C962EFF2B50B450007862B1 /* DefaultRepository.swift in Sources */,
 				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
 				5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */,
+				5C962F012B50B58C007862B1 /* Repository.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
+				5C962F052B50C13A007862B1 /* SimpleUser.swift in Sources */,
+				5C9C5D302B4FB27A00F87F5F /* SignInViewModel.swift in Sources */,
 				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,
 				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
+				5C962F032B50BDB9007862B1 /* UserDTO.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +616,7 @@
 			files = (
 				5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */,
 				5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */,
+				5C9C5D382B4FBDF400F87F5F /* SignInUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

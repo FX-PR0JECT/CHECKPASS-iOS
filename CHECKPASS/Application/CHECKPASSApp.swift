@@ -11,7 +11,8 @@ import SwiftUI
 struct CHECKPASSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(keyboardViewModel: KeyboardViewModel())
+            ContentView(keyboardViewModel: KeyboardViewModel(),
+                        signInViewModel: AppDI.shared().getSignInViewModel())
         }
     }
 }

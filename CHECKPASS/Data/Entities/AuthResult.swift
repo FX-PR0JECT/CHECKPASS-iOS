@@ -7,7 +7,14 @@
 
 import Foundation
 
-struct AuthResult {
-    var result: Bool
-    var resultSet: String
+protocol Entity {}
+
+protocol AuthEntity: Entity {
+    var result: Bool { get }
+    var resultSet: String { get }
+}
+
+struct AuthResult: AuthEntity {
+    let result: Bool
+    let resultSet: String
 }

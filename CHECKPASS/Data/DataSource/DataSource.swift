@@ -11,7 +11,7 @@ import Combine
 enum PostRequestUrl: String {
     case signUpForStudent = "http://localhost:8080/users/studentSignup"
     case signUpForStaff = "http://localhost:8080/users/professorSignup"
-    case signIn
+    case signIn = "http://localhost:8080/login"
 }
 
 protocol DataSource {

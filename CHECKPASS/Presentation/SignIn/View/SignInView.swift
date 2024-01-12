@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct SignInView<KVM: KeyboardVM>: View {
+struct SignInView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
     @EnvironmentObject private var keyboardViewModel: KVM
+    @EnvironmentObject private var signInViewModel: SVM
     @State private var id: String = ""
     @State private var pw: String = ""
     @State private var showSignUpView: Bool = false
@@ -36,14 +37,25 @@ struct SignInView<KVM: KeyboardVM>: View {
                 PasswordTextFieldView(pw: $pw)
                 
                 //MARK: - Sign In Button
-                Button(action: {}, label: {
-                    Text("로그인")
-                        .bold()
-                        .padding(.all, 15)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(.black)
-                        .cornerRadius(30)
+                Button(action: {
+                    signInViewModel.executeSignIn(id: id, password: pw)
+                }, label: {
+                    if signInViewModel.isSignInProgress {
+                        ProgressView()
+                            .padding(.all, 15)
+                            .frame(maxWidth: .infinity)
+                            .tint(.white)
+                            .background(.black)
+                            .cornerRadius(30)
+                    } else {
+                        Text("로그인")
+                            .bold()
+                            .padding(.all, 15)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(.black)
+                            .cornerRadius(30)
+                    }
                 })
                 
                 HStack(spacing: 15) {
@@ -79,10 +91,27 @@ struct SignInView<KVM: KeyboardVM>: View {
         .navigationDestination(isPresented: $showFindPwView, destination: {
             FindPwView()
         })
+        .alert(isPresented: $signInViewModel.showSignInAlert) {
+            switch signInViewModel.alertType {
+            case .isFailed:
+                Alert(title: Text("알림"),
+                      message: Text("아이디 또는 비밀번호가 올바르지 않아요"),
+                      dismissButton: .default(Text("확인")) {
+                    signInViewModel.isSignInSuccess = nil
+                })
+            case .isEmpty:
+                Alert(title: Text("알림"),
+                      message: Text("아이디와 비밀번호를 입력해 주세요"),
+                      dismissButton: .default(Text("확인")))
+            case .none:
+                fatalError()
+            }
+        }
     }
 }
 
 #Preview {
-    SignInView<KeyboardViewModel>()
+    SignInView<KeyboardViewModel, DefaultSignInViewModel>()
         .environmentObject(KeyboardViewModel())
+        .environmentObject(AppDI.shared().getSignInViewModel())
 }
