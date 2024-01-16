@@ -21,6 +21,8 @@ final class DefaultIdDuplicationCheckUseCase {
 
 extension DefaultIdDuplicationCheckUseCase: IdDuplicationCheckUseCase {
     func execute(_ data: String) -> AnyPublisher<AuthResult, Error> {
-        return repository.sendIdInfo(id: data)
+        let url: String = "http://localhost:8080/users/duplication/\(data)"    //API URL
+        return repository.fetchGetResponse(url: url)
+            .eraseToAnyPublisher()
     }
 }

@@ -8,11 +8,6 @@
 class AppDI {
     private static let instance: AppDI = AppDI()    //singleton instance
     private let dataSource = DefaultDataSource()    //DataSource
-    private let repository: Repository
-    
-    private init() {
-        repository = DefaultRepository(dataSource: dataSource)
-    }
     
     static func shared() -> AppDI {
         return instance
@@ -33,6 +28,8 @@ class AppDI {
     
     //get SignIn ViewModel
     func getSignInViewModel() -> DefaultSignInViewModel {
+        //Repository
+        let repository = DefaultAuthRepository(dataSource: dataSource)
         //UseCase
         let signInUseCase = DefaultSignInUseCase(repository: repository)
         //ViewModel

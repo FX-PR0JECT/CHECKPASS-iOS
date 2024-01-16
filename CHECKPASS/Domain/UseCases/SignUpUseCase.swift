@@ -22,10 +22,13 @@ final class DefaultSignUpUseCase {
 
 extension DefaultSignUpUseCase: SignUpUseCase {
     func executeForStudent(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
-        return repository.sendUserInfo(params: data, for: .signUpForStudent)
+        return repository.fetchPostResponse(params: data, for: .signUpForStudent)
     }
     
+    
+    
     func executeForStaff(_ data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
-        return repository.sendUserInfo(params: data, for: .signUpForStaff)
+        return repository.fetchPostResponse(params: data, for: .signUpForStaff)
+            .eraseToAnyPublisher()
     }
 }

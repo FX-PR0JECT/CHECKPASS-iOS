@@ -27,15 +27,13 @@
 		5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E812B33F3AE004C6501 /* Assets.xcassets */; };
 		5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */; };
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
-		5C962EFF2B50B450007862B1 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962EFE2B50B450007862B1 /* DefaultRepository.swift */; };
-		5C962F012B50B58C007862B1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F002B50B58C007862B1 /* Repository.swift */; };
+		5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E10E2B55FAD90024133E /* AuthDTO.swift */; };
 		5C962F032B50BDB9007862B1 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F022B50BDB9007862B1 /* UserDTO.swift */; };
 		5C962F052B50C13A007862B1 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F042B50C13A007862B1 /* SimpleUser.swift */; };
 		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
 		5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */; };
 		5C987CBE2B44E455006A2580 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */; };
 		5C987CC02B44E534006A2580 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CBF2B44E534006A2580 /* DataSource.swift */; };
-		5C987CC22B44EE1B006A2580 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC12B44EE1B006A2580 /* DTO.swift */; };
 		5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC72B4521EF006A2580 /* AppDI.swift */; };
 		5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CC92B45361A006A2580 /* AuthResult.swift */; };
 		5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */; };
@@ -94,15 +92,13 @@
 		5C561E7F2B33F3AD004C6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C561E812B33F3AE004C6501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5C962EFE2B50B450007862B1 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
-		5C962F002B50B58C007862B1 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5C66E10E2B55FAD90024133E /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
 		5C962F022B50BDB9007862B1 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		5C962F042B50C13A007862B1 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
 		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
 		5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
 		5C987CBF2B44E534006A2580 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		5C987CC12B44EE1B006A2580 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 		5C987CC72B4521EF006A2580 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
 		5C987CC92B45361A006A2580 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
 		5C9A00852B39AFE40037FC3E /* IdTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTextFieldView.swift; sourceTree = "<group>"; };
@@ -285,6 +281,7 @@
 		5C987CB22B43C9FC006A2580 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5C987CC32B451CF1006A2580 /* Entities */,
 				5C987CB92B44D0E4006A2580 /* Interfaces */,
 				5C987CB32B43CA07006A2580 /* UseCases */,
 			);
@@ -304,7 +301,6 @@
 		5C987CB62B43E499006A2580 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5C987CC32B451CF1006A2580 /* Entities */,
 				5C987CB82B43E63E006A2580 /* Repositories */,
 				5C987CB72B43E49E006A2580 /* DataSource */,
 			);
@@ -315,8 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				5C987CBF2B44E534006A2580 /* DataSource.swift */,
-				5C987CC12B44EE1B006A2580 /* DTO.swift */,
 				5C962F022B50BDB9007862B1 /* UserDTO.swift */,
+				5C66E10E2B55FAD90024133E /* AuthDTO.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -325,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */,
-				5C962EFE2B50B450007862B1 /* DefaultRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -342,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				5CAA86702B4C03D200357564 /* AuthRepository.swift */,
-				5C962F002B50B58C007862B1 /* Repository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -576,7 +570,6 @@
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
-				5C987CC22B44EE1B006A2580 /* DTO.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
@@ -587,15 +580,14 @@
 				5C3EB8982B4795C800014394 /* HireDatePickerView.swift in Sources */,
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
 				5C987CBE2B44E455006A2580 /* DefaultAuthRepository.swift in Sources */,
+				5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */,
 				5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */,
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
-				5C962EFF2B50B450007862B1 /* DefaultRepository.swift in Sources */,
 				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
 				5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */,
-				5C962F012B50B58C007862B1 /* Repository.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */,

@@ -11,7 +11,7 @@ import Combine
 
 final class SignInUseCaseTest: XCTestCase {
     private var usecase: SignInUseCase!
-    private var repository: Repository!
+    private var repository: AuthRepository!
     private var dataSource: DataSource!
     private var cancellables = Set<AnyCancellable>()
 
