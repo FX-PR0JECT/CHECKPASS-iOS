@@ -96,9 +96,7 @@ struct SignInView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
             case .isFailed:
                 Alert(title: Text("알림"),
                       message: Text("아이디 또는 비밀번호가 올바르지 않아요"),
-                      dismissButton: .default(Text("확인")) {
-                    signInViewModel.isSignInSuccess = nil
-                })
+                      dismissButton: .default(Text("확인")))
             case .isEmpty:
                 Alert(title: Text("알림"),
                       message: Text("아이디와 비밀번호를 입력해 주세요"),

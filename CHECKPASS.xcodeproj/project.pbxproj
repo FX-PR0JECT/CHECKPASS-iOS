@@ -28,6 +28,7 @@
 		5C561E852B33F3AE004C6501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */; };
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E10E2B55FAD90024133E /* AuthDTO.swift */; };
+		5C66E1142B5650790024133E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E1132B5650790024133E /* MainTabView.swift */; };
 		5C962F032B50BDB9007862B1 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F022B50BDB9007862B1 /* UserDTO.swift */; };
 		5C962F052B50C13A007862B1 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F042B50C13A007862B1 /* SimpleUser.swift */; };
 		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
@@ -93,6 +94,7 @@
 		5C561E812B33F3AE004C6501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C66E10E2B55FAD90024133E /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
+		5C66E1132B5650790024133E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5C962F022B50BDB9007862B1 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		5C962F042B50C13A007862B1 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
 		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
+				5C66E1122B5650650024133E /* Main */,
 				5C144ADE2B3E7F2E007E2E23 /* FindPassword */,
 				5C9A2A582B3B9C92006B176E /* SignUp */,
 				5CA5B1DF2B3AAA8900DD707C /* Keyboard */,
@@ -260,6 +263,14 @@
 				5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C66E1122B5650650024133E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5C66E1132B5650790024133E /* MainTabView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		5C987CAE2B438227006A2580 /* ViewModel */ = {
@@ -593,6 +604,7 @@
 				5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
+				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
 				5C962F052B50C13A007862B1 /* SimpleUser.swift in Sources */,
 				5C9C5D302B4FB27A00F87F5F /* SignInViewModel.swift in Sources */,
 				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,

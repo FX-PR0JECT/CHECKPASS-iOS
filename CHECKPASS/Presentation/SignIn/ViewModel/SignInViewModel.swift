@@ -5,27 +5,35 @@
 //  Created by 이정훈 on 1/11/24.
 //
 
+import SwiftUI
 import Combine
+import Foundation
 
 enum SignInAlert {
     case isEmpty
     case isFailed
 }
 
+enum ScreenType {
+    case main
+    case launchScreen
+    case signIn
+}
+
 protocol SignInViewModel: ObservableObject {
     var isSignInProgress: Bool { get set }
-    var isSignInSuccess: Bool? { get set }
     var showSignInAlert: Bool { get set }
     var alertType: SignInAlert? { get set }
+    var screenType: ScreenType { get set }
     
     func executeSignIn(id: String, password: String)
 }
 
 final class DefaultSignInViewModel {
     @Published var isSignInProgress: Bool = false
-    @Published var isSignInSuccess: Bool?
     @Published var showSignInAlert: Bool = false
     @Published var alertType: SignInAlert?
+    @Published var screenType: ScreenType = .launchScreen
     
     private let usecase: SignInUseCase
     private var cancellables = Set<AnyCancellable>()
@@ -37,7 +45,7 @@ final class DefaultSignInViewModel {
 
 extension DefaultSignInViewModel: SignInViewModel {
     func executeSignIn(id: String, password: String) {
-        guard !id.isEmpty || !password.isEmpty else {
+        guard !id.isEmpty && !password.isEmpty else {
             showSignInAlert = true
             alertType = .isEmpty
             
@@ -51,18 +59,28 @@ extension DefaultSignInViewModel: SignInViewModel {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("successfully signed in")
+                    print("successfully completed sign in attempt")
                 case .failure(let error):
                     print("DefaultSignInViewModel.executeSignIn(id:password:): ", error)
                 }
             }, receiveValue: { [weak self] in
                 self?.isSignInProgress = false
-                self?.isSignInSuccess = $0.result
                 
-                //When sign in is failed
-                if self?.isSignInSuccess == false {
+                if !($0.result) {
+                    //When sign in is failed
                     self?.alertType = .isFailed
                     self?.showSignInAlert = true
+                    print("sign in failed")
+                } else {
+                    //When sign in is success
+                    //Store id and password in the UserDefault
+                    UserDefaults.standard.set(id, forKey: "id")
+                    UserDefaults.standard.set(password, forKey: "pw")
+                    print("sign in success")
+                    
+                    withAnimation {
+                        self?.screenType = .main    //Change View
+                    }
                 }
             })
             .store(in: &cancellables)

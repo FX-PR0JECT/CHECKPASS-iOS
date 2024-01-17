@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ContentView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
     @StateObject private var keyboardViewModel: KVM
@@ -19,18 +20,26 @@ struct ContentView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
     
     var body: some View {
         NavigationStack {
-            if isNextViewPresented {
+            switch signInViewModel.screenType {
+            case .signIn:
                 SignInView<KVM, SVM>()
                     .environmentObject(keyboardViewModel)
                     .environmentObject(signInViewModel)
-            } else {
+            case .main:
+                MainTabView()
+            default:
                 LaunchScreenView()
             }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.2, execute: {
                 withAnimation {
-                    isNextViewPresented.toggle()
+                    if let id = UserDefaults.standard.string(forKey: "id"),
+                       let pw = UserDefaults.standard.string(forKey: "pw") {
+                        signInViewModel.executeSignIn(id: id, password: pw)
+                    } else {
+                        signInViewModel.screenType = .signIn
+                    }
                 }
             })
         }
