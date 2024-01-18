@@ -8,18 +8,18 @@
 import SwiftUI
 
 enum JobType: String {
-    case student = "학생"
-    case professor = "교수"
-    case staff = "교직원"
+    case student = "STUDENTS"
+    case professor = "PROFESSOR"
+    case staff = "STAFF"
     
-    func getEnglishData() -> String {
+    func toKorean() -> String {
         switch self {
-        case .professor:
-            return "PROFESSOR"
-        case .staff:
-            return "STAFF"
         case .student:
-            return "STUDENTS"
+            return "학생"
+        case .professor:
+            return "교수"
+        case .staff:
+            return "교직원"
         }
     }
 }

@@ -22,7 +22,7 @@ struct JobPicker: View {
         Button(action: {
             selectedJob = type
         }, label: {
-            Text(type.rawValue)
+            Text(type.toKorean())
                 .padding()
                 .foregroundColor(colorScheme == .light ? .black : .white)
                 .frame(maxWidth: .infinity)

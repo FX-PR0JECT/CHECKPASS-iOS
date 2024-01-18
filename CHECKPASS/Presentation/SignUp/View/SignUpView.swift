@@ -87,7 +87,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                             case .student:
                                 signUpViewModel.executeStudentRegister(id: idInput,
                                                                        pw: pwInput, name: nameInput,
-                                                                       job: selectedJob.getEnglishData(),
+                                                                       job: selectedJob.rawValue,
                                                                        collage: selectedCollege,
                                                                        department: selectedDepartment,
                                                                        grade: selectedGrade,
@@ -95,7 +95,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                                                                        semester: selectedSemester)
                             case .professor, .staff:
                                 signUpViewModel.executeStaffRegister(id: idInput, pw: pwInput, name: nameInput,
-                                                                     job: selectedJob.getEnglishData(),
+                                                                     job: selectedJob.rawValue,
                                                                      collage: selectedCollege,
                                                                      department: selectedDepartment,
                                                                      hireDate: selectedHireDate.toYearMonthDay())
