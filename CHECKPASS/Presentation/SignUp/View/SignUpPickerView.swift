@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpPickerView<SVM: SignUpVM>: View {
     @EnvironmentObject private var signUpViewModel: SVM
     @Binding private var selection: String
+    @Binding private var idInput: String
     @Environment(\.colorScheme) private var colorScheme
     
     private var header: String
@@ -18,9 +19,10 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
     private var pos: String
     private var type: JobType?
     
-    init(selection: Binding<String>, header: String, title: String,
+    init(selection: Binding<String>, idInput: Binding<String>, header: String, title: String,
          contents: [String], pos: String, type: JobType? = nil) {
         _selection = selection
+        _idInput = idInput
         self.header = header
         self.title = title
         self.contents = contents
@@ -94,6 +96,11 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
                 }
             }
         }
+        .onTapGesture {
+            if signUpViewModel.defaultStates["id"] == .isNotVerified {
+                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            }
+        }
     }
 }
 
@@ -117,6 +124,6 @@ extension SignUpPickerView {
 }
 
 #Preview {
-    SignUpPickerView<SignUpViewModel>(selection: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"], pos: "type")
+    SignUpPickerView<SignUpViewModel>(selection: .constant(""), idInput: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"], pos: "type")
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

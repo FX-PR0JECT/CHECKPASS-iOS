@@ -10,9 +10,11 @@ import SwiftUI
 struct PasswordConfirmInputView<SVM: SignUpVM>: View {
     @EnvironmentObject private var signUpViewModel: SVM
     @Binding private var pwConfirmInput: String
+    @Binding private var idInput: String
     
-    init(pwConfirmInput: Binding<String>) {
+    init(pwConfirmInput: Binding<String>, idInput: Binding<String>) {
         _pwConfirmInput = pwConfirmInput
+        _idInput = idInput
     }
     
     var body: some View {
@@ -45,10 +47,15 @@ struct PasswordConfirmInputView<SVM: SignUpVM>: View {
                 .foregroundColor(.red)
             }
         }
+        .onTapGesture {
+            if signUpViewModel.defaultStates["id"] == .isNotVerified {
+                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            }
+        }
     }
 }
 
 #Preview {
-    PasswordConfirmInputView<SignUpViewModel>(pwConfirmInput: .constant(""))
+    PasswordConfirmInputView<SignUpViewModel>(pwConfirmInput: .constant(""), idInput: .constant(""))
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

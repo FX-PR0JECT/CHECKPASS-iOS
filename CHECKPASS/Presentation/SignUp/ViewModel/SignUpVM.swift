@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 protocol SignUpVM: ObservableObject {
     var defaultStates: Dictionary<String, InputState> { get set }
@@ -15,43 +16,47 @@ protocol SignUpVM: ObservableObject {
     var isAlertVisible: Bool { get set }
     var alertType: AlertType { get set }
     
-    func executeStudentRegister(id: String, pw: String, name: String, job: String, collage: String,
+    func registerForStudent(id: String, pw: String, name: String, job: String, collage: String,
                                 department: String, grade: String, dayOrNight: String, semester: String)
-    func executeStaffRegister(id: String, pw: String, name: String, job: String, collage: String, department: String, hireDate: String)
-    func executeIdDuplicationCheck(for id: String)
+    func registerForStaff(id: String, pw: String, name: String, job: String, collage: String, department: String, hireDate: String)
+    func executeIdDuplicateCheck(for id: String)
 }
 
 //MARK: - Check Invalid InputStatus
-extension SignUpVM {
-    func verifyState(job: JobType) -> Bool {
+extension SignUpVM {    
+    func verifyStates(for job: String) -> Bool {
         var result: Bool = true
-
-        for key in defaultStates.keys {
-            if defaultStates[key] == .isBlank || defaultStates[key] == .isInitial {
-                defaultStates[key] = .isBlank
-                result = false
-            } else if defaultStates[key] == .isInvalid {
-                result = false
-            }
-        }
         
-        switch job {
-        case .professor, .staff:
-            for key in staffStates.keys {
-                if staffStates[key] == .isBlank || staffStates[key] == .isInitial {
-                    staffStates[key] = .isBlank
+        withAnimation {
+            for key in defaultStates.keys {
+                if defaultStates[key] == .isBlank || defaultStates[key] == .isInitial {
+                    defaultStates[key] = .isBlank
                     result = false
-                } else if staffStates[key] == .isInvalid {
+                } else if defaultStates[key] == .isInvalid {
                     result = false
                 }
             }
-        case .student:
-            for key in studentStates.keys {
-                if studentStates[key] == .isBlank || studentStates[key] == .isInitial {
-                    studentStates[key] = .isBlank
-                    result = false
-                } else if studentStates[key] == .isInvalid {
-                    result = false
+            
+            JobType(rawValue: job).map {
+                switch $0 {
+                case .professor, .staff:
+                    for key in staffStates.keys {
+                        if staffStates[key] == .isBlank || staffStates[key] == .isInitial {
+                            staffStates[key] = .isBlank
+                            result = false
+                        } else if staffStates[key] == .isInvalid {
+                            result = false
+                        }
+                    }
+                case .student:
+                    for key in studentStates.keys {
+                        if studentStates[key] == .isBlank || studentStates[key] == .isInitial {
+                            studentStates[key] = .isBlank
+                            result = false
+                        } else if studentStates[key] == .isInvalid {
+                            result = false
+                        }
+                    }
                 }
             }
         }

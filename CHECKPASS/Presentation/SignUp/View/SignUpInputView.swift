@@ -70,7 +70,7 @@ struct SignUpInputView: View {
                     }
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(inputState == .isValid || inputState == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(inputState == .isValid || inputState == .isInitial || inputState == .isNotVerified ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
         }

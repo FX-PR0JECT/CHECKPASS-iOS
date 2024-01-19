@@ -19,7 +19,7 @@ class AppDI {
         let repository = DefaultAuthRepository(dataSource: dataSource)
         //UseCase
         let signUpUseCase = DefaultSignUpUseCase(repository: repository)
-        let idDuplicationCheckUseCase = DefaultIdDuplicationCheckUseCase(repository: repository)
+        let idDuplicationCheckUseCase = DefaultIdDuplicateCheckUseCase(repository: repository)
         //ViewModel
         let viewModel = SignUpViewModel(signUpUseCase: signUpUseCase, idDuplicationCheckUseCase: idDuplicationCheckUseCase)
         

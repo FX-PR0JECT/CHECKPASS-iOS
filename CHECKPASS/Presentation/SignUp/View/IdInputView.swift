@@ -49,8 +49,11 @@ struct IdInputView<SVM: SignUpVM>: View {
                 .foregroundColor(signUpViewModel.defaultStates["id"] == .isValid ? .blue : .red)
             }
         }
-        .onChange(of: idInput) { newValue in
-            signUpViewModel.executeIdDuplicationCheck(for: newValue)
+        .onChange(of: idInput) { _ in
+            //id 유효성 검사 전 입력 상태 변경
+            withAnimation {
+                signUpViewModel.defaultStates["id"] = .isNotVerified
+            }
         }
     }
 }

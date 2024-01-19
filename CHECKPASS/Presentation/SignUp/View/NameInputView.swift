@@ -10,9 +10,11 @@ import SwiftUI
 struct NameInputView<SVM: SignUpVM>: View {
     @EnvironmentObject private var signUpViewModel: SVM
     @Binding private var nameInput: String
+    @Binding private var idInput: String
     
-    init(nameInput: Binding<String>) {
+    init(nameInput: Binding<String>, idInput: Binding<String>) {
         _nameInput = nameInput
+        _idInput = idInput
     }
     
     var body: some View {
@@ -49,10 +51,15 @@ struct NameInputView<SVM: SignUpVM>: View {
                 }
             }
         }
+        .onTapGesture {
+            if signUpViewModel.defaultStates["id"] == .isNotVerified {
+                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            }
+        }
     }
 }
 
 #Preview {
-    NameInputView<SignUpViewModel>(nameInput: .constant(""))
+    NameInputView<SignUpViewModel>(nameInput: .constant(""), idInput: .constant(""))
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

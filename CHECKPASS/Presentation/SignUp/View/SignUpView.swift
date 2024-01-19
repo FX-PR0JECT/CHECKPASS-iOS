@@ -37,25 +37,25 @@ struct SignUpView<SVM: SignUpVM>: View {
                 IdInputView<SVM>(idInput: $idInput)
                     .environmentObject(signUpViewModel)
                 
-                PasswordInputView<SVM>(pwInput: $pwInput)
+                PasswordInputView<SVM>(pwInput: $pwInput, idInput: $idInput)
                     .environmentObject(signUpViewModel)
                 
-                PasswordConfirmInputView<SVM>(pwConfirmInput: $pwConfirmInput)
+                PasswordConfirmInputView<SVM>(pwConfirmInput: $pwConfirmInput, idInput: $idInput)
                     .environmentObject(signUpViewModel)
                 
-                NameInputView<SVM>(nameInput: $nameInput)
+                NameInputView<SVM>(nameInput: $nameInput, idInput: $idInput)
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedCollege, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: "college")
+                SignUpPickerView<SVM>(selection: $selectedCollege, idInput: $idInput, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: "college")
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedDepartment, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[selectedCollege] ?? [], pos: "department")
+                SignUpPickerView<SVM>(selection: $selectedDepartment, idInput: $idInput, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[selectedCollege] ?? [], pos: "department")
                     .environmentObject(signUpViewModel)
                 
                 //MARK: - Staff Only
                 Group {
                     if selectedJob == .professor || selectedJob == .staff {
-                        HireDatePickerView<SVM>(selection: $selectedHireDate, header: "입사일", title: "입사일을 선택해 주세요")
+                        HireDatePickerView<SVM>(selection: $selectedHireDate, idInput: $idInput, header: "입사일", title: "입사일을 선택해 주세요")
                             .environmentObject(signUpViewModel)
                     }
                 }
@@ -63,13 +63,13 @@ struct SignUpView<SVM: SignUpVM>: View {
                 //MARK: - Student Only
                 Group {
                     if selectedJob == .student {
-                        SignUpPickerView<SVM>(selection: $selectedGrade, header: "학년", title: "학년을 선택해 주세요", contents: PickerContents.grades, pos: "grade", type: .student)
+                        SignUpPickerView<SVM>(selection: $selectedGrade, idInput: $idInput, header: "학년", title: "학년을 선택해 주세요", contents: PickerContents.grades, pos: "grade", type: .student)
                             .environmentObject(signUpViewModel)
                         
-                        SignUpPickerView<SVM>(selection: $selectedSemester, header: "학기", title: "학기를 선택해 주세요", contents: PickerContents.semesters, pos: "semester", type: .student)
+                        SignUpPickerView<SVM>(selection: $selectedSemester, idInput: $idInput, header: "학기", title: "학기를 선택해 주세요", contents: PickerContents.semesters, pos: "semester", type: .student)
                             .environmentObject(signUpViewModel)
                         
-                        SignUpPickerView<SVM>(selection: $selectedDayOrNight, header: "주/야", title: "주간/야간 구분을 선택해 주세요", contents: PickerContents.dayOrNight, pos:"dayOrNight", type: .student)
+                        SignUpPickerView<SVM>(selection: $selectedDayOrNight, idInput: $idInput, header: "주/야", title: "주간/야간 구분을 선택해 주세요", contents: PickerContents.dayOrNight, pos:"dayOrNight", type: .student)
                             .environmentObject(signUpViewModel)
                     }
                 }
@@ -79,30 +79,25 @@ struct SignUpView<SVM: SignUpVM>: View {
                     .environmentObject(signUpViewModel)
                 
                 Button(action: {
-                    withAnimation {
-                        dismissKeyboard()
-                        
-                        if let selectedJob = selectedJob, signUpViewModel.verifyState(job: selectedJob) {
-                            switch selectedJob {
-                            case .student:
-                                signUpViewModel.executeStudentRegister(id: idInput,
-                                                                       pw: pwInput, name: nameInput,
-                                                                       job: selectedJob.rawValue,
-                                                                       collage: selectedCollege,
-                                                                       department: selectedDepartment,
-                                                                       grade: selectedGrade,
-                                                                       dayOrNight: selectedDayOrNight,
-                                                                       semester: selectedSemester)
-                            case .professor, .staff:
-                                signUpViewModel.executeStaffRegister(id: idInput, pw: pwInput, name: nameInput,
-                                                                     job: selectedJob.rawValue,
-                                                                     collage: selectedCollege,
-                                                                     department: selectedDepartment,
-                                                                     hireDate: selectedHireDate.toYearMonthDay())
-                            }
-                        } else {
-                            signUpViewModel.alertType = .inValidInput
-                            signUpViewModel.isAlertVisible = true
+                    dismissKeyboard()    //keyboard down
+                    
+                    selectedJob.map { selectedJob in
+                        switch selectedJob {
+                        case .student:
+                            signUpViewModel.registerForStudent(id: idInput,
+                                                                   pw: pwInput, name: nameInput,
+                                                                   job: selectedJob.rawValue,
+                                                                   collage: selectedCollege,
+                                                                   department: selectedDepartment,
+                                                                   grade: selectedGrade,
+                                                                   dayOrNight: selectedDayOrNight,
+                                                                   semester: selectedSemester)
+                        case .professor, .staff:
+                            signUpViewModel.registerForStaff(id: idInput, pw: pwInput, name: nameInput,
+                                                                 job: selectedJob.rawValue,
+                                                                 collage: selectedCollege,
+                                                                 department: selectedDepartment,
+                                                                 hireDate: selectedHireDate.toYearMonthDay())
                         }
                     }
                 }, label: {
@@ -150,6 +145,9 @@ struct SignUpView<SVM: SignUpVM>: View {
                 return Alert(title: Text("알림"),
                              message: Text("잘못된 입력값이 있어요"))
             }
+        }
+        .onTapGesture {
+            dismissKeyboard()
         }
     }
 }

@@ -55,7 +55,7 @@
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
 		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
-		5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */; };
+		5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86672B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift */; };
 		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
 		5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */; };
 		5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */; };
@@ -127,7 +127,7 @@
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
-		5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCase.swift; sourceTree = "<group>"; };
+		5CAA86672B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicateCheckUseCase.swift; sourceTree = "<group>"; };
 		5CAA86702B4C03D200357564 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCaseTest.swift; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				5C987CB42B43CFF4006A2580 /* SignUpUseCase.swift */,
-				5CAA86672B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift */,
+				5CAA86672B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift */,
 				5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */,
 				5C1A374C2B57A01600A0AE8A /* GetUserInfoUseCase.swift */,
 			);
@@ -646,7 +646,7 @@
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
-				5CAA86682B4B6BFA00357564 /* IdDuplicationCheckUseCase.swift in Sources */,
+				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
 				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
