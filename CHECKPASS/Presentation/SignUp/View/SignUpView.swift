@@ -30,7 +30,7 @@ struct SignUpView<SVM: SignUpVM>: View {
         _showSignUpView = showSignUpView
     }
     
-    var body: some View {        
+    var body: some View {
         ScrollView {
             VStack(spacing: 25) {
                 //MARK: - Default Input
@@ -145,9 +145,6 @@ struct SignUpView<SVM: SignUpVM>: View {
                 return Alert(title: Text("알림"),
                              message: Text("잘못된 입력값이 있어요"))
             }
-        }
-        .onTapGesture {
-            dismissKeyboard()
         }
     }
 }
