@@ -15,11 +15,15 @@ protocol SignUpVM: ObservableObject {
     var staffStates: Dictionary<String, InputState> { get set }
     var isAlertVisible: Bool { get set }
     var alertType: AlertType { get set }
+    var departments: Departments? { get set }
+    var colleges: Colleges? { get set }
     
-    func registerForStudent(id: String, pw: String, name: String, job: String, collage: String,
+    func registerForStudent(id: String, pw: String, name: String, job: String, college: String,
                                 department: String, grade: String, dayOrNight: String, semester: String)
-    func registerForStaff(id: String, pw: String, name: String, job: String, collage: String, department: String, hireDate: String)
+    func registerForStaff(id: String, pw: String, name: String, job: String, college: String, department: String, hireDate: String)
     func executeIdDuplicateCheck(for id: String)
+    func getCollegesData()
+    func getDepartmentsData(of college: String)
 }
 
 //MARK: - Check Invalid InputStatus

@@ -59,6 +59,16 @@
 		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
 		5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */; };
 		5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */; };
+		5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2522B5E0931000423C3 /* CollegesDTO.swift */; };
+		5CEAB2552B5E0A11000423C3 /* Colleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2542B5E0A11000423C3 /* Colleges.swift */; };
+		5CEAB2572B5E212D000423C3 /* DepartmentsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2562B5E212D000423C3 /* DepartmentsDTO.swift */; };
+		5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2582B5E2223000423C3 /* Departments.swift */; };
+		5CEAB25B2B5E22BA000423C3 /* DepartmentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB25A2B5E22BA000423C3 /* DepartmentsRepository.swift */; };
+		5CEAB25D2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB25C2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift */; };
+		5CEAB25F2B5E2AC5000423C3 /* GetDepartmentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB25E2B5E2AC5000423C3 /* GetDepartmentsUseCase.swift */; };
+		5CEAB2612B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2602B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift */; };
+		5CEAB2632B5E2E0D000423C3 /* CollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2622B5E2E0D000423C3 /* CollegesRepository.swift */; };
+		5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +143,16 @@
 		5CAA86832B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicationCheckUseCaseTest.swift; sourceTree = "<group>"; };
 		5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseTest.swift; sourceTree = "<group>"; };
 		5CD6E4F92B4E5D2400C02305 /* CHECKPASSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CEAB2522B5E0931000423C3 /* CollegesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegesDTO.swift; sourceTree = "<group>"; };
+		5CEAB2542B5E0A11000423C3 /* Colleges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colleges.swift; sourceTree = "<group>"; };
+		5CEAB2562B5E212D000423C3 /* DepartmentsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsDTO.swift; sourceTree = "<group>"; };
+		5CEAB2582B5E2223000423C3 /* Departments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departments.swift; sourceTree = "<group>"; };
+		5CEAB25A2B5E22BA000423C3 /* DepartmentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsRepository.swift; sourceTree = "<group>"; };
+		5CEAB25C2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDepartmentsRepository.swift; sourceTree = "<group>"; };
+		5CEAB25E2B5E2AC5000423C3 /* GetDepartmentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDepartmentsUseCase.swift; sourceTree = "<group>"; };
+		5CEAB2602B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDepartmentsUseCaseTest.swift; sourceTree = "<group>"; };
+		5CEAB2622B5E2E0D000423C3 /* CollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegesRepository.swift; sourceTree = "<group>"; };
+		5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollegesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +195,8 @@
 			children = (
 				5C66E10E2B55FAD90024133E /* AuthDTO.swift */,
 				5C962F022B50BDB9007862B1 /* SimpleUserInfoDTO.swift */,
+				5CEAB2522B5E0931000423C3 /* CollegesDTO.swift */,
+				5CEAB2562B5E212D000423C3 /* DepartmentsDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -345,6 +367,7 @@
 				5CAA86672B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift */,
 				5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */,
 				5C1A374C2B57A01600A0AE8A /* GetUserInfoUseCase.swift */,
+				5CEAB25E2B5E2AC5000423C3 /* GetDepartmentsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -372,6 +395,8 @@
 			children = (
 				5C987CBD2B44E455006A2580 /* DefaultAuthRepository.swift */,
 				5C1A37412B576A0900A0AE8A /* DefaultUserRepository.swift */,
+				5CEAB25C2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift */,
+				5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -389,6 +414,8 @@
 			children = (
 				5CAA86702B4C03D200357564 /* AuthRepository.swift */,
 				5C1A373D2B57685F00A0AE8A /* UserRepository.swift */,
+				5CEAB25A2B5E22BA000423C3 /* DepartmentsRepository.swift */,
+				5CEAB2622B5E2E0D000423C3 /* CollegesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -398,6 +425,8 @@
 			children = (
 				5C987CC92B45361A006A2580 /* AuthResult.swift */,
 				5C962F042B50C13A007862B1 /* SimpleUserInfo.swift */,
+				5CEAB2542B5E0A11000423C3 /* Colleges.swift */,
+				5CEAB2582B5E2223000423C3 /* Departments.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -473,6 +502,7 @@
 				5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */,
 				5C9C5D372B4FBDF400F87F5F /* SignInUseCaseTest.swift */,
 				5C1A37552B58A81000A0AE8A /* GetUserInfoUseCaseTest.swift */,
+				5CEAB2602B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -618,13 +648,16 @@
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
+				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
 				5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */,
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
+				5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */,
 				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
+				5CEAB2572B5E212D000423C3 /* DepartmentsDTO.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
 				5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */,
@@ -636,15 +669,20 @@
 				5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */,
 				5C987CBE2B44E455006A2580 /* DefaultAuthRepository.swift in Sources */,
 				5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */,
+				5CEAB25F2B5E2AC5000423C3 /* GetDepartmentsUseCase.swift in Sources */,
 				5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */,
+				5CEAB25B2B5E22BA000423C3 /* DepartmentsRepository.swift in Sources */,
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
+				5CEAB2632B5E2E0D000423C3 /* CollegesRepository.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
 				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
 				5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */,
+				5CEAB2552B5E0A11000423C3 /* Colleges.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
+				5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
@@ -656,6 +694,7 @@
 				5C1A374D2B57A01600A0AE8A /* GetUserInfoUseCase.swift in Sources */,
 				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
 				5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */,
+				5CEAB25D2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
 				5C1A37542B57A76100A0AE8A /* UserInfoVM.swift in Sources */,
 			);
@@ -667,6 +706,7 @@
 			files = (
 				5CAA86842B4D1D9300357564 /* IdDuplicationCheckUseCaseTest.swift in Sources */,
 				5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */,
+				5CEAB2612B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift in Sources */,
 				5C9C5D382B4FBDF400F87F5F /* SignInUseCaseTest.swift in Sources */,
 				5C1A37562B58A81000A0AE8A /* GetUserInfoUseCaseTest.swift in Sources */,
 			);

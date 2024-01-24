@@ -46,10 +46,10 @@ struct SignUpView<SVM: SignUpVM>: View {
                 NameInputView<SVM>(nameInput: $nameInput, idInput: $idInput)
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedCollege, idInput: $idInput, header: "단과대", title: "단과대를 선택해 주세요", contents: PickerContents.colleges, pos: "college")
+                SignUpPickerView<SVM>(selection: $selectedCollege, idInput: $idInput, header: "단과대", title: "단과대를 선택해 주세요", contents: signUpViewModel.colleges?.collegeList ?? [], pos: "college")
                     .environmentObject(signUpViewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedDepartment, idInput: $idInput, header: "학과", title: "학과를 선택해 주세요", contents: PickerContents.departments[selectedCollege] ?? [], pos: "department")
+                SignUpPickerView<SVM>(selection: $selectedDepartment, idInput: $idInput, header: "학과", title: "학과를 선택해 주세요", contents: signUpViewModel.departments?.departmentList ?? [], pos: "department")
                     .environmentObject(signUpViewModel)
                 
                 //MARK: - Staff Only
@@ -85,19 +85,19 @@ struct SignUpView<SVM: SignUpVM>: View {
                         switch selectedJob {
                         case .student:
                             signUpViewModel.registerForStudent(id: idInput,
-                                                                   pw: pwInput, name: nameInput,
-                                                                   job: selectedJob.rawValue,
-                                                                   collage: selectedCollege,
-                                                                   department: selectedDepartment,
-                                                                   grade: selectedGrade,
-                                                                   dayOrNight: selectedDayOrNight,
-                                                                   semester: selectedSemester)
+                                                               pw: pwInput, name: nameInput,
+                                                               job: selectedJob.rawValue,
+                                                               college: selectedCollege,
+                                                               department: selectedDepartment,
+                                                               grade: selectedGrade,
+                                                               dayOrNight: selectedDayOrNight,
+                                                               semester: selectedSemester)
                         case .professor, .staff:
                             signUpViewModel.registerForStaff(id: idInput, pw: pwInput, name: nameInput,
-                                                                 job: selectedJob.rawValue,
-                                                                 collage: selectedCollege,
-                                                                 department: selectedDepartment,
-                                                                 hireDate: selectedHireDate.toYearMonthDay())
+                                                             job: selectedJob.rawValue,
+                                                             college: selectedCollege,
+                                                             department: selectedDepartment,
+                                                             hireDate: selectedHireDate.toYearMonthDay())
                         }
                     }
                 }, label: {
@@ -126,6 +126,11 @@ struct SignUpView<SVM: SignUpVM>: View {
                 }
             }
         }
+        .onChange(of: selectedCollege) { newValue in
+            if newValue != "선택" {
+                signUpViewModel.getDepartmentsData(of: newValue)
+            }
+        }
         .onDisappear {
             signUpViewModel.initializeStates()
         }
@@ -145,6 +150,10 @@ struct SignUpView<SVM: SignUpVM>: View {
                 return Alert(title: Text("알림"),
                              message: Text("잘못된 입력값이 있어요"))
             }
+        }
+        .onAppear {
+            //fetch colleges data when view appear
+            signUpViewModel.getCollegesData()
         }
     }
 }
