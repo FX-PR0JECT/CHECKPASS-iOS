@@ -9,10 +9,10 @@ import XCTest
 import Combine
 @testable import CHECKPASS
 
-final class IdDuplicationCheckUseCaseTest: XCTestCase {
+final class IdDuplicateCheckUseCaseTest: XCTestCase {
     private var authRepository: AuthRepository!
     private var dataSource: DataSource!
-    private var usecase: IdDuplicationCheckUseCase!
+    private var usecase: IdDuplicateCheckUseCase!
     private var cancellables = Set<AnyCancellable>()
 
 
@@ -21,7 +21,7 @@ final class IdDuplicationCheckUseCaseTest: XCTestCase {
         
         self.dataSource = DefaultDataSource()
         self.authRepository = DefaultAuthRepository(dataSource: dataSource)
-        self.usecase = DefaultIdDuplicationCheckUseCase(repository: authRepository)
+        self.usecase = DefaultIdDuplicateCheckUseCase(repository: authRepository)
     }
 
     override func tearDownWithError() throws {

@@ -18,7 +18,7 @@ final class SignInUseCaseTest: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         dataSource = DefaultDataSource()
-        repository = DefaultRepository(dataSource: dataSource)
+        repository = DefaultAuthRepository(dataSource: dataSource)
         usecase = DefaultSignInUseCase(repository: repository)
     }
 
