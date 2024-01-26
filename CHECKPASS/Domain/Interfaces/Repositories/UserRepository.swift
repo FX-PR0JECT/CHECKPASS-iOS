@@ -8,5 +8,5 @@
 import Combine
 
 protocol UserRepository {
-    func fetchSimpleUserInfo(url: String) -> AnyPublisher<SimpleUserInfo, Error>
+    func fetchSimpleUserInfo(url: String) -> AnyPublisher<SimpleUserInfo?, Error>
 }

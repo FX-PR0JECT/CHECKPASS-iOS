@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol GetUserInfoUseCase {
-    func executeGetSimpleUserInfo() -> AnyPublisher<SimpleUserInfo, Error>
+    func executeGetSimpleUserInfo() -> AnyPublisher<SimpleUserInfo?, Error>
 }
 
 final class DefaultGetUserInfoUseCase {
@@ -21,11 +21,12 @@ final class DefaultGetUserInfoUseCase {
 }
 
 extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
-    func executeGetSimpleUserInfo() -> AnyPublisher<SimpleUserInfo, Error> {
+    func executeGetSimpleUserInfo() -> AnyPublisher<SimpleUserInfo?, Error> {
         let id = UserDefaults.standard.string(forKey: "id")
-        
         guard let userId = id else {
-            fatalError()
+            return Just(nil)
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
         }
         
         let url = "http://localhost:8080/users/simple/\(userId)"

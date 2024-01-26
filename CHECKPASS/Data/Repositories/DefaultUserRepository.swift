@@ -18,7 +18,7 @@ final class DefaultUserRepository {
 }
 
 extension DefaultUserRepository: UserRepository {    
-    func fetchSimpleUserInfo(url: String) -> AnyPublisher<SimpleUserInfo, Error> {
+    func fetchSimpleUserInfo(url: String) -> AnyPublisher<SimpleUserInfo?, Error> {
         return dataSource.sendGetRequest(url: url, resultType: SimpleUserInfoDTO.self)
             .map {
                 $0.toEntity()
