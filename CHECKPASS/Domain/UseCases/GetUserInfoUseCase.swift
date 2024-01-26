@@ -28,7 +28,7 @@ extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
             fatalError()
         }
         
-        let url = "http://localhost:8080/users/\(userId)"
+        let url = "http://localhost:8080/users/simple/\(userId)"
         return repository.fetchSimpleUserInfo(url: url)
     }
 }

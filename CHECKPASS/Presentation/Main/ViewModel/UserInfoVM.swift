@@ -9,4 +9,6 @@ import Foundation
 
 protocol UserInfoVM: ObservableObject {
     var simpleUserInfo: SimpleUserInfo? { get set }
+    
+    func getSimpleUserInfo()
 }

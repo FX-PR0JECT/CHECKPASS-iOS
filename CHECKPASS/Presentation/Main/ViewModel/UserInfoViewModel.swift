@@ -15,7 +15,6 @@ final class UserInfoViewModel {
     
     init(useCase: GetUserInfoUseCase) {
         self.useCase = useCase
-        getSimpleUserInfo()
     }
 }
 

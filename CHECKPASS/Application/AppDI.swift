@@ -13,6 +13,15 @@ class AppDI {
         return instance
     }
     
+    //get UserInfo ViewModel
+    func getUserInfoViewModel() -> any UserInfoVM {
+        let repository = DefaultUserRepository(dataSource: dataSource)
+        let useCase = DefaultGetUserInfoUseCase(repository: repository)
+        let viewModel = UserInfoViewModel(useCase: useCase)
+        
+        return viewModel
+    }
+    
     //get SignUp ViewModel
     func getSignUpViewModel() -> SignUpViewModel {
         //Repository
