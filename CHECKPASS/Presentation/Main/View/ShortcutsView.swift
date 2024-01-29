@@ -15,7 +15,7 @@ struct ShortcutsView: View {
                 .foregroundColor(.white)
                 .shadow(radius: 2)
             
-            HStack(spacing: 50) {
+            HStack(spacing: UIScreen.main.bounds.width * 0.12) {
                 NavigationLink(destination: {}, label: {
                     ShortcutIcon(image: "rocket", caption: "홈페이지")
                         .foregroundColor(.black)

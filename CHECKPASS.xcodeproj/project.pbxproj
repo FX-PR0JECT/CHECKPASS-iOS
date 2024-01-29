@@ -18,6 +18,11 @@
 		5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A37512B57A73600A0AE8A /* UserInfoViewModel.swift */; };
 		5C1A37542B57A76100A0AE8A /* UserInfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A37532B57A76100A0AE8A /* UserInfoVM.swift */; };
 		5C1A37562B58A81000A0AE8A /* GetUserInfoUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A37552B58A81000A0AE8A /* GetUserInfoUseCaseTest.swift */; };
+		5C1F2BDE2B6375610035415E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F2BDD2B6375610035415E /* MainView.swift */; };
+		5C1F2BE02B6375B00035415E /* MobileIdCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F2BDF2B6375B00035415E /* MobileIdCardView.swift */; };
+		5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F2BE22B63791C0035415E /* FrontCard.swift */; };
+		5C1F2BE52B63793F0035415E /* BackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F2BE42B63793F0035415E /* BackCard.swift */; };
+		5C1F2BE72B638D340035415E /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F2BE62B638D340035415E /* CardDetail.swift */; };
 		5C2124452B3CE5EA00D237D4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */; };
 		5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */; };
 		5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */; };
@@ -35,7 +40,6 @@
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E10E2B55FAD90024133E /* AuthDTO.swift */; };
 		5C66E1142B5650790024133E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E1132B5650790024133E /* MainTabView.swift */; };
-		5C93F0C22B60F353005D576D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C12B60F353005D576D /* MainView.swift */; };
 		5C93F0C52B60F50F005D576D /* MyLectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* MyLectureListView.swift */; };
 		5C93F0C82B60F6A0005D576D /* SeeMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */; };
 		5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CA2B60F796005D576D /* BoardView.swift */; };
@@ -109,6 +113,11 @@
 		5C1A37512B57A73600A0AE8A /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		5C1A37532B57A76100A0AE8A /* UserInfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVM.swift; sourceTree = "<group>"; };
 		5C1A37552B58A81000A0AE8A /* GetUserInfoUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInfoUseCaseTest.swift; sourceTree = "<group>"; };
+		5C1F2BDD2B6375610035415E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5C1F2BDF2B6375B00035415E /* MobileIdCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileIdCardView.swift; sourceTree = "<group>"; };
+		5C1F2BE22B63791C0035415E /* FrontCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
+		5C1F2BE42B63793F0035415E /* BackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackCard.swift; sourceTree = "<group>"; };
+		5C1F2BE62B638D340035415E /* CardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetail.swift; sourceTree = "<group>"; };
 		5C2124442B3CE5EA00D237D4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5C2124462B3CEB6700D237D4 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		5C2124482B3CF68200D237D4 /* PasswordConfirmInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmInputView.swift; sourceTree = "<group>"; };
@@ -126,7 +135,6 @@
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C66E10E2B55FAD90024133E /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
 		5C66E1132B5650790024133E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		5C93F0C12B60F353005D576D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5C93F0C42B60F50F005D576D /* MyLectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLectureListView.swift; sourceTree = "<group>"; };
 		5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreView.swift; sourceTree = "<group>"; };
 		5C93F0CA2B60F796005D576D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -232,14 +240,25 @@
 			isa = PBXGroup;
 			children = (
 				5C66E1132B5650790024133E /* MainTabView.swift */,
-				5C93F0C12B60F353005D576D /* MainView.swift */,
 				5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */,
 				5C93F0CE2B620F8A005D576D /* MainSubTitle.swift */,
 				5C93F0D02B620FBC005D576D /* ShortcutIcon.swift */,
 				5C93F0D22B6229D3005D576D /* TestView.swift */,
 				5C93F0D62B623420005D576D /* AttendanceCardView.swift */,
+				5C1F2BDD2B6375610035415E /* MainView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5C1F2BE12B6379010035415E /* MobileIdCard */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F2BDF2B6375B00035415E /* MobileIdCardView.swift */,
+				5C1F2BE22B63791C0035415E /* FrontCard.swift */,
+				5C1F2BE42B63793F0035415E /* BackCard.swift */,
+				5C1F2BE62B638D340035415E /* CardDetail.swift */,
+			);
+			path = MobileIdCard;
 			sourceTree = "<group>";
 		};
 		5C2124432B3CE5DA00D237D4 /* ViewModel */ = {
@@ -262,6 +281,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5C1F2BE12B6379010035415E /* MobileIdCard */,
 				5C93F0C92B60F76F005D576D /* Board */,
 				5C93F0C62B60F68F005D576D /* SeeMore */,
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
@@ -714,7 +734,6 @@
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
 				5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */,
-				5C93F0C22B60F353005D576D /* MainView.swift in Sources */,
 				5C1A37422B576A0900A0AE8A /* DefaultUserRepository.swift in Sources */,
 				5C9A00882B39AFF50037FC3E /* PasswordTextFieldView.swift in Sources */,
 				5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */,
@@ -725,12 +744,14 @@
 				5C93F0C82B60F6A0005D576D /* SeeMoreView.swift in Sources */,
 				5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */,
 				5CEAB25F2B5E2AC5000423C3 /* GetDepartmentsUseCase.swift in Sources */,
+				5C1F2BE02B6375B00035415E /* MobileIdCardView.swift in Sources */,
 				5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */,
 				5CEAB25B2B5E22BA000423C3 /* DepartmentsRepository.swift in Sources */,
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5CEAB2632B5E2E0D000423C3 /* CollegesRepository.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
+				5C1F2BE72B638D340035415E /* CardDetail.swift in Sources */,
 				5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */,
 				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
@@ -746,12 +767,15 @@
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C93F0C52B60F50F005D576D /* MyLectureListView.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
+				5C1F2BDE2B6375610035415E /* MainView.swift in Sources */,
+				5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
 				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
 				5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */,
 				5C9C5D302B4FB27A00F87F5F /* SignInViewModel.swift in Sources */,
 				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,
 				5C1A374D2B57A01600A0AE8A /* GetUserInfoUseCase.swift in Sources */,
+				5C1F2BE52B63793F0035415E /* BackCard.swift in Sources */,
 				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
 				5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */,
 				5CEAB25D2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift in Sources */,

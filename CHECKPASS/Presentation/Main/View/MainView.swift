@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView<UVM: UserInfoVM>: View {
     @StateObject private var userInfoViewModel: UVM
+    @State private var showCardView: Bool = false
     @Binding private var selectedTab: Tab
     
     init(viewModel: UVM, selectedTab: Binding<Tab>) {
@@ -18,7 +19,7 @@ struct MainView<UVM: UserInfoVM>: View {
     
     var body: some View {
         ScrollView {
-            MainSubTitle("oo 님 안녕하세요!")
+            MainSubTitle("\(userInfoViewModel.simpleUserInfo?.userName ?? "") 님 안녕하세요!")
             
             ShortcutsView()
                 .padding([.leading, .trailing])
@@ -46,7 +47,9 @@ struct MainView<UVM: UserInfoVM>: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        showCardView.toggle()
+                    }, label: {
                         Image(systemName: "person.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -57,7 +60,13 @@ struct MainView<UVM: UserInfoVM>: View {
             }
         }
         .onAppear {
-            userInfoViewModel.getSimpleUserInfo()
+            if userInfoViewModel.simpleUserInfo == nil {
+                userInfoViewModel.getSimpleUserInfo()
+            }
+        }
+        .fullScreenCover(isPresented: $showCardView) {
+            MobileIdCardView<UVM>(showCardView: $showCardView)
+                .environmentObject(userInfoViewModel)
         }
     }
 }
