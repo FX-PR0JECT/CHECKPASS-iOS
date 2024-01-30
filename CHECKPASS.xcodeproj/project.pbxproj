@@ -32,6 +32,8 @@
 		5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124502B3D438B00D237D4 /* NameInputView.swift */; };
 		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
+		5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ADE802B6791C00001B3D8 /* WebView.swift */; };
+		5C3ADE832B6792B90001B3D8 /* WebBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ADE822B6792B90001B3D8 /* WebBrowserView.swift */; };
 		5C3EB8982B4795C800014394 /* HireDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EB8972B4795C800014394 /* HireDatePickerView.swift */; };
 		5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */; };
 		5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7F2B33F3AD004C6501 /* ContentView.swift */; };
@@ -40,6 +42,7 @@
 		5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C561E8C2B33F3BF004C6501 /* Alamofire */; };
 		5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E10E2B55FAD90024133E /* AuthDTO.swift */; };
 		5C66E1142B5650790024133E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E1132B5650790024133E /* MainTabView.swift */; };
+		5C72B26B2B687AEB0058DF4F /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C72B26A2B687AEB0058DF4F /* WebViewModel.swift */; };
 		5C93F0C52B60F50F005D576D /* MyLectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* MyLectureListView.swift */; };
 		5C93F0C82B60F6A0005D576D /* SeeMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */; };
 		5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CA2B60F796005D576D /* BoardView.swift */; };
@@ -127,6 +130,9 @@
 		5C2124502B3D438B00D237D4 /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		5C3ADE7A2B6772730001B3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C3ADE802B6791C00001B3D8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		5C3ADE822B6792B90001B3D8 /* WebBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserView.swift; sourceTree = "<group>"; };
 		5C3EB8972B4795C800014394 /* HireDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireDatePickerView.swift; sourceTree = "<group>"; };
 		5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHECKPASS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHECKPASSApp.swift; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 		5C561E842B33F3AE004C6501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C66E10E2B55FAD90024133E /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
 		5C66E1132B5650790024133E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		5C72B26A2B687AEB0058DF4F /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		5C93F0C42B60F50F005D576D /* MyLectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLectureListView.swift; sourceTree = "<group>"; };
 		5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreView.swift; sourceTree = "<group>"; };
 		5C93F0CA2B60F796005D576D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -281,10 +288,11 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
+				5C3ADE752B676E960001B3D8 /* WebView */,
 				5C1F2BE12B6379010035415E /* MobileIdCard */,
 				5C93F0C92B60F76F005D576D /* Board */,
 				5C93F0C62B60F68F005D576D /* SeeMore */,
-				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
 				5C93F0C32B60F4E5005D576D /* MyLectures */,
 				5C66E1122B5650650024133E /* Main */,
 				5C144ADE2B3E7F2E007E2E23 /* FindPassword */,
@@ -331,6 +339,15 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		5C3ADE752B676E960001B3D8 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				5C72B2682B687AD40058DF4F /* ViewModel */,
+				5C72B2692B687ADD0058DF4F /* View */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		5C561E712B33F3AD004C6501 = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +370,7 @@
 		5C561E7C2B33F3AD004C6501 /* CHECKPASS */ = {
 			isa = PBXGroup;
 			children = (
+				5C3ADE7A2B6772730001B3D8 /* Info.plist */,
 				5C987CB62B43E499006A2580 /* Data */,
 				5C987CB22B43C9FC006A2580 /* Domain */,
 				5C9A2A642B3BE36C006B176E /* Commons */,
@@ -379,6 +397,23 @@
 				5C1A37502B57A72700A0AE8A /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5C72B2682B687AD40058DF4F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C72B26A2B687AEB0058DF4F /* WebViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C72B2692B687ADD0058DF4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C3ADE802B6791C00001B3D8 /* WebView.swift */,
+				5C3ADE822B6792B90001B3D8 /* WebBrowserView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5C93F0C32B60F4E5005D576D /* MyLectures */ = {
@@ -727,6 +762,7 @@
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C93F0D32B6229D3005D576D /* TestView.swift in Sources */,
 				5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */,
+				5C72B26B2B687AEB0058DF4F /* WebViewModel.swift in Sources */,
 				5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
@@ -759,6 +795,8 @@
 				5C93F0CF2B620F8A005D576D /* MainSubTitle.swift in Sources */,
 				5CEAB2552B5E0A11000423C3 /* Colleges.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
+				5C3ADE832B6792B90001B3D8 /* WebBrowserView.swift in Sources */,
+				5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */,
 				5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */,
@@ -949,6 +987,7 @@
 				DEVELOPMENT_TEAM = QHK65XFL8U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CHECKPASS/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -983,6 +1022,7 @@
 				DEVELOPMENT_TEAM = QHK65XFL8U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CHECKPASS/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
