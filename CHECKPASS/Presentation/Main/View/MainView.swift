@@ -27,14 +27,32 @@ struct MainView<UVM: UserInfoVM>: View {
             MainSubTitle("출석하기")
             
             HStack(spacing: 15) {
-                NavigationLink(destination: {}, label: {
-                    AttendanceCardView("비콘으로")
+                NavigationLink(destination: {
+                    //Beacon Attendance View
+                }, label: {
+                    MainMediumCard(title: "비콘으로\n출석하기",
+                                   image: "",
+                                   imageOffset: (0, 20))
                 })
                 
-                NavigationLink(destination: {}, label: {
-                    AttendanceCardView("전자출결로")
+                NavigationLink(destination: {
+                    //E-attendance View
+                }, label: {
+                    MainMediumCard(title: "전자출결로\n출석하기",
+                                   image: "dart",
+                                   imageOffset: (0, 20))
                 })
             }
+            .padding([.leading, .trailing])
+            
+            MainSubTitle("시간표")
+            
+            NavigationLink(destination: {
+                //Timetable View
+            }, label: {
+                MainMediumCard(title: "시간표\n확인하기",
+                               image: "calender 2")
+            })
             .padding([.leading, .trailing])
         }
         .toolbar {

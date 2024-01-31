@@ -18,7 +18,7 @@ struct ShortcutsView: View {
             RoundedRectangle(cornerRadius: 20)
                 .frame(height: UIScreen.main.bounds.width * 0.2)
                 .foregroundColor(.white)
-                .shadow(radius: 2)
+                .shadow(color: Color(red: 213 / 255, green: 213 / 255, blue: 213 / 255), radius: 5, y: 3)
             
             HStack(spacing: UIScreen.main.bounds.width * 0.12) {
                 Button(action: {

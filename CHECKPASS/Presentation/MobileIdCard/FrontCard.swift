@@ -19,7 +19,7 @@ struct FrontCard<UVM: UserInfoVM>: View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(.white)
-                .shadow(radius: 3)
+                .shadow(radius: 5, y: 4)
             
             Image("qr_code")
                 .resizable()

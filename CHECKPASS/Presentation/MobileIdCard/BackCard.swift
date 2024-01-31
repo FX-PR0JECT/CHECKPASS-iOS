@@ -19,7 +19,7 @@ struct BackCard<UVM: UserInfoVM>: View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(Color(red: 26 / 255, green: 58 / 255, blue: 183 / 255))
-                .shadow(radius: 3)
+                .shadow(radius: 5, y: 4)
             
             VStack(spacing: 20) {
                 HStack {
