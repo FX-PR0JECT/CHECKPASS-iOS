@@ -43,7 +43,7 @@
 		5C66E10F2B55FAD90024133E /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E10E2B55FAD90024133E /* AuthDTO.swift */; };
 		5C66E1142B5650790024133E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66E1132B5650790024133E /* MainTabView.swift */; };
 		5C72B26B2B687AEB0058DF4F /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C72B26A2B687AEB0058DF4F /* WebViewModel.swift */; };
-		5C93F0C52B60F50F005D576D /* MyLectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* MyLectureListView.swift */; };
+		5C93F0C52B60F50F005D576D /* MyLectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* MyLectureList.swift */; };
 		5C93F0C82B60F6A0005D576D /* SeeMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */; };
 		5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CA2B60F796005D576D /* BoardView.swift */; };
 		5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */; };
@@ -74,6 +74,9 @@
 		5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86672B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift */; };
 		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
 		5CAA86842B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift */; };
+		5CB36C462B6B1C220042D9BA /* SimpleLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */; };
+		5CB36C482B6B20790042D9BA /* MyLectureListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C472B6B20790042D9BA /* MyLectureListRow.swift */; };
+		5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD037372B6C71EB0036448A /* Sectionheader.swift */; };
 		5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */; };
 		5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2522B5E0931000423C3 /* CollegesDTO.swift */; };
 		5CEAB2552B5E0A11000423C3 /* Colleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2542B5E0A11000423C3 /* Colleges.swift */; };
@@ -142,7 +145,7 @@
 		5C66E10E2B55FAD90024133E /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
 		5C66E1132B5650790024133E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5C72B26A2B687AEB0058DF4F /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
-		5C93F0C42B60F50F005D576D /* MyLectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLectureListView.swift; sourceTree = "<group>"; };
+		5C93F0C42B60F50F005D576D /* MyLectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLectureList.swift; sourceTree = "<group>"; };
 		5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreView.swift; sourceTree = "<group>"; };
 		5C93F0CA2B60F796005D576D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
@@ -174,6 +177,9 @@
 		5CAA86702B4C03D200357564 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAA86832B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicateCheckUseCaseTest.swift; sourceTree = "<group>"; };
+		5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLecture.swift; sourceTree = "<group>"; };
+		5CB36C472B6B20790042D9BA /* MyLectureListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLectureListRow.swift; sourceTree = "<group>"; };
+		5CD037372B6C71EB0036448A /* Sectionheader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sectionheader.swift; sourceTree = "<group>"; };
 		5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseTest.swift; sourceTree = "<group>"; };
 		5CD6E4F92B4E5D2400C02305 /* CHECKPASSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CEAB2522B5E0931000423C3 /* CollegesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegesDTO.swift; sourceTree = "<group>"; };
@@ -419,7 +425,9 @@
 		5C93F0C32B60F4E5005D576D /* MyLectures */ = {
 			isa = PBXGroup;
 			children = (
-				5C93F0C42B60F50F005D576D /* MyLectureListView.swift */,
+				5C93F0C42B60F50F005D576D /* MyLectureList.swift */,
+				5CB36C472B6B20790042D9BA /* MyLectureListRow.swift */,
+				5CD037372B6C71EB0036448A /* Sectionheader.swift */,
 			);
 			path = MyLectures;
 			sourceTree = "<group>";
@@ -533,6 +541,7 @@
 				5C962F042B50C13A007862B1 /* SimpleUserInfo.swift */,
 				5CEAB2542B5E0A11000423C3 /* Colleges.swift */,
 				5CEAB2582B5E2223000423C3 /* Departments.swift */,
+				5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -753,6 +762,7 @@
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
+				5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
 				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
 				5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */,
@@ -762,6 +772,7 @@
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C93F0D32B6229D3005D576D /* TestView.swift in Sources */,
 				5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */,
+				5CB36C462B6B1C220042D9BA /* SimpleLecture.swift in Sources */,
 				5C72B26B2B687AEB0058DF4F /* WebViewModel.swift in Sources */,
 				5C987CCA2B45361A006A2580 /* AuthResult.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */,
@@ -795,6 +806,7 @@
 				5C93F0CF2B620F8A005D576D /* MainSubTitle.swift in Sources */,
 				5CEAB2552B5E0A11000423C3 /* Colleges.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
+				5CB36C482B6B20790042D9BA /* MyLectureListRow.swift in Sources */,
 				5C3ADE832B6792B90001B3D8 /* WebBrowserView.swift in Sources */,
 				5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
@@ -803,7 +815,7 @@
 				5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
-				5C93F0C52B60F50F005D576D /* MyLectureListView.swift in Sources */,
+				5C93F0C52B60F50F005D576D /* MyLectureList.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C1F2BDE2B6375610035415E /* MainView.swift in Sources */,
 				5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */,
@@ -1035,6 +1047,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.CHECKPASS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -19,29 +19,27 @@ struct ContentView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
     }
     
     var body: some View {
-        NavigationStack {
-            switch signInViewModel.screenType {
-            case .signIn:
-                SignInView<KVM, SVM>()
-                    .environmentObject(keyboardViewModel)
-                    .environmentObject(signInViewModel)
-            case .main:
-                MainTabView()
-            default:
-                LaunchScreenView()
-            }
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.2, execute: {
-                withAnimation {
-                    if let id = UserDefaults.standard.string(forKey: "id"),
-                       let pw = UserDefaults.standard.string(forKey: "pw") {
-                        signInViewModel.executeSignIn(id: id, password: pw)
-                    } else {
-                        signInViewModel.screenType = .signIn
-                    }
+        switch signInViewModel.screenType {
+        case .signIn:
+            SignInView<KVM, SVM>()
+                .environmentObject(keyboardViewModel)
+                .environmentObject(signInViewModel)
+        case .main:
+            MainTabView()
+        default:
+            LaunchScreenView()
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.2, execute: {
+                        withAnimation {
+                            if let id = UserDefaults.standard.string(forKey: "id"),
+                               let pw = UserDefaults.standard.string(forKey: "pw") {
+                                signInViewModel.executeSignIn(id: id, password: pw)
+                            } else {
+                                signInViewModel.screenType = .signIn
+                            }
+                        }
+                    })
                 }
-            })
         }
     }
 }

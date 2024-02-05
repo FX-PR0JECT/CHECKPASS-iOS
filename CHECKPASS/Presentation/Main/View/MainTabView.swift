@@ -7,37 +7,24 @@
 
 import SwiftUI
 
-enum Tab {
-    case main
-    case myLectures
-    case board
-    case seeMore
-}
-
 struct MainTabView: View {
-    @State private var selectedTab: Tab = .main
-    
     var body: some View {
-        TabView(selection: $selectedTab) {
-            MainView(viewModel: AppDI.shared().getUserInfoViewModel() as! UserInfoViewModel,
-                     selectedTab: $selectedTab)
-                .tag(Tab.main)
+        TabView() {
+            MainView(viewModel: AppDI.shared().getUserInfoViewModel() as! UserInfoViewModel)
                 .tabItem {
                     Image(systemName: "house.fill")
                     
                     Text("홈")
                 }
             
-            MyLectureListView()
-                .tag(Tab.myLectures)
+            MyLectureList()
                 .tabItem {
-                    Image(systemName: "person.bust")
+                    Image(systemName: "graduationcap.fill")
                     
                     Text("내 강의")
                 }
             
             BoardView()
-                .tag(Tab.board)
                 .tabItem {
                     Image(systemName: "ellipsis.message")
                     
@@ -45,7 +32,6 @@ struct MainTabView: View {
                 }
             
             SeeMoreView()
-                .tag(Tab.seeMore)
                 .tabItem {
                     Image(systemName: "ellipsis")
                     
