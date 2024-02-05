@@ -31,7 +31,8 @@ struct MainView<UVM: UserInfoVM>: View {
                     }, label: {
                         MainMediumCard(title: "비콘으로\n출석하기",
                                        image: "mobile",
-                                       imageOffset: (0, 20))
+                                       imageOffset: (-13, 20),
+                                       scale: 0.21)
                     })
                     
                     NavigationLink(destination: {

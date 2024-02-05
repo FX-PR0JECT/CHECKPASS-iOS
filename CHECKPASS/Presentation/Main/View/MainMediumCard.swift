@@ -10,13 +10,16 @@ import SwiftUI
 struct MainMediumCard: View {
     let title: String, image: String
     let xOffset: CGFloat?, yOffset: CGFloat?
+    let scale: Double
     
     init(title: String, image: String,
-         imageOffset: (x: CGFloat, y: CGFloat)? = nil) {
+         imageOffset: (x: CGFloat, y: CGFloat)? = nil,
+         scale: Double = 0.25) {
         self.title = title
         self.image = image
         self.xOffset = imageOffset?.x
         self.yOffset = imageOffset?.y
+        self.scale = scale
     }
     
     var body: some View {
@@ -48,7 +51,7 @@ struct MainMediumCard: View {
                 Image(image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: UIScreen.main.bounds.width * 0.25)
+                    .frame(height: UIScreen.main.bounds.width * scale)
                     .padding(.trailing)
                     .offset(x: xOffset ?? 0, y: yOffset ?? 0)
             }
@@ -57,5 +60,5 @@ struct MainMediumCard: View {
 }
 
 #Preview {
-    MainMediumCard(title: "비콘으로", image: "dart")
+    MainMediumCard(title: "비콘으로", image: "mobile")
 }
