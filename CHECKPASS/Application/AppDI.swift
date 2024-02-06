@@ -39,13 +39,14 @@ class AppDI {
     }
     
     //get SignIn ViewModel
-    func getSignInViewModel() -> DefaultSignInViewModel {
+    func getAuthViewModel() -> DefaultAuthViewModel {
         //Repository
         let repository = DefaultAuthRepository(dataSource: dataSource)
         //UseCase
         let signInUseCase = DefaultSignInUseCase(repository: repository)
+        let logoutUseCase = DefaultLogoutUseCase(repository: repository)
         //ViewModel
-        let viewModel = DefaultSignInViewModel(usecase: signInUseCase)
+        let viewModel = DefaultAuthViewModel(signInUseCase: signInUseCase, logoutUseCase: logoutUseCase)
         
         return viewModel
     }

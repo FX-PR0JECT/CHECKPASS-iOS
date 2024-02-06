@@ -12,7 +12,7 @@ struct CHECKPASSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(keyboardViewModel: KeyboardViewModel(),
-                        signInViewModel: AppDI.shared().getSignInViewModel())
+                        authViewModel: AppDI.shared().getAuthViewModel())
         }
     }
 }

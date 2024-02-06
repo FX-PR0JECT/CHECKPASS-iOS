@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct MainTabView: View {
+struct MainTabView<AVM: AuthViewModel>: View {
+    @EnvironmentObject private var authViewModel: AVM
+    
     var body: some View {
         TabView() {
             MainView(viewModel: AppDI.shared().getUserInfoViewModel() as! UserInfoViewModel)
@@ -31,7 +33,8 @@ struct MainTabView: View {
                     Text("게시판")
                 }
             
-            SeeMoreView()
+            SeeMoreView<AVM>()
+                .environmentObject(authViewModel)
                 .tabItem {
                     Image(systemName: "ellipsis")
                     
@@ -42,5 +45,6 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView<DefaultAuthViewModel>()
+        .environmentObject(AppDI.shared().getAuthViewModel())
 }

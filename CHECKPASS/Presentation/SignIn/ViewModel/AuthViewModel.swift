@@ -1,5 +1,5 @@
 //
-//  SignInViewModel.swift
+//  DefaultAuthViewModel.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 1/11/24.
@@ -20,30 +20,33 @@ enum ScreenType {
     case signIn
 }
 
-protocol SignInViewModel: ObservableObject {
+protocol AuthViewModel: ObservableObject {
     var isSignInProgress: Bool { get set }
     var showSignInAlert: Bool { get set }
     var alertType: SignInAlert? { get set }
     var screenType: ScreenType { get set }
     
     func executeSignIn(id: String, password: String)
+    func executeLogout()
 }
 
-final class DefaultSignInViewModel {
+final class DefaultAuthViewModel {
     @Published var isSignInProgress: Bool = false
     @Published var showSignInAlert: Bool = false
     @Published var alertType: SignInAlert?
     @Published var screenType: ScreenType = .launchScreen
     
-    private let usecase: SignInUseCase
+    private let signInUseCase: SignInUseCase
+    private let logoutUseCase: LogoutUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    init(usecase: SignInUseCase) {
-        self.usecase = usecase
+    init(signInUseCase: SignInUseCase, logoutUseCase: LogoutUseCase) {
+        self.signInUseCase = signInUseCase
+        self.logoutUseCase = logoutUseCase
     }
 }
 
-extension DefaultSignInViewModel: SignInViewModel {
+extension DefaultAuthViewModel: AuthViewModel {
     func executeSignIn(id: String, password: String) {
         guard !id.isEmpty && !password.isEmpty else {
             showSignInAlert = true
@@ -55,7 +58,7 @@ extension DefaultSignInViewModel: SignInViewModel {
         isSignInProgress = true
         let data = ["loginId": id, "loginPassword": password]
         
-        usecase.executeForSignIn(data: data)
+        signInUseCase.executeForSignIn(data: data)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -80,6 +83,25 @@ extension DefaultSignInViewModel: SignInViewModel {
                     
                     withAnimation {
                         self?.screenType = .main    //Change View
+                    }
+                }
+            })
+            .store(in: &cancellables)
+    }
+    
+    func executeLogout() {
+        logoutUseCase.executeForLogout()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("successfully finished logout")
+                case .failure(let error):
+                    print("executeLogout(): Error: " , error)
+                }
+            }, receiveValue: { [weak self] in
+                if $0.result {
+                    withAnimation {
+                        self?.screenType = .signIn
                     }
                 }
             })

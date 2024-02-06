@@ -8,24 +8,25 @@
 import SwiftUI
 import Foundation
 
-struct ContentView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
+struct ContentView<KVM: KeyboardVM, AVM: AuthViewModel>: View {
     @StateObject private var keyboardViewModel: KVM
-    @StateObject private var signInViewModel: SVM
+    @StateObject private var authViewModel: AVM
     @State private var isNextViewPresented: Bool = false
     
-    init(keyboardViewModel: KVM, signInViewModel: SVM) {
+    init(keyboardViewModel: KVM, authViewModel: AVM) {
         _keyboardViewModel = StateObject(wrappedValue: keyboardViewModel)
-        _signInViewModel = StateObject(wrappedValue: signInViewModel)
+        _authViewModel = StateObject(wrappedValue: authViewModel)
     }
     
     var body: some View {
-        switch signInViewModel.screenType {
+        switch authViewModel.screenType {
         case .signIn:
-            SignInView<KVM, SVM>()
+            SignInView<KVM, AVM>()
                 .environmentObject(keyboardViewModel)
-                .environmentObject(signInViewModel)
+                .environmentObject(authViewModel)
         case .main:
-            MainTabView()
+            MainTabView<AVM>()
+                .environmentObject(authViewModel)
         default:
             LaunchScreenView()
                 .onAppear {
@@ -33,9 +34,9 @@ struct ContentView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
                         withAnimation {
                             if let id = UserDefaults.standard.string(forKey: "id"),
                                let pw = UserDefaults.standard.string(forKey: "pw") {
-                                signInViewModel.executeSignIn(id: id, password: pw)
+                                authViewModel.executeSignIn(id: id, password: pw)
                             } else {
-                                signInViewModel.screenType = .signIn
+                                authViewModel.screenType = .signIn
                             }
                         }
                     })
@@ -45,5 +46,5 @@ struct ContentView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
 }
 
 #Preview {
-    ContentView<KeyboardViewModel, DefaultSignInViewModel>(keyboardViewModel: KeyboardViewModel(), signInViewModel: AppDI.shared().getSignInViewModel())
+    ContentView<KeyboardViewModel, DefaultAuthViewModel>(keyboardViewModel: KeyboardViewModel(), authViewModel: AppDI.shared().getAuthViewModel())
 }

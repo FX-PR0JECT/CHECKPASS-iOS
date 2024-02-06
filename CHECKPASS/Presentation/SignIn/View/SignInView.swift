@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignInView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
+struct SignInView<KVM: KeyboardVM, SVM: AuthViewModel>: View {
     @EnvironmentObject private var keyboardViewModel: KVM
     @EnvironmentObject private var signInViewModel: SVM
     @State private var id: String = ""
@@ -39,6 +39,7 @@ struct SignInView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
                     
                     //MARK: - Sign In Button
                     Button(action: {
+                        dismissKeyboard()
                         signInViewModel.executeSignIn(id: id, password: pw)
                     }, label: {
                         if signInViewModel.isSignInProgress {
@@ -111,7 +112,7 @@ struct SignInView<KVM: KeyboardVM, SVM: SignInViewModel>: View {
 }
 
 #Preview {
-    SignInView<KeyboardViewModel, DefaultSignInViewModel>()
+    SignInView<KeyboardViewModel, DefaultAuthViewModel>()
         .environmentObject(KeyboardViewModel())
-        .environmentObject(AppDI.shared().getSignInViewModel())
+        .environmentObject(AppDI.shared().getAuthViewModel())
 }

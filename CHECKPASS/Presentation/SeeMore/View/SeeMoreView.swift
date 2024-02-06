@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SeeMoreView: View {
+struct SeeMoreView<AVM: AuthViewModel>: View {
+    @EnvironmentObject private var authViewModel: AVM
     @State private var showLogoutAlert: Bool = false
     
     var body: some View {
@@ -22,7 +23,7 @@ struct SeeMoreView: View {
                     })
                     .alert("계정에서 로그아웃 하시겠어요?", isPresented: $showLogoutAlert) {
                         Button(role: .destructive) {
-                            // Handle the deletion.
+                            authViewModel.executeLogout()
                         } label: {
                             Text("로그아웃")
                         }
@@ -37,5 +38,5 @@ struct SeeMoreView: View {
 }
 
 #Preview {
-    SeeMoreView()
+    SeeMoreView<DefaultAuthViewModel>()
 }

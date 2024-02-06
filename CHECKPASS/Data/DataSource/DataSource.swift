@@ -12,26 +12,32 @@ enum PostRequestUrl: String {
     case signUpForStudent = "http://localhost:8080/users/studentSignup"
     case signUpForStaff = "http://localhost:8080/users/professorSignup"
     case signIn = "http://localhost:8080/login"
+    case logout = "http://localhost:8080/logout"
 }
 
 protocol DataSource {
-    func sendPostRequest<DTO: Codable>(_ params: Parameters, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPostRequest<DTO: Codable>(_ params: Parameters?, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
 final class DefaultDataSource: DataSource {
     //MARK: - request POST api
-    func sendPostRequest<DTO: Codable>(_ params: Parameters, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
-        return AF.request(url.rawValue,
-                          method: .post,
-                          parameters: params,
-                          encoding: JSONEncoding.default)
-                    .publishDecodable(type: resultType)    //decode and return Publisher
-                    .value()    //get value
-                    .mapError {
-                        return $0 as Error
-                    }
-                    .eraseToAnyPublisher()
+    func sendPostRequest<DTO: Codable>(_ params: Parameters? = nil, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+        var dataRequest: DataRequest
+        
+        if let params = params {
+            dataRequest = AF.request(url.rawValue, method: .post,
+                                  parameters: params, encoding: JSONEncoding.default)
+        } else {
+            dataRequest = AF.request(url.rawValue, method: .post)
+        }
+        
+        return dataRequest.publishDecodable(type: resultType)    //decode and return Publisher
+                            .value()    //get value
+                            .mapError {
+                                return $0 as Error
+                            }
+                            .eraseToAnyPublisher()
     }
     
     //MARK: - request GET api
