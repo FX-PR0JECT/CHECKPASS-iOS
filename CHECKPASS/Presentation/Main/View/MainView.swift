@@ -36,7 +36,7 @@ struct MainView<UVM: UserInfoVM>: View {
                     })
                     
                     NavigationLink(destination: {
-                        //E-attendance View
+                        EAttendanceList()
                     }, label: {
                         MainMediumCard(title: "전자출결로\n출석하기",
                                        image: "dart",

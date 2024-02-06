@@ -75,7 +75,10 @@
 		5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86702B4C03D200357564 /* AuthRepository.swift */; };
 		5CAA86842B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift */; };
 		5CB36C462B6B1C220042D9BA /* SimpleLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */; };
-		5CB36C482B6B20790042D9BA /* MyLectureListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C472B6B20790042D9BA /* MyLectureListRow.swift */; };
+		5CB36C482B6B20790042D9BA /* SimpleLectureListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */; };
+		5CCEC3842B7099F100460B4B /* EAttendanceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3832B7099F100460B4B /* EAttendanceList.swift */; };
+		5CCEC3862B709D1600460B4B /* EAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3852B709D1600460B4B /* EAttendance.swift */; };
+		5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3872B709F0300460B4B /* CodeInput.swift */; };
 		5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD037372B6C71EB0036448A /* Sectionheader.swift */; };
 		5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */; };
 		5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2522B5E0931000423C3 /* CollegesDTO.swift */; };
@@ -178,7 +181,10 @@
 		5CAA86762B4D144200357564 /* CHECKPASSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAA86832B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicateCheckUseCaseTest.swift; sourceTree = "<group>"; };
 		5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLecture.swift; sourceTree = "<group>"; };
-		5CB36C472B6B20790042D9BA /* MyLectureListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLectureListRow.swift; sourceTree = "<group>"; };
+		5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLectureListRow.swift; sourceTree = "<group>"; };
+		5CCEC3832B7099F100460B4B /* EAttendanceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendanceList.swift; sourceTree = "<group>"; };
+		5CCEC3852B709D1600460B4B /* EAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendance.swift; sourceTree = "<group>"; };
+		5CCEC3872B709F0300460B4B /* CodeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInput.swift; sourceTree = "<group>"; };
 		5CD037372B6C71EB0036448A /* Sectionheader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sectionheader.swift; sourceTree = "<group>"; };
 		5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseTest.swift; sourceTree = "<group>"; };
 		5CD6E4F92B4E5D2400C02305 /* CHECKPASSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHECKPASSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +300,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5CCEC3802B7099BE00460B4B /* EAttendance */,
 				5C561E7F2B33F3AD004C6501 /* ContentView.swift */,
 				5C3ADE752B676E960001B3D8 /* WebView */,
 				5C1F2BE12B6379010035415E /* MobileIdCard */,
@@ -426,7 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				5C93F0C42B60F50F005D576D /* MyLectureList.swift */,
-				5CB36C472B6B20790042D9BA /* MyLectureListRow.swift */,
+				5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */,
 				5CD037372B6C71EB0036448A /* Sectionheader.swift */,
 			);
 			path = MyLectures;
@@ -622,6 +629,32 @@
 			path = Usecases;
 			sourceTree = "<group>";
 		};
+		5CCEC3802B7099BE00460B4B /* EAttendance */ = {
+			isa = PBXGroup;
+			children = (
+				5CCEC3822B7099D800460B4B /* ViewModel */,
+				5CCEC3812B7099D400460B4B /* View */,
+			);
+			path = EAttendance;
+			sourceTree = "<group>";
+		};
+		5CCEC3812B7099D400460B4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CCEC3832B7099F100460B4B /* EAttendanceList.swift */,
+				5CCEC3852B709D1600460B4B /* EAttendance.swift */,
+				5CCEC3872B709F0300460B4B /* CodeInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CCEC3822B7099D800460B4B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -801,12 +834,13 @@
 				5C1F2BE72B638D340035415E /* CardDetail.swift in Sources */,
 				5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */,
 				5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */,
+				5CCEC3862B709D1600460B4B /* EAttendance.swift in Sources */,
 				5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */,
 				5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */,
 				5C93F0CF2B620F8A005D576D /* MainSubTitle.swift in Sources */,
 				5CEAB2552B5E0A11000423C3 /* Colleges.swift in Sources */,
 				5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */,
-				5CB36C482B6B20790042D9BA /* MyLectureListRow.swift in Sources */,
+				5CB36C482B6B20790042D9BA /* SimpleLectureListRow.swift in Sources */,
 				5C3ADE832B6792B90001B3D8 /* WebBrowserView.swift in Sources */,
 				5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
@@ -814,6 +848,7 @@
 				5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */,
 				5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
+				5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C93F0C52B60F50F005D576D /* MyLectureList.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
@@ -830,6 +865,7 @@
 				5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */,
 				5CEAB25D2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
+				5CCEC3842B7099F100460B4B /* EAttendanceList.swift in Sources */,
 				5C1A37542B57A76100A0AE8A /* UserInfoVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

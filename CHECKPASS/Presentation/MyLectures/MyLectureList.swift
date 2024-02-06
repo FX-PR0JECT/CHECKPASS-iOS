@@ -36,7 +36,7 @@ struct MyLectureList: View {
                             NavigationLink(destination: {
                                 //Lecture Detail
                             }, label: {
-                                MyLectureListRow(lecture)
+                                SimpleLectureListRow(lecture)
                             })
                         }
                     }

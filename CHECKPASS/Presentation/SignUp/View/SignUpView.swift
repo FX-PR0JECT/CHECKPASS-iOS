@@ -158,7 +158,7 @@ struct SignUpView<SVM: SignUpVM>: View {
     }
 }
 
-extension SignUpView {
+extension View {
     //MARK: - keyboard dismiss method
     func dismissKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

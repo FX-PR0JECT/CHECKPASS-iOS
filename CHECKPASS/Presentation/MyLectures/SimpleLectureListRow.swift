@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MyLectureListRow: View {
+struct SimpleLectureListRow: View {
     private let lecture: SimpleLecture
     
     init(_ lecture: SimpleLecture) {
@@ -32,6 +32,6 @@ struct MyLectureListRow: View {
 
 #if DEBUG
 #Preview {
-    MyLectureListRow(SimpleLecture(id: "123456", name: "객체지향설계", professor: "홍길동", division: "1분반"))
+    SimpleLectureListRow(SimpleLecture(id: "123456", name: "객체지향설계", professor: "홍길동", division: "1분반"))
 }
 #endif
