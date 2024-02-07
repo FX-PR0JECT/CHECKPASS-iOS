@@ -7,20 +7,32 @@
 
 import SwiftUI
 
-struct SeeMoreView<AVM: AuthViewModel>: View {
+struct SeeMoreView<AVM: AuthVM, UVM: UserInfoVM>: View {
     @EnvironmentObject private var authViewModel: AVM
+    @EnvironmentObject private var userInfoViewModel: UVM
     @State private var showLogoutAlert: Bool = false
     
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text("로그인 관리")) {
+                Section {
+                    NavigationLink(destination: {
+                        DetailUserInfo<UVM>()
+                            .environmentObject(userInfoViewModel)
+                    }, label: {
+                        UserCard(simpleUserInfo: .constant(SimpleUserInfo.sampleData))
+                    })
+                    .listRowSeparator(.hidden)
+                }
+                
+                Section(header: Sectionheader(header: "계정 관리")) {
                     Button(action: {
                         showLogoutAlert.toggle()
                     }, label: {
                         Text("로그아웃")
                             .foregroundColor(.red)
                     })
+                    .listRowSeparator(.hidden)
                     .alert("계정에서 로그아웃 하시겠어요?", isPresented: $showLogoutAlert) {
                         Button(role: .destructive) {
                             authViewModel.executeLogout()
@@ -29,6 +41,7 @@ struct SeeMoreView<AVM: AuthViewModel>: View {
                         }
                     }
                 }
+                .listSectionSeparator(.visible, edges: .bottom)
             }
             .navigationTitle("더보기")
             .navigationBarTitleDisplayMode(.large)
@@ -38,5 +51,6 @@ struct SeeMoreView<AVM: AuthViewModel>: View {
 }
 
 #Preview {
-    SeeMoreView<DefaultAuthViewModel>()
+    SeeMoreView<AuthViewModel, UserInfoViewModel>()
+        .environmentObject(AppDI.shared().getUserInfoViewModel())
 }

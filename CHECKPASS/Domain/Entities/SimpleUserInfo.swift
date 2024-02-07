@@ -13,3 +13,12 @@ struct SimpleUserInfo {
     let userDepartment: String
     let jobType: JobType?
 }
+
+#if DEBUG
+extension SimpleUserInfo {
+    static var sampleData: Self {
+        return SimpleUserInfo(userId: 1234567, userName: "홍길동",
+                              userDepartment: "컴퓨터소프트웨어학과", jobType: .student)
+    }
+}
+#endif

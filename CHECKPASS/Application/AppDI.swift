@@ -14,7 +14,7 @@ class AppDI {
     }
     
     //get UserInfo ViewModel
-    func getUserInfoViewModel() -> any UserInfoVM {
+    func getUserInfoViewModel() -> UserInfoViewModel {
         let repository = DefaultUserRepository(dataSource: dataSource)
         let useCase = DefaultGetUserInfoUseCase(repository: repository)
         let viewModel = UserInfoViewModel(useCase: useCase)
@@ -39,14 +39,14 @@ class AppDI {
     }
     
     //get SignIn ViewModel
-    func getAuthViewModel() -> DefaultAuthViewModel {
+    func getAuthViewModel() -> AuthViewModel {
         //Repository
         let repository = DefaultAuthRepository(dataSource: dataSource)
         //UseCase
         let signInUseCase = DefaultSignInUseCase(repository: repository)
         let logoutUseCase = DefaultLogoutUseCase(repository: repository)
         //ViewModel
-        let viewModel = DefaultAuthViewModel(signInUseCase: signInUseCase, logoutUseCase: logoutUseCase)
+        let viewModel = AuthViewModel(signInUseCase: signInUseCase, logoutUseCase: logoutUseCase)
         
         return viewModel
     }

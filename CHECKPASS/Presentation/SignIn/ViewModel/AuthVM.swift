@@ -20,7 +20,7 @@ enum ScreenType {
     case signIn
 }
 
-protocol AuthViewModel: ObservableObject {
+protocol AuthVM: ObservableObject {
     var isSignInProgress: Bool { get set }
     var showSignInAlert: Bool { get set }
     var alertType: SignInAlert? { get set }
@@ -30,7 +30,7 @@ protocol AuthViewModel: ObservableObject {
     func executeLogout()
 }
 
-final class DefaultAuthViewModel {
+final class AuthViewModel {
     @Published var isSignInProgress: Bool = false
     @Published var showSignInAlert: Bool = false
     @Published var alertType: SignInAlert?
@@ -46,7 +46,7 @@ final class DefaultAuthViewModel {
     }
 }
 
-extension DefaultAuthViewModel: AuthViewModel {
+extension AuthViewModel: AuthVM {
     func executeSignIn(id: String, password: String) {
         guard !id.isEmpty && !password.isEmpty else {
             showSignInAlert = true

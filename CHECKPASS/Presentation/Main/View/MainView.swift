@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct MainView<UVM: UserInfoVM>: View {
-    @StateObject private var userInfoViewModel: UVM
+    @EnvironmentObject private var userInfoViewModel: UVM
     @State private var showCardView: Bool = false
-    
-    init(viewModel: UVM) {
-        _userInfoViewModel = StateObject(wrappedValue: viewModel)
-    }
     
     var body: some View {
         NavigationStack {
@@ -89,5 +85,6 @@ struct MainView<UVM: UserInfoVM>: View {
 }
 
 #Preview {
-    MainView<UserInfoViewModel>(viewModel: AppDI.shared().getUserInfoViewModel() as! UserInfoViewModel)
+    MainView<UserInfoViewModel>()
+        .environmentObject(AppDI.shared().getUserInfoViewModel())
 }

@@ -35,6 +35,8 @@
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
 		5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ADE802B6791C00001B3D8 /* WebView.swift */; };
 		5C3ADE832B6792B90001B3D8 /* WebBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ADE822B6792B90001B3D8 /* WebBrowserView.swift */; };
+		5C3B11842B73141200256BF0 /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B11832B73141200256BF0 /* UserCard.swift */; };
+		5C3B11862B7339D900256BF0 /* DetailUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B11852B7339D900256BF0 /* DetailUserInfo.swift */; };
 		5C3EB8982B4795C800014394 /* HireDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EB8972B4795C800014394 /* HireDatePickerView.swift */; };
 		5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */; };
 		5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7F2B33F3AD004C6501 /* ContentView.swift */; };
@@ -66,7 +68,7 @@
 		5C9A2A612B3BAB6E006B176E /* PickerContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A602B3BAB6E006B176E /* PickerContents.swift */; };
 		5C9A2A662B3BF3A3006B176E /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */; };
 		5C9A2A682B3BF8C0006B176E /* SignUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */; };
-		5C9C5D302B4FB27A00F87F5F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D2F2B4FB27A00F87F5F /* AuthViewModel.swift */; };
+		5C9C5D302B4FB27A00F87F5F /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D2F2B4FB27A00F87F5F /* AuthVM.swift */; };
 		5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */; };
 		5C9C5D382B4FBDF400F87F5F /* SignInUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C5D372B4FBDF400F87F5F /* SignInUseCaseTest.swift */; };
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
@@ -141,6 +143,8 @@
 		5C3ADE7A2B6772730001B3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5C3ADE802B6791C00001B3D8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		5C3ADE822B6792B90001B3D8 /* WebBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserView.swift; sourceTree = "<group>"; };
+		5C3B11832B73141200256BF0 /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		5C3B11852B7339D900256BF0 /* DetailUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserInfo.swift; sourceTree = "<group>"; };
 		5C3EB8972B4795C800014394 /* HireDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireDatePickerView.swift; sourceTree = "<group>"; };
 		5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHECKPASS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHECKPASSApp.swift; sourceTree = "<group>"; };
@@ -172,7 +176,7 @@
 		5C9A2A602B3BAB6E006B176E /* PickerContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerContents.swift; sourceTree = "<group>"; };
 		5C9A2A652B3BF3A3006B176E /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
 		5C9A2A672B3BF8C0006B176E /* SignUpPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPickerView.swift; sourceTree = "<group>"; };
-		5C9C5D2F2B4FB27A00F87F5F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		5C9C5D2F2B4FB27A00F87F5F /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		5C9C5D312B4FB3F400F87F5F /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
 		5C9C5D372B4FBDF400F87F5F /* SignInUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCaseTest.swift; sourceTree = "<group>"; };
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */,
+				5C3B11832B73141200256BF0 /* UserCard.swift */,
+				5C3B11852B7339D900256BF0 /* DetailUserInfo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,7 +355,7 @@
 		5C32B2492B352AF90036CDF2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5C9C5D2F2B4FB27A00F87F5F /* AuthViewModel.swift */,
+				5C9C5D2F2B4FB27A00F87F5F /* AuthVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -807,6 +813,7 @@
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
 				5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */,
+				5C3B11862B7339D900256BF0 /* DetailUserInfo.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
 				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
 				5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */,
@@ -869,11 +876,12 @@
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
 				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
 				5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */,
-				5C9C5D302B4FB27A00F87F5F /* AuthViewModel.swift in Sources */,
+				5C9C5D302B4FB27A00F87F5F /* AuthVM.swift in Sources */,
 				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,
 				5C1A374D2B57A01600A0AE8A /* GetUserInfoUseCase.swift in Sources */,
 				5C1F2BE52B63793F0035415E /* BackCard.swift in Sources */,
 				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
+				5C3B11842B73141200256BF0 /* UserCard.swift in Sources */,
 				5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */,
 				5CEAB25D2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,

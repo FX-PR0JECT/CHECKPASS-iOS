@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignInView<KVM: KeyboardVM, SVM: AuthViewModel>: View {
+struct SignInView<KVM: KeyboardVM, SVM: AuthVM>: View {
     @EnvironmentObject private var keyboardViewModel: KVM
     @EnvironmentObject private var signInViewModel: SVM
     @State private var id: String = ""
@@ -112,7 +112,7 @@ struct SignInView<KVM: KeyboardVM, SVM: AuthViewModel>: View {
 }
 
 #Preview {
-    SignInView<KeyboardViewModel, DefaultAuthViewModel>()
+    SignInView<KeyboardViewModel, AuthViewModel>()
         .environmentObject(KeyboardViewModel())
         .environmentObject(AppDI.shared().getAuthViewModel())
 }

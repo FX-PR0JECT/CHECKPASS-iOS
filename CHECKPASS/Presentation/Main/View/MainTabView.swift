@@ -7,12 +7,18 @@
 
 import SwiftUI
 
-struct MainTabView<AVM: AuthViewModel>: View {
+struct MainTabView<AVM: AuthVM, UVM: UserInfoVM>: View {
+    @StateObject private var userInfoViewModel: UVM
     @EnvironmentObject private var authViewModel: AVM
+    
+    init(viewModel: UVM) {
+        _userInfoViewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         TabView() {
-            MainView(viewModel: AppDI.shared().getUserInfoViewModel() as! UserInfoViewModel)
+            MainView<UVM>()
+                .environmentObject(userInfoViewModel)
                 .tabItem {
                     Image(systemName: "house.fill")
                     
@@ -33,8 +39,9 @@ struct MainTabView<AVM: AuthViewModel>: View {
                     Text("게시판")
                 }
             
-            SeeMoreView<AVM>()
+            SeeMoreView<AVM, UVM>()
                 .environmentObject(authViewModel)
+                .environmentObject(userInfoViewModel)
                 .tabItem {
                     Image(systemName: "ellipsis")
                     
@@ -45,6 +52,6 @@ struct MainTabView<AVM: AuthViewModel>: View {
 }
 
 #Preview {
-    MainTabView<DefaultAuthViewModel>()
+    MainTabView<AuthViewModel, UserInfoViewModel>(viewModel: AppDI.shared().getUserInfoViewModel())
         .environmentObject(AppDI.shared().getAuthViewModel())
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct ContentView<KVM: KeyboardVM, AVM: AuthViewModel>: View {
+struct ContentView<KVM: KeyboardVM, AVM: AuthVM>: View {
     @StateObject private var keyboardViewModel: KVM
     @StateObject private var authViewModel: AVM
     @State private var isNextViewPresented: Bool = false
@@ -25,7 +25,7 @@ struct ContentView<KVM: KeyboardVM, AVM: AuthViewModel>: View {
                 .environmentObject(keyboardViewModel)
                 .environmentObject(authViewModel)
         case .main:
-            MainTabView<AVM>()
+            MainTabView<AVM, _>(viewModel: AppDI.shared().getUserInfoViewModel())
                 .environmentObject(authViewModel)
         default:
             LaunchScreenView()
@@ -46,5 +46,5 @@ struct ContentView<KVM: KeyboardVM, AVM: AuthViewModel>: View {
 }
 
 #Preview {
-    ContentView<KeyboardViewModel, DefaultAuthViewModel>(keyboardViewModel: KeyboardViewModel(), authViewModel: AppDI.shared().getAuthViewModel())
+    ContentView<KeyboardViewModel, AuthViewModel>(keyboardViewModel: KeyboardViewModel(), authViewModel: AppDI.shared().getAuthViewModel())
 }
