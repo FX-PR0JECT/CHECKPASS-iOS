@@ -17,7 +17,7 @@ struct SeeMoreView<AVM: AuthVM, UVM: UserInfoVM>: View {
             List {
                 Section {
                     NavigationLink(destination: {
-                        DetailUserInfo<UVM>()
+                        DetailedUserInfoView<UVM>()
                             .environmentObject(userInfoViewModel)
                     }, label: {
                         UserCard(simpleUserInfo: .constant(SimpleUserInfo.sampleData))

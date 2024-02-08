@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030D1C2B464738004B19AB /* SignUpStartView.swift */; };
 		5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030D1E2B4648AA004B19AB /* JobPicker.swift */; };
+		5C0705702B749180007531C8 /* DetailedUserInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C07056F2B749180007531C8 /* DetailedUserInfoRow.swift */; };
+		5C0705722B7495A1007531C8 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0705712B7495A1007531C8 /* ProfileImage.swift */; };
 		5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */; };
 		5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */; };
 		5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144AE12B3E90EC007E2E23 /* FindPwView.swift */; };
@@ -119,6 +121,8 @@
 /* Begin PBXFileReference section */
 		5C030D1C2B464738004B19AB /* SignUpStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStartView.swift; sourceTree = "<group>"; };
 		5C030D1E2B4648AA004B19AB /* JobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPicker.swift; sourceTree = "<group>"; };
+		5C07056F2B749180007531C8 /* DetailedUserInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoRow.swift; sourceTree = "<group>"; };
+		5C0705712B7495A1007531C8 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
 		5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementButton.swift; sourceTree = "<group>"; };
 		5C144AE12B3E90EC007E2E23 /* FindPwView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwView.swift; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 				5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */,
 				5C3B11832B73141200256BF0 /* UserCard.swift */,
 				5C3B11852B7339D900256BF0 /* DetailedUserInfoView.swift */,
+				5C07056F2B749180007531C8 /* DetailedUserInfoRow.swift */,
+				5C0705712B7495A1007531C8 /* ProfileImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -859,6 +865,7 @@
 				5C21244D2B3D172000D237D4 /* SignUpVM.swift in Sources */,
 				5CEAB2632B5E2E0D000423C3 /* CollegesRepository.swift in Sources */,
 				5C3B11882B73592600256BF0 /* DetailedUserInfoDTO.swift in Sources */,
+				5C0705702B749180007531C8 /* DetailedUserInfoRow.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,
 				5C9A2A5B2B3B9F18006B176E /* SignUpView.swift in Sources */,
 				5C1F2BE72B638D340035415E /* CardDetail.swift in Sources */,
@@ -889,6 +896,7 @@
 				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
 				5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */,
 				5C9C5D302B4FB27A00F87F5F /* AuthVM.swift in Sources */,
+				5C0705722B7495A1007531C8 /* ProfileImage.swift in Sources */,
 				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,
 				5C1A374D2B57A01600A0AE8A /* GetUserInfoUseCase.swift in Sources */,
 				5C1F2BE52B63793F0035415E /* BackCard.swift in Sources */,
