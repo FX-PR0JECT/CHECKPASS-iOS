@@ -9,7 +9,8 @@ import Combine
 import Foundation
 
 protocol GetUserInfoUseCase {
-    func executeGetSimpleUserInfo() -> AnyPublisher<SimpleUserInfo?, Error>
+    func executeForSimpleUserInfo() -> AnyPublisher<SimpleUserInfo?, Error>
+    func executeForDetailedUserInfo() -> AnyPublisher<User, Error>
 }
 
 final class DefaultGetUserInfoUseCase {
@@ -21,15 +22,44 @@ final class DefaultGetUserInfoUseCase {
 }
 
 extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
-    func executeGetSimpleUserInfo() -> AnyPublisher<SimpleUserInfo?, Error> {
+    enum UserInfoError: Error {
+        case idIsNil(message: String)
+        case jobMissMatching(message: String)
+    }
+    
+    //MARK: - fetch simple user data
+    func executeForSimpleUserInfo() -> AnyPublisher<SimpleUserInfo?, Error> {
         let id = UserDefaults.standard.string(forKey: "id")
         guard let userId = id else {
-            return Just(nil)
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
+            return Fail<SimpleUserInfo?, Error>(error: UserInfoError.idIsNil(message: "there is no id"))
+                .eraseToAnyPublisher()
         }
         
         let url = "http://localhost:8080/users/simple/\(userId)"
         return repository.fetchSimpleUserInfo(url: url)
+    }
+    
+    //MARK: - fetch detailed user data
+    func executeForDetailedUserInfo() -> AnyPublisher<User, Error> {
+        let id = UserDefaults.standard.string(forKey: "id")
+        guard let userId = id else {
+            return Fail<User, Error>(error: UserInfoError.idIsNil(message: "there is no id"))
+                .eraseToAnyPublisher()
+        }
+        
+        let url = "http://localhost:8080/users/\(userId)"
+        return repository.fetchDetailedUserInfo(url: url)
+            .flatMap { value -> AnyPublisher<User, Error> in
+                switch value {
+                case .some(let user):
+                    return Just(user)
+                        .setFailureType(to: Error.self)
+                        .eraseToAnyPublisher()
+                case .none:
+                    return Fail<User, Error>(error: UserInfoError.jobMissMatching(message: "JobType mismatching"))
+                        .eraseToAnyPublisher()
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }
