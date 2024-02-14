@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PasswordInputView<SVM: SignUpVM>: View {
-    @EnvironmentObject private var signUpViewModel: SVM
+struct PasswordInputView<SVM: UserInfoInputVM>: View {
+    @EnvironmentObject private var viewModel: SVM
     @Binding private var pwInput: String
     @Binding private var idInput: String
     
@@ -19,24 +19,24 @@ struct PasswordInputView<SVM: SignUpVM>: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $pwInput,
+            UserInfoInputView(text: $pwInput,
                             inputState: Binding(
                                 get: {
-                                    self.signUpViewModel.defaultStates["pw"] ?? .isInitial
+                                    self.viewModel.defaultStates["pw"] ?? .isInitial
                                 }, set: { newValue in
-                                    self.signUpViewModel.defaultStates["pw"] = newValue
+                                    self.viewModel.defaultStates["pw"] = newValue
                                 }
                             ),
                             header: "비밀번호", placeholder: "비밀번호를 입력해 주세요", style: .secure)
             
             //MARK: - Warning Message
-            if signUpViewModel.defaultStates["pw"] == .isInvalid || signUpViewModel.defaultStates["pw"] == .isBlank {
+            if viewModel.defaultStates["pw"] == .isInvalid || viewModel.defaultStates["pw"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.defaultStates["pw"] == .isInvalid {
+                    if viewModel.defaultStates["pw"] == .isInvalid {
                         Text("비밀번호는 영문, 숫자, 특수문자 포함 8~16자리")
-                    } else if signUpViewModel.defaultStates["pw"] == .isBlank {
+                    } else if viewModel.defaultStates["pw"] == .isBlank {
                         Text("비밀번호를 입력해 주세요")
                     }
                     
@@ -50,15 +50,17 @@ struct PasswordInputView<SVM: SignUpVM>: View {
         .onChange(of: pwInput) { newValue in
             withAnimation {
                 if newValue.isEmpty {
-                    signUpViewModel.defaultStates["pw"] = .isBlank
+                    viewModel.defaultStates["pw"] = .isBlank
                 } else {
-                    signUpViewModel.checkPwValidation(newValue)
+                    viewModel.checkPwValidation(newValue)
                 }
             }
         }
         .onTapGesture {
-            if signUpViewModel.defaultStates["id"] == .isNotVerified {
-                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            if let signUpViewModel = viewModel as? SignUpVM {
+                if viewModel.defaultStates["id"] == .isNotVerified {
+                    signUpViewModel.executeIdDuplicateCheck(for: idInput)
+                }
             }
         }
     }

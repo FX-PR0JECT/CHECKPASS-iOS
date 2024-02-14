@@ -11,14 +11,14 @@ struct SeeMoreView<AVM: AuthVM, UVM: UserInfoVM>: View {
     @EnvironmentObject private var authViewModel: AVM
     @EnvironmentObject private var userInfoViewModel: UVM
     @State private var showLogoutAlert: Bool = false
+    @State private var showDetailUserInfo: Bool = false
     
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    NavigationLink(destination: {
-                        DetailedUserInfoView<UVM>()
-                            .environmentObject(userInfoViewModel)
+                    Button(action: {
+                        showDetailUserInfo.toggle()
                     }, label: {
                         UserCard(simpleUserInfo: .constant(SimpleUserInfo.sampleData))
                     })
@@ -46,6 +46,10 @@ struct SeeMoreView<AVM: AuthVM, UVM: UserInfoVM>: View {
             .navigationTitle("더보기")
             .navigationBarTitleDisplayMode(.large)
             .listStyle(.plain)
+            .fullScreenCover(isPresented: $showDetailUserInfo) {
+                DetailedUserInfoView<UVM>(showDetailUserInfo: $showDetailUserInfo)
+                    .environmentObject(userInfoViewModel)
+            }
         }
     }
 }

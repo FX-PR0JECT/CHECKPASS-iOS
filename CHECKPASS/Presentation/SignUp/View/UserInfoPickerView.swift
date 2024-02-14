@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SignUpPickerView<SVM: SignUpVM>: View {
-    @EnvironmentObject private var signUpViewModel: SVM
+struct UserInfoPickerView<SVM: UserInfoInputVM>: View {
+    @EnvironmentObject private var viewModel: SVM
     @Binding private var selection: String
     @Binding private var idInput: String
     @Environment(\.colorScheme) private var colorScheme
@@ -19,10 +19,10 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
     private var pos: String
     private var type: JobType?
     
-    init(selection: Binding<String>, idInput: Binding<String>, header: String, title: String,
+    init(selection: Binding<String>, idInput: Binding<String>? = nil, header: String, title: String,
          contents: [String], pos: String, type: JobType? = nil) {
         _selection = selection
-        _idInput = idInput
+        _idInput = idInput ?? .constant("")
         self.header = header
         self.title = title
         self.contents = contents
@@ -65,7 +65,7 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
                     .frame(height: UIScreen.main.bounds.width * 0.13)
             }
             
-            if signUpViewModel.defaultStates[pos] == .isBlank || signUpViewModel.studentStates[pos] == .isBlank {
+            if viewModel.defaultStates[pos] == .isBlank || viewModel.studentStates[pos] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -83,36 +83,38 @@ struct SignUpPickerView<SVM: SignUpVM>: View {
                 switch type {
                 case .student:
                     if newValue == "선택" {
-                        signUpViewModel.studentStates[pos] = .isBlank
+                        viewModel.studentStates[pos] = .isBlank
                     } else {
-                        signUpViewModel.studentStates[pos] = .isValid
+                        viewModel.studentStates[pos] = .isValid
                     }
                 default:
                     if newValue == "선택" {
-                        signUpViewModel.defaultStates[pos] = .isBlank
+                        viewModel.defaultStates[pos] = .isBlank
                     } else {
-                        signUpViewModel.defaultStates[pos] = .isValid
+                        viewModel.defaultStates[pos] = .isValid
                     }
                 }
             }
         }
         .onTapGesture {
-            if signUpViewModel.defaultStates["id"] == .isNotVerified {
-                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            if let signUpViewModel = viewModel as? SignUpVM, !idInput.isEmpty {
+                if viewModel.defaultStates["id"] == .isNotVerified {
+                    signUpViewModel.executeIdDuplicateCheck(for: idInput)
+                }
             }
         }
     }
 }
 
-extension SignUpPickerView {
+extension UserInfoPickerView {
     private func getStrokeColor() -> Color {
         var state: InputState
         
         switch type {
         case .student:
-            state = signUpViewModel.studentStates[pos] ?? .isInvalid
+            state = viewModel.studentStates[pos] ?? .isInvalid
         default:
-            state = signUpViewModel.defaultStates[pos] ?? .isInvalid
+            state = viewModel.defaultStates[pos] ?? .isInvalid
         }
         
         if state == .isBlank || state == .isInvalid {
@@ -124,6 +126,6 @@ extension SignUpPickerView {
 }
 
 #Preview {
-    SignUpPickerView<SignUpViewModel>(selection: .constant(""), idInput: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"], pos: "type")
+    UserInfoPickerView<SignUpViewModel>(selection: .constant(""), idInput: .constant(""), header: "header", title: "title", contents: ["선택", "학생", "교수", "교직원"], pos: "type")
         .environmentObject(AppDI.shared().getSignUpViewModel())
 }

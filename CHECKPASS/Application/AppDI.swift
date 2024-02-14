@@ -9,8 +9,16 @@ class AppDI {
     private static let instance: AppDI = AppDI()    //singleton instance
     private let dataSource = DefaultDataSource()    //DataSource
     
+    private init() {}
+    
     static func shared() -> AppDI {
         return instance
+    }
+    
+    func getEditUserInfoViewModel() -> EditUserInfoViewModel {
+        let viewModel = EditUserInfoViewModel()
+        
+        return viewModel
     }
     
     //get UserInfo ViewModel

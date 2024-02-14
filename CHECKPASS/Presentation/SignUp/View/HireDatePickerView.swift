@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HireDatePickerView<SVM: SignUpVM>: View {
-    @EnvironmentObject private var signUpViewModel: SVM
+struct HireDatePickerView<SVM: UserInfoInputVM>: View {
+    @EnvironmentObject private var viewModel: SVM
     @Binding private var selection: Date
     @Binding private var idInput: String
     @Environment(\.colorScheme) private var colorScheme
@@ -16,9 +16,9 @@ struct HireDatePickerView<SVM: SignUpVM>: View {
     var header: String
     var title: String
     
-    init(selection: Binding<Date>, idInput: Binding<String>, header: String, title: String) {
+    init(selection: Binding<Date>, idInput: Binding<String>? = nil, header: String, title: String) {
         _selection = selection
-        _idInput = idInput
+        _idInput = idInput ?? .constant("")
         self.header = header
         self.title = title
     }
@@ -44,11 +44,11 @@ struct HireDatePickerView<SVM: SignUpVM>: View {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 30)
-                    .stroke(signUpViewModel.staffStates["hireDate"] == .isValid || signUpViewModel.staffStates["hireDate"] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                    .stroke(viewModel.staffStates["hireDate"] == .isValid || viewModel.staffStates["hireDate"] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
             }
             
-            if signUpViewModel.staffStates["hireDate"] == .isInvalid || signUpViewModel.staffStates["hireDate"] == .isBlank {
+            if viewModel.staffStates["hireDate"] == .isInvalid || viewModel.staffStates["hireDate"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -64,15 +64,17 @@ struct HireDatePickerView<SVM: SignUpVM>: View {
         .onChange(of: selection) { newValue in
             withAnimation {
                 if newValue == Date(timeIntervalSince1970: 0) {
-                    signUpViewModel.staffStates["hireDate"] = .isInvalid
+                    viewModel.staffStates["hireDate"] = .isInvalid
                 } else {
-                    signUpViewModel.staffStates["hireDate"] = .isValid
+                    viewModel.staffStates["hireDate"] = .isValid
                 }
             }
         }
         .onTapGesture {
-            if signUpViewModel.defaultStates["id"] == .isNotVerified {
-                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            if let signUpViewModel = viewModel as? SignUpVM, !idInput.isEmpty {
+                if viewModel.defaultStates["id"] == .isNotVerified {
+                    signUpViewModel.executeIdDuplicateCheck(for: idInput)
+                }
             }
         }
     }

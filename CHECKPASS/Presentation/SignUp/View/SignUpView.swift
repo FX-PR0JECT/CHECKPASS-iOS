@@ -8,8 +8,8 @@
 import SwiftUI
 import UIKit
 
-struct SignUpView<SVM: SignUpVM>: View {
-    @EnvironmentObject private var signUpViewModel: SVM
+struct SignUpView<SVM: UserInfoInputVM & SignUpVM>: View {
+    @EnvironmentObject private var viewModel: SVM
     @State private var idInput: String = ""
     @State private var pwInput: String = ""
     @State private var pwConfirmInput: String = ""
@@ -35,48 +35,48 @@ struct SignUpView<SVM: SignUpVM>: View {
             VStack(spacing: 25) {
                 //MARK: - Default Input
                 IdInputView<SVM>(idInput: $idInput)
-                    .environmentObject(signUpViewModel)
+                    .environmentObject(viewModel)
                 
                 PasswordInputView<SVM>(pwInput: $pwInput, idInput: $idInput)
-                    .environmentObject(signUpViewModel)
+                    .environmentObject(viewModel)
                 
                 PasswordConfirmInputView<SVM>(pwConfirmInput: $pwConfirmInput, idInput: $idInput)
-                    .environmentObject(signUpViewModel)
+                    .environmentObject(viewModel)
                 
                 NameInputView<SVM>(nameInput: $nameInput, idInput: $idInput)
-                    .environmentObject(signUpViewModel)
+                    .environmentObject(viewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedCollege, idInput: $idInput, header: "단과대", title: "단과대를 선택해 주세요", contents: signUpViewModel.colleges?.collegeList ?? [], pos: "college")
-                    .environmentObject(signUpViewModel)
+                UserInfoPickerView<SVM>(selection: $selectedCollege, idInput: $idInput, header: "단과대", title: "단과대를 선택해 주세요", contents: viewModel.colleges?.collegeList ?? [], pos: "college")
+                    .environmentObject(viewModel)
                 
-                SignUpPickerView<SVM>(selection: $selectedDepartment, idInput: $idInput, header: "학과", title: "학과를 선택해 주세요", contents: signUpViewModel.departments?.departmentList ?? [], pos: "department")
-                    .environmentObject(signUpViewModel)
+                UserInfoPickerView<SVM>(selection: $selectedDepartment, idInput: $idInput, header: "학과", title: "학과를 선택해 주세요", contents: viewModel.departments?.departmentList ?? [], pos: "department")
+                    .environmentObject(viewModel)
                 
                 //MARK: - Staff Only
                 Group {
                     if selectedJob == .professor || selectedJob == .staff {
                         HireDatePickerView<SVM>(selection: $selectedHireDate, idInput: $idInput, header: "입사일", title: "입사일을 선택해 주세요")
-                            .environmentObject(signUpViewModel)
+                            .environmentObject(viewModel)
                     }
                 }
                 
                 //MARK: - Student Only
                 Group {
                     if selectedJob == .student {
-                        SignUpPickerView<SVM>(selection: $selectedGrade, idInput: $idInput, header: "학년", title: "학년을 선택해 주세요", contents: PickerContents.grades, pos: "grade", type: .student)
-                            .environmentObject(signUpViewModel)
+                        UserInfoPickerView<SVM>(selection: $selectedGrade, idInput: $idInput, header: "학년", title: "학년을 선택해 주세요", contents: PickerContents.grades, pos: "grade", type: .student)
+                            .environmentObject(viewModel)
                         
-                        SignUpPickerView<SVM>(selection: $selectedSemester, idInput: $idInput, header: "학기", title: "학기를 선택해 주세요", contents: PickerContents.semesters, pos: "semester", type: .student)
-                            .environmentObject(signUpViewModel)
+                        UserInfoPickerView<SVM>(selection: $selectedSemester, idInput: $idInput, header: "학기", title: "학기를 선택해 주세요", contents: PickerContents.semesters, pos: "semester", type: .student)
+                            .environmentObject(viewModel)
                         
-                        SignUpPickerView<SVM>(selection: $selectedDayOrNight, idInput: $idInput, header: "주/야", title: "주간/야간 구분을 선택해 주세요", contents: PickerContents.dayOrNight, pos:"dayOrNight", type: .student)
-                            .environmentObject(signUpViewModel)
+                        UserInfoPickerView<SVM>(selection: $selectedDayOrNight, idInput: $idInput, header: "주/야", title: "주간/야간 구분을 선택해 주세요", contents: PickerContents.dayOrNight, pos:"dayOrNight", type: .student)
+                            .environmentObject(viewModel)
                     }
                 }
                 
                 //MARK: - Terms Agreement
                 TermsAgreementView<SVM>()
-                    .environmentObject(signUpViewModel)
+                    .environmentObject(viewModel)
                 
                 Button(action: {
                     dismissKeyboard()    //keyboard down
@@ -84,7 +84,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                     selectedJob.map { selectedJob in
                         switch selectedJob {
                         case .student:
-                            signUpViewModel.registerForStudent(id: idInput,
+                            viewModel.registerForStudent(id: idInput,
                                                                pw: pwInput, name: nameInput,
                                                                job: selectedJob.rawValue,
                                                                college: selectedCollege,
@@ -93,7 +93,7 @@ struct SignUpView<SVM: SignUpVM>: View {
                                                                dayOrNight: selectedDayOrNight,
                                                                semester: selectedSemester)
                         case .professor, .staff:
-                            signUpViewModel.registerForStaff(id: idInput, pw: pwInput, name: nameInput,
+                            viewModel.registerForStaff(id: idInput, pw: pwInput, name: nameInput,
                                                              job: selectedJob.rawValue,
                                                              college: selectedCollege,
                                                              department: selectedDepartment,
@@ -118,24 +118,24 @@ struct SignUpView<SVM: SignUpVM>: View {
         .onChange(of: pwConfirmInput) { newValue in
             withAnimation {
                 if pwInput == pwConfirmInput {
-                    signUpViewModel.defaultStates["pwConfirmation"] = .isValid
+                    viewModel.defaultStates["pwConfirmation"] = .isValid
                 } else if newValue.isEmpty {
-                    signUpViewModel.defaultStates["pwConfirmation"] = .isBlank
+                    viewModel.defaultStates["pwConfirmation"] = .isBlank
                 } else {
-                    signUpViewModel.defaultStates["pwConfirmation"] = .isInvalid
+                    viewModel.defaultStates["pwConfirmation"] = .isInvalid
                 }
             }
         }
         .onChange(of: selectedCollege) { newValue in
             if newValue != "선택" {
-                signUpViewModel.getDepartmentsData(of: newValue)
+                viewModel.getDepartmentsData(of: newValue)
             }
         }
         .onDisappear {
-            signUpViewModel.initializeStates()
+            viewModel.initializeStates()
         }
-        .alert(isPresented: $signUpViewModel.isAlertVisible) {
-            switch signUpViewModel.alertType {
+        .alert(isPresented: $viewModel.isAlertVisible) {
+            switch viewModel.alertType {
             case .signUpSucceed:
                 return Alert(title: Text("환영합니다!"),
                              message: Text("회원가입이 완료 되었어요"),
@@ -153,7 +153,7 @@ struct SignUpView<SVM: SignUpVM>: View {
         }
         .onAppear {
             //fetch colleges data when view appear
-            signUpViewModel.getCollegesData()
+            viewModel.getCollegesData()
         }
     }
 }

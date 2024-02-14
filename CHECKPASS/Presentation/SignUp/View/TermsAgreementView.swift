@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TermsAgreementView<SVM: SignUpVM>: View {
+struct TermsAgreementView<SVM: UserInfoInputVM>: View {
     @EnvironmentObject private var signUpViewModel: SVM
     @Environment(\.colorScheme) private var colorScheme
     

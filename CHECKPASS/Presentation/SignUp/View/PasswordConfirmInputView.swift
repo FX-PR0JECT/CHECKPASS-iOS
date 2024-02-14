@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PasswordConfirmInputView<SVM: SignUpVM>: View {
-    @EnvironmentObject private var signUpViewModel: SVM
+struct PasswordConfirmInputView<SVM: UserInfoInputVM>: View {
+    @EnvironmentObject private var viewModel: SVM
     @Binding private var pwConfirmInput: String
     @Binding private var idInput: String
     
@@ -19,24 +19,24 @@ struct PasswordConfirmInputView<SVM: SignUpVM>: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $pwConfirmInput,
+            UserInfoInputView(text: $pwConfirmInput,
                             inputState: Binding(
                                 get: {
-                                    self.signUpViewModel.defaultStates["pwConfirmation"] ?? .isInitial
+                                    self.viewModel.defaultStates["pwConfirmation"] ?? .isInitial
                                 }, set: { newValue in
-                                    self.signUpViewModel.defaultStates["pwConfirmation"] = newValue
+                                    self.viewModel.defaultStates["pwConfirmation"] = newValue
                                 }
                             ),
                             header: "비밀번호 확인", placeholder: "비밀번호를 다시 한번 입력해 주세요", style: .secure)
             
             //MARK: - Warning Message
-            if signUpViewModel.defaultStates["pwConfirmation"] == .isInvalid || signUpViewModel.defaultStates["pwConfirmation"] == .isBlank {
+            if viewModel.defaultStates["pwConfirmation"] == .isInvalid || viewModel.defaultStates["pwConfirmation"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
-                    if signUpViewModel.defaultStates["pwConfirmation"] == .isInvalid {
+                    if viewModel.defaultStates["pwConfirmation"] == .isInvalid {
                         Text("비밀번호가 일치하지 않아요")
-                    } else if signUpViewModel.defaultStates["pwConfirmation"] == .isBlank {
+                    } else if viewModel.defaultStates["pwConfirmation"] == .isBlank {
                         Text("비밀번호를 확인해 주세요")
                     }
                     
@@ -48,8 +48,10 @@ struct PasswordConfirmInputView<SVM: SignUpVM>: View {
             }
         }
         .onTapGesture {
-            if signUpViewModel.defaultStates["id"] == .isNotVerified {
-                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            if let signUpViewModel = viewModel as? SignUpVM {
+                if viewModel.defaultStates["id"] == .isNotVerified {
+                    signUpViewModel.executeIdDuplicateCheck(for: idInput)
+                }
             }
         }
     }

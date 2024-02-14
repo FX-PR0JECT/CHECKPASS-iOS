@@ -22,7 +22,7 @@ extension CustomColor {
     }
 }
 
-struct SignUpInputView: View {
+struct UserInfoInputView: View {
     @Binding private var text: String
     @Binding private var inputState: InputState
     @Environment(\.colorScheme) private var colorScheme
@@ -78,5 +78,5 @@ struct SignUpInputView: View {
 }
 
 #Preview {
-    SignUpInputView(text: .constant(""), inputState: .constant(.isInitial), header: "header", placeholder: "placeholder", style: .normal)
+    UserInfoInputView(text: .constant(""), inputState: .constant(.isInitial), header: "header", placeholder: "placeholder", style: .normal)
 }

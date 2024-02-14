@@ -24,7 +24,7 @@ enum JobType: String {
     }
 }
 
-struct SignUpStartView<SVM: SignUpVM>: View {
+struct SignUpStartView<SVM: UserInfoInputVM & SignUpVM>: View {
     @StateObject private var signUpViewModel: SVM
     @Environment(\.colorScheme) private var colorScheme
     @State private var selectedJob: JobType?

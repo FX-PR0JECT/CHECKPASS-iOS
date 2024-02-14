@@ -7,29 +7,29 @@
 
 import SwiftUI
 
-struct NameInputView<SVM: SignUpVM>: View {
-    @EnvironmentObject private var signUpViewModel: SVM
+struct NameInputView<SVM: UserInfoInputVM>: View {
+    @EnvironmentObject private var viewModel: SVM
     @Binding private var nameInput: String
     @Binding private var idInput: String
     
-    init(nameInput: Binding<String>, idInput: Binding<String>) {
+    init(nameInput: Binding<String>, idInput: Binding<String>? = nil) {
         _nameInput = nameInput
-        _idInput = idInput
+        _idInput = idInput ?? Binding.constant("")
     }
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $nameInput,
+            UserInfoInputView(text: $nameInput,
                             inputState: Binding(
                             get: {
-                                self.signUpViewModel.defaultStates["name"] ?? .isInitial
+                                self.viewModel.defaultStates["name"] ?? .isInitial
                             }, set: { newValue in
-                                self.signUpViewModel.defaultStates["name"] = newValue
+                                self.viewModel.defaultStates["name"] = newValue
                             }),
                             header: "이름", placeholder: "이름을 입력해 주세요")
             
             //MARK: - Warning Message
-            if signUpViewModel.defaultStates["name"] == .isBlank {
+            if viewModel.defaultStates["name"] == .isBlank {
                 HStack(spacing: 5) {
                     Image(systemName: "info.circle")
                     
@@ -45,15 +45,17 @@ struct NameInputView<SVM: SignUpVM>: View {
         .onChange(of: nameInput) { newValue in
             withAnimation {
                 if nameInput.isEmpty {
-                    signUpViewModel.defaultStates["name"] = .isBlank
+                    viewModel.defaultStates["name"] = .isBlank
                 } else {
-                    signUpViewModel.defaultStates["name"] = .isValid
+                    viewModel.defaultStates["name"] = .isValid
                 }
             }
         }
         .onTapGesture {
-            if signUpViewModel.defaultStates["id"] == .isNotVerified {
-                signUpViewModel.executeIdDuplicateCheck(for: idInput)
+            if let signUpViewModel = viewModel as? SignUpVM, !idInput.isEmpty {
+                if viewModel.defaultStates["id"] == .isNotVerified {
+                    signUpViewModel.executeIdDuplicateCheck(for: idInput)
+                }
             }
         }
     }

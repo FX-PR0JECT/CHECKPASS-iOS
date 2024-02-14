@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct IdInputView<SVM: SignUpVM>: View {
+struct IdInputView<SVM: UserInfoInputVM>: View {
     @EnvironmentObject private var signUpViewModel: SVM
     @Binding private var idInput: String
     
@@ -17,7 +17,7 @@ struct IdInputView<SVM: SignUpVM>: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $idInput,
+            UserInfoInputView(text: $idInput,
                             inputState: Binding(
                                 get: {
                                     self.signUpViewModel.defaultStates["id"] ?? .isInitial

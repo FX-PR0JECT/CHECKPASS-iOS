@@ -9,7 +9,15 @@ import Foundation
 import Combine
 import SwiftUI
 
-protocol SignUpVM: ObservableObject {
+protocol SignUpVM {
+    func executeIdDuplicateCheck(for id: String)
+    func registerForStudent(id: String, pw: String, name: String, job: String, college: String,
+                                department: String, grade: String, dayOrNight: String, semester: String)
+    func registerForStaff(id: String, pw: String, name: String, job: String, college: String, department: String, hireDate: String)
+    func getCollegesData()
+}
+
+protocol UserInfoInputVM: ObservableObject {
     var defaultStates: Dictionary<String, InputState> { get set }
     var studentStates: Dictionary<String, InputState> { get set }
     var staffStates: Dictionary<String, InputState> { get set }
@@ -18,16 +26,11 @@ protocol SignUpVM: ObservableObject {
     var departments: Departments? { get set }
     var colleges: Colleges? { get set }
     
-    func registerForStudent(id: String, pw: String, name: String, job: String, college: String,
-                                department: String, grade: String, dayOrNight: String, semester: String)
-    func registerForStaff(id: String, pw: String, name: String, job: String, college: String, department: String, hireDate: String)
-    func executeIdDuplicateCheck(for id: String)
-    func getCollegesData()
     func getDepartmentsData(of college: String)
 }
 
 //MARK: - Check Invalid InputStatus
-extension SignUpVM {    
+extension UserInfoInputVM {
     func verifyStates(for job: String) -> Bool {
         var result: Bool = true
         
@@ -87,7 +90,7 @@ extension SignUpVM {
 }
 
 //MARK: - Regular Expression
-extension SignUpVM {
+extension UserInfoInputVM {
     //Password Validation Checking
     func checkPwValidation(_ pw: String) {
         let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"

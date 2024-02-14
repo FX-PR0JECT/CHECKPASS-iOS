@@ -9,7 +9,7 @@ import Foundation
 
 protocol User {
     var userId: Int { get }
-    var userName: String { get }
+    var userName: String { get set }
     var userJob: JobType { get }
     var userDepartment: String { get }
     var userCollege: String { get }

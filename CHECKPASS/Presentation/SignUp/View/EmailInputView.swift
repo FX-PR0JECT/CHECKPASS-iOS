@@ -17,7 +17,7 @@ struct EmailInputView: View {
     
     var body: some View {
         VStack {
-            SignUpInputView(text: $emailInput,
+            UserInfoInputView(text: $emailInput,
                             inputState: Binding(
                                 get: {
                                     self.signUpViewModel.defaultStates["email"] ?? .isInitial
