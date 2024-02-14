@@ -20,6 +20,5 @@ struct DetailedUserInfoResultSet: Codable {
     let userId: Int
     let userName, userJob, userDepartment, userCollege: String
     let studentGrade, dayOrNight, studentSemester: String?
-    let hiredate: String?
+    let hireDate: String?
 }
-

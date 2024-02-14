@@ -37,7 +37,7 @@ extension DefaultUserRepository: UserRepository {
                 case .professor, .staff:
                     return DetailedStaffInfo(userId: DTO.resultSet.userId, userCollege: DTO.resultSet.userCollege,
                                            userDepartment: DTO.resultSet.userDepartment,
-                                           userName: DTO.resultSet.userName, hireDate: DTO.resultSet.hiredate ?? "",
+                                           userName: DTO.resultSet.userName, hireDate: DTO.resultSet.hireDate ?? "",
                                            userJob: job)
                 case .student:
                     return DetailedStudentInfo(userId: DTO.resultSet.userId, userCollege: DTO.resultSet.userCollege,
