@@ -12,16 +12,6 @@ enum TextFieldStyle {
     case secure
 }
 
-extension CustomColor {
-    static func getSignUpInputGray(_ colorMode: ColorScheme) -> Color {
-        if colorMode == .light {
-            return Color(red: 244 / 255, green: 244 / 255, blue: 244 / 255)
-        } else {
-            return Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255)
-        }
-    }
-}
-
 struct UserInfoInputView: View {
     @Binding private var text: String
     @Binding private var inputState: InputState
@@ -53,7 +43,7 @@ struct UserInfoInputView: View {
             .offset(x: 16)
             
             RoundedRectangle(cornerRadius: 30)
-                .fill(CustomColor.getSignUpInputGray(colorScheme))
+                .fill(.userInfoInputGray)
                 .frame(height: UIScreen.main.bounds.width * 0.13)
                 .overlay {
                     switch style {
@@ -70,7 +60,7 @@ struct UserInfoInputView: View {
                     }
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(inputState == .isValid || inputState == .isInitial || inputState == .isNotVerified ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(inputState == .isValid || inputState == .isInitial || inputState == .isNotVerified ? .userInfoInputGray : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
         }

@@ -34,7 +34,7 @@ struct HireDatePickerView<SVM: UserInfoInputVM>: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 30)
-                    .fill(CustomColor.getSignUpInputGray(colorScheme))
+                    .fill(.userInfoInputGray)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
                 
                 DatePicker(selection: $selection, displayedComponents: .date) {
@@ -44,7 +44,7 @@ struct HireDatePickerView<SVM: UserInfoInputVM>: View {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 30)
-                    .stroke(viewModel.staffStates["hireDate"] == .isValid || viewModel.staffStates["hireDate"] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                    .stroke(viewModel.staffStates["hireDate"] == .isValid || viewModel.staffStates["hireDate"] == .isInitial ? .userInfoInputGray : .red, lineWidth: 1)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
             }
             

@@ -88,6 +88,7 @@
 		5CAA86842B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA86832B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift */; };
 		5CB36C462B6B1C220042D9BA /* SimpleLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */; };
 		5CB36C482B6B20790042D9BA /* SimpleLectureListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */; };
+		5CBB72932B7C774500DF0C72 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB72922B7C774500DF0C72 /* String.swift */; };
 		5CCEC3842B7099F100460B4B /* EAttendanceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3832B7099F100460B4B /* EAttendanceList.swift */; };
 		5CCEC3862B709D1600460B4B /* EAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3852B709D1600460B4B /* EAttendance.swift */; };
 		5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3872B709F0300460B4B /* CodeInput.swift */; };
@@ -206,6 +207,7 @@
 		5CAA86832B4D1D9300357564 /* IdDuplicateCheckUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdDuplicateCheckUseCaseTest.swift; sourceTree = "<group>"; };
 		5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLecture.swift; sourceTree = "<group>"; };
 		5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLectureListRow.swift; sourceTree = "<group>"; };
+		5CBB72922B7C774500DF0C72 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5CCEC3832B7099F100460B4B /* EAttendanceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendanceList.swift; sourceTree = "<group>"; };
 		5CCEC3852B709D1600460B4B /* EAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendance.swift; sourceTree = "<group>"; };
 		5CCEC3872B709F0300460B4B /* CodeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInput.swift; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 			children = (
 				5C9A2A602B3BAB6E006B176E /* PickerContents.swift */,
 				5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */,
+				5CBB72922B7C774500DF0C72 /* String.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -867,6 +870,7 @@
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
 				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
+				5CBB72932B7C774500DF0C72 /* String.swift in Sources */,
 				5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */,
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
 				5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */,

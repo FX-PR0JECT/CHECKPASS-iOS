@@ -51,6 +51,9 @@ extension UserInfoViewModel: UserInfoVM {
                 }
             }, receiveValue: { [weak self] in
                 self?.detailedUserInfo = $0
+                if let userInfo = $0 as? DetailedStaffInfo {
+                    print(userInfo)
+                }
             })
             .store(in: &cancellables)
     }

@@ -19,7 +19,7 @@ struct FindPwEmailInput: View {
     var body: some View {
         VStack {            
             RoundedRectangle(cornerRadius: 30)
-                .fill(CustomColor.getSignUpInputGray(colorScheme))
+                .fill(.userInfoInputGray)
                 .frame(height: UIScreen.main.bounds.width * 0.13)
                 .overlay {
                     TextField(placeholder, text: $text)
@@ -29,7 +29,7 @@ struct FindPwEmailInput: View {
                         .padding()
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(inputState == .isValid || inputState == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(inputState == .isValid || inputState == .isInitial ? .userInfoInputGray : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
             

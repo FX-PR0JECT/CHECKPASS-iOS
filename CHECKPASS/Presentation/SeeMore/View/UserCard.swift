@@ -37,6 +37,8 @@ struct UserCard: View {
     }
 }
 
+#if DEBUG
 #Preview {
     UserCard(simpleUserInfo: .constant(SimpleUserInfo.sampleData))
 }
+#endif

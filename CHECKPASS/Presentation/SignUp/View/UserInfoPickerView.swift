@@ -33,7 +33,10 @@ struct UserInfoPickerView<SVM: UserInfoInputVM>: View {
     var body: some View {
         VStack {
             HStack {
-                Text(header).bold().font(.subheadline).foregroundColor(colorScheme == .light ? .black : .white)
+                Text(header)
+                    .bold()
+                    .font(.subheadline)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
                 
                 Spacer()
             }
@@ -41,7 +44,7 @@ struct UserInfoPickerView<SVM: UserInfoInputVM>: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 30)
-                    .fill(CustomColor.getSignUpInputGray(colorScheme))
+                    .fill(.userInfoInputGray)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
                 
                 HStack {
@@ -113,6 +116,8 @@ extension UserInfoPickerView {
         switch type {
         case .student:
             state = viewModel.studentStates[pos] ?? .isInvalid
+        case .staff:
+            state = viewModel.staffStates[pos] ?? .isInvalid
         default:
             state = viewModel.defaultStates[pos] ?? .isInvalid
         }
@@ -120,7 +125,7 @@ extension UserInfoPickerView {
         if state == .isBlank || state == .isInvalid {
             return .red
         } else {
-            return CustomColor.getSignUpInputGray(colorScheme)
+            return .userInfoInputGray
         }
     }
 }

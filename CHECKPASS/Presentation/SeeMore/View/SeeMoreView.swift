@@ -20,7 +20,11 @@ struct SeeMoreView<AVM: AuthVM, UVM: UserInfoVM>: View {
                     Button(action: {
                         showDetailUserInfo.toggle()
                     }, label: {
+                        #if DEBUG
                         UserCard(simpleUserInfo: .constant(SimpleUserInfo.sampleData))
+                        #else
+                        UserCard(simpleUserInfo: $userInfoViewModel.simpleUserInfo)
+                        #endif
                     })
                     .listRowSeparator(.hidden)
                 }

@@ -22,7 +22,7 @@ struct TermsAgreementView<SVM: UserInfoInputVM>: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 30)
-                    .fill(CustomColor.getSignUpInputGray(colorScheme))
+                    .fill(.userInfoInputGray)
                     .frame(height: UIScreen.main.bounds.width * 0.13)
                 
                 HStack {
@@ -40,7 +40,7 @@ struct TermsAgreementView<SVM: UserInfoInputVM>: View {
                 .padding()
                 .overlay {
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(signUpViewModel.defaultStates["agreement"] == .isValid || signUpViewModel.defaultStates["agreement"] == .isInitial ? CustomColor.getSignUpInputGray(colorScheme) : .red, lineWidth: 1)
+                        .stroke(signUpViewModel.defaultStates["agreement"] == .isValid || signUpViewModel.defaultStates["agreement"] == .isInitial ? .userInfoInputGray : .red, lineWidth: 1)
                         .frame(height: UIScreen.main.bounds.width * 0.13)
                 }
             }
