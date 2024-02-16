@@ -15,7 +15,7 @@ struct EditButton: View {
             .padding()
             .frame(maxWidth: .infinity)
             .overlay {
-                RoundedRectangle(cornerRadius: 15)
+                RoundedRectangle(cornerRadius: 30)
                     .stroke(.gray, lineWidth: 0.5)
             }
     }

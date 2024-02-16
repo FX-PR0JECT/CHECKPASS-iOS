@@ -9,14 +9,6 @@ import Foundation
 import Combine
 import SwiftUI
 
-protocol SignUpVM {
-    func executeIdDuplicateCheck(for id: String)
-    func registerForStudent(id: String, pw: String, name: String, job: String, college: String,
-                                department: String, grade: String, dayOrNight: String, semester: String)
-    func registerForStaff(id: String, pw: String, name: String, job: String, college: String, department: String, hireDate: String)
-    func getCollegesData()
-}
-
 protocol UserInfoInputVM: ObservableObject {
     var defaultStates: Dictionary<String, InputState> { get set }
     var studentStates: Dictionary<String, InputState> { get set }
@@ -24,53 +16,12 @@ protocol UserInfoInputVM: ObservableObject {
     var isAlertVisible: Bool { get set }
     var alertType: AlertType { get set }
     var departments: Departments? { get set }
-    var colleges: Colleges? { get set }
     
     func getDepartmentsData(of college: String)
 }
 
 //MARK: - Check Invalid InputStatus
 extension UserInfoInputVM {
-    func verifyStates(for job: String) -> Bool {
-        var result: Bool = true
-        
-        withAnimation {
-            for key in defaultStates.keys {
-                if defaultStates[key] == .isBlank || defaultStates[key] == .isInitial {
-                    defaultStates[key] = .isBlank
-                    result = false
-                } else if defaultStates[key] == .isInvalid {
-                    result = false
-                }
-            }
-            
-            JobType(rawValue: job).map {
-                switch $0 {
-                case .professor, .staff:
-                    for key in staffStates.keys {
-                        if staffStates[key] == .isBlank || staffStates[key] == .isInitial {
-                            staffStates[key] = .isBlank
-                            result = false
-                        } else if staffStates[key] == .isInvalid {
-                            result = false
-                        }
-                    }
-                case .student:
-                    for key in studentStates.keys {
-                        if studentStates[key] == .isBlank || studentStates[key] == .isInitial {
-                            studentStates[key] = .isBlank
-                            result = false
-                        } else if studentStates[key] == .isInvalid {
-                            result = false
-                        }
-                    }
-                }
-            }
-        }
-        
-        return result
-    }
-    
     func initializeStates() {
         //defaultStates initialize
         defaultStates.keys.forEach {

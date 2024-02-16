@@ -8,7 +8,7 @@
 import Combine
 
 protocol SignInUseCase {
-    func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error>
+    func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<APIResult, Error>
 }
 
 final class DefaultSignInUseCase {
@@ -20,7 +20,7 @@ final class DefaultSignInUseCase {
 }
 
 extension DefaultSignInUseCase: SignInUseCase {
-    func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<AuthResult, Error> {
+    func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<APIResult, Error> {
         return repository.fetchPostResponse(params: data, for: .signIn)
     }
     

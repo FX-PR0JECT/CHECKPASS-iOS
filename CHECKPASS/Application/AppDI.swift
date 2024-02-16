@@ -16,7 +16,11 @@ class AppDI {
     }
     
     func getEditUserInfoViewModel() -> EditUserInfoViewModel {
-        let viewModel = EditUserInfoViewModel()
+        let departmentsRepository = DefaultDepartmentsRepository(dataSource: dataSource),
+            editUserInfoRepository = DefaultEditUserInfoRepository(dataSource: dataSource)
+        let getDepartmentsUseCase = DefaultGetDepartmentsUseCase(departmentsRepository: departmentsRepository),
+            editUserInfoUseCase = DefaultEditUserInfoUseCase(repository: editUserInfoRepository)
+        let viewModel = EditUserInfoViewModel(getDepartmentUseCase: getDepartmentsUseCase, editUserInfoUseCase: editUserInfoUseCase)
         
         return viewModel
     }

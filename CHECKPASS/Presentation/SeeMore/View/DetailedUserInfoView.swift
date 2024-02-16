@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailedUserInfoView<UVM: UserInfoVM>: View {
-    @EnvironmentObject private var userInfoViewModel: UVM
+    @EnvironmentObject private var viewModel: UVM
     @State private var showEditView: Bool = false
     @Binding var showDetailUserInfo: Bool
     
@@ -26,22 +26,22 @@ struct DetailedUserInfoView<UVM: UserInfoVM>: View {
                 
                 Section(header: BackgroundHeader(name: "", color: .listSeperator)) {
                     DetailedUserInfoRow(title: "이름",
-                                        value: userInfoViewModel.detailedUserInfo?.userName ?? "")
+                                        value: viewModel.detailedUserInfo?.userName ?? "")
                     
-                    DetailedUserInfoRow(title: userInfoViewModel.detailedUserInfo?.userJob == .student ? "학번" : "교직원 번호",
-                                        value: String(userInfoViewModel.detailedUserInfo?.userId ?? 0000000))
+                    DetailedUserInfoRow(title: viewModel.detailedUserInfo?.userJob == .student ? "학번" : "교직원 번호",
+                                        value: String(viewModel.detailedUserInfo?.userId ?? 0000000))
                     
                     DetailedUserInfoRow(title: "단과대",
-                                        value: userInfoViewModel.detailedUserInfo?.userCollege ?? "")
+                                        value: viewModel.detailedUserInfo?.userCollege ?? "")
                     
                     
                     DetailedUserInfoRow(title: "학과",
-                                        value: userInfoViewModel.detailedUserInfo?.userDepartment ?? "")
+                                        value: viewModel.detailedUserInfo?.userDepartment ?? "")
                     
                 }
                 .listRowSeparator(.hidden)
                 
-                if let userInfo = userInfoViewModel.detailedUserInfo as? DetailedStudentInfo {
+                if let userInfo = viewModel.detailedUserInfo as? DetailedStudentInfo {
                     //MARK: - Student only
                     Section(header: BackgroundHeader(name: "", color: .listSeperator)) {
                         DetailedUserInfoRow(title: "구분",
@@ -54,7 +54,7 @@ struct DetailedUserInfoView<UVM: UserInfoVM>: View {
                                             value: userInfo.dayOrNight)
                     }
                     .listRowSeparator(.hidden)
-                } else if let userInfo = userInfoViewModel.detailedUserInfo as? DetailedStaffInfo {
+                } else if let userInfo = viewModel.detailedUserInfo as? DetailedStaffInfo {
                     //MARK: - Staff only
                     Section(header: BackgroundHeader(name: "", color: .listSeperator)) {
                         DetailedUserInfoRow(title: "구분",
@@ -66,6 +66,8 @@ struct DetailedUserInfoView<UVM: UserInfoVM>: View {
                     .listRowSeparator(.hidden)
                 }
                 
+                Spacer()
+                
                 Button(action: {
                     showEditView.toggle()
                 }, label: {
@@ -73,13 +75,12 @@ struct DetailedUserInfoView<UVM: UserInfoVM>: View {
                 })
                 .buttonStyle(.borderless)
                 .listRowSeparator(.hidden)
-                .padding(.top, 30)
             }
             .listRowSpacing(15.0)
             .listStyle(.plain)
             .onAppear {
-                if userInfoViewModel.detailedUserInfo == nil {
-                    userInfoViewModel.getDetailedUserInfo()
+                if viewModel.detailedUserInfo == nil {
+                    viewModel.getDetailedUserInfo()
                 }
             }
             .navigationTitle("내 정보")
@@ -87,7 +88,7 @@ struct DetailedUserInfoView<UVM: UserInfoVM>: View {
             .navigationDestination(isPresented: $showEditView) {
                 EditUserInfoView<UVM, _>(viewModel: AppDI.shared().getEditUserInfoViewModel(),
                                          showEditView: $showEditView)
-                .environmentObject(userInfoViewModel)
+                .environmentObject(viewModel)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

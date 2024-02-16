@@ -136,19 +136,22 @@ struct SignUpView<SVM: UserInfoInputVM & SignUpVM>: View {
         }
         .alert(isPresented: $viewModel.isAlertVisible) {
             switch viewModel.alertType {
-            case .signUpSucceed:
+            case .requestSucceed:
                 return Alert(title: Text("환영합니다!"),
                              message: Text("회원가입이 완료 되었어요"),
                              dismissButton: .default(Text("확인")) {
                                 showNextView = false
                                 showSignUpView = false
                             })
-            case .signUpFailed:
+            case .requestFailed:
                 return Alert(title: Text("알림"),
                              message: Text("회원가입에 실패했어요"))
-            case .inValidInput:
+            case .isInValidInput:
                 return Alert(title: Text("알림"),
                              message: Text("잘못된 입력값이 있어요"))
+            case .isBlank:
+                return Alert(title: Text("알림"),
+                             message: Text("입력되지 않은 값이 있어요"))
             }
         }
         .onAppear {

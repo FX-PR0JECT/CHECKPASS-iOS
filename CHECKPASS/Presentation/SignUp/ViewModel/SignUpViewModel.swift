@@ -17,9 +17,20 @@ enum InputState {
 }
 
 enum AlertType {
-    case signUpSucceed
-    case signUpFailed
-    case inValidInput
+    case requestSucceed
+    case requestFailed
+    case isInValidInput
+    case isBlank
+}
+
+protocol SignUpVM {
+    var colleges: Colleges? { get }
+    
+    func executeIdDuplicateCheck(for id: String)
+    func registerForStudent(id: String, pw: String, name: String, job: String, college: String,
+                                department: String, grade: String, dayOrNight: String, semester: String)
+    func registerForStaff(id: String, pw: String, name: String, job: String, college: String, department: String, hireDate: String)
+    func getCollegesData()
 }
 
 final class SignUpViewModel {
@@ -27,7 +38,7 @@ final class SignUpViewModel {
     @Published var studentStates: Dictionary<String, InputState> = ["grade": .isInitial, "dayOrNight": .isInitial, "semester": .isInitial]    //only Student Input
     @Published var staffStates: Dictionary<String, InputState> = ["hireDate": .isInitial]    //only Staff Input
     @Published var isAlertVisible: Bool = false
-    @Published var alertType: AlertType = .signUpSucceed
+    @Published var alertType: AlertType = .requestSucceed
     @Published var departments: Departments?
     @Published var colleges: Colleges?
     
@@ -62,6 +73,52 @@ extension SignUpViewModel: UserInfoInputVM {
 }
 
 extension SignUpViewModel: SignUpVM {
+    func verifyStates(for job: String) -> Bool {
+        var result: Bool = true
+        
+        withAnimation {
+            for key in defaultStates.keys {
+                if defaultStates[key] == .isBlank || defaultStates[key] == .isInitial {
+                    defaultStates[key] = .isBlank
+                    alertType = .isBlank
+                    result = false
+                } else if defaultStates[key] == .isInvalid {
+                    alertType = .isInValidInput
+                    result = false
+                }
+            }
+            
+            JobType(rawValue: job).map {
+                switch $0 {
+                case .professor, .staff:
+                    for key in staffStates.keys {
+                        if staffStates[key] == .isBlank || staffStates[key] == .isInitial {
+                            staffStates[key] = .isBlank
+                            alertType = .isBlank
+                            result = false
+                        } else if staffStates[key] == .isInvalid {
+                            alertType = .isInValidInput
+                            result = false
+                        }
+                    }
+                case .student:
+                    for key in studentStates.keys {
+                        if studentStates[key] == .isBlank || studentStates[key] == .isInitial {
+                            studentStates[key] = .isBlank
+                            alertType = .isBlank
+                            result = false
+                        } else if studentStates[key] == .isInvalid {
+                            alertType = .isInValidInput
+                            result = false
+                        }
+                    }
+                }
+            }
+        }
+        
+        return result
+    }
+    
     //MARK: - Check data before staff registration
     func registerForStaff(id: String, pw: String, name: String,
                           job: String, college: String, department: String, hireDate: String) {
@@ -80,7 +137,6 @@ extension SignUpViewModel: SignUpVM {
         if verifyStates(for: job) {
             executeUseCaseForStaff(data)
         } else {
-            alertType = .inValidInput
             isAlertVisible = true
         }
     }
@@ -104,7 +160,6 @@ extension SignUpViewModel: SignUpVM {
         if verifyStates(for: job) {
             executeUseCaseForStudent(data)
         } else {
-            alertType = .inValidInput
             isAlertVisible = true
         }
     }
@@ -119,7 +174,7 @@ extension SignUpViewModel: SignUpVM {
                 defaultStates["id"] = .isBlank
             }
             isRequestPossible = false
-            alertType = .inValidInput
+            alertType = .isBlank
             isAlertVisible = true
             return
         }
@@ -146,7 +201,7 @@ extension SignUpViewModel: SignUpVM {
                     handler(data)    //All inputs are clear
                 } else {
                     //When an invalid value exists
-                    self?.alertType = .inValidInput
+                    self?.alertType = .isInValidInput
                     self?.isAlertVisible = true
                 }
             })
@@ -165,9 +220,9 @@ extension SignUpViewModel: SignUpVM {
                 }
             }, receiveValue: { [weak self] in
                 if $0.result {    //Sign up complited
-                    self?.alertType = .signUpSucceed
+                    self?.alertType = .requestSucceed
                 } else {    //Sign up failed
-                    self?.alertType = .signUpFailed
+                    self?.alertType = .requestFailed
                 }
                 
                 self?.isAlertVisible = true
@@ -187,9 +242,9 @@ extension SignUpViewModel: SignUpVM {
                 }
             }, receiveValue: { [weak self] in
                 if $0.result {    //Sign up Success
-                    self?.alertType = .signUpSucceed
+                    self?.alertType = .requestSucceed
                 } else {    //Sign up failed
-                    self?.alertType = .signUpFailed
+                    self?.alertType = .requestFailed
                 }
                 
                 self?.isAlertVisible = true

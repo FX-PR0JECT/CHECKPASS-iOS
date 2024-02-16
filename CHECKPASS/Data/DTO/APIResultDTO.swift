@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct AuthDTO: Codable {
+struct APIResultDTO: Codable {
     let state: String
     let code: Int
     let title: String
     let resultSet: String
 }
 
-extension AuthDTO {
-    func toEntity() -> AuthResult {
-        return AuthResult(result: state == "SUCCESS" ? true : false, resultSet: resultSet)
+extension APIResultDTO {
+    func toEntity() -> APIResult {
+        return APIResult(result: state == "SUCCESS" ? true : false, resultSet: resultSet)
     }
 }

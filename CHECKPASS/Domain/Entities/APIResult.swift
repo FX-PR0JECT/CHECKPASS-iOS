@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthResult: Codable {
+struct APIResult: Codable {
     var result: Bool
     var resultSet: String
 }

@@ -13,10 +13,14 @@ protocol GetDepartmentsUseCase {
 }
 
 final class DefaultGetDepartmentsUseCase {
-    private let departmentsRepository: DepartmentsRepository
-    private let collegesRepository: CollegesRepository
+    enum GetDepartmentsUseCaseError: Error {
+        case collegeRepositoryNil
+    }
     
-    init(departmentsRepository: DepartmentsRepository, collegesRepository: CollegesRepository) {
+    private let departmentsRepository: DepartmentsRepository
+    private let collegesRepository: CollegesRepository?
+    
+    init(departmentsRepository: DepartmentsRepository, collegesRepository: CollegesRepository? = nil) {
         self.departmentsRepository = departmentsRepository
         self.collegesRepository = collegesRepository
     }
@@ -24,7 +28,15 @@ final class DefaultGetDepartmentsUseCase {
 
 extension DefaultGetDepartmentsUseCase: GetDepartmentsUseCase {
     func executeForColleges() -> AnyPublisher<Colleges, Error> {
-        return collegesRepository.fetchColleges()
+        if let collegesRepository = collegesRepository {
+            return collegesRepository.fetchColleges()
+        }
+        
+        return Fail<Colleges, GetDepartmentsUseCaseError>(error: .collegeRepositoryNil)
+            .mapError {
+                $0 as Error
+            }
+            .eraseToAnyPublisher()
     }
     
     func executeForDeparments(college: String) -> AnyPublisher<Departments, Error> {

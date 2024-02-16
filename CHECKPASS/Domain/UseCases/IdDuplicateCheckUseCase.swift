@@ -8,7 +8,7 @@
 import Combine
 
 protocol IdDuplicateCheckUseCase {
-    func execute(_ data: String) -> AnyPublisher<AuthResult, Error>
+    func execute(_ data: String) -> AnyPublisher<APIResult, Error>
 }
 
 final class DefaultIdDuplicateCheckUseCase {
@@ -20,7 +20,7 @@ final class DefaultIdDuplicateCheckUseCase {
 }
 
 extension DefaultIdDuplicateCheckUseCase: IdDuplicateCheckUseCase {
-    func execute(_ data: String) -> AnyPublisher<AuthResult, Error> {
+    func execute(_ data: String) -> AnyPublisher<APIResult, Error> {
         let url: String = "http://localhost:8080/users/duplication/\(data)"    //API URL
         return repository.fetchGetResponse(url: url)
             .eraseToAnyPublisher()

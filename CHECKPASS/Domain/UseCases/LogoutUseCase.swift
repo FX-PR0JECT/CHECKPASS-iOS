@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol LogoutUseCase {
-    func executeForLogout() -> AnyPublisher<AuthResult, Error>
+    func executeForLogout() -> AnyPublisher<APIResult, Error>
 }
 
 final class DefaultLogoutUseCase {
@@ -21,7 +21,7 @@ final class DefaultLogoutUseCase {
 }
 
 extension DefaultLogoutUseCase: LogoutUseCase {
-    func executeForLogout() -> AnyPublisher<AuthResult, Error> {
+    func executeForLogout() -> AnyPublisher<APIResult, Error> {
         return repository.fetchPostResponse(params: nil, for: .logout)
             .map {
                 if $0.result {

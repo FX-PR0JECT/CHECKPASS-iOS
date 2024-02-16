@@ -47,7 +47,7 @@ final class IdDuplicateCheckUseCaseTest: XCTestCase {
     }
     
     func test_signUpTextField_inputId_showIdDuplicationCheck() {
-        let result: AuthResult = AuthResult(
+        let result: APIResult = APIResult(
             result: true,
             resultSet: "사용 가능한 아이디입니다."
         )
@@ -69,8 +69,8 @@ final class IdDuplicateCheckUseCaseTest: XCTestCase {
 
 }
 
-extension AuthResult: Equatable {
-    public static func == (lhs: AuthResult, rhs: AuthResult) -> Bool {
+extension APIResult: Equatable {
+    public static func == (lhs: APIResult, rhs: APIResult) -> Bool {
         if lhs.result == rhs.result && lhs.resultSet == rhs.resultSet {
             return true
         } else {

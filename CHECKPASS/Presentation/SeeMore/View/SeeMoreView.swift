@@ -23,7 +23,7 @@ struct SeeMoreView<AVM: AuthVM, UVM: UserInfoVM>: View {
                         #if DEBUG
                         UserCard(simpleUserInfo: .constant(SimpleUserInfo.sampleData))
                         #else
-                        UserCard(simpleUserInfo: $userInfoViewModel.simpleUserInfo)
+                        UserCard(simpleUserInfo: $viewModel.simpleUserInfo)
                         #endif
                     })
                     .listRowSeparator(.hidden)

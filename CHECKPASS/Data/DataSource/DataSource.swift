@@ -18,10 +18,11 @@ enum PostRequestUrl: String {
 protocol DataSource {
     func sendPostRequest<DTO: Codable>(_ params: Parameters?, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
 final class DefaultDataSource: DataSource {
-    //MARK: - request POST api
+    //MARK: - request POST API
     func sendPostRequest<DTO: Codable>(_ params: Parameters? = nil, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         var dataRequest: DataRequest
         
@@ -40,7 +41,18 @@ final class DefaultDataSource: DataSource {
                             .eraseToAnyPublisher()
     }
     
-    //MARK: - request GET api
+    //MARK: - request PATCH API
+    func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+        return AF.request(url, method: .patch, parameters: params)
+                .publishDecodable(type: resultType)
+                .value()
+                .mapError {
+                    $0 as Error
+                }
+                .eraseToAnyPublisher()
+    }
+    
+    //MARK: - request GET API
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         return AF.request(url)
                     .publishDecodable(type: resultType)    //decode and return Publisher
