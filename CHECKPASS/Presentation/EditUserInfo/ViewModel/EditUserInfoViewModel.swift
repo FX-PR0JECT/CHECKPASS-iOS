@@ -83,6 +83,12 @@ extension EditUserInfoViewModel: EditUserInfoVM {
     }
     
     func executeForStudent(updateName: String, updateDepartment: String, updateStudentGrade: String, updateDayOrNight: String, updateStudentSemester: String) {
+        guard let updateDepartment = departments?[updateDepartment] else {
+            alertType = .requestFailed
+            isAlertVisible = true
+            return
+        }
+        
         let data = ["updateName": updateName, "updateDepartment": updateDepartment,
                     "updateStudentGrade": updateStudentGrade, "updateDayOrNight": updateDayOrNight,
                     "updateStudentSemester": updateStudentSemester]
@@ -96,7 +102,7 @@ extension EditUserInfoViewModel: EditUserInfoVM {
                     self?.alertType = .requestFailed
                     self?.isAlertVisible = true
                     
-                    print("EditUserInfoViewModel.func executeForStudent(updateName:updateDepartment:updateStudentGrade:updateDayOrNight:updateStudentSemester:) error: ", error)
+                    print("EditUserInfoViewModel. executeForStudent(updateName:updateDepartment:updateStudentGrade:updateDayOrNight:updateStudentSemester:) error: ", error)
                 }
             }, receiveValue: { [weak self] in
                 if $0.result {
@@ -111,6 +117,12 @@ extension EditUserInfoViewModel: EditUserInfoVM {
     }
     
     func executeForStaff(updateName: String, updateDepartment: String, updateHireDate: String) {
+        guard let updateDepartment = departments?[updateDepartment] else {
+            alertType = .requestFailed
+            isAlertVisible = true
+            return
+        }
+        
         let data = ["updateName": updateName, "updateDepartment": updateDepartment,
                     "updateHireDate": updateHireDate]
         

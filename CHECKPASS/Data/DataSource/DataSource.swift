@@ -43,7 +43,7 @@ final class DefaultDataSource: DataSource {
     
     //MARK: - request PATCH API
     func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
-        return AF.request(url, method: .patch, parameters: params)
+        return AF.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default)
                 .publishDecodable(type: resultType)
                 .value()
                 .mapError {
