@@ -13,9 +13,7 @@ protocol EditUserInfoVM {
     
     func executeForStudent(updateName: String, updateDepartment: String, updateStudentGrade: String, updateDayOrNight: String, updateStudentSemester: String)
     func executeForStaff(updateName: String, updateDepartment: String, updateHireDate: String)
-    func compare(_ lhs: String, _ rhs: String?)
-    func compare(_ lhs: String, _ rhs: String)
-    func compare(_ lhs: Date, _ rhs: String)
+    func compare(_ lhs: User?, _ rhs: User?)
 }
 
 final class EditUserInfoViewModel {
@@ -25,7 +23,7 @@ final class EditUserInfoViewModel {
     @Published var isAlertVisible: Bool = false
     @Published var alertType: AlertType = .requestSucceed
     @Published var departments: Departments?
-    @Published var isChanged: Bool = true
+    @Published var isChanged: Bool = false
     
     private let getDepartmentsUseCase: GetDepartmentsUseCase
     private let editUserInfoUseCase: EditUserInfoUseCase
@@ -55,31 +53,14 @@ extension EditUserInfoViewModel: UserInfoInputVM {
 }
 
 extension EditUserInfoViewModel: EditUserInfoVM {
-    func compare(_ lhs: String, _ rhs: String?) {
-        guard lhs != "선택" else {
-            isChanged = true
-            return
+    func compare(_ lhs: User?, _ rhs: User?) {
+        if let lhs = lhs as? DetailedStudentInfo, let rhs = rhs as? DetailedStudentInfo {
+            isChanged = lhs == rhs ? false : true
+        } else if let lhs = lhs as? DetailedStaffInfo, let rhs = rhs as? DetailedStaffInfo {
+            if lhs == rhs {
+                isChanged = lhs == rhs ? false : true
+            }
         }
-        
-        isChanged = lhs != rhs ? false : true
-    }
-    
-    func compare(_ lhs: String, _ rhs: String) {
-        guard lhs != "선택" else {
-            isChanged = true
-            return
-        }
-        
-        isChanged = lhs != rhs ? false : true
-    }
-    
-    func compare(_ lhs: Date, _ rhs: String) {
-        guard lhs != Date(timeIntervalSince1970: 0) else {
-            isChanged = true
-            return
-        }
-        
-        isChanged = lhs.toYearMonthDay() != rhs ? false : true
     }
     
     func executeForStudent(updateName: String, updateDepartment: String, updateStudentGrade: String, updateDayOrNight: String, updateStudentSemester: String) {
