@@ -5,7 +5,7 @@
 //  Created by 이정훈 on 1/3/24.
 //
 
-class AppDI {
+struct AppDI {
     private static let instance: AppDI = AppDI()    //singleton instance
     private let dataSource = DefaultDataSource()    //DataSource
     
@@ -13,6 +13,14 @@ class AppDI {
     
     static func shared() -> AppDI {
         return instance
+    }
+    
+    func getLectureSearchViewModel() -> DefaultLectureRegistrationViewModel {
+        let repository = DefaultLectureSearchRepository(dataSource: dataSource)
+        let usecase = DefaultLectureSearchUseCase(repository: repository)
+        let viewModel = DefaultLectureRegistrationViewModel(usecase: usecase)
+        
+        return viewModel
     }
     
     func getEditUserInfoViewModel() -> EditUserInfoViewModel {

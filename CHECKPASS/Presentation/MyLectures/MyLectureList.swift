@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyLectureList: View {
+    @State private var showRegistraion: Bool = false
+    @State private var showSemesterPicker: Bool = false
     #if DEBUG
     @State private var selectedSemester: String = SimpleLecture.sampleDataKeys.first ?? ""
     #else
@@ -16,18 +18,30 @@ struct MyLectureList: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Sectionheader(header: "학기 선택")) {
-                    #if DEBUG
-                    Picker("학기", selection: $selectedSemester) {
-                        ForEach(SimpleLecture.sampleDataKeys, id: \.self) {
-                            Text("\($0)")
+                HStack {
+                    Button(action: {
+                        showSemesterPicker.toggle()
+                    }, label: {
+                        HStack(spacing: 1) {
+                            Text(selectedSemester)
+                                .bold()
+                            
+                            Image(systemName: "arrowtriangle.down.fill")
+                                .font(.caption2)
                         }
-                    }
-                    #else
-                    #endif
+                        .overlay(Rectangle()
+                                    .frame(height: 1)
+                                    .offset(y: 4), alignment: .bottom)
+                        .foregroundColor(.black)
+                    })
+                    .buttonStyle(.borderless)
+                    .padding(.trailing)
+                    
+                    Spacer()
                 }
+                .listRowSeparator(.hidden)
                 
-                Section(header: Sectionheader(header: "수강 중인 강의")) {
+                Section(header: Sectionheader(header: "수강 내역")) {
                     #if DEBUG
                     if selectedSemester.isEmpty {
                         Text("수강 중인 강의가 없습니다")
@@ -37,6 +51,7 @@ struct MyLectureList: View {
                                 //Lecture Detail
                             }, label: {
                                 SimpleLectureListRow(lecture)
+                                    .padding(10)
                             })
                         }
                     }
@@ -44,8 +59,31 @@ struct MyLectureList: View {
                     #endif
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("내 강의")
-            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        showRegistraion.toggle()
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
+                }
+            }
+            .fullScreenCover(isPresented: $showRegistraion) {
+                LectureRegistration(viewModel: AppDI.shared().getLectureSearchViewModel(), showRegistration: $showRegistraion
+                )
+            }
+            .sheet(isPresented: $showSemesterPicker) {
+                Picker("", selection: $selectedSemester) {
+                    ForEach(SimpleLecture.sampleDataKeys, id: \.self) {
+                        Text("\($0)")
+                    }
+                }
+                .pickerStyle(.wheel)
+                .presentationDetents([.height(UIScreen.main.bounds.height * 0.2)])
+                .presentationDragIndicator(.visible)
+            }
         }
     }
 }
