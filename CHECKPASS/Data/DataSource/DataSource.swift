@@ -19,7 +19,6 @@ protocol DataSource {
     func sendPostRequest<DTO: Codable>(_ params: Parameters?, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
-    func sendGetRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
 final class DefaultDataSource: DataSource {
@@ -63,24 +62,6 @@ final class DefaultDataSource: DataSource {
         return AF.request(url)
                     .publishDecodable(type: resultType)    //decode and return Publisher
                     .value()    //get value
-                    .mapError {
-                        return $0 as Error
-                    }
-                    .eraseToAnyPublisher()
-    }
-    
-    func sendGetRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
-        AF.request(url, method: .get, parameters: params, encoding: URLEncoding.httpBody)
-            .responseJSON {
-                print($0)
-            }
-        
-        return AF.request(url, 
-                          method: .get,
-                          parameters: params,
-                          encoding: URLEncoding.httpBody)
-                    .publishDecodable(type: resultType)
-                    .value()
                     .mapError {
                         return $0 as Error
                     }

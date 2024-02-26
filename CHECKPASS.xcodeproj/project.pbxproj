@@ -115,6 +115,8 @@
 		5CEAB2612B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2602B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift */; };
 		5CEAB2632B5E2E0D000423C3 /* CollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2622B5E2E0D000423C3 /* CollegesRepository.swift */; };
 		5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */; };
+		5CFACF5F2B886AD0003319C0 /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */; };
+		5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +248,8 @@
 		5CEAB2602B5E2D98000423C3 /* GetDepartmentsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDepartmentsUseCaseTest.swift; sourceTree = "<group>"; };
 		5CEAB2622B5E2E0D000423C3 /* CollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegesRepository.swift; sourceTree = "<group>"; };
 		5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollegesRepository.swift; sourceTree = "<group>"; };
+		5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
+		5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +319,8 @@
 				5C93F0D22B6229D3005D576D /* TestView.swift */,
 				5C93F0D62B623420005D576D /* MainMediumCard.swift */,
 				5C1F2BDD2B6375610035415E /* MainView.swift */,
+				5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */,
+				5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -928,8 +934,10 @@
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
 				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
+				5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */,
 				5CBB72932B7C774500DF0C72 /* String.swift in Sources */,
 				5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */,
+				5CFACF5F2B886AD0003319C0 /* ShortcutCard.swift in Sources */,
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
 				5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */,
 				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,

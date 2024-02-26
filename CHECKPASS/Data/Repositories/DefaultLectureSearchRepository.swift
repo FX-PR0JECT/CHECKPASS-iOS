@@ -17,8 +17,8 @@ final class DefaultLectureSearchRepository {
 }
 
 extension DefaultLectureSearchRepository: LectureSearchRepository {
-    func fetchLecture(url: String, params: Dictionary<String, Any>) -> AnyPublisher<[LectureInfo], Error> {
-        return dataSource.sendGetRequest(url: url, params: params, resultType: LectureSearchDTO.self)
+    func fetchLecture(url: String) -> AnyPublisher<[LectureInfo], Error> {
+        return dataSource.sendGetRequest(url: url, resultType: LectureSearchDTO.self)
             .map { DTO in
                 DTO.resultSet.map {
                     LectureInfo(lectureCode: $0.lectureCode,

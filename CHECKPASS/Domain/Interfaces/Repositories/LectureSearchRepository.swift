@@ -8,5 +8,5 @@
 import Combine
 
 protocol LectureSearchRepository {
-    func fetchLecture(url: String, params: Dictionary<String, Any>) -> AnyPublisher<[LectureInfo], Error>
+    func fetchLecture(url: String) -> AnyPublisher<[LectureInfo], Error>
 }
