@@ -24,7 +24,7 @@ class DefaultLectureSearchUseCase {
 extension DefaultLectureSearchUseCase: LectureSearchUseCase {
     func execute(lectureGrade: String?, lectureKind: String?, lectureGrades: String?,
                  lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[LectureInfo], Error> {
-        let url = "http://localhost:8080/lectures/search?(grade=null)&(kind=전필)&(grades=null)&(lectureCode=null)&(lectureName=null)&(professorName=null)"
+        let url = "http://localhost:8080/lectures/search?(grade=\(lectureGrade ?? "null"))&(kind=\(lectureKind ?? "null"))&(grades=\(lectureGrades ?? "null")&(lectureCode=\(lectureCode ?? "null"))&(lectureName=\(lectureName ?? "null")&(professorName=\(professorName ?? "null"))"
         
         return repository.fetchLecture(url: url)
                 .eraseToAnyPublisher()
