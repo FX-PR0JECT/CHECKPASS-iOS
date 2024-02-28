@@ -16,6 +16,6 @@ struct APIResultDTO: Codable {
 
 extension APIResultDTO {
     func toEntity() -> APIResult {
-        return APIResult(result: state == "SUCCESS" ? true : false, resultSet: resultSet)
+        return APIResult(result: state == "SUCCESS" ? true : false, code: code, resultSet: resultSet)
     }
 }

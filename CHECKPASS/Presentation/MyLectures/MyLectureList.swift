@@ -71,7 +71,7 @@ struct MyLectureList: View {
                 }
             }
             .fullScreenCover(isPresented: $showRegistraion) {
-                LectureRegistration(viewModel: AppDI.shared().getLectureSearchViewModel(), showRegistration: $showRegistraion
+                LectureEnrollmentView(viewModel: AppDI.shared().getLectureSearchViewModel(), showEnrollmentView: $showRegistraion
                 )
             }
             .sheet(isPresented: $showSemesterPicker) {

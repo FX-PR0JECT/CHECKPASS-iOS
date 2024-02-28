@@ -24,7 +24,55 @@ class DefaultLectureSearchUseCase {
 extension DefaultLectureSearchUseCase: LectureSearchUseCase {
     func execute(lectureGrade: String?, lectureKind: String?, lectureGrades: String?,
                  lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[LectureInfo], Error> {
-        let url = "http://localhost:8080/lectures/search?(grade=\(lectureGrade ?? "null"))&(kind=\(lectureKind ?? "null"))&(grades=\(lectureGrades ?? "null")&(lectureCode=\(lectureCode ?? "null"))&(lectureName=\(lectureName ?? "null")&(professorName=\(professorName ?? "null"))"
+        var url = "http://localhost:8080/lectures/search?"
+        
+        if let lectureGrade {
+            if String(url.last!) != "?" {
+                url += "&"
+            }
+            
+            url += "grade=\(lectureGrade)"
+        }
+        
+        if let lectureKind {
+            if String(url.last!) != "?" {
+                url += "&"
+            }
+            
+            url += "kind=\(lectureKind)"
+        }
+        
+        if let lectureGrades {
+            if String(url.last!) != "?" {
+                url += "&"
+            }
+            
+            url += "grades=\(lectureGrades)"
+        }
+        
+        if let lectureCode {
+            if String(url.last!) != "?" {
+                url += "&"
+            }
+            
+            url += "lectureCode=\(lectureCode)"
+        }
+        
+        if let lectureName {
+            if String(url.last!) != "?" {
+                url += "&"
+            }
+            
+            url += "lectureName=\(lectureName)"
+        }
+        
+        if let professorName {
+            if String(url.last!) != "?" {
+                url += "&"
+            }
+            
+            url += "professorName=\(professorName)"
+        }
         
         return repository.fetchLecture(url: url)
                 .eraseToAnyPublisher()

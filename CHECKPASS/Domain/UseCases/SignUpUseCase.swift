@@ -28,7 +28,7 @@ extension DefaultSignUpUseCase: SignUpUseCase {
               let signUpDepartment = data["signUpDepartment"],
               let engDepartment = departments?[signUpDepartment] else {
             //sign up failed because there is no eng name
-            return Just(APIResult(result: false, resultSet: "There is no eng name"))
+            return Just(APIResult(result: false, code: -62, resultSet: "There is no eng name"))
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
@@ -46,7 +46,7 @@ extension DefaultSignUpUseCase: SignUpUseCase {
               let engCollege = colleges?[signUpCollege],
               let signUpDepartment = data["signUpDepartment"],
               let engDepartment = departments?[signUpDepartment] else {
-            return Just(APIResult(result: false, resultSet: "There is no eng name"))
+            return Just(APIResult(result: false, code: -62, resultSet: "There is no eng name"))
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }

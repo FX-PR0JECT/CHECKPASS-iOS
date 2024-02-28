@@ -9,5 +9,6 @@ import Foundation
 
 struct APIResult: Codable {
     var result: Bool
+    var code: Int
     var resultSet: String
 }

@@ -17,17 +17,18 @@ enum PostRequestUrl: String {
 
 protocol DataSource {
     func sendPostRequest<DTO: Codable>(_ params: Parameters?, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPostRequest<DTO: Codable>(url: String, params: Parameters?, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
-final class DefaultDataSource: DataSource {
+extension DataSource {
     //MARK: - request POST API
     func sendPostRequest<DTO: Codable>(_ params: Parameters? = nil, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         var dataRequest: DataRequest
         
         if let params = params {
-            dataRequest = AF.request(url.rawValue, 
+            dataRequest = AF.request(url.rawValue,
                                      method: .post,
                                      parameters: params,
                                      encoding: JSONEncoding.default)
@@ -43,6 +44,30 @@ final class DefaultDataSource: DataSource {
                             .eraseToAnyPublisher()
     }
     
+    //MARK: - request POST API for flexible pathvariable
+    func sendPostRequest<DTO: Codable>(url: String, params: Parameters? = nil, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+        let dataRequest: DataRequest
+        
+        if let params {
+            dataRequest = AF.request(url,
+                                     method: .post,
+                                     parameters: params,
+                                     encoding: JSONEncoding.default)
+        } else {
+            dataRequest = AF.request(url, method: .post)
+        }
+        
+        return dataRequest
+                    .publishDecodable(type: resultType)
+                    .value()
+                    .mapError {
+                        return $0 as Error
+                    }
+                    .eraseToAnyPublisher()
+    }
+}
+
+final class DefaultDataSource: DataSource {
     //MARK: - request PATCH API
     func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         return AF.request(url, 
