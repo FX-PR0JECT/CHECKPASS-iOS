@@ -13,10 +13,10 @@ protocol LectureSearchUseCase {
                  lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[LectureInfo], Error>
 }
 
-class DefaultLectureSearchUseCase {
-    private let repository: LectureSearchRepository
+class DefaultLectureSearchUseCase<T: LectureRepository> {
+    private let repository: T
     
-    init(repository: LectureSearchRepository) {
+    init(repository: T) {
         self.repository = repository
     }
 }
@@ -75,6 +75,15 @@ extension DefaultLectureSearchUseCase: LectureSearchUseCase {
         }
         
         return repository.fetchLecture(url: url)
-                .eraseToAnyPublisher()
+            .map { lectures in
+                lectures.map {
+                    guard let lecture = $0 as? LectureInfo else {
+                        fatalError("cannot cast to SimpleLecture type")
+                    }
+                    
+                    return lecture
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }

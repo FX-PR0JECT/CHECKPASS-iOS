@@ -1,5 +1,5 @@
-// MARK: - SearchLectureDTO
-struct LectureSearchDTO: Codable {
+// MARK: - LectureDTO
+struct LectureDTO: Codable {
     let state: String
     let code: Int
     let title: String
