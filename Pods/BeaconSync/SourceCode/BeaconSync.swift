@@ -17,4 +17,9 @@ public struct BeaconSync {
             })
             .store(in: &cancellables)
     }
+    
+    public func publishBeacons() -> AnyPublisher<[CLBeacon]?, Never> {
+        return beaconManager.$beacons
+            .eraseToAnyPublisher()
+    }
 }

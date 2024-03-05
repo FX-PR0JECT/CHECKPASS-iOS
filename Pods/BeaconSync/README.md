@@ -5,11 +5,31 @@
 [![License](https://img.shields.io/cocoapods/l/BeaconSync.svg?style=flat)](https://cocoapods.org/pods/BeaconSync)
 [![Platform](https://img.shields.io/cocoapods/p/BeaconSync.svg?style=flat)](https://cocoapods.org/pods/BeaconSync)
 
+## How to use
+```swift
+import BeaconSync
+import CoreLocation
+
+final class ViewModel: ObservableObject {
+    @Published var beacons: [CLBeacon]?
+    private var beaconSync: BeaconSync?
+    
+    func startScann() {
+        beaconSync = BeaconSync(for: "00000000-0000-0000-0000-000000000000")
+        beaconSync?.sync { [weak self] in
+            self?.beacons = $0
+        }
+    }
+}
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Swift 5.x <br>
+iOS 14.0 ~
 
 ## Installation
 

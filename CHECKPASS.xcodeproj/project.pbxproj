@@ -105,6 +105,8 @@
 		5CB36C482B6B20790042D9BA /* SimpleLectureListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */; };
 		5CBB72932B7C774500DF0C72 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB72922B7C774500DF0C72 /* String.swift */; };
 		5CBD3E1E2B96A6F700724669 /* BeaconAttendanceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD3E1D2B96A6F700724669 /* BeaconAttendanceList.swift */; };
+		5CBD3E202B96AADE00724669 /* BeaconAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD3E1F2B96AADE00724669 /* BeaconAttendanceViewModel.swift */; };
+		5CBD3E242B96AF7D00724669 /* ScanBeaconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD3E232B96AF7D00724669 /* ScanBeaconUseCase.swift */; };
 		5CC787DC2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC787DB2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift */; };
 		5CC787DE2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC787DD2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift */; };
 		5CC787E42B8F04FF005A3EA3 /* DefaultCurrentLectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC787E32B8F04FF005A3EA3 /* DefaultCurrentLectureRepository.swift */; };
@@ -255,6 +257,8 @@
 		5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLectureListRow.swift; sourceTree = "<group>"; };
 		5CBB72922B7C774500DF0C72 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5CBD3E1D2B96A6F700724669 /* BeaconAttendanceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceList.swift; sourceTree = "<group>"; };
+		5CBD3E1F2B96AADE00724669 /* BeaconAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceViewModel.swift; sourceTree = "<group>"; };
+		5CBD3E232B96AF7D00724669 /* ScanBeaconUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeaconUseCase.swift; sourceTree = "<group>"; };
 		5CC787DB2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentViewModel.swift; sourceTree = "<group>"; };
 		5CC787DD2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentUserLectureUseCase.swift; sourceTree = "<group>"; };
 		5CC787E32B8F04FF005A3EA3 /* DefaultCurrentLectureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrentLectureRepository.swift; sourceTree = "<group>"; };
@@ -664,6 +668,7 @@
 				5C36EDFD2B858E4600D6CD4C /* LectureSearchUseCase.swift */,
 				5C9EF7FA2B8C25520085B5A3 /* LectureEnrollmentUseCase.swift */,
 				5CC787DD2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift */,
+				5CBD3E232B96AF7D00724669 /* ScanBeaconUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -844,6 +849,7 @@
 		5CBD3E1C2B96A6E300724669 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5CBD3E1F2B96AADE00724669 /* BeaconAttendanceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1211,6 +1217,7 @@
 				5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */,
 				5C9A00862B39AFE40037FC3E /* IdTextFieldView.swift in Sources */,
 				5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */,
+				5CBD3E202B96AADE00724669 /* BeaconAttendanceViewModel.swift in Sources */,
 				5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */,
 				5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
@@ -1229,6 +1236,7 @@
 				5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */,
 				5CDBD8442B8582A00052225C /* LectureDTO.swift in Sources */,
 				5C9C5D302B4FB27A00F87F5F /* AuthVM.swift in Sources */,
+				5CBD3E242B96AF7D00724669 /* ScanBeaconUseCase.swift in Sources */,
 				5C0705722B7495A1007531C8 /* ProfileImage.swift in Sources */,
 				5CAA86712B4C03D200357564 /* AuthRepository.swift in Sources */,
 				5C1A374D2B57A01600A0AE8A /* GetUserInfoUseCase.swift in Sources */,

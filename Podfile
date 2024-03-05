@@ -6,7 +6,7 @@ target 'CHECKPASS' do
   use_frameworks!
 
   # Pods for CHECKPASS
-  pod 'BeaconSync'
+  pod 'BeaconSync', '0.1.1'
 
   target 'CHECKPASSTests' do
     inherit! :search_paths
