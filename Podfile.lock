@@ -1,0 +1,16 @@
+PODS:
+  - BeaconSync (0.1.0)
+
+DEPENDENCIES:
+  - BeaconSync
+
+SPEC REPOS:
+  trunk:
+    - BeaconSync
+
+SPEC CHECKSUMS:
+  BeaconSync: 79838eccbeaf74b4de25fea0dc04ea62bfb88ee0
+
+PODFILE CHECKSUM: cc2680e237ff31d9704b76ff6deb3bc826ddacc5
+
+COCOAPODS: 1.14.3

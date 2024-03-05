@@ -104,6 +104,7 @@
 		5CB36C462B6B1C220042D9BA /* SimpleLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */; };
 		5CB36C482B6B20790042D9BA /* SimpleLectureListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */; };
 		5CBB72932B7C774500DF0C72 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB72922B7C774500DF0C72 /* String.swift */; };
+		5CBD3E1E2B96A6F700724669 /* BeaconAttendanceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD3E1D2B96A6F700724669 /* BeaconAttendanceList.swift */; };
 		5CC787DC2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC787DB2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift */; };
 		5CC787DE2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC787DD2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift */; };
 		5CC787E42B8F04FF005A3EA3 /* DefaultCurrentLectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC787E32B8F04FF005A3EA3 /* DefaultCurrentLectureRepository.swift */; };
@@ -127,6 +128,9 @@
 		5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */; };
 		5CFACF5F2B886AD0003319C0 /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */; };
 		5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */; };
+		A8068E7058E1CF261F4659FC /* Pods_CHECKPASS_CHECKPASSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */; };
+		D3CF7CB5E985BF68B861AA8C /* Pods_CHECKPASS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */; };
+		F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +151,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EADD8BA6BBD1928CC068F60 /* Pods-CHECKPASSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.release.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		508C3A645432E702D7D6E398 /* Pods-CHECKPASS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.debug.xcconfig"; sourceTree = "<group>"; };
 		5C030D1C2B464738004B19AB /* SignUpStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStartView.swift; sourceTree = "<group>"; };
 		5C030D1E2B4648AA004B19AB /* JobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPicker.swift; sourceTree = "<group>"; };
 		5C07056F2B749180007531C8 /* DetailedUserInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoRow.swift; sourceTree = "<group>"; };
@@ -246,6 +254,7 @@
 		5CB36C452B6B1C220042D9BA /* SimpleLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLecture.swift; sourceTree = "<group>"; };
 		5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLectureListRow.swift; sourceTree = "<group>"; };
 		5CBB72922B7C774500DF0C72 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5CBD3E1D2B96A6F700724669 /* BeaconAttendanceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceList.swift; sourceTree = "<group>"; };
 		5CC787DB2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentViewModel.swift; sourceTree = "<group>"; };
 		5CC787DD2B8F0357005A3EA3 /* GetCurrentUserLectureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentUserLectureUseCase.swift; sourceTree = "<group>"; };
 		5CC787E32B8F04FF005A3EA3 /* DefaultCurrentLectureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrentLectureRepository.swift; sourceTree = "<group>"; };
@@ -270,6 +279,11 @@
 		5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollegesRepository.swift; sourceTree = "<group>"; };
 		5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
 		5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsScrollView.swift; sourceTree = "<group>"; };
+		7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS_CHECKPASSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E157D41D8DB29693CDE33198 /* Pods-CHECKPASS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS.release.xcconfig"; path = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.release.xcconfig"; sourceTree = "<group>"; };
+		FA83AA761BB61BB9DB0C33A7 /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C561E8D2B33F3BF004C6501 /* Alamofire in Frameworks */,
+				D3CF7CB5E985BF68B861AA8C /* Pods_CHECKPASS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,12 +308,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8068E7058E1CF261F4659FC /* Pods_CHECKPASS_CHECKPASSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C696EB25B794610A07D0704 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				508C3A645432E702D7D6E398 /* Pods-CHECKPASS.debug.xcconfig */,
+				E157D41D8DB29693CDE33198 /* Pods-CHECKPASS.release.xcconfig */,
+				7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */,
+				FA83AA761BB61BB9DB0C33A7 /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */,
+				A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */,
+				1EADD8BA6BBD1928CC068F60 /* Pods-CHECKPASSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5C144ADE2B3E7F2E007E2E23 /* FindPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +420,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5CBD3E1A2B96A6D000724669 /* BeaconAttendance */,
 				5C7D974E2B82ECC10066234F /* LectureEnrollment */,
 				5C5D47AC2B7AEBF10006DDC5 /* EditUserInfo */,
 				5CCEC3802B7099BE00460B4B /* EAttendance */,
@@ -459,6 +490,8 @@
 				5C561E7C2B33F3AD004C6501 /* CHECKPASS */,
 				5CAA86772B4D144200357564 /* CHECKPASSTests */,
 				5C561E7B2B33F3AD004C6501 /* Products */,
+				4C696EB25B794610A07D0704 /* Pods */,
+				B48C7E558E1F83E77D44507F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -791,6 +824,30 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5CBD3E1A2B96A6D000724669 /* BeaconAttendance */ = {
+			isa = PBXGroup;
+			children = (
+				5CBD3E1C2B96A6E300724669 /* ViewModel */,
+				5CBD3E1B2B96A6DC00724669 /* View */,
+			);
+			path = BeaconAttendance;
+			sourceTree = "<group>";
+		};
+		5CBD3E1B2B96A6DC00724669 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CBD3E1D2B96A6F700724669 /* BeaconAttendanceList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CBD3E1C2B96A6E300724669 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5CCEC3802B7099BE00460B4B /* EAttendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +876,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B48C7E558E1F83E77D44507F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */,
+				91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */,
+				2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -826,9 +893,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C561E882B33F3AE004C6501 /* Build configuration list for PBXNativeTarget "CHECKPASS" */;
 			buildPhases = (
+				50210C95A89AE0BE2E89F285 /* [CP] Check Pods Manifest.lock */,
 				5C561E762B33F3AD004C6501 /* Sources */,
 				5C561E772B33F3AD004C6501 /* Frameworks */,
 				5C561E782B33F3AD004C6501 /* Resources */,
+				3EDF31BA7F742B95DE2F36FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -846,6 +915,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CAA867C2B4D144200357564 /* Build configuration list for PBXNativeTarget "CHECKPASSTests" */;
 			buildPhases = (
+				F75FC7D27B67100FB53CB8A7 /* [CP] Check Pods Manifest.lock */,
 				5CAA86722B4D144200357564 /* Sources */,
 				5CAA86732B4D144200357564 /* Frameworks */,
 				5CAA86742B4D144200357564 /* Resources */,
@@ -864,9 +934,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CD6E5012B4E5D2400C02305 /* Build configuration list for PBXNativeTarget "CHECKPASSUITests" */;
 			buildPhases = (
+				535552F0618EF7D512F2FFD5 /* [CP] Check Pods Manifest.lock */,
 				5CD6E4F52B4E5D2400C02305 /* Sources */,
 				5CD6E4F62B4E5D2400C02305 /* Frameworks */,
 				5CD6E4F72B4E5D2400C02305 /* Resources */,
+				A652E1A56418B8FD37E4047F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -950,6 +1022,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EDF31BA7F742B95DE2F36FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50210C95A89AE0BE2E89F285 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHECKPASS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		535552F0618EF7D512F2FFD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHECKPASS-CHECKPASSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A652E1A56418B8FD37E4047F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F75FC7D27B67100FB53CB8A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHECKPASSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C561E762B33F3AD004C6501 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -994,6 +1169,7 @@
 				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
 				5C36EDFE2B858E4600D6CD4C /* LectureSearchUseCase.swift in Sources */,
 				5C5D47B12B7B01AC0006DDC5 /* BackgroundHeader.swift in Sources */,
+				5CBD3E1E2B96A6F700724669 /* BeaconAttendanceList.swift in Sources */,
 				5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */,
 				5C3B118A2B735A6E00256BF0 /* DetailUserInfo.swift in Sources */,
 				5C9EF7FD2B8C26560085B5A3 /* LectureEnrollmentRepository.swift in Sources */,
@@ -1226,6 +1402,7 @@
 		};
 		5C561E892B33F3AE004C6501 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 508C3A645432E702D7D6E398 /* Pods-CHECKPASS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1234,6 +1411,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CHECKPASS/Preview Content\"";
 				DEVELOPMENT_TEAM = QHK65XFL8U;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CHECKPASS/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -1253,6 +1431,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1261,6 +1440,7 @@
 		};
 		5C561E8A2B33F3AE004C6501 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E157D41D8DB29693CDE33198 /* Pods-CHECKPASS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1269,6 +1449,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CHECKPASS/Preview Content\"";
 				DEVELOPMENT_TEAM = QHK65XFL8U;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CHECKPASS/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -1289,6 +1470,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1297,6 +1479,7 @@
 		};
 		5CAA867D2B4D144200357564 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1316,6 +1499,7 @@
 		};
 		5CAA867E2B4D144200357564 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EADD8BA6BBD1928CC068F60 /* Pods-CHECKPASSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1335,6 +1519,7 @@
 		};
 		5CD6E5022B4E5D2400C02305 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1353,6 +1538,7 @@
 		};
 		5CD6E5032B4E5D2400C02305 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA83AA761BB61BB9DB0C33A7 /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

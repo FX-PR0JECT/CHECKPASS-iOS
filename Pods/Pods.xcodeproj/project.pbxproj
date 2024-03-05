@@ -1,0 +1,970 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2908DDB43F302C23659ED719CA6878A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5E8B7B6267BED513C48B175BD495E22C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		639D2C350D9FC2242B89842D01D0E249 /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF42F1F3185BE3F8A17C2666E583CDA /* BeaconManager.swift */; };
+		919F963916EF01DE1AE94A54B90E9F39 /* BeaconSync-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBC4BD93F113E75082ED53327373E6F /* BeaconSync-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94C4F4D6628C7F6A3E3A3FF85AD395AE /* Pods-CHECKPASS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C4D7A5FBAE91D7602883816040F9F71 /* Pods-CHECKPASS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95976E78957FA9FEA965B4A2977B10AE /* BeaconSync-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A62D3850FB4FB606785318F257F8C6 /* BeaconSync-dummy.m */; };
+		A085A310A4CF78C9111CC04CE449EA78 /* Pods-CHECKPASS-CHECKPASSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD55B5BB72B443277CC80CA5D39DBCB /* Pods-CHECKPASS-CHECKPASSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADFBB15700AD32D228322335141FB612 /* Pods-CHECKPASSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C75727B901BB9AA7A9F6D23668579535 /* Pods-CHECKPASSTests-dummy.m */; };
+		AF4A9968EA9F08357CC23E6A75E2C4E9 /* Pods-CHECKPASS-CHECKPASSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D0E51B117811AA3E1259C673AF8EAA /* Pods-CHECKPASS-CHECKPASSUITests-dummy.m */; };
+		C6DA846325B4F87F8FA3601ED6CE6649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CC2EA178FFB88CB9EE4BE8F69CA61EDB /* Pods-CHECKPASS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC55EFA678F834B2771A6F2834CB15E /* Pods-CHECKPASS-dummy.m */; };
+		D0E401AE1EE612CD887CADD5AD349DB5 /* BeaconSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA2428B1AF508DB3DB1FF30ADF37F2C /* BeaconSync.swift */; };
+		E1D42A5F4DC3DC2C76558C3AC620F345 /* Pods-CHECKPASSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8A0C857F1FA0663DB95605CEDD4F951 /* Pods-CHECKPASSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2CCFF8F2A7C809095A76EACB0998E1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		348251AB71B9EF8CE5A6E23A8C190FB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E605CFE42603B7F93407FBBFB7A1C88;
+			remoteInfo = BeaconSync;
+		};
+		5F465A0B7C0FB0A8231762AEF4EFAEB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E605CFE42603B7F93407FBBFB7A1C88;
+			remoteInfo = BeaconSync;
+		};
+		CF2360005499F946ABC5DA207DAEFADB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC93F3CB2D5DE852B8795A059E93368F;
+			remoteInfo = "Pods-CHECKPASS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20ACDD433A2EE8B4846B6EFAAEFDC141 /* Pods-CHECKPASS-CHECKPASSUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CHECKPASS-CHECKPASSUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		26A4B83CBEDBD95C68BF661E57CFE744 /* Pods-CHECKPASS-CHECKPASSUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CHECKPASS-CHECKPASSUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		32F100B5D380BDD2D4079FEEEBF164FA /* Pods-CHECKPASS-CHECKPASSUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CHECKPASS-CHECKPASSUITests"; path = Pods_CHECKPASS_CHECKPASSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C175DF6B60A7F7B419FEA0DF6FBCBC /* BeaconSync-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BeaconSync-Info.plist"; sourceTree = "<group>"; };
+		37D69E19A50035CA7A1B71DD9AB591FE /* Pods-CHECKPASS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CHECKPASS.debug.xcconfig"; sourceTree = "<group>"; };
+		4240F2D8C3CBBE3BF399FDD88F57FE4C /* Pods-CHECKPASSTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CHECKPASSTests"; path = Pods_CHECKPASSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43109C9BE9BA1414D473F3FC0CB5576D /* BeaconSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BeaconSync.release.xcconfig; sourceTree = "<group>"; };
+		4DA2428B1AF508DB3DB1FF30ADF37F2C /* BeaconSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeaconSync.swift; path = SourceCode/BeaconSync.swift; sourceTree = "<group>"; };
+		5D09A11D46348EC367B98C15003B0ACF /* Pods-CHECKPASS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CHECKPASS-Info.plist"; sourceTree = "<group>"; };
+		6FFE96AD63DE384AA786039023746A36 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		70A07FE01290DA390542F3ECE5D77949 /* Pods-CHECKPASSTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CHECKPASSTests-Info.plist"; sourceTree = "<group>"; };
+		71217A9A046857C5E6F478280FEA0FEE /* BeaconSync.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BeaconSync.modulemap; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7868715C2A9CB98609BB823B04F6FD3F /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8BBC4BD93F113E75082ED53327373E6F /* BeaconSync-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BeaconSync-umbrella.h"; sourceTree = "<group>"; };
+		8C0656A9753DAE6CF061EBA1383D5BBC /* Pods-CHECKPASSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CHECKPASSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8E8A807724D08132E147B3A331CF611D /* Pods-CHECKPASS-CHECKPASSUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CHECKPASS-CHECKPASSUITests-Info.plist"; sourceTree = "<group>"; };
+		9AF15086FF58AA80700790E5CE39D236 /* Pods-CHECKPASS-CHECKPASSUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CHECKPASS-CHECKPASSUITests-frameworks.sh"; sourceTree = "<group>"; };
+		9C4D7A5FBAE91D7602883816040F9F71 /* Pods-CHECKPASS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CHECKPASS-umbrella.h"; sourceTree = "<group>"; };
+		9CC55EFA678F834B2771A6F2834CB15E /* Pods-CHECKPASS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CHECKPASS-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E633424C4776E8C3806D676AD31C65F /* BeaconSync */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BeaconSync; path = BeaconSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE696DF4F04F9E660DEB26CE3B91F35 /* Pods-CHECKPASS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CHECKPASS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A3A62D3850FB4FB606785318F257F8C6 /* BeaconSync-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BeaconSync-dummy.m"; sourceTree = "<group>"; };
+		A448AD4E3C818662DAEE0870FC175666 /* Pods-CHECKPASS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CHECKPASS"; path = Pods_CHECKPASS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8A0C857F1FA0663DB95605CEDD4F951 /* Pods-CHECKPASSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CHECKPASSTests-umbrella.h"; sourceTree = "<group>"; };
+		A96B752CE28331F209A27827FF9B67EA /* BeaconSync-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BeaconSync-prefix.pch"; sourceTree = "<group>"; };
+		ABAFF611A2A791F221E807942172EF73 /* BeaconSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BeaconSync.debug.xcconfig; sourceTree = "<group>"; };
+		AE2E9DC8EA4F664551AA18E36D050E28 /* Pods-CHECKPASSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CHECKPASSTests.modulemap"; sourceTree = "<group>"; };
+		AFAF1ADC30034CB07979DCB4A8178F1E /* Pods-CHECKPASS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CHECKPASS.release.xcconfig"; sourceTree = "<group>"; };
+		B0565C8D9BD78785658ACC7FA809DB00 /* Pods-CHECKPASSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CHECKPASSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAF42F1F3185BE3F8A17C2666E583CDA /* BeaconManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeaconManager.swift; path = SourceCode/BeaconManager.swift; sourceTree = "<group>"; };
+		C6D0E51B117811AA3E1259C673AF8EAA /* Pods-CHECKPASS-CHECKPASSUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CHECKPASS-CHECKPASSUITests-dummy.m"; sourceTree = "<group>"; };
+		C75727B901BB9AA7A9F6D23668579535 /* Pods-CHECKPASSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CHECKPASSTests-dummy.m"; sourceTree = "<group>"; };
+		D2D133C64BCBD15F172AF902F79C4645 /* Pods-CHECKPASSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CHECKPASSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D334F739F903EBD6ECB2BB8090A9E3A6 /* Pods-CHECKPASS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CHECKPASS-acknowledgements.plist"; sourceTree = "<group>"; };
+		DECB8378A811066C6CEB2496BFCC0667 /* Pods-CHECKPASS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CHECKPASS-frameworks.sh"; sourceTree = "<group>"; };
+		E2853BC2E55F1A84FB2CAA43F2306EB0 /* Pods-CHECKPASS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CHECKPASS.modulemap"; sourceTree = "<group>"; };
+		EAD55B5BB72B443277CC80CA5D39DBCB /* Pods-CHECKPASS-CHECKPASSUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CHECKPASS-CHECKPASSUITests-umbrella.h"; sourceTree = "<group>"; };
+		F483212DF891BC8989E8ED486AD7458E /* Pods-CHECKPASS-CHECKPASSUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CHECKPASS-CHECKPASSUITests.modulemap"; sourceTree = "<group>"; };
+		F8610527C3EBA75C0896ED7EB386E2A4 /* Pods-CHECKPASSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CHECKPASSTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F7141CB4A3651B1A8AAF6AA92C17BEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6DA846325B4F87F8FA3601ED6CE6649 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		714FD863C1B4EB8799E622012DDF55C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CCFF8F2A7C809095A76EACB0998E1A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFA1E54BE312B977C48ABDEA577CD06F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E8B7B6267BED513C48B175BD495E22C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE9FE8CC0A72F592CC78212BBE066AFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2908DDB43F302C23659ED719CA6878A0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DAABCFB150AEBE504EFC38CB8CCC505 /* Pods-CHECKPASS */ = {
+			isa = PBXGroup;
+			children = (
+				E2853BC2E55F1A84FB2CAA43F2306EB0 /* Pods-CHECKPASS.modulemap */,
+				9EE696DF4F04F9E660DEB26CE3B91F35 /* Pods-CHECKPASS-acknowledgements.markdown */,
+				D334F739F903EBD6ECB2BB8090A9E3A6 /* Pods-CHECKPASS-acknowledgements.plist */,
+				9CC55EFA678F834B2771A6F2834CB15E /* Pods-CHECKPASS-dummy.m */,
+				DECB8378A811066C6CEB2496BFCC0667 /* Pods-CHECKPASS-frameworks.sh */,
+				5D09A11D46348EC367B98C15003B0ACF /* Pods-CHECKPASS-Info.plist */,
+				9C4D7A5FBAE91D7602883816040F9F71 /* Pods-CHECKPASS-umbrella.h */,
+				37D69E19A50035CA7A1B71DD9AB591FE /* Pods-CHECKPASS.debug.xcconfig */,
+				AFAF1ADC30034CB07979DCB4A8178F1E /* Pods-CHECKPASS.release.xcconfig */,
+			);
+			name = "Pods-CHECKPASS";
+			path = "Target Support Files/Pods-CHECKPASS";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		780C157AD6C5DCB775BBF25BAAA5C18C /* BeaconSync */ = {
+			isa = PBXGroup;
+			children = (
+				BAF42F1F3185BE3F8A17C2666E583CDA /* BeaconManager.swift */,
+				4DA2428B1AF508DB3DB1FF30ADF37F2C /* BeaconSync.swift */,
+				F2273A7434EAF60B9747DC67EA572597 /* Support Files */,
+			);
+			name = BeaconSync;
+			path = BeaconSync;
+			sourceTree = "<group>";
+		};
+		8182C461F95CEF8D2961FFB88E240A23 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DAABCFB150AEBE504EFC38CB8CCC505 /* Pods-CHECKPASS */,
+				EE1139375A254176E82E5C336F13D6EA /* Pods-CHECKPASS-CHECKPASSUITests */,
+				9EDF429EB611A090A0D0185E0CB7F8A1 /* Pods-CHECKPASSTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9EDF429EB611A090A0D0185E0CB7F8A1 /* Pods-CHECKPASSTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE2E9DC8EA4F664551AA18E36D050E28 /* Pods-CHECKPASSTests.modulemap */,
+				D2D133C64BCBD15F172AF902F79C4645 /* Pods-CHECKPASSTests-acknowledgements.markdown */,
+				8C0656A9753DAE6CF061EBA1383D5BBC /* Pods-CHECKPASSTests-acknowledgements.plist */,
+				C75727B901BB9AA7A9F6D23668579535 /* Pods-CHECKPASSTests-dummy.m */,
+				70A07FE01290DA390542F3ECE5D77949 /* Pods-CHECKPASSTests-Info.plist */,
+				A8A0C857F1FA0663DB95605CEDD4F951 /* Pods-CHECKPASSTests-umbrella.h */,
+				B0565C8D9BD78785658ACC7FA809DB00 /* Pods-CHECKPASSTests.debug.xcconfig */,
+				F8610527C3EBA75C0896ED7EB386E2A4 /* Pods-CHECKPASSTests.release.xcconfig */,
+			);
+			name = "Pods-CHECKPASSTests";
+			path = "Target Support Files/Pods-CHECKPASSTests";
+			sourceTree = "<group>";
+		};
+		AA11C4BA9916EEE2F924302A561EDA09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E633424C4776E8C3806D676AD31C65F /* BeaconSync */,
+				A448AD4E3C818662DAEE0870FC175666 /* Pods-CHECKPASS */,
+				32F100B5D380BDD2D4079FEEEBF164FA /* Pods-CHECKPASS-CHECKPASSUITests */,
+				4240F2D8C3CBBE3BF399FDD88F57FE4C /* Pods-CHECKPASSTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				E49F9CA5B156B2443B35362B64760C46 /* Pods */,
+				AA11C4BA9916EEE2F924302A561EDA09 /* Products */,
+				8182C461F95CEF8D2961FFB88E240A23 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E49F9CA5B156B2443B35362B64760C46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				780C157AD6C5DCB775BBF25BAAA5C18C /* BeaconSync */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE1139375A254176E82E5C336F13D6EA /* Pods-CHECKPASS-CHECKPASSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F483212DF891BC8989E8ED486AD7458E /* Pods-CHECKPASS-CHECKPASSUITests.modulemap */,
+				20ACDD433A2EE8B4846B6EFAAEFDC141 /* Pods-CHECKPASS-CHECKPASSUITests-acknowledgements.markdown */,
+				26A4B83CBEDBD95C68BF661E57CFE744 /* Pods-CHECKPASS-CHECKPASSUITests-acknowledgements.plist */,
+				C6D0E51B117811AA3E1259C673AF8EAA /* Pods-CHECKPASS-CHECKPASSUITests-dummy.m */,
+				9AF15086FF58AA80700790E5CE39D236 /* Pods-CHECKPASS-CHECKPASSUITests-frameworks.sh */,
+				8E8A807724D08132E147B3A331CF611D /* Pods-CHECKPASS-CHECKPASSUITests-Info.plist */,
+				EAD55B5BB72B443277CC80CA5D39DBCB /* Pods-CHECKPASS-CHECKPASSUITests-umbrella.h */,
+				6FFE96AD63DE384AA786039023746A36 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */,
+				7868715C2A9CB98609BB823B04F6FD3F /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */,
+			);
+			name = "Pods-CHECKPASS-CHECKPASSUITests";
+			path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests";
+			sourceTree = "<group>";
+		};
+		F2273A7434EAF60B9747DC67EA572597 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71217A9A046857C5E6F478280FEA0FEE /* BeaconSync.modulemap */,
+				A3A62D3850FB4FB606785318F257F8C6 /* BeaconSync-dummy.m */,
+				33C175DF6B60A7F7B419FEA0DF6FBCBC /* BeaconSync-Info.plist */,
+				A96B752CE28331F209A27827FF9B67EA /* BeaconSync-prefix.pch */,
+				8BBC4BD93F113E75082ED53327373E6F /* BeaconSync-umbrella.h */,
+				ABAFF611A2A791F221E807942172EF73 /* BeaconSync.debug.xcconfig */,
+				43109C9BE9BA1414D473F3FC0CB5576D /* BeaconSync.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BeaconSync";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		508075556E03EAD9BB6850641F2C66A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A085A310A4CF78C9111CC04CE449EA78 /* Pods-CHECKPASS-CHECKPASSUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCCCDE859EEFF15C71155A20CBF758C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94C4F4D6628C7F6A3E3A3FF85AD395AE /* Pods-CHECKPASS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FAA3BB005C267F612CC54E9D8A3506E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				919F963916EF01DE1AE94A54B90E9F39 /* BeaconSync-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6F759964E4C399BAA28129FCC01D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1D42A5F4DC3DC2C76558C3AC620F345 /* Pods-CHECKPASSTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1E605CFE42603B7F93407FBBFB7A1C88 /* BeaconSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47D3048DFAD0F61EB87BAFD45604B3D3 /* Build configuration list for PBXNativeTarget "BeaconSync" */;
+			buildPhases = (
+				8FAA3BB005C267F612CC54E9D8A3506E /* Headers */,
+				6CA67C470C2CE1FC21F5F07D070A6EF0 /* Sources */,
+				FE9FE8CC0A72F592CC78212BBE066AFA /* Frameworks */,
+				35B9E11CFB3020DD0E897385F0AC1E0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeaconSync;
+			productName = BeaconSync;
+			productReference = 9E633424C4776E8C3806D676AD31C65F /* BeaconSync */;
+			productType = "com.apple.product-type.framework";
+		};
+		53D93900486A33D5CA93210F7E8FB489 /* Pods-CHECKPASSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1852D641336459396C350688BD7E8090 /* Build configuration list for PBXNativeTarget "Pods-CHECKPASSTests" */;
+			buildPhases = (
+				C7A6F759964E4C399BAA28129FCC01D5 /* Headers */,
+				7D4DF713DDB49D72E4604DC913B9655D /* Sources */,
+				714FD863C1B4EB8799E622012DDF55C0 /* Frameworks */,
+				0ED997F82BAC36C106DCBFFCEB9347B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE2D402343DDA128B18311E4A0889727 /* PBXTargetDependency */,
+			);
+			name = "Pods-CHECKPASSTests";
+			productName = Pods_CHECKPASSTests;
+			productReference = 4240F2D8C3CBBE3BF399FDD88F57FE4C /* Pods-CHECKPASSTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD63C546B2157CB596A5D39F6A40AFB7 /* Pods-CHECKPASS-CHECKPASSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 682B1BA593378E38E93CC79BFB87A6E5 /* Build configuration list for PBXNativeTarget "Pods-CHECKPASS-CHECKPASSUITests" */;
+			buildPhases = (
+				508075556E03EAD9BB6850641F2C66A9 /* Headers */,
+				A0C862849E0DE2EABA7AEAD0B0B4C586 /* Sources */,
+				AFA1E54BE312B977C48ABDEA577CD06F /* Frameworks */,
+				B13E5BD64ADA9B838DC12093CB429896 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F636A5BC68491170626241D2D7242109 /* PBXTargetDependency */,
+			);
+			name = "Pods-CHECKPASS-CHECKPASSUITests";
+			productName = Pods_CHECKPASS_CHECKPASSUITests;
+			productReference = 32F100B5D380BDD2D4079FEEEBF164FA /* Pods-CHECKPASS-CHECKPASSUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		BC93F3CB2D5DE852B8795A059E93368F /* Pods-CHECKPASS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFF7B823FE71DF7A4BDDF1E95D0A232F /* Build configuration list for PBXNativeTarget "Pods-CHECKPASS" */;
+			buildPhases = (
+				8BCCCDE859EEFF15C71155A20CBF758C /* Headers */,
+				2378C5B1851431DEFDC18082536B223F /* Sources */,
+				4F7141CB4A3651B1A8AAF6AA92C17BEE /* Frameworks */,
+				1A47E5B49C4855F1F068ED2AC112D9FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C09BB308F67E5C658B4AF85F03EFE091 /* PBXTargetDependency */,
+			);
+			name = "Pods-CHECKPASS";
+			productName = Pods_CHECKPASS;
+			productReference = A448AD4E3C818662DAEE0870FC175666 /* Pods-CHECKPASS */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AA11C4BA9916EEE2F924302A561EDA09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E605CFE42603B7F93407FBBFB7A1C88 /* BeaconSync */,
+				BC93F3CB2D5DE852B8795A059E93368F /* Pods-CHECKPASS */,
+				AD63C546B2157CB596A5D39F6A40AFB7 /* Pods-CHECKPASS-CHECKPASSUITests */,
+				53D93900486A33D5CA93210F7E8FB489 /* Pods-CHECKPASSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ED997F82BAC36C106DCBFFCEB9347B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A47E5B49C4855F1F068ED2AC112D9FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35B9E11CFB3020DD0E897385F0AC1E0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B13E5BD64ADA9B838DC12093CB429896 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2378C5B1851431DEFDC18082536B223F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC2EA178FFB88CB9EE4BE8F69CA61EDB /* Pods-CHECKPASS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA67C470C2CE1FC21F5F07D070A6EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639D2C350D9FC2242B89842D01D0E249 /* BeaconManager.swift in Sources */,
+				D0E401AE1EE612CD887CADD5AD349DB5 /* BeaconSync.swift in Sources */,
+				95976E78957FA9FEA965B4A2977B10AE /* BeaconSync-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4DF713DDB49D72E4604DC913B9655D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADFBB15700AD32D228322335141FB612 /* Pods-CHECKPASSTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0C862849E0DE2EABA7AEAD0B0B4C586 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4A9968EA9F08357CC23E6A75E2C4E9 /* Pods-CHECKPASS-CHECKPASSUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C09BB308F67E5C658B4AF85F03EFE091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BeaconSync;
+			target = 1E605CFE42603B7F93407FBBFB7A1C88 /* BeaconSync */;
+			targetProxy = 5F465A0B7C0FB0A8231762AEF4EFAEB2 /* PBXContainerItemProxy */;
+		};
+		DE2D402343DDA128B18311E4A0889727 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-CHECKPASS";
+			target = BC93F3CB2D5DE852B8795A059E93368F /* Pods-CHECKPASS */;
+			targetProxy = CF2360005499F946ABC5DA207DAEFADB /* PBXContainerItemProxy */;
+		};
+		F636A5BC68491170626241D2D7242109 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BeaconSync;
+			target = 1E605CFE42603B7F93407FBBFB7A1C88 /* BeaconSync */;
+			targetProxy = 348251AB71B9EF8CE5A6E23A8C190FB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03CEC1458794BA6239690F911E3C6756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0565C8D9BD78785658ACC7FA809DB00 /* Pods-CHECKPASSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0908B783BE06F260DC57440753ED70CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFAF1ADC30034CB07979DCB4A8178F1E /* Pods-CHECKPASS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		30E0B9EFD9A5C45D0D351231E81B30B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		60A79739D1A9BB01D3827712C8CF1520 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D69E19A50035CA7A1B71DD9AB591FE /* Pods-CHECKPASS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9817CD8E2ED59A6E04215CC86D280B29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABAFF611A2A791F221E807942172EF73 /* BeaconSync.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BeaconSync/BeaconSync-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BeaconSync/BeaconSync-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BeaconSync/BeaconSync.modulemap";
+				PRODUCT_MODULE_NAME = BeaconSync;
+				PRODUCT_NAME = BeaconSync;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4767D880523D431F059874087CEC8DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43109C9BE9BA1414D473F3FC0CB5576D /* BeaconSync.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BeaconSync/BeaconSync-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BeaconSync/BeaconSync-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BeaconSync/BeaconSync.modulemap";
+				PRODUCT_MODULE_NAME = BeaconSync;
+				PRODUCT_NAME = BeaconSync;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B77356994892FF3839B9617A351A7B19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7868715C2A9CB98609BB823B04F6FD3F /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BD95464426E35C66B341BFD53C02D1F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FFE96AD63DE384AA786039023746A36 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D755DAB934207A3B93C969D6BF71ECE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8610527C3EBA75C0896ED7EB386E2A4 /* Pods-CHECKPASSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F4FF6A0D1970CA9705974E3CB2134802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1852D641336459396C350688BD7E8090 /* Build configuration list for PBXNativeTarget "Pods-CHECKPASSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CEC1458794BA6239690F911E3C6756 /* Debug */,
+				D755DAB934207A3B93C969D6BF71ECE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47D3048DFAD0F61EB87BAFD45604B3D3 /* Build configuration list for PBXNativeTarget "BeaconSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9817CD8E2ED59A6E04215CC86D280B29 /* Debug */,
+				A4767D880523D431F059874087CEC8DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FF6A0D1970CA9705974E3CB2134802 /* Debug */,
+				30E0B9EFD9A5C45D0D351231E81B30B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		682B1BA593378E38E93CC79BFB87A6E5 /* Build configuration list for PBXNativeTarget "Pods-CHECKPASS-CHECKPASSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD95464426E35C66B341BFD53C02D1F9 /* Debug */,
+				B77356994892FF3839B9617A351A7B19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFF7B823FE71DF7A4BDDF1E95D0A232F /* Build configuration list for PBXNativeTarget "Pods-CHECKPASS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60A79739D1A9BB01D3827712C8CF1520 /* Debug */,
+				0908B783BE06F260DC57440753ED70CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

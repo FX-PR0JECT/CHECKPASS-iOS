@@ -1,0 +1,6 @@
+framework module BeaconSync {
+  umbrella header "BeaconSync-umbrella.h"
+
+  export *
+  module * { export * }
+}
