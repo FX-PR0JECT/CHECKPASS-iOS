@@ -16,8 +16,7 @@ struct MainView<UVM: UserInfoVM>: View {
             ScrollView {
                 MainSubTitle("\(userInfoViewModel.simpleUserInfo?.userName ?? "") 님 안녕하세요!")
                 
-                ShortcutsView()
-                    .padding([.leading, .trailing])
+                ShortcutsScrollView()
                 
                 MainSubTitle("출석하기")
                 
@@ -32,14 +31,14 @@ struct MainView<UVM: UserInfoVM>: View {
                     })
                     
                     NavigationLink(destination: {
-                        EAttendanceList()
+                        EAttendanceList(viewModel: AppDI.shared().getEAttendanceViewModel())
                     }, label: {
                         MainMediumCard(title: "전자출결로\n출석하기",
                                        image: "dart",
                                        imageOffset: (0, 20))
                     })
                 }
-                .padding([.leading, .trailing])
+                .padding([.leading, .trailing, .bottom])
                 
                 MainSubTitle("시간표")
                 
