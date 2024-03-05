@@ -51,10 +51,13 @@ struct MyLectureList: View {
                                 //Lecture Detail
                             }, label: {
                                 SimpleLectureListRow(lecture)
-                                    .padding(10)
+                                    .padding([.top, .bottom])
                             })
+                            .listRowSeparator(.hidden)
                         }
+                        .listSectionSeparator(.visible, edges: .top)
                     }
+                    
                     #else
                     #endif
                 }

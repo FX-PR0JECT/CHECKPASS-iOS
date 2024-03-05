@@ -22,30 +22,55 @@ struct EAttendance: View {
                 .frame(width: 0)
             
             VStack {
-                HStack(spacing: 25) {
-                    CodeInput(input: $inputs, index: 0)
+                VStack(alignment: .leading) {
+                    HStack(spacing: 2) {
+                        Text(lecture.name)
+                            .font(.largeTitle)
+                            .bold()
+                        
+                        Spacer()
+                    }
                     
-                    CodeInput(input: $inputs, index: 1)
-                    
-                    CodeInput(input: $inputs, index: 2)
-                    
-                    CodeInput(input: $inputs, index: 3)
+                    HStack {
+                        Text("\(lecture.professor) 교수님")
+                        
+                        Text("•")
+                        
+                        Text("\(lecture.division)분반")
+                    }
+                    .font(.subheadline)
                 }
-                .onTapGesture {
-                    focusedField = true
+                .padding(.bottom, 30)
+                
+                VStack(alignment: .leading) {
+                    Text("출석 코드")
+                        .font(.title3)
+                        .bold()
+                    
+                    HStack(spacing: 25) {
+                        CodeInput(input: $inputs, index: 0)
+                        
+                        CodeInput(input: $inputs, index: 1)
+                        
+                        CodeInput(input: $inputs, index: 2)
+                        
+                        CodeInput(input: $inputs, index: 3)
+                    }
+                    .onTapGesture {
+                        focusedField = true
+                    }
                 }
                 
                 Spacer()
                 
                 Button(action: {}, label: {
                     Text("출석하기")
-                        .bold()
-                        .padding(.all, 15)
+                        .padding(8)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(.blue)
-                        .cornerRadius(30)
                 })
+                .buttonBorderShape(.roundedRectangle)
+                .cornerRadius(30)
+                .buttonStyle(.borderedProminent)
             }
             .padding()
             .onAppear {
@@ -71,14 +96,8 @@ struct EAttendance: View {
                 }
             }
         }
-    }
-}
-
-extension View {
-    func modifier<ModifiedContent: View>(
-        @ViewBuilder body: (_ content: Self) -> ModifiedContent
-    ) -> ModifiedContent {
-        body(self)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 
@@ -94,5 +113,5 @@ extension EAttendance {
 }
 
 #Preview {
-    EAttendance(lecture: SimpleLecture(id: "103834", name: "Java 프로그래밍", professor: "홍길동", division: "1분반"))
+    EAttendance(lecture: SimpleLecture(id: "103834", name: "Java 프로그래밍", professor: "홍길동", division: "1"))
 }

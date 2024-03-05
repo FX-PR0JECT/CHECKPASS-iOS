@@ -13,6 +13,8 @@
 		5C0705722B7495A1007531C8 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0705712B7495A1007531C8 /* ProfileImage.swift */; };
 		5C0780D32B78644B00E7641B /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0780D22B78644B00E7641B /* EditButton.swift */; };
 		5C0CBAB22B9006EE0007849E /* EAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0CBAB12B9006EE0007849E /* EAttendanceViewModel.swift */; };
+		5C0CBAB42B9018120007849E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0CBAB32B9018120007849E /* View.swift */; };
+		5C0CBAB62B903C960007849E /* LectureIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0CBAB52B903C960007849E /* LectureIcon.swift */; };
 		5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */; };
 		5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */; };
 		5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C144AE12B3E90EC007E2E23 /* FindPwView.swift */; };
@@ -151,6 +153,8 @@
 		5C0705712B7495A1007531C8 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		5C0780D22B78644B00E7641B /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
 		5C0CBAB12B9006EE0007849E /* EAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendanceViewModel.swift; sourceTree = "<group>"; };
+		5C0CBAB32B9018120007849E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5C0CBAB52B903C960007849E /* LectureIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureIcon.swift; sourceTree = "<group>"; };
 		5C144ADA2B3E41A9007E2E23 /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
 		5C144ADC2B3E4221007E2E23 /* AgreementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementButton.swift; sourceTree = "<group>"; };
 		5C144AE12B3E90EC007E2E23 /* FindPwView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwView.swift; sourceTree = "<group>"; };
@@ -745,6 +749,7 @@
 				5C9A2A602B3BAB6E006B176E /* PickerContents.swift */,
 				5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */,
 				5CBB72922B7C774500DF0C72 /* String.swift */,
+				5C0CBAB32B9018120007849E /* View.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -801,6 +806,7 @@
 				5CCEC3832B7099F100460B4B /* EAttendanceList.swift */,
 				5CCEC3852B709D1600460B4B /* EAttendance.swift */,
 				5CCEC3872B709F0300460B4B /* CodeInput.swift */,
+				5C0CBAB52B903C960007849E /* LectureIcon.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1032,11 +1038,13 @@
 				5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */,
 				5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
+				5C0CBAB42B9018120007849E /* View.swift in Sources */,
 				5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C9EF7F92B8C11F80085B5A3 /* SearchedLectureListRow.swift in Sources */,
 				5C0780D32B78644B00E7641B /* EditButton.swift in Sources */,
 				5C93F0C52B60F50F005D576D /* MyLectureList.swift in Sources */,
+				5C0CBAB62B903C960007849E /* LectureIcon.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C1F2BDE2B6375610035415E /* MainView.swift in Sources */,
 				5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */,

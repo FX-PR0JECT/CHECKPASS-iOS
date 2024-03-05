@@ -7,32 +7,37 @@
 
 import SwiftUI
 
-struct EAttendanceList: View {
-    #if DEBUG
-    @State private var lectures: [SimpleLecture] = SimpleLecture.sampleData["2024학년도 1학기"] ?? []
-    #else
-    #endif
+struct EAttendanceList<T: EAttendanceViewModel>: View {
+    @ObservedObject private var viewModel: T
+    
+    init(viewModel: T) {
+        _viewModel = ObservedObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         List {
-            #if DEBUG
-            Section(header: Sectionheader(header: "2024학년도 1학기")) {
-                ForEach(lectures) { lecture in
+            Section(header: Sectionheader(header: "수강 중인 강의")) {
+                ForEach(viewModel.lectures ?? []) { lecture in
                     NavigationLink(destination: {
                         EAttendance(lecture: lecture)
                     }, label: {
                         SimpleLectureListRow(lecture)
+                            .padding([.top, .bottom])
                     })
+                    .listRowSeparator(.hidden)
                 }
+                .listSectionSeparator(.visible, edges: .top)
             }
-            #else
-            #endif
-        }
-        .navigationTitle("전자출석")
+        } 
+        .listStyle(.plain)
+        .navigationTitle("전자출결")
         .navigationBarTitleDisplayMode(.large)
+        .onAppear {
+            viewModel.getCurrentLectures()
+        }
     }
 }
 
 #Preview {
-    EAttendanceList()
+    EAttendanceList(viewModel: AppDI.shared().getEAttendanceViewModel())
 }

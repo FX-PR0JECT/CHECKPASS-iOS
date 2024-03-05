@@ -15,16 +15,20 @@ struct SimpleLectureListRow: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("\(lecture.name)(\(lecture.division))")
-                .font(.headline)
+        HStack(spacing: 10) {
+            LectureIcon()
             
-            HStack {
-                Text(lecture.professor)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+            VStack(alignment: .leading, spacing: 10) {
+                Text("\(lecture.name)(\(lecture.division)분반)")
+                    .font(.headline)
                 
-                Spacer()
+                HStack {
+                    Text(lecture.professor)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                }
             }
         }
     }
@@ -32,6 +36,6 @@ struct SimpleLectureListRow: View {
 
 #if DEBUG
 #Preview {
-    SimpleLectureListRow(SimpleLecture(id: "123456", name: "객체지향설계", professor: "홍길동", division: "1분반"))
+    SimpleLectureListRow(SimpleLecture(id: "123456", name: "객체지향설계", professor: "홍길동", division: "1"))
 }
 #endif
