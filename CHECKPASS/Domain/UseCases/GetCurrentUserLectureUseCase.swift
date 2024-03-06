@@ -21,7 +21,7 @@ class DefaultGetCurrentUserLectureUseCase<T: LectureRepository> {
 
 extension DefaultGetCurrentUserLectureUseCase: GetCurrentUserLectureUseCase {
     func execute() -> AnyPublisher<[SimpleLecture], Error> {
-        let url = "http://localhost:8080/enrollment/enrollmentList"
+        let url = "http://localhost:8080/enrollment"
         
         return repository.fetchLecture(url: url)
             .map { lectures in
