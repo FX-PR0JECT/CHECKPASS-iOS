@@ -113,5 +113,5 @@ extension EAttendance {
 }
 
 #Preview {
-    EAttendance(lecture: SimpleLecture(id: "103834", name: "Java 프로그래밍", professor: "홍길동", division: "1"))
+    EAttendance(lecture: SimpleLecture(id: 103834, name: "Java 프로그래밍", professor: "홍길동", division: "1"))
 }

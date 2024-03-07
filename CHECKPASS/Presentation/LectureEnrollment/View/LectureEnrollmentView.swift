@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
-    @ObservedObject private var viewModel: T
+    @StateObject private var viewModel: T
     @State private var showSearchStandardPicker: Bool = false
     @State private var showGradePicker: Bool = false
     @State private var showLectureTypePicker: Bool = false
@@ -16,7 +16,7 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
     @Binding private var showEnrollmentView: Bool
     
     init(viewModel: T, showEnrollmentView: Binding<Bool>) {
-        _viewModel = ObservedObject(wrappedValue: viewModel)
+        _viewModel = StateObject(wrappedValue: viewModel)
         _showEnrollmentView = showEnrollmentView
     }
     

@@ -19,7 +19,7 @@ struct SimpleLectureListRow: View {
             LectureIcon()
             
             VStack(alignment: .leading, spacing: 10) {
-                Text("\(lecture.name)(\(lecture.division)분반)")
+                Text("\(lecture.name)(\(lecture.division))")
                     .font(.headline)
                 
                 HStack {
@@ -36,6 +36,6 @@ struct SimpleLectureListRow: View {
 
 #if DEBUG
 #Preview {
-    SimpleLectureListRow(SimpleLecture(id: "123456", name: "객체지향설계", professor: "홍길동", division: "1"))
+    SimpleLectureListRow(SimpleLecture(id: 123456, name: "객체지향설계", professor: "홍길동", division: "1분반"))
 }
 #endif

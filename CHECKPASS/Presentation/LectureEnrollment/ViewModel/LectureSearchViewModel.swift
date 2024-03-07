@@ -63,6 +63,7 @@ extension DefaultLectureSearchViewModel: LectureSearchViewModel {
             .store(in: &cancellables)
         
         $searchKeyword
+            .debounce(for: 0.5, scheduler: RunLoop.main)    //0.5초 이내에 새로운 값이 입력되지 않을때 값을 방출
             .sink(receiveValue: { [weak self] _ in
                 self?.search()
             })
@@ -70,13 +71,8 @@ extension DefaultLectureSearchViewModel: LectureSearchViewModel {
     }
     
     private func search() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-            if let searchKeyword = self?.searchKeyword,
-               let isEmpty = self?.searchKeyword.isEmpty, !isEmpty,
-               let firstCharacter = searchKeyword.first,
-               String(firstCharacter) != " " {
-                self?.searchLectures(keyword: searchKeyword)
-            }
+        if !searchKeyword.isEmpty && searchKeyword.first != " " {
+            searchLectures(keyword: searchKeyword)
         }
     }
     

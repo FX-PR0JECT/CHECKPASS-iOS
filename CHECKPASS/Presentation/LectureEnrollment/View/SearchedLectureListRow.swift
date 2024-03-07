@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SearchedLectureListRow<T: LectureEnrollmentViewModel>: View {
-    @ObservedObject private var viewModel: T
+    @StateObject private var viewModel: T
     
     let lecture: LectureInfo
     
     init(viewModel: T, lecture: LectureInfo) {
-        _viewModel = ObservedObject(wrappedValue: viewModel)
+        _viewModel = StateObject(wrappedValue: viewModel)
         self.lecture = lecture
     }
     

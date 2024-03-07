@@ -1,5 +1,5 @@
 //
-//  MyLectureListView.swift
+//  EnrollmentHistoryList.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 1/24/24.
@@ -7,23 +7,26 @@
 
 import SwiftUI
 
-struct MyLectureList: View {
+struct EnrollmentHistoryList<T: EnrollmentHistoryViewModel>: View {
+    @ObservedObject private var viewModel: T
     @State private var showRegistraion: Bool = false
     @State private var showSemesterPicker: Bool = false
-    #if DEBUG
-    @State private var selectedSemester: String = SimpleLecture.sampleDataKeys.first ?? ""
-    #else
-    #endif
+    @State private var selectedSemester: String?
+    
+    init(viewModel: T) {
+        _viewModel = ObservedObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack {
             List {
+                //Semester Selector
                 HStack {
                     Button(action: {
                         showSemesterPicker.toggle()
                     }, label: {
                         HStack(spacing: 1) {
-                            Text(selectedSemester)
+                            Text(selectedSemester ?? "학기선택")
                                 .bold()
                             
                             Image(systemName: "arrowtriangle.down.fill")
@@ -41,12 +44,10 @@ struct MyLectureList: View {
                 }
                 .listRowSeparator(.hidden)
                 
+                //Lecture List
                 Section(header: Sectionheader(header: "수강 내역")) {
-                    #if DEBUG
-                    if selectedSemester.isEmpty {
-                        Text("수강 중인 강의가 없습니다")
-                    } else {
-                        ForEach(SimpleLecture.sampleData[selectedSemester] ?? []) { lecture in
+                    if let selectedSemester {
+                        ForEach(viewModel.history?[selectedSemester] ?? []) { lecture in
                             NavigationLink(destination: {
                                 //Lecture Detail
                             }, label: {
@@ -56,10 +57,10 @@ struct MyLectureList: View {
                             .listRowSeparator(.hidden)
                         }
                         .listSectionSeparator(.visible, edges: .top)
+                    } else {
+                        Text("수강 중인 강의가 없습니다")
+                            .listRowSeparator(.hidden)
                     }
-                    
-                    #else
-                    #endif
                 }
             }
             .listStyle(.plain)
@@ -79,7 +80,7 @@ struct MyLectureList: View {
             }
             .sheet(isPresented: $showSemesterPicker) {
                 Picker("", selection: $selectedSemester) {
-                    ForEach(SimpleLecture.sampleDataKeys, id: \.self) {
+                    ForEach(viewModel.sortedHistoryKeys ?? [], id: \.self) {
                         Text("\($0)")
                     }
                 }
@@ -87,10 +88,16 @@ struct MyLectureList: View {
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.2)])
                 .presentationDragIndicator(.visible)
             }
+            .onAppear {
+                viewModel.fetchHistory()
+            }
+            .onChange(of: viewModel.history, perform: { newValue in
+                self.selectedSemester = newValue?.keys.first
+            })
         }
     }
 }
 
 #Preview {
-    MyLectureList()
+    EnrollmentHistoryList(viewModel: AppDI.shared().getEnrollmentHistoryViewModel())
 }

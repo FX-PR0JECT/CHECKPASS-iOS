@@ -70,7 +70,7 @@
 		5C7D97502B82ECF70066234F /* LectureEnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D974F2B82ECF70066234F /* LectureEnrollmentView.swift */; };
 		5C7D97522B82F6320066234F /* FilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D97512B82F6320066234F /* FilterButtons.swift */; };
 		5C7D97562B8312A90066234F /* LectureSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D97552B8312A90066234F /* LectureSearchViewModel.swift */; };
-		5C93F0C52B60F50F005D576D /* LectureHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */; };
+		5C93F0C52B60F50F005D576D /* EnrollmentHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* EnrollmentHistoryList.swift */; };
 		5C93F0C82B60F6A0005D576D /* SeeMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */; };
 		5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CA2B60F796005D576D /* BoardView.swift */; };
 		5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */; };
@@ -225,7 +225,7 @@
 		5C7D974F2B82ECF70066234F /* LectureEnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentView.swift; sourceTree = "<group>"; };
 		5C7D97512B82F6320066234F /* FilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtons.swift; sourceTree = "<group>"; };
 		5C7D97552B8312A90066234F /* LectureSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureSearchViewModel.swift; sourceTree = "<group>"; };
-		5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHistoryList.swift; sourceTree = "<group>"; };
+		5C93F0C42B60F50F005D576D /* EnrollmentHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentHistoryList.swift; sourceTree = "<group>"; };
 		5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreView.swift; sourceTree = "<group>"; };
 		5C93F0CA2B60F796005D576D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
@@ -442,7 +442,7 @@
 				5C1F2BE12B6379010035415E /* MobileIdCard */,
 				5C93F0C92B60F76F005D576D /* Board */,
 				5C93F0C62B60F68F005D576D /* SeeMore */,
-				5C93F0C32B60F4E5005D576D /* MyLectures */,
+				5C93F0C32B60F4E5005D576D /* EnrollmentHistoryList */,
 				5C66E1122B5650650024133E /* Main */,
 				5C144ADE2B3E7F2E007E2E23 /* FindPassword */,
 				5C9A2A582B3B9C92006B176E /* SignUp */,
@@ -500,7 +500,7 @@
 		5C40F1A12B980B0A00BF6FDB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */,
+				5C93F0C42B60F50F005D576D /* EnrollmentHistoryList.swift */,
 				5CB36C472B6B20790042D9BA /* SimpleLectureListRow.swift */,
 				5CD037372B6C71EB0036448A /* Sectionheader.swift */,
 			);
@@ -630,13 +630,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		5C93F0C32B60F4E5005D576D /* MyLectures */ = {
+		5C93F0C32B60F4E5005D576D /* EnrollmentHistoryList */ = {
 			isa = PBXGroup;
 			children = (
 				5C40F1A22B980B1300BF6FDB /* ViewModel */,
 				5C40F1A12B980B0A00BF6FDB /* View */,
 			);
-			path = MyLectures;
+			path = EnrollmentHistoryList;
 			sourceTree = "<group>";
 		};
 		5C93F0C62B60F68F005D576D /* SeeMore */ = {
@@ -1257,7 +1257,7 @@
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C9EF7F92B8C11F80085B5A3 /* SearchedLectureListRow.swift in Sources */,
 				5C0780D32B78644B00E7641B /* EditButton.swift in Sources */,
-				5C93F0C52B60F50F005D576D /* LectureHistoryList.swift in Sources */,
+				5C93F0C52B60F50F005D576D /* EnrollmentHistoryList.swift in Sources */,
 				5C40F1A42B980B3E00BF6FDB /* EnrollmentHistoryViewModel.swift in Sources */,
 				5C0CBAB62B903C960007849E /* LectureIcon.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
