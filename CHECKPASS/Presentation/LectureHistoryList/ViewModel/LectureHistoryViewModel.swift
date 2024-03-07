@@ -1,5 +1,5 @@
 //
-//  EnrollmentHistoryViewModel.swift
+//  LectureHistoryViewModel.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 3/6/24.
@@ -7,14 +7,14 @@
 
 import Combine
 
-protocol EnrollmentHistoryViewModel: ObservableObject {
+protocol LectureHistoryViewModel: ObservableObject {
     var history: Dictionary<String, [SimpleLecture]>? { get set }
     var sortedHistoryKeys: [String]? { get }
     
     func fetchHistory()
 }
 
-extension EnrollmentHistoryViewModel {
+extension LectureHistoryViewModel {
     var sortedHistoryKeys: [String]? {
         if let history {
             return history.keys.sorted { $0 < $1 }
@@ -24,18 +24,18 @@ extension EnrollmentHistoryViewModel {
     }
 }
 
-final class DefaultEnrollmentHistoryViewModel {
+final class DefaultLectureHistoryViewModel {
     @Published var history: Dictionary<String, [SimpleLecture]>?
     
-    private let usecase: GetEnrollmentHistoryUseCase
+    private let usecase: GetLectureHistoryUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    init(usecase: GetEnrollmentHistoryUseCase) {
+    init(usecase: GetLectureHistoryUseCase) {
         self.usecase = usecase
     }
 }
 
-extension DefaultEnrollmentHistoryViewModel: EnrollmentHistoryViewModel {
+extension DefaultLectureHistoryViewModel: LectureHistoryViewModel {
     func fetchHistory() {
         usecase.execute()
             .sink(receiveCompletion: { completion in
@@ -43,7 +43,7 @@ extension DefaultEnrollmentHistoryViewModel: EnrollmentHistoryViewModel {
                 case .finished:
                     print("successfully fetched lecture history")
                 case .failure(let error):
-                    print("DefaultEnrollmentHistoryViewModel.fetchHistory() error: ", error)
+                    print("DefaultLectureHistoryViewModel.fetchHistory() error: ", error)
                 }
             }, receiveValue: { [weak self] history in
                 self?.history = history

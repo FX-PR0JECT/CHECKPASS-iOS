@@ -74,7 +74,7 @@ extension DefaultLectureSearchUseCase: LectureSearchUseCase {
             url += "professorName=\(professorName)"
         }
         
-        return repository.fetchLecture(url: url)
+        return repository.fetchLectures(url: url)
             .map { lectures in
                 guard let lectures = lectures as? [LectureInfo] else {
                     fatalError("cannot cast to [LectureInfo] type")

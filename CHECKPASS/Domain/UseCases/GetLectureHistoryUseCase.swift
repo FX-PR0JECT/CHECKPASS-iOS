@@ -1,5 +1,5 @@
 //
-//  GetEnrollmentHistoryUseCase.swift
+//  GetLectureHistoryUseCase.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 3/6/24.
@@ -9,11 +9,11 @@ import Combine
 
 typealias History = [String: [SimpleLecture]]
 
-protocol GetEnrollmentHistoryUseCase {
+protocol GetLectureHistoryUseCase {
     func execute() -> AnyPublisher<History, Error>
 }
 
-class DefaultGetEnrollmentHistoryUseCase<T: LectureRepository> {
+class DefaultGetLectureHistoryUseCase<T: LectureRepository> {
     let repository: T
     
     init(repository: T) {
@@ -21,11 +21,11 @@ class DefaultGetEnrollmentHistoryUseCase<T: LectureRepository> {
     }
 }
 
-extension DefaultGetEnrollmentHistoryUseCase: GetEnrollmentHistoryUseCase {
+extension DefaultGetLectureHistoryUseCase: GetLectureHistoryUseCase {
     func execute() -> AnyPublisher<History, Error> {
         let url = "http://localhost:8080/enrollment/history"
         
-        return repository.fetchLecture(url: url)
+        return repository.fetchLectures(url: url)
             .map { history in
                 guard let history = history as? History else {
                     fatalError("history can not be converted to History type")

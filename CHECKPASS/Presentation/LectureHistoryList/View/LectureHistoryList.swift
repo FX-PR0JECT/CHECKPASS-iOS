@@ -1,5 +1,5 @@
 //
-//  EnrollmentHistoryList.swift
+//  LectureHistoryList.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 1/24/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EnrollmentHistoryList<T: EnrollmentHistoryViewModel>: View {
+struct LectureHistoryList<T: LectureHistoryViewModel>: View {
     @ObservedObject private var viewModel: T
     @State private var showRegistraion: Bool = false
     @State private var showSemesterPicker: Bool = false
@@ -99,5 +99,5 @@ struct EnrollmentHistoryList<T: EnrollmentHistoryViewModel>: View {
 }
 
 #Preview {
-    EnrollmentHistoryList(viewModel: AppDI.shared().getEnrollmentHistoryViewModel())
+    LectureHistoryList(viewModel: AppDI.shared().getLectureHistoryViewModel())
 }

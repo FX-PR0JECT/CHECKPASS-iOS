@@ -1,5 +1,5 @@
 //
-//  GetCurrentLectureUseCase.swift
+//  GetRecentlyEnrolledLectureUseCase.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 2/28/24.
@@ -7,11 +7,11 @@
 
 import Combine
 
-protocol GetCurrentUserLectureUseCase {
+protocol GetRecentlyEnrolledLectureUseCase {
     func execute() -> AnyPublisher<[SimpleLecture], Error>
 }
 
-class DefaultGetCurrentUserLectureUseCase<T: LectureRepository> {
+class DefaultGetRecentlyEnrolledLectureUseCase<T: LectureRepository> {
     let repository: T
     
     init(repository: T) {
@@ -19,11 +19,11 @@ class DefaultGetCurrentUserLectureUseCase<T: LectureRepository> {
     }
 }
 
-extension DefaultGetCurrentUserLectureUseCase: GetCurrentUserLectureUseCase {
+extension DefaultGetRecentlyEnrolledLectureUseCase: GetRecentlyEnrolledLectureUseCase {
     func execute() -> AnyPublisher<[SimpleLecture], Error> {
         let url = "http://localhost:8080/enrollment"
         
-        return repository.fetchLecture(url: url)
+        return repository.fetchLectures(url: url)
             .map { lectures in
                 guard let lectures = lectures as? [SimpleLecture] else {
                     fatalError("cannot cast to [SimpleLecture] type")

@@ -1,5 +1,5 @@
 //
-//  EAttendanceList.swift
+//  RecentlyEnrolledLectureList.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 2/5/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EAttendanceList<T: EAttendanceViewModel>: View {
+struct RecentlyEnrolledLectureList<T: RecentlyEnrolledLectureViewModel>: View {
     @ObservedObject private var viewModel: T
     
     init(viewModel: T) {
@@ -33,11 +33,11 @@ struct EAttendanceList<T: EAttendanceViewModel>: View {
         .navigationTitle("전자출결")
         .navigationBarTitleDisplayMode(.large)
         .onAppear {
-            viewModel.getCurrentLectures()
+            viewModel.getRecentlyEnrolledLectures()
         }
     }
 }
 
 #Preview {
-    EAttendanceList(viewModel: AppDI.shared().getEAttendanceViewModel())
+    RecentlyEnrolledLectureList(viewModel: AppDI.shared().getRecentlyEnrolledLectureViewModel())
 }
