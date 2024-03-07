@@ -8,7 +8,7 @@
 import Combine
 
 protocol LectureRepository {
-    associatedtype lecture
+    associatedtype result: Collection
     
-    func fetchLecture(url: String) -> AnyPublisher<[lecture], Error>
+    func fetchLecture(url: String) -> AnyPublisher<result, Error>
 }

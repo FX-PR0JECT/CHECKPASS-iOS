@@ -3,11 +3,11 @@ struct LectureDTO: Codable {
     let state: String
     let code: Int
     let title: String
-    let resultSet: [LectureSearchResultSet]
+    let resultSet: [LectureResultSet]
 }
 
 // MARK: - ResultSet
-struct LectureSearchResultSet: Codable {
+struct LectureResultSet: Codable {
     let lectureCode: Int
     let lectureName, lectureGrade, lectureKind, lectureGrades: String
     let professorName, lectureRoom: String

@@ -20,10 +20,10 @@ extension DefaultCurrentLectureRepository: LectureRepository {
         dataSource.sendGetRequest(url: url, resultType: LectureDTO.self)
             .map { DTO in
                 DTO.resultSet.map { lecture in
-                    SimpleLecture(id: String(lecture.lectureCode),
+                    SimpleLecture(id: lecture.lectureCode,
                                   name: lecture.lectureName,
                                   professor: lecture.professorName,
-                                  division: "1")
+                                  division: lecture.division)
                 }
             }
             .eraseToAnyPublisher()

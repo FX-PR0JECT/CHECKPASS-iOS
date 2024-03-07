@@ -76,13 +76,11 @@ extension DefaultLectureSearchUseCase: LectureSearchUseCase {
         
         return repository.fetchLecture(url: url)
             .map { lectures in
-                lectures.map {
-                    guard let lecture = $0 as? LectureInfo else {
-                        fatalError("cannot cast to SimpleLecture type")
-                    }
-                    
-                    return lecture
+                guard let lectures = lectures as? [LectureInfo] else {
+                    fatalError("cannot cast to [LectureInfo] type")
                 }
+                
+                return lectures
             }
             .eraseToAnyPublisher()
     }

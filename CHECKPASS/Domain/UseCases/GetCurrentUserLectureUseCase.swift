@@ -25,13 +25,11 @@ extension DefaultGetCurrentUserLectureUseCase: GetCurrentUserLectureUseCase {
         
         return repository.fetchLecture(url: url)
             .map { lectures in
-                lectures.map {
-                    guard let lecture = $0 as? SimpleLecture else {
-                        fatalError("cannot cast to SimpleLecture type")
-                    }
-                    
-                    return lecture
+                guard let lectures = lectures as? [SimpleLecture] else {
+                    fatalError("cannot cast to [SimpleLecture] type")
                 }
+                
+                return lectures
             }
             .eraseToAnyPublisher()
     }
