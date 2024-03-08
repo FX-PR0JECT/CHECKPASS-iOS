@@ -9,7 +9,8 @@ import Foundation
 
 struct LectureInfo: Identifiable {
     let id: Int
-    let lectureName, lectureGrade, lectureKind, lectureGrades: String
+    let lectureName, lectureKind: String
+    let lectureGrade, lectureGrades: Int
     let professorName, lectureRoom, alphaTimeCodes: String
     let lectureTimes: [String]
     let lectureFull, lectureCount: Int
@@ -21,9 +22,9 @@ extension LectureInfo {
     static var sampleData: Self {
         LectureInfo(id: 131314,
                     lectureName: "데이터베이스",
-                    lectureGrade: "4학년",
                     lectureKind: "전필",
-                    lectureGrades: "3학점",
+                    lectureGrade: 4,
+                    lectureGrades: 3,
                     professorName: "홍길동",
                     lectureRoom: "미래융합정보관(220)",
                     alphaTimeCodes:

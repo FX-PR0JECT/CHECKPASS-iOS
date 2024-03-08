@@ -9,7 +9,8 @@ struct LectureDTO: Codable {
 // MARK: - ResultSet
 struct LectureResultSet: Codable {
     let lectureCode: Int
-    let lectureName, lectureGrade, lectureKind, lectureGrades: String
+    let lectureName, lectureKind: String
+    let lectureGrade, lectureGrades: Int
     let professorName, lectureRoom: String
     let lectureTimes, alphaTimeCodes: [String]
     let scheduleArray: ResultSetScheduleArray

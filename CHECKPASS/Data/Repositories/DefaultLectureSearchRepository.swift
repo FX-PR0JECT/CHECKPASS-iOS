@@ -23,8 +23,8 @@ extension DefaultLectureSearchRepository: LectureRepository {
                 DTO.resultSet.map {
                     LectureInfo(id: $0.lectureCode,
                                 lectureName: $0.lectureName,
-                                lectureGrade: $0.lectureGrade,
                                 lectureKind: $0.lectureKind,
+                                lectureGrade: $0.lectureGrade,
                                 lectureGrades: $0.lectureGrades,
                                 professorName: $0.professorName,
                                 lectureRoom: $0.lectureRoom,
