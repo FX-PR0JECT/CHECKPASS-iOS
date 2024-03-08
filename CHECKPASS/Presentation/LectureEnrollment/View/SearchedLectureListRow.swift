@@ -39,11 +39,11 @@ struct SearchedLectureListRow<T: LectureEnrollmentViewModel>: View {
                 .font(.caption)
             
             HStack {
-                Text(lecture.lectureGrade)
+                Text("\(lecture.lectureGrade)학년")
                 
                 Text(lecture.lectureKind)
                 
-                Text(lecture.lectureGrades)
+                Text("\(lecture.lectureGrades)학점")
                 
                 Text(String(lecture.id))
             }
