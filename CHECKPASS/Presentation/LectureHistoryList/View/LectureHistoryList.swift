@@ -60,6 +60,7 @@ struct LectureHistoryList<T: LectureHistoryViewModel>: View {
                     } else {
                         Text("수강 중인 강의가 없습니다")
                             .listRowSeparator(.hidden)
+                            .listSectionSeparator(.visible, edges: .top)
                     }
                 }
             }
@@ -75,8 +76,9 @@ struct LectureHistoryList<T: LectureHistoryViewModel>: View {
                 }
             }
             .fullScreenCover(isPresented: $showRegistraion) {
-                LectureEnrollmentView(viewModel: AppDI.shared().getLectureSearchViewModel(), showEnrollmentView: $showRegistraion
+                LectureEnrollmentView<_, T>(viewModel: AppDI.shared().getLectureSearchViewModel(), showEnrollmentView: $showRegistraion
                 )
+                .environmentObject(viewModel)
             }
             .sheet(isPresented: $showSemesterPicker) {
                 Picker("", selection: $selectedSemester) {

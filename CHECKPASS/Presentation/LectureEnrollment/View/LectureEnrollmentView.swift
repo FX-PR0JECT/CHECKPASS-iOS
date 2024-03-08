@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
-    @StateObject private var viewModel: T
+struct LectureEnrollmentView<T: LectureSearchViewModel, U: LectureHistoryViewModel>: View {
+    @StateObject private var lectureSearchViewModel: T
+    @EnvironmentObject private var lectureHistoryViewModel: U
     @State private var showSearchStandardPicker: Bool = false
     @State private var showGradePicker: Bool = false
     @State private var showLectureTypePicker: Bool = false
@@ -16,7 +17,7 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
     @Binding private var showEnrollmentView: Bool
     
     init(viewModel: T, showEnrollmentView: Binding<Bool>) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+        _lectureSearchViewModel = StateObject(wrappedValue: viewModel)
         _showEnrollmentView = showEnrollmentView
     }
     
@@ -28,18 +29,18 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
                     showGradePicker: $showGradePicker,
                     showLectureTypePicker: $showLectureTypePicker,
                     showCreditPicker: $showCreditPicker)
-                .environmentObject(viewModel)
+                .environmentObject(lectureSearchViewModel)
                 .padding(.leading)
                 
                 List {
-                    ForEach(viewModel.lectures ?? []) { lecture in
+                    ForEach(lectureSearchViewModel.lectures ?? []) { lecture in
                         SearchedLectureListRow(viewModel: AppDI.shared().getLectureEnrollmentViewModel(),
                                                lecture: lecture)
                         .listRowSeparator(.hidden)
                     }
                 }
             }
-            .searchable(text: $viewModel.searchKeyword, placement: .toolbar)
+            .searchable(text: $lectureSearchViewModel.searchKeyword, placement: .toolbar)
             .navigationTitle("개설 강좌 확인")
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(.plain)
@@ -53,7 +54,7 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
                 }
             }
             .sheet(isPresented: $showSearchStandardPicker) {
-                Picker("", selection: $viewModel.searchStandard) {
+                Picker("", selection: $lectureSearchViewModel.searchStandard) {
                     ForEach(SearchStandard.allCases) {
                         Text($0.rawValue).tag($0.rawValue as String)
                     }
@@ -63,7 +64,7 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
                 .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showGradePicker) {
-                Picker("", selection: $viewModel.selectedGrade) {
+                Picker("", selection: $lectureSearchViewModel.selectedGrade) {
                     Text("없음").tag(nil as String?)
                     
                     ForEach(Grades.allCases) {
@@ -75,7 +76,7 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
                 .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showLectureTypePicker) {
-                Picker("", selection: $viewModel.selectedLectureType) {
+                Picker("", selection: $lectureSearchViewModel.selectedLectureType) {
                     Text("없음").tag(nil as String?)
                     
                     ForEach(LectureType.allCases) {
@@ -87,7 +88,7 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
                 .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showCreditPicker) {
-                Picker("", selection: $viewModel.selectedCredit) {
+                Picker("", selection: $lectureSearchViewModel.selectedCredit) {
                     Text("없음").tag(nil as String?)
                     
                     ForEach(Credit.allCases) {
@@ -99,12 +100,16 @@ struct LectureEnrollmentView<T: LectureSearchViewModel>: View {
                 .presentationDragIndicator(.visible)
             }
             .onAppear {
-                viewModel.observe()
+                lectureSearchViewModel.observe()
+            }
+            .onDisappear {
+                lectureHistoryViewModel.fetchHistory()
             }
         }
     }
 }
 
 #Preview {
-    LectureEnrollmentView<DefaultLectureSearchViewModel>(viewModel: AppDI.shared().getLectureSearchViewModel(), showEnrollmentView: .constant(true))
+    LectureEnrollmentView<DefaultLectureSearchViewModel, DefaultLectureHistoryViewModel>(viewModel: AppDI.shared().getLectureSearchViewModel(), showEnrollmentView: .constant(true))
+        .environmentObject(AppDI.shared().getLectureHistoryViewModel())
 }
