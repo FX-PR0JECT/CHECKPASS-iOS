@@ -10,7 +10,7 @@ import Foundation
 
 protocol LectureSearchUseCase {
     func execute(lectureGrade: String?, lectureKind: String?, lectureGrades: String?,
-                 lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[LectureInfo], Error>
+                 lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[Lecture], Error>
 }
 
 class DefaultLectureSearchUseCase<T: LectureRepository> {
@@ -23,7 +23,7 @@ class DefaultLectureSearchUseCase<T: LectureRepository> {
 
 extension DefaultLectureSearchUseCase: LectureSearchUseCase {
     func execute(lectureGrade: String?, lectureKind: String?, lectureGrades: String?,
-                 lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[LectureInfo], Error> {
+                 lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[Lecture], Error> {
         var url = "http://localhost:8080/lectures/search?"
         
         if let lectureGrade {
@@ -76,7 +76,7 @@ extension DefaultLectureSearchUseCase: LectureSearchUseCase {
         
         return repository.fetchLectures(url: url)
             .map { lectures in
-                guard let lectures = lectures as? [LectureInfo] else {
+                guard let lectures = lectures as? [Lecture] else {
                     fatalError("cannot cast to [LectureInfo] type")
                 }
                 

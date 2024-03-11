@@ -7,7 +7,7 @@
 
 import Combine
 
-typealias History = [String: [SimpleLecture]]
+typealias History = [String: [Lecture]]
 
 protocol GetLectureHistoryUseCase {
     func execute() -> AnyPublisher<History, Error>

@@ -8,27 +8,41 @@
 import SwiftUI
 
 struct SimpleLectureListRow: View {
-    private let lecture: SimpleLecture
+    enum IconType {
+        case structure
+        case radio
+    }
     
-    init(_ lecture: SimpleLecture) {
+    private let lecture: Lecture
+    private let iconType: IconType
+    
+    init(_ lecture: Lecture, for attendanceType: IconType) {
         self.lecture = lecture
+        self.iconType = attendanceType
     }
     
     var body: some View {
         HStack(spacing: 10) {
-            LectureIcon()
+            switch iconType {
+            case .structure:
+                LectureIcon()
+            case .radio:
+                BeaconIcon()
+            }
             
-            VStack(alignment: .leading, spacing: 10) {
-                Text("\(lecture.name)(\(lecture.division))")
+            VStack(alignment: .leading, spacing: 5) {
+                Text("\(lecture.lectureName)(\(lecture.division))")
                     .font(.headline)
                 
-                HStack {
-                    Text(lecture.professor)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                HStack(spacing: 6) {
+                    Text(lecture.professorName)
+                    
+                    Text(lecture.lectureRoom)
                     
                     Spacer()
                 }
+                .font(.footnote)
+                .foregroundColor(.gray)
             }
         }
     }
@@ -36,6 +50,7 @@ struct SimpleLectureListRow: View {
 
 #if DEBUG
 #Preview {
-    SimpleLectureListRow(SimpleLecture(id: 123456, name: "객체지향설계", professor: "홍길동", division: "1분반"))
+    SimpleLectureListRow(Lecture.sampleData, 
+                         for: .radio)
 }
 #endif

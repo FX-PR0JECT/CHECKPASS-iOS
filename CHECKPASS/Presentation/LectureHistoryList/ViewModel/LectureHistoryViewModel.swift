@@ -8,7 +8,7 @@
 import Combine
 
 protocol LectureHistoryViewModel: ObservableObject {
-    var history: Dictionary<String, [SimpleLecture]>? { get set }
+    var history: Dictionary<String, [Lecture]>? { get set }
     var sortedHistoryKeys: [String]? { get }
     
     func fetchHistory()
@@ -25,7 +25,7 @@ extension LectureHistoryViewModel {
 }
 
 final class DefaultLectureHistoryViewModel {
-    @Published var history: Dictionary<String, [SimpleLecture]>?
+    @Published var history: Dictionary<String, [Lecture]>?
     
     private let usecase: GetLectureHistoryUseCase
     private var cancellables = Set<AnyCancellable>()

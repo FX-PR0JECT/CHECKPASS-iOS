@@ -11,7 +11,7 @@ struct EAttendance: View {
     @State private var inputs: String = ""
     @FocusState private var focusedField: Bool
     
-    var lecture: SimpleLecture
+    var lecture: Lecture
     
     var body: some View {
         ZStack {
@@ -24,7 +24,7 @@ struct EAttendance: View {
             VStack {
                 VStack(alignment: .leading) {
                     HStack(spacing: 2) {
-                        Text(lecture.name)
+                        Text(lecture.lectureName)
                             .font(.largeTitle)
                             .bold()
                         
@@ -32,11 +32,11 @@ struct EAttendance: View {
                     }
                     
                     HStack {
-                        Text("\(lecture.professor) 교수님")
+                        Text("\(lecture.professorName) 교수님")
                         
                         Text("•")
                         
-                        Text("\(lecture.division)분반")
+                        Text("\(lecture.division)")
                     }
                     .font(.subheadline)
                 }
@@ -113,5 +113,5 @@ extension EAttendance {
 }
 
 #Preview {
-    EAttendance(lecture: SimpleLecture(id: 103834, name: "Java 프로그래밍", professor: "홍길동", division: "1"))
+    EAttendance(lecture: Lecture.sampleData)
 }

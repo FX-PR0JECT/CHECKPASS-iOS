@@ -51,7 +51,8 @@ struct LectureHistoryList<T: LectureHistoryViewModel>: View {
                             NavigationLink(destination: {
                                 //Lecture Detail
                             }, label: {
-                                SimpleLectureListRow(lecture)
+                                SimpleLectureListRow(lecture,
+                                                     for: .structure)
                                     .padding([.top, .bottom])
                             })
                             .listRowSeparator(.hidden)

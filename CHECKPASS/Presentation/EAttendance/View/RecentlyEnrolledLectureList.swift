@@ -21,7 +21,8 @@ struct RecentlyEnrolledLectureList<T: RecentlyEnrolledLectureViewModel>: View {
                     NavigationLink(destination: {
                         EAttendance(lecture: lecture)
                     }, label: {
-                        SimpleLectureListRow(lecture)
+                        SimpleLectureListRow(lecture,
+                                             for: .structure)
                             .padding([.top, .bottom])
                     })
                     .listRowSeparator(.hidden)

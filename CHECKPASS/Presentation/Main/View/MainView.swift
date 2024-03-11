@@ -22,7 +22,7 @@ struct MainView<UVM: UserInfoVM>: View {
                 
                 HStack(spacing: 15) {
                     NavigationLink(destination: {
-                        //Beacon Attendance View
+                        BeaconAttendanceList()
                     }, label: {
                         MainMediumCard(title: "비콘으로\n출석하기",
                                        image: "mobile",
@@ -31,7 +31,7 @@ struct MainView<UVM: UserInfoVM>: View {
                     })
                     
                     NavigationLink(destination: {
-                        EAttendanceList(viewModel: AppDI.shared().getEAttendanceViewModel())
+                        RecentlyEnrolledLectureList(viewModel: AppDI.shared().getRecentlyEnrolledLectureViewModel())
                     }, label: {
                         MainMediumCard(title: "전자출결로\n출석하기",
                                        image: "dart",

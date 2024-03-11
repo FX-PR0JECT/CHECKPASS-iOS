@@ -8,7 +8,7 @@
 import Combine
 
 protocol GetRecentlyEnrolledLectureUseCase {
-    func execute() -> AnyPublisher<[SimpleLecture], Error>
+    func execute() -> AnyPublisher<[Lecture], Error>
 }
 
 class DefaultGetRecentlyEnrolledLectureUseCase<T: LectureRepository> {
@@ -20,13 +20,13 @@ class DefaultGetRecentlyEnrolledLectureUseCase<T: LectureRepository> {
 }
 
 extension DefaultGetRecentlyEnrolledLectureUseCase: GetRecentlyEnrolledLectureUseCase {
-    func execute() -> AnyPublisher<[SimpleLecture], Error> {
+    func execute() -> AnyPublisher<[Lecture], Error> {
         let url = "http://localhost:8080/enrollment"
         
         return repository.fetchLectures(url: url)
             .map { lectures in
-                guard let lectures = lectures as? [SimpleLecture] else {
-                    fatalError("cannot cast to [SimpleLecture] type")
+                guard let lectures = lectures as? [Lecture] else {
+                    fatalError("cannot cast to [Lecture] type")
                 }
                 
                 return lectures

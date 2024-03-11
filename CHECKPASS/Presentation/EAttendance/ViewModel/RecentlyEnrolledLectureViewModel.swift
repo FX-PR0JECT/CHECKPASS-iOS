@@ -8,13 +8,13 @@
 import Combine
 
 protocol RecentlyEnrolledLectureViewModel: ObservableObject {
-    var lectures: Array<SimpleLecture>? { get set }
+    var lectures: Array<Lecture>? { get set }
     
     func getRecentlyEnrolledLectures()
 }
 
 final class DefaultRecentlyEnrolledLectureViewModel {
-    @Published var lectures: [SimpleLecture]?
+    @Published var lectures: [Lecture]?
     
     let usecase: GetRecentlyEnrolledLectureUseCase
     var cancellables = Set<AnyCancellable>()

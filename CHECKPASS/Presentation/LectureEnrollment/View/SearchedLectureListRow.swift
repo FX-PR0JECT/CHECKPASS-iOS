@@ -10,9 +10,9 @@ import SwiftUI
 struct SearchedLectureListRow<T: LectureEnrollmentViewModel>: View {
     @StateObject private var viewModel: T
     
-    let lecture: LectureInfo
+    let lecture: Lecture
     
-    init(viewModel: T, lecture: LectureInfo) {
+    init(viewModel: T, lecture: Lecture) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.lecture = lecture
     }
@@ -90,6 +90,6 @@ struct SearchedLectureListRow<T: LectureEnrollmentViewModel>: View {
 #if DEBUG
 #Preview {
     SearchedLectureListRow(viewModel: AppDI.shared().getLectureEnrollmentViewModel(),
-                           lecture: LectureInfo.sampleData)
+                           lecture: Lecture.sampleData)
 }
 #endif

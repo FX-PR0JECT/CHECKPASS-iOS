@@ -24,7 +24,7 @@ struct AppDI {
     }
     
     func getRecentlyEnrolledLectureViewModel() -> DefaultRecentlyEnrolledLectureViewModel {
-        let repository = DefaultCurrentLectureRepository(dataSource: dataSource)
+        let repository = DefaultLectureRepository(dataSource: dataSource)
         let usecase = DefaultGetRecentlyEnrolledLectureUseCase(repository: repository)
         let viewModel = DefaultRecentlyEnrolledLectureViewModel(usecase: usecase)
         
@@ -40,7 +40,7 @@ struct AppDI {
     }
     
     func getLectureSearchViewModel() -> DefaultLectureSearchViewModel {
-        let repository = DefaultLectureSearchRepository(dataSource: dataSource)
+        let repository = DefaultLectureRepository(dataSource: dataSource)
         let usecase = DefaultLectureSearchUseCase(repository: repository)
         let viewModel = DefaultLectureSearchViewModel(usecase: usecase)
         

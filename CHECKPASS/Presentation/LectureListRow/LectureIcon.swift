@@ -10,7 +10,7 @@ import SwiftUI
 struct LectureIcon: View {
     var body: some View {        
         Circle()
-            .fill(.lectureBackground)
+            .fill(.lectureIconBackground)
             .frame(width: 50, height: 50)
             .overlay {
                 Image(systemName: "building.columns.fill")

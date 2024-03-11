@@ -25,7 +25,7 @@ struct MainTabView<AVM: AuthVM, UVM: UserInfoVM>: View {
                     Text("홈")
                 }
             
-            MyLectureList()
+            LectureHistoryList(viewModel: AppDI.shared().getLectureHistoryViewModel())
                 .tabItem {
                     Image(systemName: "graduationcap.fill")
                     

@@ -14,7 +14,7 @@ protocol LectureSearchViewModel: ObservableObject {
     var selectedGrade: String? { get set }
     var selectedLectureType: String? { get set }
     var selectedCredit: String? { get set }
-    var lectures: [LectureInfo]? { get set }
+    var lectures: [Lecture]? { get set }
     
     func searchLectures(keyword: String)
     func observe()
@@ -26,7 +26,7 @@ final class DefaultLectureSearchViewModel {
     @Published var selectedGrade: String?
     @Published var selectedLectureType: String?
     @Published var selectedCredit: String?
-    @Published var lectures: [LectureInfo]?
+    @Published var lectures: [Lecture]?
     
     private let usecase: LectureSearchUseCase
     private var cancellables = Set<AnyCancellable>()
@@ -81,7 +81,7 @@ extension DefaultLectureSearchViewModel: LectureSearchViewModel {
             return
         }
         
-        let publisher: AnyPublisher<[LectureInfo], Error>
+        let publisher: AnyPublisher<[Lecture], Error>
         
         switch standard {
         case .profName:

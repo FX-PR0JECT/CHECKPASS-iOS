@@ -17,6 +17,16 @@ struct Lecture: Identifiable {
     let dayOrNight, departments, division, yearSemester: String
 }
 
+extension Lecture: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 #if DEBUG
 extension Lecture {
     static var sampleData: Self {
