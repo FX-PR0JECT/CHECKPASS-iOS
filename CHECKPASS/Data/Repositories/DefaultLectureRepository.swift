@@ -8,7 +8,7 @@
 import Combine
 import Alamofire
 
-final class DefaultLectureSearchRepository {
+final class DefaultLectureRepository {
     private let dataSource: DataSource
     
     init(dataSource: DataSource) {
@@ -16,12 +16,12 @@ final class DefaultLectureSearchRepository {
     }
 }
 
-extension DefaultLectureSearchRepository: LectureRepository {
-    func fetchLectures(url: String) -> AnyPublisher<[LectureInfo], Error> {
+extension DefaultLectureRepository: LectureRepository {
+    func fetchLectures(url: String) -> AnyPublisher<[Lecture], Error> {
         return dataSource.sendGetRequest(url: url, resultType: LectureDTO.self)
             .map { DTO in
                 DTO.resultSet.map {
-                    LectureInfo(id: $0.lectureCode,
+                    Lecture(id: $0.lectureCode,
                                 lectureName: $0.lectureName,
                                 lectureKind: $0.lectureKind,
                                 lectureGrade: $0.lectureGrade,

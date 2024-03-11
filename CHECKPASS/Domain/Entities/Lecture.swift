@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LectureInfo: Identifiable {
+struct Lecture: Identifiable {
     let id: Int
     let lectureName, lectureKind: String
     let lectureGrade, lectureGrades: Int
@@ -18,9 +18,9 @@ struct LectureInfo: Identifiable {
 }
 
 #if DEBUG
-extension LectureInfo {
+extension Lecture {
     static var sampleData: Self {
-        LectureInfo(id: 131314,
+        Lecture(id: 131314,
                     lectureName: "데이터베이스",
                     lectureKind: "전필",
                     lectureGrade: 4,
