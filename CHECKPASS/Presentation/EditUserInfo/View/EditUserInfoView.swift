@@ -116,7 +116,7 @@ struct EditUserInfoView<UVM: UserInfoVM, UEVM: UserInfoInputVM & EditUserInfoVM>
                         } else {
                             editUserInfoViewModel.executeForStaff(updateName: updateName,
                                                                   updateDepartment: updateDepartment,
-                                                                  updateHireDate: updateHireDate.toYearMonthDay())
+                                                                  updateHireDate: updateHireDate.formatDateToString(format: "yyyy-MM-dd"))
                         }
                     }, label: {
                         Text("수정하기")
@@ -174,7 +174,7 @@ extension EditUserInfoView {
                                          userCollege: userInfo.userCollege,
                                          userDepartment: updateDepartment,
                                          userName: updateName,
-                                         hireDate: updateHireDate.toYearMonthDay(),
+                                         hireDate: updateHireDate.formatDateToString(format: "yyyy-MM-dd"),
                                          userJob: userInfo.userJob)
             }
         }

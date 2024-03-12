@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030D1C2B464738004B19AB /* SignUpStartView.swift */; };
 		5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030D1E2B4648AA004B19AB /* JobPicker.swift */; };
+		5C04DC392B9EAEE30032EA78 /* BeaconAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C04DC382B9EAEE30032EA78 /* BeaconAttendance.swift */; };
 		5C0705702B749180007531C8 /* DetailedUserInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C07056F2B749180007531C8 /* DetailedUserInfoRow.swift */; };
 		5C0705722B7495A1007531C8 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0705712B7495A1007531C8 /* ProfileImage.swift */; };
 		5C0780D32B78644B00E7641B /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0780D22B78644B00E7641B /* EditButton.swift */; };
@@ -134,6 +135,9 @@
 		5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */; };
 		5CFACF5F2B886AD0003319C0 /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */; };
 		5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */; };
+		5CFC206B2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */; };
+		5CFC206D2B9F0C0C00735328 /* CurrentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206C2B9F0C0C00735328 /* CurrentTimeView.swift */; };
+		5CFC206F2B9F0C8000735328 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206E2B9F0C8000735328 /* Date.swift */; };
 		A8068E7058E1CF261F4659FC /* Pods_CHECKPASS_CHECKPASSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */; };
 		D3CF7CB5E985BF68B861AA8C /* Pods_CHECKPASS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */; };
 		F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */; };
@@ -163,6 +167,7 @@
 		508C3A645432E702D7D6E398 /* Pods-CHECKPASS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.debug.xcconfig"; sourceTree = "<group>"; };
 		5C030D1C2B464738004B19AB /* SignUpStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStartView.swift; sourceTree = "<group>"; };
 		5C030D1E2B4648AA004B19AB /* JobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPicker.swift; sourceTree = "<group>"; };
+		5C04DC382B9EAEE30032EA78 /* BeaconAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendance.swift; sourceTree = "<group>"; };
 		5C07056F2B749180007531C8 /* DetailedUserInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoRow.swift; sourceTree = "<group>"; };
 		5C0705712B7495A1007531C8 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		5C0780D22B78644B00E7641B /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
@@ -291,6 +296,9 @@
 		5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollegesRepository.swift; sourceTree = "<group>"; };
 		5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
 		5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsScrollView.swift; sourceTree = "<group>"; };
+		5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceButtonLabel.swift; sourceTree = "<group>"; };
+		5CFC206C2B9F0C0C00735328 /* CurrentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeView.swift; sourceTree = "<group>"; };
+		5CFC206E2B9F0C8000735328 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS_CHECKPASSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -825,6 +833,7 @@
 				5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */,
 				5CBB72922B7C774500DF0C72 /* String.swift */,
 				5C0CBAB32B9018120007849E /* View.swift */,
+				5CFC206E2B9F0C8000735328 /* Date.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -879,6 +888,9 @@
 			isa = PBXGroup;
 			children = (
 				5CBD3E1D2B96A6F700724669 /* BeaconAttendanceList.swift */,
+				5C04DC382B9EAEE30032EA78 /* BeaconAttendance.swift */,
+				5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */,
+				5CFC206C2B9F0C0C00735328 /* CurrentTimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1172,6 +1184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C04DC392B9EAEE30032EA78 /* BeaconAttendance.swift in Sources */,
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5CDBD8402B8580830052225C /* LectureRepository.swift in Sources */,
@@ -1184,6 +1197,7 @@
 				5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */,
 				5CC787DE2B8F0357005A3EA3 /* GetRecentlyEnrolledLectureUseCase.swift in Sources */,
 				5CBB72932B7C774500DF0C72 /* String.swift in Sources */,
+				5CFC206F2B9F0C8000735328 /* Date.swift in Sources */,
 				5C1A37522B57A73600A0AE8A /* UserInfoViewModel.swift in Sources */,
 				5CFACF5F2B886AD0003319C0 /* ShortcutCard.swift in Sources */,
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
@@ -1268,9 +1282,11 @@
 				5C93F0C52B60F50F005D576D /* LectureHistoryList.swift in Sources */,
 				5C40F1A42B980B3E00BF6FDB /* LectureHistoryViewModel.swift in Sources */,
 				5C0CBAB62B903C960007849E /* LectureIcon.swift in Sources */,
+				5CFC206D2B9F0C0C00735328 /* CurrentTimeView.swift in Sources */,
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5C1F2BDE2B6375610035415E /* MainView.swift in Sources */,
 				5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */,
+				5CFC206B2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
 				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
 				5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */,

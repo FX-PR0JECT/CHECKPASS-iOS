@@ -14,10 +14,9 @@ struct BeaconAttendanceList: View {
             Section(header: Sectionheader(header: "근처 강의실")) {
                 ForEach([Lecture.sampleData]) { lecture in
                     NavigationLink(destination: {
-                        
+                        BeaconAttendance(lecture: lecture)
                     }, label: {
-                        SimpleLectureListRow(lecture, 
-                                             for: .radio)
+                        SimpleLectureListRow(lecture, for: .radio)
                             .padding([.top, .bottom])
                     })
                     .listRowSeparator(.hidden)

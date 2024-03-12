@@ -61,6 +61,9 @@ struct EAttendance: View {
                     }
                 }
                 
+                CurrentTimeView()
+                    .padding(.top)
+                
                 Spacer()
                 
                 Button(action: {}, label: {

@@ -97,7 +97,7 @@ struct SignUpView<SVM: UserInfoInputVM & SignUpVM>: View {
                                                              job: selectedJob.rawValue,
                                                              college: selectedCollege,
                                                              department: selectedDepartment,
-                                                             hireDate: selectedHireDate.toYearMonthDay())
+                                                             hireDate: selectedHireDate.formatDateToString(format: "yyyy-MM-dd"))
                         }
                     }
                 }, label: {
@@ -165,15 +165,6 @@ extension View {
     //MARK: - keyboard dismiss method
     func dismissKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-
-extension Date {
-    func toYearMonthDay() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        return dateFormatter.string(from: self)
     }
 }
 
