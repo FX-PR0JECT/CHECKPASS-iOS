@@ -22,20 +22,21 @@ extension DefaultLectureRepository: LectureRepository {
             .map { DTO in
                 DTO.resultSet.map {
                     Lecture(id: $0.lectureCode,
-                                lectureName: $0.lectureName,
-                                lectureKind: $0.lectureKind,
-                                lectureGrade: $0.lectureGrade,
-                                lectureGrades: $0.lectureGrades,
-                                professorName: $0.professorName,
-                                lectureRoom: $0.lectureRoom,
-                                alphaTimeCodes: $0.alphaTimeCodes.joined(separator: "\n"),
-                                lectureTimes: $0.lectureTimes,
-                                lectureFull: $0.lectureFull,
-                                lectureCount: $0.lectureCount,
-                                dayOrNight: $0.dayOrNight == "day" ? "주간" : "야간",
-                                departments: $0.departments,
-                                division: $0.division,
-                                yearSemester: $0.yearSemester)
+                            lectureName: $0.lectureName,
+                            lectureKind: $0.lectureKind,
+                            lectureGrade: $0.lectureGrade,
+                            lectureGrades: $0.lectureGrades,
+                            professorName: $0.professorName,
+                            lectureRoom: $0.lectureRoom,
+                            alphaTimeCodes: $0.alphaTimeCodes.joined(separator: "\n"),
+                            lectureTimes: $0.lectureTimes,
+                            lectureFull: $0.lectureFull,
+                            lectureCount: $0.lectureCount,
+                            dayOrNight: $0.dayOrNight == "day" ? "주간" : "야간",
+                            departments: $0.departments,
+                            division: $0.division,
+                            yearSemester: $0.yearSemester,
+                            scheduleArray: $0.scheduleArray.scheduleArray)
                 }
             }
             .eraseToAnyPublisher()

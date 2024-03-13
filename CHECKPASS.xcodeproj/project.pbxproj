@@ -37,6 +37,9 @@
 		5C21244D2B3D172000D237D4 /* UserInfoInputVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21244C2B3D172000D237D4 /* UserInfoInputVM.swift */; };
 		5C21244F2B3D415F00D237D4 /* IdInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21244E2B3D415F00D237D4 /* IdInputView.swift */; };
 		5C2124512B3D438B00D237D4 /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2124502B3D438B00D237D4 /* NameInputView.swift */; };
+		5C2799F22B9FEDD00004CBF9 /* TimeTableGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799F12B9FEDD00004CBF9 /* TimeTableGrid.swift */; };
+		5C2799F42B9FEEA90004CBF9 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799F32B9FEEA90004CBF9 /* TimeTable.swift */; };
+		5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799F52B9FF18D0004CBF9 /* TimeTableBlock.swift */; };
 		5C31E7832B71FC7500F526DE /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C31E7822B71FC7500F526DE /* LogoutUseCase.swift */; };
 		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
@@ -195,6 +198,9 @@
 		5C21244C2B3D172000D237D4 /* UserInfoInputVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputVM.swift; sourceTree = "<group>"; };
 		5C21244E2B3D415F00D237D4 /* IdInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdInputView.swift; sourceTree = "<group>"; };
 		5C2124502B3D438B00D237D4 /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
+		5C2799F12B9FEDD00004CBF9 /* TimeTableGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableGrid.swift; sourceTree = "<group>"; };
+		5C2799F32B9FEEA90004CBF9 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
+		5C2799F52B9FF18D0004CBF9 /* TimeTableBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableBlock.swift; sourceTree = "<group>"; };
 		5C31E7822B71FC7500F526DE /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -416,6 +422,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5C2799F02B9FED9F0004CBF9 /* TimeTable */ = {
+			isa = PBXGroup;
+			children = (
+				5C2799F12B9FEDD00004CBF9 /* TimeTableGrid.swift */,
+				5C2799F32B9FEEA90004CBF9 /* TimeTable.swift */,
+				5C2799F52B9FF18D0004CBF9 /* TimeTableBlock.swift */,
+			);
+			path = TimeTable;
+			sourceTree = "<group>";
+		};
 		5C31E77B2B71F8DA00F526DE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +457,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5C2799F02B9FED9F0004CBF9 /* TimeTable */,
 				5C6819BF2B9AD5CE00B1AAC3 /* LectureListRow */,
 				5CBD3E1A2B96A6D000724669 /* BeaconAttendance */,
 				5C7D974E2B82ECC10066234F /* LectureEnrollment */,
@@ -1191,6 +1208,7 @@
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
 				5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */,
+				5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */,
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
 				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
@@ -1229,6 +1247,7 @@
 				5C5D47B12B7B01AC0006DDC5 /* BackgroundHeader.swift in Sources */,
 				5CBD3E1E2B96A6F700724669 /* BeaconAttendanceList.swift in Sources */,
 				5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */,
+				5C2799F22B9FEDD00004CBF9 /* TimeTableGrid.swift in Sources */,
 				5C3B118A2B735A6E00256BF0 /* DetailUserInfo.swift in Sources */,
 				5C9EF7FD2B8C26560085B5A3 /* LectureEnrollmentRepository.swift in Sources */,
 				5C1A37422B576A0900A0AE8A /* DefaultUserRepository.swift in Sources */,
@@ -1249,6 +1268,7 @@
 				5C7D97522B82F6320066234F /* FilterButtons.swift in Sources */,
 				5C21244D2B3D172000D237D4 /* UserInfoInputVM.swift in Sources */,
 				5CEAB2632B5E2E0D000423C3 /* CollegesRepository.swift in Sources */,
+				5C2799F42B9FEEA90004CBF9 /* TimeTable.swift in Sources */,
 				5C3B11882B73592600256BF0 /* DetailedUserInfoDTO.swift in Sources */,
 				5C0705702B749180007531C8 /* DetailedUserInfoRow.swift in Sources */,
 				5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */,

@@ -43,7 +43,7 @@ struct MainView<UVM: UserInfoVM>: View {
                 MainSubTitle("시간표")
                 
                 NavigationLink(destination: {
-                    //Timetable View
+                    TimeTable()
                 }, label: {
                     MainMediumCard(title: "시간표\n확인하기",
                                    image: "calender 2")

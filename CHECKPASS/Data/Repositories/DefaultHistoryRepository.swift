@@ -38,7 +38,8 @@ extension DefaultEnrollmentHistoryRepository: LectureRepository {
                                                   dayOrNight: lecture.dayOrNight,
                                                   departments: lecture.departments,
                                                   division: lecture.division,
-                                                  yearSemester: lecture.yearSemester)
+                                                  yearSemester: lecture.yearSemester,
+                                                  scheduleArray: lecture.scheduleArray.scheduleArray)
                             
                             if result[key] == nil {
                                 result[key] = [lecture]
