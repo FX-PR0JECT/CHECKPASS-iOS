@@ -115,6 +115,8 @@ extension EAttendance {
     }
 }
 
+#if DEBUG
 #Preview {
     EAttendance(lecture: Lecture.sampleData)
 }
+#endif

@@ -64,6 +64,8 @@ struct BeaconAttendance: View {
     }
 }
 
+#if DEBUG
 #Preview {
     BeaconAttendance(lecture: Lecture.sampleData)
 }
+#endif

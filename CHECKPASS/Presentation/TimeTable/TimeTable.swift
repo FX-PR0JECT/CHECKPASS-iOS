@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct TimeTable: View {
+struct TimeTable<T: RecentlyEnrolledLectureViewModel>: View {
+    @EnvironmentObject private var viewModel: T
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             ZStack {
@@ -22,6 +24,16 @@ struct TimeTable: View {
                                           title: Lecture.sampleDataArray[idx].lectureName,
                            scheduleArray: Lecture.sampleDataArray[idx].scheduleArray[key])
                        }
+                    }
+                }
+                #else
+                if let lectures = viewModel.lectures {
+                    ForEach(0..<lectures.count, id: \.self) { idx in
+                        ForEach(Array(lectures[idx].scheduleArray.keys), id: \.self) { key in
+                            if let xCoordinate = xCoordinate(of: key) {
+                                TimeTableBlock(lectureIndex: idx, xCoordinate: xCoordinate, title: lectures[idx].lectureName, scheduleArray: lectures[idx].scheduleArray[key])
+                            }
+                        }
                     }
                 }
                 #endif
@@ -39,5 +51,6 @@ extension TimeTable {
 }
 
 #Preview {
-    TimeTable()
+    TimeTable<DefaultRecentlyEnrolledLectureViewModel>()
+        .environmentObject(AppDI.shared().getRecentlyEnrolledLectureViewModel())
 }

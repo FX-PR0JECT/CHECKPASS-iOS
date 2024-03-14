@@ -10,7 +10,7 @@ import Combine
 protocol RecentlyEnrolledLectureViewModel: ObservableObject {
     var lectures: Array<Lecture>? { get set }
     
-    func getRecentlyEnrolledLectures()
+    func getLectures()
 }
 
 final class DefaultRecentlyEnrolledLectureViewModel {
@@ -25,14 +25,14 @@ final class DefaultRecentlyEnrolledLectureViewModel {
 }
 
 extension DefaultRecentlyEnrolledLectureViewModel: RecentlyEnrolledLectureViewModel {
-    func getRecentlyEnrolledLectures() {
+    func getLectures() {
         usecase.execute()
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
                     print("successfully fetched current lectures")
                 case .failure(let error):
-                    print("DefaultRecentlyEnrolledLectureViewModel.getCurrentLectures() error: ", error)
+                    print("DefaultRecentlyEnrolledLectureViewModel.getLectures() error: ", error)
                 }
             }, receiveValue: { [weak self] in
                 self?.lectures = $0

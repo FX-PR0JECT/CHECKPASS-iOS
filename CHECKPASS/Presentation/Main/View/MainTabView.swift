@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-struct MainTabView<AVM: AuthVM, UVM: UserInfoVM>: View {
-    @StateObject private var userInfoViewModel: UVM
-    @EnvironmentObject private var authViewModel: AVM
+struct MainTabView<T: AuthVM, U: UserInfoVM, R: RecentlyEnrolledLectureViewModel>: View {
+    @StateObject private var userInfoViewModel: U
+    @StateObject private var recentlyEnrolledLectureViewModel: R
+    @EnvironmentObject private var authViewModel: T
     
-    init(viewModel: UVM) {
-        _userInfoViewModel = StateObject(wrappedValue: viewModel)
+    init(userInfoViewModel: U, recentlyEnrolledLectureViewModel: R) {
+        _userInfoViewModel = StateObject(wrappedValue: userInfoViewModel)
+        _recentlyEnrolledLectureViewModel = StateObject(wrappedValue: recentlyEnrolledLectureViewModel)
     }
     
     var body: some View {
         TabView() {
-            MainView<UVM>()
+            MainView<U, R>()
                 .environmentObject(userInfoViewModel)
+                .environmentObject(recentlyEnrolledLectureViewModel)
                 .tabItem {
                     Image(systemName: "house.fill")
                     
@@ -39,7 +42,7 @@ struct MainTabView<AVM: AuthVM, UVM: UserInfoVM>: View {
                     Text("게시판")
                 }
             
-            SeeMoreView<AVM, UVM>()
+            SeeMoreView<T, U>()
                 .environmentObject(authViewModel)
                 .environmentObject(userInfoViewModel)
                 .tabItem {
@@ -52,6 +55,7 @@ struct MainTabView<AVM: AuthVM, UVM: UserInfoVM>: View {
 }
 
 #Preview {
-    MainTabView<AuthViewModel, UserInfoViewModel>(viewModel: AppDI.shared().getUserInfoViewModel())
+    MainTabView<AuthViewModel, UserInfoViewModel, DefaultRecentlyEnrolledLectureViewModel>(userInfoViewModel: AppDI.shared().getUserInfoViewModel(),
+                                                  recentlyEnrolledLectureViewModel:  AppDI.shared().getRecentlyEnrolledLectureViewModel())
         .environmentObject(AppDI.shared().getAuthViewModel())
 }

@@ -25,7 +25,8 @@ struct ContentView<KVM: KeyboardVM, AVM: AuthVM>: View {
                 .environmentObject(keyboardViewModel)
                 .environmentObject(authViewModel)
         case .main:
-            MainTabView<AVM, _>(viewModel: AppDI.shared().getUserInfoViewModel())
+            MainTabView<AVM, _, _>(userInfoViewModel: AppDI.shared().getUserInfoViewModel(),
+                                   recentlyEnrolledLectureViewModel: AppDI.shared().getRecentlyEnrolledLectureViewModel())
                 .environmentObject(authViewModel)
         default:
             LaunchScreenView()

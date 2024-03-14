@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct MainView<UVM: UserInfoVM>: View {
-    @EnvironmentObject private var userInfoViewModel: UVM
+struct MainView<T: UserInfoVM, U: RecentlyEnrolledLectureViewModel>: View {
+    @EnvironmentObject private var userInfoViewModel: T
+    @EnvironmentObject private var recentlyEnrolledLectureViewModel: U
     @State private var showCardView: Bool = false
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                MainSubTitle("\(userInfoViewModel.simpleUserInfo?.userName ?? "") 님 안녕하세요!")
+                MainSubTitle("\(userInfoViewModel.simpleUserInfo?.userName ?? "???") 님 안녕하세요!")
                 
                 ShortcutsScrollView()
                 
@@ -31,7 +32,8 @@ struct MainView<UVM: UserInfoVM>: View {
                     })
                     
                     NavigationLink(destination: {
-                        RecentlyEnrolledLectureList(viewModel: AppDI.shared().getRecentlyEnrolledLectureViewModel())
+                        RecentlyEnrolledLectureList<U>()
+                            .environmentObject(recentlyEnrolledLectureViewModel)
                     }, label: {
                         MainMediumCard(title: "전자출결로\n출석하기",
                                        image: "dart",
@@ -43,7 +45,8 @@ struct MainView<UVM: UserInfoVM>: View {
                 MainSubTitle("시간표")
                 
                 NavigationLink(destination: {
-                    TimeTable()
+                    TimeTable<U>()
+                        .environmentObject(recentlyEnrolledLectureViewModel)
                 }, label: {
                     MainMediumCard(title: "시간표\n확인하기",
                                    image: "calender 2")
@@ -74,9 +77,13 @@ struct MainView<UVM: UserInfoVM>: View {
                 if userInfoViewModel.simpleUserInfo == nil {
                     userInfoViewModel.getSimpleUserInfo()
                 }
+                
+                if recentlyEnrolledLectureViewModel.lectures == nil {
+                    recentlyEnrolledLectureViewModel.getLectures()
+                }
             }
             .fullScreenCover(isPresented: $showCardView) {
-                MobileIdCardView<UVM>(showCardView: $showCardView)
+                MobileIdCardView<T>(showCardView: $showCardView)
                     .environmentObject(userInfoViewModel)
             }
         }
@@ -84,6 +91,7 @@ struct MainView<UVM: UserInfoVM>: View {
 }
 
 #Preview {
-    MainView<UserInfoViewModel>()
+    MainView<UserInfoViewModel, DefaultRecentlyEnrolledLectureViewModel>()
         .environmentObject(AppDI.shared().getUserInfoViewModel())
+        .environmentObject(AppDI.shared().getRecentlyEnrolledLectureViewModel())
 }

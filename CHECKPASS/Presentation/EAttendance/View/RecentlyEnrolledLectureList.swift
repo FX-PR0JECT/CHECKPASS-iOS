@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct RecentlyEnrolledLectureList<T: RecentlyEnrolledLectureViewModel>: View {
-    @ObservedObject private var viewModel: T
-    
-    init(viewModel: T) {
-        _viewModel = ObservedObject(wrappedValue: viewModel)
-    }
+    @EnvironmentObject private var viewModel: T
     
     var body: some View {
         List {
@@ -33,12 +29,10 @@ struct RecentlyEnrolledLectureList<T: RecentlyEnrolledLectureViewModel>: View {
         .listStyle(.plain)
         .navigationTitle("전자출결")
         .navigationBarTitleDisplayMode(.large)
-        .onAppear {
-            viewModel.getRecentlyEnrolledLectures()
-        }
     }
 }
 
 #Preview {
-    RecentlyEnrolledLectureList(viewModel: AppDI.shared().getRecentlyEnrolledLectureViewModel())
+    RecentlyEnrolledLectureList<DefaultRecentlyEnrolledLectureViewModel>()
+        .environmentObject(AppDI.shared().getRecentlyEnrolledLectureViewModel())
 }
