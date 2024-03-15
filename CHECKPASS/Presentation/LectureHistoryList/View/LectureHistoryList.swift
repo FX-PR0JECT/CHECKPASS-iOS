@@ -19,53 +19,59 @@ struct LectureHistoryList<T: LectureHistoryViewModel>: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                //Semester Selector
-                HStack {
-                    Button(action: {
-                        showSemesterPicker.toggle()
-                    }, label: {
-                        HStack(spacing: 1) {
-                            Text(selectedSemester ?? "학기선택")
-                                .bold()
-                            
-                            Image(systemName: "arrowtriangle.down.fill")
-                                .font(.caption2)
-                        }
-                        .overlay(Rectangle()
+            ZStack {
+                if let selectedSemester {
+                    List {
+                        //Semester Selector
+                        HStack {
+                            Button(action: {
+                                showSemesterPicker.toggle()
+                            }, label: {
+                                HStack(spacing: 1) {
+                                    Text(selectedSemester)
+                                        .bold()
+                                    
+                                    Image(systemName: "arrowtriangle.down.fill")
+                                        .font(.caption2)
+                                }
+                                .overlay(Rectangle()
                                     .frame(height: 1)
                                     .offset(y: 4), alignment: .bottom)
-                        .foregroundColor(.black)
-                    })
-                    .buttonStyle(.borderless)
-                    .padding(.trailing)
-                    
-                    Spacer()
-                }
-                .listRowSeparator(.hidden)
-                
-                //Lecture List
-                Section(header: Sectionheader(header: "수강 내역")) {
-                    if let selectedSemester {
-                        ForEach(viewModel.history?[selectedSemester] ?? []) { lecture in
-                            NavigationLink(destination: {
-                                //Lecture Detail
-                            }, label: {
-                                SimpleLectureListRow(lecture,
-                                                     for: .structure)
-                                    .padding([.top, .bottom])
+                                .foregroundColor(.black)
                             })
-                            .listRowSeparator(.hidden)
+                            .buttonStyle(.borderless)
+                            .padding(.trailing)
+                            
+                            Spacer()
                         }
-                        .listSectionSeparator(.visible, edges: .top)
-                    } else {
-                        Text("수강 중인 강의가 없습니다")
-                            .listRowSeparator(.hidden)
+                        .listRowSeparator(.hidden)
+                        
+                        //Lecture List
+                        Section(header: Sectionheader(header: "수강 내역")) {
+                            ForEach(viewModel.history?[selectedSemester] ?? []) { lecture in
+                                NavigationLink(destination: {
+                                    //Lecture Detail
+                                }, label: {
+                                    SimpleLectureListRow(lecture,
+                                                         for: .structure)
+                                    .padding([.top, .bottom])
+                                })
+                                .listRowSeparator(.hidden)
+                            }
                             .listSectionSeparator(.visible, edges: .top)
+                        }
                     }
+                    .listStyle(.plain)
+                } else if viewModel.isFirstAppear {
+                    EmptyView()
+                } else {
+                    NoLectureView()
+                }
+                
+                if viewModel.isProgress {
+                    CustomProgressView()
                 }
             }
-            .listStyle(.plain)
             .navigationTitle("내 강의")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -92,11 +98,13 @@ struct LectureHistoryList<T: LectureHistoryViewModel>: View {
                 .presentationDragIndicator(.visible)
             }
             .onAppear {
-                viewModel.fetchHistory()
+                if viewModel.isFirstAppear {
+                    viewModel.fetchHistory()
+                }
             }
             .onChange(of: viewModel.history, perform: { newValue in
                 self.selectedSemester = newValue?.keys.first
-            })
+        })
         }
     }
 }

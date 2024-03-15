@@ -57,6 +57,8 @@
 		5C40F19C2B97F28A00BF6FDB /* DefaultHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40F19B2B97F28A00BF6FDB /* DefaultHistoryRepository.swift */; };
 		5C40F1A02B98073E00BF6FDB /* GetLectureHistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40F19F2B98073E00BF6FDB /* GetLectureHistoryUseCase.swift */; };
 		5C40F1A42B980B3E00BF6FDB /* LectureHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40F1A32B980B3E00BF6FDB /* LectureHistoryViewModel.swift */; };
+		5C4766DF2BA3CF4700AD75AC /* NoLectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4766DE2BA3CF4700AD75AC /* NoLectureView.swift */; };
+		5C4766E12BA3DFAA00AD75AC /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4766E02BA3DFAA00AD75AC /* CustomProgressView.swift */; };
 		5C561E7E2B33F3AD004C6501 /* CHECKPASSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */; };
 		5C561E802B33F3AD004C6501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C561E7F2B33F3AD004C6501 /* ContentView.swift */; };
 		5C561E822B33F3AE004C6501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C561E812B33F3AE004C6501 /* Assets.xcassets */; };
@@ -219,6 +221,8 @@
 		5C40F19B2B97F28A00BF6FDB /* DefaultHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHistoryRepository.swift; sourceTree = "<group>"; };
 		5C40F19F2B98073E00BF6FDB /* GetLectureHistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLectureHistoryUseCase.swift; sourceTree = "<group>"; };
 		5C40F1A32B980B3E00BF6FDB /* LectureHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHistoryViewModel.swift; sourceTree = "<group>"; };
+		5C4766DE2BA3CF4700AD75AC /* NoLectureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLectureView.swift; sourceTree = "<group>"; };
+		5C4766E02BA3DFAA00AD75AC /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		5C561E7A2B33F3AD004C6501 /* CHECKPASS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHECKPASS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C561E7D2B33F3AD004C6501 /* CHECKPASSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHECKPASSApp.swift; sourceTree = "<group>"; };
 		5C561E7F2B33F3AD004C6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 				5CA5B1DF2B3AAA8900DD707C /* Keyboard */,
 				5C32B24D2B352F330036CDF2 /* LaunchScreen */,
 				5C32B2472B352AEB0036CDF2 /* SignIn */,
+				5C4766E02BA3DFAA00AD75AC /* CustomProgressView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -935,6 +940,7 @@
 				5CCEC3832B7099F100460B4B /* RecentlyEnrolledLectureList.swift */,
 				5CCEC3852B709D1600460B4B /* EAttendance.swift */,
 				5CCEC3872B709F0300460B4B /* CodeInput.swift */,
+				5C4766DE2BA3CF4700AD75AC /* NoLectureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1201,6 +1207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4766DF2BA3CF4700AD75AC /* NoLectureView.swift in Sources */,
 				5C04DC392B9EAEE30032EA78 /* BeaconAttendance.swift in Sources */,
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
@@ -1294,6 +1301,7 @@
 				5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */,
 				5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */,
 				5C1A373E2B57685F00A0AE8A /* UserRepository.swift in Sources */,
+				5C4766E12BA3DFAA00AD75AC /* CustomProgressView.swift in Sources */,
 				5C0CBAB42B9018120007849E /* View.swift in Sources */,
 				5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
