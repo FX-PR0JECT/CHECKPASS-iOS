@@ -44,42 +44,22 @@ extension DefaultLectureHistoryViewModel: LectureHistoryViewModel {
     func fetchHistory() {
         isProgress.toggle()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.usecase.execute()
-                .sink(receiveCompletion: { [weak self] completion in
-                    self?.isProgress.toggle()
-                    if let isFirstAppear = self?.isFirstAppear, isFirstAppear {
-                        self?.isFirstAppear.toggle()
-                    }
-                    
-                    switch completion {
-                    case .finished:
-                        print("successfully fetched lecture history")
-                    case .failure(let error):
-                        print("DefaultLectureHistoryViewModel.fetchHistory() error: ", error)
-                    }
-                }, receiveValue: { [weak self] history in
-                    self?.history = history
-                })
-                .store(in: &self.cancellables)
-        })
-        
-//        usecase.execute()
-//            .sink(receiveCompletion: { [weak self] completion in
-//                self?.isProgress.toggle()
-//                if let isFirstAppear = self?.isFirstAppear, isFirstAppear {
-//                    self?.isFirstAppear.toggle()
-//                }
-//                
-//                switch completion {
-//                case .finished:
-//                    print("successfully fetched lecture history")
-//                case .failure(let error):
-//                    print("DefaultLectureHistoryViewModel.fetchHistory() error: ", error)
-//                }
-//            }, receiveValue: { [weak self] history in
-//                self?.history = history
-//            })
-//            .store(in: &cancellables)
+        usecase.execute()
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.isProgress.toggle()
+                if let isFirstAppear = self?.isFirstAppear, isFirstAppear {
+                    self?.isFirstAppear.toggle()
+                }
+                
+                switch completion {
+                case .finished:
+                    print("successfully fetched lecture history")
+                case .failure(let error):
+                    print("DefaultLectureHistoryViewModel.fetchHistory() error: ", error)
+                }
+            }, receiveValue: { [weak self] history in
+                self?.history = history
+            })
+            .store(in: &cancellables)
     }
 }
