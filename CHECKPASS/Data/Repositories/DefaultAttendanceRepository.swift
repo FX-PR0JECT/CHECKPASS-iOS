@@ -17,7 +17,7 @@ class DefaultAttendanceRepository {
 
 extension DefaultAttendanceRepository: AttendanceRepository {    
     func attendUsingBeacon(to url: String) -> AnyPublisher<APIResult, Error> {
-        return dataSource.sendPostRequest(url: url, resultType: APIResultDTO.self)
+        return dataSource.sendPostRequest(to: url, resultType: APIResultDTO.self)
             .map {
                 $0.toEntity()
             }

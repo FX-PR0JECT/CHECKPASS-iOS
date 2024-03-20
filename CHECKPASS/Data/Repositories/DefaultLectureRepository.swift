@@ -18,7 +18,7 @@ final class DefaultLectureRepository {
 
 extension DefaultLectureRepository: LectureRepository {
     func fetchLectures(url: String) -> AnyPublisher<[Lecture], Error> {
-        return dataSource.sendGetRequest(url: url, resultType: LectureDTO.self)
+        return dataSource.sendGetRequest(to: url, resultType: LectureDTO.self)
             .map { DTO in
                 DTO.resultSet.map {
                     Lecture(id: $0.lectureCode,

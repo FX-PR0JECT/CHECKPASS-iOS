@@ -17,7 +17,7 @@ class DefaultEnrollmentHistoryRepository {
 
 extension DefaultEnrollmentHistoryRepository: LectureRepository {
     func fetchLectures(url: String) -> AnyPublisher<History, Error> {
-        dataSource.sendGetRequest(url: url, resultType: EnrollmentHistoryDTO.self)
+        dataSource.sendGetRequest(to: url, resultType: EnrollmentHistoryDTO.self)
             .map { DTO in
                 var result = [String: [Lecture]]()
                 

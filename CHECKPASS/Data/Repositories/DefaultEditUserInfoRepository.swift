@@ -18,7 +18,7 @@ class DefaultEditUserInfoRepository {
 
 extension DefaultEditUserInfoRepository: EditUserInfoRepository {
     func editUserInfo(url: String, params: Dictionary<String, String>) -> AnyPublisher<APIResult, Error> {
-        dataSource.sendPatchRequest(url: url, params: params, resultType: APIResultDTO.self)
+        dataSource.sendPatchRequest(with: params, to: url, resultType: APIResultDTO.self)
             .map {
                 $0.toEntity()
             }

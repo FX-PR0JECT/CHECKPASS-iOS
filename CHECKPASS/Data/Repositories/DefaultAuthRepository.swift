@@ -17,7 +17,7 @@ final class DefaultAuthRepository {
 
 extension DefaultAuthRepository: AuthRepository {
     func fetchPostResponse(params: Dictionary<String, String>? = nil, for classification: PostRequestUrl) -> AnyPublisher<APIResult, Error> {
-        return dataSource.sendPostRequest(params, for: classification, resultType: APIResultDTO.self)
+        return dataSource.sendPostRequest(with: params, to: classification, resultType: APIResultDTO.self)
             .map {
                 $0.toEntity()
             }
@@ -25,7 +25,7 @@ extension DefaultAuthRepository: AuthRepository {
     }
     
     func fetchGetResponse(url: String) -> AnyPublisher<APIResult, Error> {
-        return dataSource.sendGetRequest(url: url, resultType: APIResultDTO.self)
+        return dataSource.sendGetRequest(to: url, resultType: APIResultDTO.self)
             .map {
                 $0.toEntity()
             }

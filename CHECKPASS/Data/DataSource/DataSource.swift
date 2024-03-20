@@ -17,16 +17,16 @@ enum PostRequestUrl: String {
 }
 
 protocol DataSource {
-    func sendPostRequest<DTO: Codable>(_ params: Parameters?, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
-    func sendPostRequest<DTO: Codable>(url: String, params: Parameters?, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
-    func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
-    func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPostRequest<DTO: Codable>(with params: Parameters?, to url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPostRequest<DTO: Codable>(with params: Parameters?, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendGetRequest<DTO: Codable>(to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendPatchRequest<DTO: Codable>(with params: Parameters, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendMultipartFormDataRequest<DTO: Codable>(with params: Parameters, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
 extension DataSource {
     //MARK: - request POST API
-    func sendPostRequest<DTO: Codable>(_ params: Parameters? = nil, for url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+    func sendPostRequest<DTO: Codable>(with params: Parameters? = nil, to url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         var dataRequest: DataRequest
         
         if let params = params {
@@ -47,7 +47,7 @@ extension DataSource {
     }
     
     //MARK: - request POST API for flexible pathvariable
-    func sendPostRequest<DTO: Codable>(url: String, params: Parameters? = nil, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+    func sendPostRequest<DTO: Codable>(with params: Parameters? = nil, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         let dataRequest: DataRequest
         
         if let params {
@@ -86,8 +86,8 @@ class DefaultDataSource: DataSource {
     }
     
     //MARK: - request PATCH API
-    func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
-        return AF.request(url, 
+    func sendPatchRequest<DTO: Codable>(with params: Parameters, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+        return AF.request(url,
                           method: .patch,
                           parameters: params,
                           encoding: JSONEncoding.default)
@@ -100,7 +100,7 @@ class DefaultDataSource: DataSource {
     }
     
     //MARK: - request GET API
-    func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+    func sendGetRequest<DTO: Codable>(to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         return AF.request(url)
                     .publishDecodable(type: resultType)    //decode and return Publisher
                     .value()    //get value

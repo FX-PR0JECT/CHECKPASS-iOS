@@ -19,7 +19,7 @@ final class DefaultUserRepository {
 
 extension DefaultUserRepository: UserRepository {    
     func fetchSimpleUserInfo(url: String) -> AnyPublisher<SimpleUserInfo?, Error> {
-        return dataSource.sendGetRequest(url: url, resultType: SimpleUserInfoDTO.self)
+        return dataSource.sendGetRequest(to: url, resultType: SimpleUserInfoDTO.self)
             .map {
                 $0.toEntity()
             }
@@ -27,7 +27,7 @@ extension DefaultUserRepository: UserRepository {
     }
     
     func fetchDetailedUserInfo(url: String) -> AnyPublisher<User?, Error> {
-        return dataSource.sendGetRequest(url: url, resultType: DetailedUserInfoDTO.self)
+        return dataSource.sendGetRequest(to: url, resultType: DetailedUserInfoDTO.self)
             .map { DTO in
                 guard let job = JobType(rawValue: DTO.resultSet.userJob) else {
                     return nil

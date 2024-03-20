@@ -18,7 +18,7 @@ final class DefaultDepartmentsRepository {
 extension DefaultDepartmentsRepository: DepartmentsRepository {    
     func fetchDepartments(of college: String) -> AnyPublisher<Departments, Error> {
         let url = "http://localhost:8080/viewElement/departments/\(college)"
-        return dataSource.sendGetRequest(url: url, resultType: DepartmentsDTO.self)
+        return dataSource.sendGetRequest(to: url, resultType: DepartmentsDTO.self)
             .map {
                 $0.toEntity()
             }
