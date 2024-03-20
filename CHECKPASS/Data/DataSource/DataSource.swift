@@ -13,6 +13,7 @@ enum PostRequestUrl: String {
     case signUpForStaff = "http://localhost:8080/users/professorSignup"
     case signIn = "http://localhost:8080/login"
     case logout = "http://localhost:8080/logout"
+    case eAttendance = "http://localhost:8080/attendance"
 }
 
 protocol DataSource {
@@ -20,6 +21,7 @@ protocol DataSource {
     func sendPostRequest<DTO: Codable>(url: String, params: Parameters?, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
+    func sendMultipartFormDataRequest<DTO: Codable>(with params: Parameters, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
 }
 
 extension DataSource {
@@ -67,7 +69,22 @@ extension DataSource {
     }
 }
 
-final class DefaultDataSource: DataSource {
+class DefaultDataSource: DataSource {
+    //MARK: - request MultiPartFormData API
+    func sendMultipartFormDataRequest<DTO: Codable>(with params: Parameters, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
+        return AF.upload(multipartFormData: { multipartFormData in
+            for (key, value) in params {
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+        }, to: url)
+        .publishDecodable(type: resultType)
+        .value()
+        .mapError {
+            $0 as Error
+        }
+        .eraseToAnyPublisher()
+    }
+    
     //MARK: - request PATCH API
     func sendPatchRequest<DTO: Codable>(url: String, params: Parameters, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         return AF.request(url, 

@@ -15,6 +15,14 @@ struct AppDI {
         return instance
     }
     
+    func getEAttendanceViewModel() -> DefaultEAttendanceViewModel {
+        let repository = DefaultAttendanceRepository(dataSource: dataSource)
+        let usecase = DefaultAttendanceUseCase(repository: repository)
+        let viewModel = DefaultEAttendanceViewModel(usecase: usecase)
+        
+        return viewModel
+    }
+    
     func getLectureHistoryViewModel() -> DefaultLectureHistoryViewModel {
         let repository = DefaultEnrollmentHistoryRepository(dataSource: dataSource)
         let usecase = DefaultGetLectureHistoryUseCase(repository: repository)
