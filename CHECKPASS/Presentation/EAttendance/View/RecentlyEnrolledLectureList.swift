@@ -16,7 +16,8 @@ struct RecentlyEnrolledLectureList<T: RecentlyEnrolledLectureViewModel>: View {
                 Section(header: Sectionheader(header: "수강 중인 강의")) {
                     ForEach(lectures) { lecture in
                         NavigationLink(destination: {
-                            EAttendance(lecture: lecture)
+                            EAttendance(viewModel: AppDI.shared().getEAttendanceViewModel(),
+                                        lecture: lecture)
                         }, label: {
                             SimpleLectureListRow(lecture,
                                                  for: .structure)

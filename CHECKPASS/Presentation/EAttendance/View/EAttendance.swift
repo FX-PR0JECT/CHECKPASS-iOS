@@ -7,116 +7,146 @@
 
 import SwiftUI
 
-struct EAttendance: View {
-    @State private var inputs: String = ""
+struct EAttendance<T: AttendanceViewModel>: View {
+    @ObservedObject private var viewModel: T
     @FocusState private var focusedField: Bool
     
-    var lecture: Lecture
+    private var lecture: Lecture
+    
+    init(viewModel: T, lecture: Lecture) {
+        _viewModel = ObservedObject(wrappedValue: viewModel)
+        self.lecture = lecture
+    }
     
     var body: some View {
-        ZStack {
-            TextField("", text: $inputs)
-                .focused($focusedField, equals: true)
-                .autocorrectionDisabled()
-                .keyboardType(.asciiCapable)
-                .frame(width: 0)
-            
-            VStack {
-                VStack(alignment: .leading) {
-                    HStack(spacing: 2) {
-                        Text(lecture.lectureName)
-                            .font(.largeTitle)
-                            .bold()
+        if viewModel.result != nil {
+            AttendanceResultView<T>()
+                .environmentObject(viewModel)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("전자출석")
+                .toolbar(.hidden, for: .tabBar)
+        } else {
+            ZStack {
+                if viewModel.isProgress {
+                    CustomProgressView()
+                }
+                
+                if var viewModel = viewModel as? EAttendanceViewModel {
+                    TextField("", text: Binding(get: {
+                        viewModel.input
+                    }, set: { newValue in
+                        viewModel.input = newValue
+                    }))
+                    .focused($focusedField, equals: true)
+                    .autocorrectionDisabled()
+                    .keyboardType(.decimalPad)
+                    .frame(width: 0)
+                    
+                    VStack(alignment: .leading) {
+                        HStack(spacing: 0) {
+                            Text(lecture.lectureName)
+                                .font(.largeTitle)
+                                .bold()
+                            
+                            Text("(\(lecture.division))")
+                        }
+                        .padding(.bottom, 30)
+                        
+                        HStack {
+                            Spacer()
+                            
+                            VStack(alignment: .leading) {
+                                Text("출석 코드")
+                                    .font(.title3)
+                                    .bold()
+                                
+                                HStack(spacing: 25) {
+                                    CodeInput(input: Binding(get: {
+                                        viewModel.input
+                                    }, set: { newValue in
+                                        viewModel.input = newValue
+                                    }), index: 0)
+                                    
+                                    CodeInput(input: Binding(get: {
+                                        viewModel.input
+                                    }, set: { newValue in
+                                        viewModel.input = newValue
+                                    }), index: 1)
+                                    
+                                    CodeInput(input: Binding(get: {
+                                        viewModel.input
+                                    }, set: { newValue in
+                                        viewModel.input = newValue
+                                    }), index: 2)
+                                    
+                                    CodeInput(input: Binding(get: {
+                                        viewModel.input
+                                    }, set: { newValue in
+                                        viewModel.input = newValue
+                                    }), index: 3)
+                                }
+                                .onTapGesture {
+                                    focusedField = true
+                                }
+                            }
+                            
+                            Spacer()
+                        }
+                        
+                        CurrentTimeView()
+                            .padding([.top, .bottom])
+                        
+                        Divider()
                         
                         Spacer()
-                    }
-                    
-                    HStack {
-                        Text("\(lecture.professorName) 교수님")
                         
-                        Text("•")
-                        
-                        Text("\(lecture.division)")
+                        Button(action: {
+                            viewModel.executeForEAttendance()
+                        }, label: {
+                            Text("출석하기")
+                                .padding(8)
+                                .frame(maxWidth: .infinity)
+                        })
+                        .buttonBorderShape(.roundedRectangle)
+                        .cornerRadius(30)
+                        .buttonStyle(.borderedProminent)
                     }
-                    .font(.subheadline)
+                    .padding()
+                    .modifier { view in
+                        if #available(iOS 17.0, *) {
+                            view.onChange(of: viewModel.input) {
+                                viewModel.verifyInput(viewModel.input)
+                                
+                                if viewModel.input.count == 4 {
+                                    dismissKeyboard()
+                                }
+                            }
+                        } else {
+                            view.onChange(of: viewModel.input, perform: { newValue in
+                                viewModel.verifyInput(newValue)
+                                
+                                if newValue.count == 4 {
+                                    dismissKeyboard()
+                                }
+                            })
+                        }
+                    }
                 }
-                .padding(.bottom, 30)
-                
-                VStack(alignment: .leading) {
-                    Text("출석 코드")
-                        .font(.title3)
-                        .bold()
-                    
-                    HStack(spacing: 25) {
-                        CodeInput(input: $inputs, index: 0)
-                        
-                        CodeInput(input: $inputs, index: 1)
-                        
-                        CodeInput(input: $inputs, index: 2)
-                        
-                        CodeInput(input: $inputs, index: 3)
-                    }
-                    .onTapGesture {
-                        focusedField = true
-                    }
-                }
-                
-                CurrentTimeView()
-                    .padding(.top)
-                
-                Spacer()
-                
-                Button(action: {}, label: {
-                    Text("출석하기")
-                        .padding(8)
-                        .frame(maxWidth: .infinity)
-                })
-                .buttonBorderShape(.roundedRectangle)
-                .cornerRadius(30)
-                .buttonStyle(.borderedProminent)
             }
-            .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("전자출석")
+            .toolbar(.hidden, for: .tabBar)
             .onAppear {
                 focusedField = true
             }
-            .modifier { view in
-                if #available(iOS 17.0, *) {
-                    view.onChange(of: inputs) {
-                        verifyInputString(inputs)
-                        
-                        if inputs.count == 4 {
-                            dismissKeyboard()
-                        }
-                    }
-                } else {
-                    view.onChange(of: inputs, perform: { newValue in
-                        verifyInputString(newValue)
-                        
-                        if newValue.count == 4 {
-                            dismissKeyboard()
-                        }
-                    })
-                }
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar(.hidden, for: .tabBar)
-    }
-}
-
-extension EAttendance {
-    func verifyInputString(_ newValue: String) {
-        if newValue.count > 4 {
-            let start = newValue.startIndex
-            let end = newValue.index(start, offsetBy: 3)
-            
-            self.inputs = String(newValue[start...end])
+                
         }
     }
 }
 
 #if DEBUG
 #Preview {
-    EAttendance(lecture: Lecture.sampleData)
+    EAttendance<DefaultEAttendanceViewModel>(viewModel: AppDI.shared().getEAttendanceViewModel(),
+                                             lecture: Lecture.sampleData)
 }
 #endif

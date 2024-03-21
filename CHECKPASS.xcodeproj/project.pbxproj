@@ -110,6 +110,7 @@
 		5C9EF7FB2B8C25520085B5A3 /* LectureEnrollmentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EF7FA2B8C25520085B5A3 /* LectureEnrollmentUseCase.swift */; };
 		5C9EF7FD2B8C26560085B5A3 /* LectureEnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EF7FC2B8C26560085B5A3 /* LectureEnrollmentRepository.swift */; };
 		5C9EF7FF2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EF7FE2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift */; };
+		5CA2E0CB2BABB024000C5EDA /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA2E0CA2BABB024000C5EDA /* AttendanceViewModel.swift */; };
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
 		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
@@ -273,6 +274,7 @@
 		5C9EF7FA2B8C25520085B5A3 /* LectureEnrollmentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentUseCase.swift; sourceTree = "<group>"; };
 		5C9EF7FC2B8C26560085B5A3 /* LectureEnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentRepository.swift; sourceTree = "<group>"; };
 		5C9EF7FE2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLectureEnrollmentRepository.swift; sourceTree = "<group>"; };
+		5CA2E0CA2BABB024000C5EDA /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
@@ -952,6 +954,7 @@
 			children = (
 				5C0CBAB12B9006EE0007849E /* RecentlyEnrolledLectureViewModel.swift */,
 				5CEE58322BA7CA1A004264B6 /* EAttendanceViewModel.swift */,
+				5CA2E0CA2BABB024000C5EDA /* AttendanceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1176,6 +1179,7 @@
 				5C987CCA2B45361A006A2580 /* APIResult.swift in Sources */,
 				5C3B118C2B739F7B00256BF0 /* User.swift in Sources */,
 				5C7D97562B8312A90066234F /* LectureSearchViewModel.swift in Sources */,
+				5CA2E0CB2BABB024000C5EDA /* AttendanceViewModel.swift in Sources */,
 				5C40F19A2B97EF5600BF6FDB /* EnrollmentHistoryDTO.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* UserInfoInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,

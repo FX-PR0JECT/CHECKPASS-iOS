@@ -161,13 +161,6 @@ struct SignUpView<SVM: UserInfoInputVM & SignUpVM>: View {
     }
 }
 
-extension View {
-    //MARK: - keyboard dismiss method
-    func dismissKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-
 #Preview {
     SignUpView<SignUpViewModel>(selectedJob: .constant(.student), showNextView: .constant(true), showSignUpView: .constant(true))
         .environmentObject(AppDI.shared().getSignUpViewModel())
