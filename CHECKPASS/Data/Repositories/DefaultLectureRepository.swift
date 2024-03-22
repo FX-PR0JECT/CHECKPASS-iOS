@@ -6,7 +6,6 @@
 //
 
 import Combine
-import Alamofire
 
 final class DefaultLectureRepository {
     private let dataSource: DataSource
@@ -40,6 +39,5 @@ extension DefaultLectureRepository: LectureRepository {
                 }
             }
             .eraseToAnyPublisher()
-            
     }
 }

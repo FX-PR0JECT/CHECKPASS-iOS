@@ -111,6 +111,7 @@
 		5C9EF7FD2B8C26560085B5A3 /* LectureEnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EF7FC2B8C26560085B5A3 /* LectureEnrollmentRepository.swift */; };
 		5C9EF7FF2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EF7FE2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift */; };
 		5CA2E0CB2BABB024000C5EDA /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA2E0CA2BABB024000C5EDA /* AttendanceViewModel.swift */; };
+		5CA2E0CD2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA2E0CC2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift */; };
 		5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */; };
 		5CA5B1E22B3AAB6B00DD707C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */; };
 		5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */; };
@@ -275,6 +276,7 @@
 		5C9EF7FC2B8C26560085B5A3 /* LectureEnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentRepository.swift; sourceTree = "<group>"; };
 		5C9EF7FE2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLectureEnrollmentRepository.swift; sourceTree = "<group>"; };
 		5CA2E0CA2BABB024000C5EDA /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
+		5CA2E0CC2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLectureByBeaconInfoUseCase.swift; sourceTree = "<group>"; };
 		5CA5B1DD2B3A6CCB00DD707C /* KeyBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardViewModel.swift; sourceTree = "<group>"; };
 		5CA5B1E12B3AAB6B00DD707C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		5CA5B1E42B3AB0DA00DD707C /* KeyboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVM.swift; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				5CBD3E232B96AF7D00724669 /* BeaconScanUseCase.swift */,
 				5C40F19F2B98073E00BF6FDB /* GetLectureHistoryUseCase.swift */,
 				5C3CAA892BA90F7800716800 /* AttendanceUseCase.swift */,
+				5CA2E0CC2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1256,6 +1259,7 @@
 				5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */,
 				5CFC206B2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
+				5CA2E0CD2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift in Sources */,
 				5C66E1142B5650790024133E /* MainTabView.swift in Sources */,
 				5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */,
 				5CDBD8442B8582A00052225C /* LectureDTO.swift in Sources */,
