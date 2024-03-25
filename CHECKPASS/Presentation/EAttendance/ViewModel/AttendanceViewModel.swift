@@ -9,5 +9,6 @@ import Foundation
 
 protocol AttendanceViewModel: ObservableObject {
     var result: Bool? { get set }
+    var resultSet: String? { get set }
     var isProgress: Bool { get set }
 }

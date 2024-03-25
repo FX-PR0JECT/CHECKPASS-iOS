@@ -9,7 +9,7 @@ import Combine
 
 protocol AttendanceUseCase {
     func executeForEAttendance(attendanceCode: String) -> AnyPublisher<APIResult, Error>
-    func executeForBeaconAttendance(at lectureCode: String) -> AnyPublisher<APIResult, Error>
+    func executeForBeaconAttendance(byId lectureCode: Int) -> AnyPublisher<APIResult, Error>
 }
 
 class DefaultAttendanceUseCase {
@@ -28,7 +28,7 @@ extension DefaultAttendanceUseCase: AttendanceUseCase {
         return repository.attend(with: params, to: url)
     }
     
-    func executeForBeaconAttendance(at lectureCode: String) -> AnyPublisher<APIResult, Error> {
+    func executeForBeaconAttendance(byId lectureCode: Int) -> AnyPublisher<APIResult, Error> {
         let url = "http://localhost:8080/attendance/\(lectureCode)"
         return repository.attend(to: url)
     }

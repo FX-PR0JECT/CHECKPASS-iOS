@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct BeaconAttendance: View {
+struct BeaconAttendance<T: AttendanceViewModel>: View {
+    @EnvironmentObject private var viewModel: T
+    
     private let lecture: Lecture
     
     init(lecture: Lecture) {
@@ -22,32 +24,13 @@ struct BeaconAttendance: View {
                     .bold()
                 
                 Text("(\(lecture.division))")
-                
-                Spacer()
             }
-            .padding(.bottom, 10)
-            
-            Text(lecture.alphaTimeCodes)
-                .foregroundColor(.gray)
-                .font(.footnote)
-            
-            HStack {
-                Image(systemName: "mappin.and.ellipse")
-                
-                Text(lecture.lectureRoom)
-                
-                Spacer()
-                
-                Text("\(lecture.professorName) 교수님")
-            }
-            .foregroundColor(.gray)
-            .font(.footnote)
-            
-            Divider()
-                .padding(.bottom)
+            .padding(.bottom, 30)
             
             Button(action: {
-                
+                if let viewModel = viewModel as? BeaconAttendanceViewModel {
+                    viewModel.attend(lectureId: lecture.id)
+                }
             }, label: {
                 BeaconAttendanceButtonLabel()
             })
@@ -61,11 +44,15 @@ struct BeaconAttendance: View {
         }
         .padding()
         .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("비콘출석")
     }
 }
 
 #if DEBUG
 #Preview {
-    BeaconAttendance(lecture: Lecture.sampleData)
+    BeaconAttendance<DefaultBeaconAttendanceViewModel>(
+        lecture: Lecture.sampleData
+    )
+    .environmentObject(AppDI.shared().getBeaconAttendanceViewModel())
 }
 #endif

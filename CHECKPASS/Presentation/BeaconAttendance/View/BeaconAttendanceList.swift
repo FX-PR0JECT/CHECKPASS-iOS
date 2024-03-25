@@ -7,14 +7,20 @@
 
 import SwiftUI
 
-struct BeaconAttendanceList: View {
+struct BeaconAttendanceList<T: AttendanceViewModel>: View {
+    @ObservedObject private var viewModel: T
+    
+    init(viewModel: T) {
+        _viewModel = ObservedObject(wrappedValue: viewModel)
+    }
     var body: some View {
-        #if DEBUG
         List {
             Section(header: Sectionheader(header: "근처 강의실")) {
+                #if DEBUG
                 ForEach([Lecture.sampleData]) { lecture in
                     NavigationLink(destination: {
-                        BeaconAttendance(lecture: lecture)
+                        BeaconAttendance<T>(lecture: lecture)
+                            .environmentObject(viewModel)
                     }, label: {
                         SimpleLectureListRow(lecture, for: .radio)
                             .padding([.top, .bottom])
@@ -22,16 +28,37 @@ struct BeaconAttendanceList: View {
                     .listRowSeparator(.hidden)
                 }
                 .listSectionSeparator(.visible, edges: .top)
+                #else
+                if let viewModel = viewModel as? BeaconAttendanceViewModel,
+                   let lectures = viewModel.lectures {
+                    ForEach(lectures) { lecture in
+                        NavigationLink(destination: {
+                            BeaconAttendance<T>(lecture: lecture)
+                                .environmentObject(viewModel)
+                        }, label: {
+                            SimpleLectureListRow(lecture, for: .radio)
+                                .padding([.top, .bottom])
+                        })
+                        .listRowSeparator(.hidden)
+                    }
+                    .listSectionSeparator(.visible, edges: .top)
+                }
+                #endif
             }
         }
         .listStyle(.plain)
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("비콘출석")
-        #else
-        #endif
+        .onAppear {
+            if let viewModel = viewModel as? BeaconAttendanceViewModel {
+                viewModel.observeBeacons()
+                viewModel.startScan()
+            }
+        }
     }
 }
 
 #Preview {
-    BeaconAttendanceList()
+    BeaconAttendanceList<DefaultBeaconAttendanceViewModel>(viewModel: AppDI.shared().getBeaconAttendanceViewModel())
+        .environmentObject(AppDI.shared().getBeaconAttendanceViewModel())
 }

@@ -15,6 +15,17 @@ struct AppDI {
         return instance
     }
     
+    func getBeaconAttendanceViewModel() -> DefaultBeaconAttendanceViewModel {
+        let attendanceRepository = DefaultAttendanceRepository(dataSource: dataSource),
+            lectureRepository = DefaultLectureRepository(dataSource: dataSource)
+        let beaconScanUseCase = DefaultScanBeaconUseCase(),
+            lectureUseCase = DefaultGetLectureByBeaconInfoUseCase(repository: lectureRepository),
+            attendanceUseCase = DefaultAttendanceUseCase(repository: attendanceRepository)
+        let viewModel = DefaultBeaconAttendanceViewModel(beaconScanUseCase: beaconScanUseCase, lectureUseCase: lectureUseCase, attendanceUseCase: attendanceUseCase)
+        
+        return viewModel
+    }
+    
     func getEAttendanceViewModel() -> DefaultEAttendanceViewModel {
         let repository = DefaultAttendanceRepository(dataSource: dataSource)
         let usecase = DefaultAttendanceUseCase(repository: repository)
