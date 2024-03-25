@@ -1,5 +1,5 @@
 //
-//  AttendanceResultView.swift
+//  AttendanceResult.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 3/18/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AttendanceResultView<T: AttendanceViewModel>: View {
+struct AttendanceResult<T: AttendanceViewModel>: View {
     @EnvironmentObject private var viewModel: T
     @State private var animationCount = 0
     
@@ -31,7 +31,7 @@ struct AttendanceResultView<T: AttendanceViewModel>: View {
                         }
                         .padding(.bottom, 40)
                     
-                    Text("출석이 완료 되었습니다 :)")
+                    Text(viewModel.resultSet)
                         .bold()
                         .foregroundColor(.gray)
                 } else {
@@ -49,7 +49,7 @@ struct AttendanceResultView<T: AttendanceViewModel>: View {
                         }
                         .padding(.bottom, 40)
                     
-                    Text("출석에 실패했습니다\n다시 시도해 주세요")
+                    Text(viewModel.resultSet)
                         .bold()
                         .foregroundColor(.gray)
                 }
@@ -75,11 +75,14 @@ struct AttendanceResultView<T: AttendanceViewModel>: View {
                 animationCount += 1
             }
         }
+        .onDisappear {
+            viewModel.result = nil
+        }
         .padding()
     }
 }
 
 #Preview {
-    AttendanceResultView<DefaultEAttendanceViewModel>()
+    AttendanceResult<DefaultEAttendanceViewModel>()
         .environmentObject(AppDI.shared().getEAttendanceViewModel())
 }

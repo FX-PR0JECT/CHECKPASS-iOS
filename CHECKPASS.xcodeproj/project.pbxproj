@@ -146,7 +146,7 @@
 		5CEAB2652B5E2E35000423C3 /* DefaultCollegesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */; };
 		5CEE58332BA7CA1A004264B6 /* EAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE58322BA7CA1A004264B6 /* EAttendanceViewModel.swift */; };
 		5CEE58352BA7DB69004264B6 /* EAttendanceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE58342BA7DB69004264B6 /* EAttendanceInput.swift */; };
-		5CEE58372BA7E107004264B6 /* AttendanceResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE58362BA7E107004264B6 /* AttendanceResultView.swift */; };
+		5CEE58372BA7E107004264B6 /* AttendanceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE58362BA7E107004264B6 /* AttendanceResult.swift */; };
 		5CFACF5F2B886AD0003319C0 /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */; };
 		5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */; };
 		5CFC206B2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */; };
@@ -312,7 +312,7 @@
 		5CEAB2642B5E2E35000423C3 /* DefaultCollegesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollegesRepository.swift; sourceTree = "<group>"; };
 		5CEE58322BA7CA1A004264B6 /* EAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendanceViewModel.swift; sourceTree = "<group>"; };
 		5CEE58342BA7DB69004264B6 /* EAttendanceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendanceInput.swift; sourceTree = "<group>"; };
-		5CEE58362BA7E107004264B6 /* AttendanceResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceResultView.swift; sourceTree = "<group>"; };
+		5CEE58362BA7E107004264B6 /* AttendanceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceResult.swift; sourceTree = "<group>"; };
 		5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
 		5CFACF602B88718A003319C0 /* ShortcutsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsScrollView.swift; sourceTree = "<group>"; };
 		5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceButtonLabel.swift; sourceTree = "<group>"; };
@@ -947,7 +947,7 @@
 				5CCEC3872B709F0300460B4B /* CodeInput.swift */,
 				5C4766DE2BA3CF4700AD75AC /* NoLectureView.swift */,
 				5CEE58342BA7DB69004264B6 /* EAttendanceInput.swift */,
-				5CEE58362BA7E107004264B6 /* AttendanceResultView.swift */,
+				5CEE58362BA7E107004264B6 /* AttendanceResult.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1278,7 +1278,7 @@
 				5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */,
 				5CEAB25D2B5E22CC000423C3 /* DefaultDepartmentsRepository.swift in Sources */,
 				5C144AE22B3E90EC007E2E23 /* FindPwView.swift in Sources */,
-				5CEE58372BA7E107004264B6 /* AttendanceResultView.swift in Sources */,
+				5CEE58372BA7E107004264B6 /* AttendanceResult.swift in Sources */,
 				5CCEC3842B7099F100460B4B /* RecentlyEnrolledLectureList.swift in Sources */,
 				5C1A37542B57A76100A0AE8A /* UserInfoVM.swift in Sources */,
 			);

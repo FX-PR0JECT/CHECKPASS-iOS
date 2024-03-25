@@ -19,7 +19,7 @@ protocol BeaconAttendanceViewModel {
 
 final class DefaultBeaconAttendanceViewModel: AttendanceViewModel {
     @Published var result: Bool?
-    @Published var resultSet: String?
+    @Published var resultSet = ""
     @Published var isProgress = false
     @Published var beacons: [CLBeacon]?
     @Published var lectures: [Lecture]?

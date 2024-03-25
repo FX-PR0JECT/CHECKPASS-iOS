@@ -20,7 +20,7 @@ struct EAttendance<T: AttendanceViewModel>: View {
     
     var body: some View {
         if viewModel.result != nil {
-            AttendanceResultView<T>()
+            AttendanceResult<T>()
                 .environmentObject(viewModel)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("전자출석")
@@ -139,7 +139,11 @@ struct EAttendance<T: AttendanceViewModel>: View {
             .onAppear {
                 focusedField = true
             }
-                
+            .onDisappear {
+                if var viewModel = viewModel as? EAttendanceViewModel {
+                    viewModel.input = ""
+                }
+            }
         }
     }
 }

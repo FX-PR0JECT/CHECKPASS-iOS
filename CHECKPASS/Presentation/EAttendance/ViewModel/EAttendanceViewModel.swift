@@ -17,6 +17,7 @@ protocol EAttendanceViewModel {
 final class DefaultEAttendanceViewModel: AttendanceViewModel {
     @Published var input: String = ""
     @Published var result: Bool?
+    @Published var resultSet = ""
     @Published var isProgress = false
     
     private let usecase: AttendanceUseCase
@@ -42,6 +43,7 @@ extension DefaultEAttendanceViewModel: EAttendanceViewModel {
                 }
             }, receiveValue: { [weak self] in
                 self?.result = $0.result
+                self?.resultSet = $0.resultSet
             })
             .store(in: &cancellables)
     }
