@@ -40,6 +40,7 @@
 		5C2799F22B9FEDD00004CBF9 /* TimeTableGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799F12B9FEDD00004CBF9 /* TimeTableGrid.swift */; };
 		5C2799F42B9FEEA90004CBF9 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799F32B9FEEA90004CBF9 /* TimeTable.swift */; };
 		5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799F52B9FF18D0004CBF9 /* TimeTableBlock.swift */; };
+		5C2D23922BB1106000E83DA1 /* GetAttendanceStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D23912BB1106000E83DA1 /* GetAttendanceStatusUseCase.swift */; };
 		5C31E7832B71FC7500F526DE /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C31E7822B71FC7500F526DE /* LogoutUseCase.swift */; };
 		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
@@ -152,6 +153,9 @@
 		5CFC206B2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */; };
 		5CFC206D2B9F0C0C00735328 /* CurrentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206C2B9F0C0C00735328 /* CurrentTimeView.swift */; };
 		5CFC206F2B9F0C8000735328 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC206E2B9F0C8000735328 /* Date.swift */; };
+		5CFD12692BB115D1001B54E5 /* AttendanceStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12682BB115D1001B54E5 /* AttendanceStatusRepository.swift */; };
+		5CFD126B2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD126A2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift */; };
+		5CFD126D2BB117A0001B54E5 /* AttendanceStatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD126C2BB117A0001B54E5 /* AttendanceStatusDTO.swift */; };
 		D3CF7CB5E985BF68B861AA8C /* Pods_CHECKPASS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */; };
 		F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */; };
 /* End PBXBuildFile section */
@@ -204,6 +208,7 @@
 		5C2799F12B9FEDD00004CBF9 /* TimeTableGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableGrid.swift; sourceTree = "<group>"; };
 		5C2799F32B9FEEA90004CBF9 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		5C2799F52B9FF18D0004CBF9 /* TimeTableBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableBlock.swift; sourceTree = "<group>"; };
+		5C2D23912BB1106000E83DA1 /* GetAttendanceStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAttendanceStatusUseCase.swift; sourceTree = "<group>"; };
 		5C31E7822B71FC7500F526DE /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -318,6 +323,9 @@
 		5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceButtonLabel.swift; sourceTree = "<group>"; };
 		5CFC206C2B9F0C0C00735328 /* CurrentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeView.swift; sourceTree = "<group>"; };
 		5CFC206E2B9F0C8000735328 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5CFD12682BB115D1001B54E5 /* AttendanceStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusRepository.swift; sourceTree = "<group>"; };
+		5CFD126A2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAttendanceStatusRepository.swift; sourceTree = "<group>"; };
+		5CFD126C2BB117A0001B54E5 /* AttendanceStatusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusDTO.swift; sourceTree = "<group>"; };
 		7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS_CHECKPASSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -378,6 +386,7 @@
 				5C3B11872B73592600256BF0 /* DetailedUserInfoDTO.swift */,
 				5CDBD8432B8582A00052225C /* LectureDTO.swift */,
 				5C40F1992B97EF5600BF6FDB /* EnrollmentHistoryDTO.swift */,
+				5CFD126C2BB117A0001B54E5 /* AttendanceStatusDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -738,6 +747,7 @@
 				5C40F19F2B98073E00BF6FDB /* GetLectureHistoryUseCase.swift */,
 				5C3CAA892BA90F7800716800 /* AttendanceUseCase.swift */,
 				5CA2E0CC2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift */,
+				5C2D23912BB1106000E83DA1 /* GetAttendanceStatusUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -772,6 +782,7 @@
 				5C9EF7FE2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift */,
 				5C40F19B2B97F28A00BF6FDB /* DefaultHistoryRepository.swift */,
 				5C3CAA8D2BA910CA00716800 /* DefaultAttendanceRepository.swift */,
+				5CFD126A2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -795,6 +806,7 @@
 				5CDBD83F2B8580830052225C /* LectureRepository.swift */,
 				5C9EF7FC2B8C26560085B5A3 /* LectureEnrollmentRepository.swift */,
 				5C3CAA8B2BA910A500716800 /* AttendanceRepository.swift */,
+				5CFD12682BB115D1001B54E5 /* AttendanceStatusRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1147,6 +1159,7 @@
 			files = (
 				5C4766DF2BA3CF4700AD75AC /* NoLectureView.swift in Sources */,
 				5C04DC392B9EAEE30032EA78 /* BeaconAttendance.swift in Sources */,
+				5CFD126D2BB117A0001B54E5 /* AttendanceStatusDTO.swift in Sources */,
 				5CA5B1DE2B3A6CCB00DD707C /* KeyBoardViewModel.swift in Sources */,
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5CDBD8402B8580830052225C /* LectureRepository.swift in Sources */,
@@ -1156,6 +1169,7 @@
 				5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */,
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
+				5C2D23922BB1106000E83DA1 /* GetAttendanceStatusUseCase.swift in Sources */,
 				5CEAB2592B5E2223000423C3 /* Departments.swift in Sources */,
 				5CFACF612B88718A003319C0 /* ShortcutsScrollView.swift in Sources */,
 				5CC787DE2B8F0357005A3EA3 /* GetRecentlyEnrolledLectureUseCase.swift in Sources */,
@@ -1166,6 +1180,7 @@
 				5C987CB52B43CFF4006A2580 /* SignUpUseCase.swift in Sources */,
 				5CEAB2532B5E0931000423C3 /* CollegesDTO.swift in Sources */,
 				5CC787DC2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift in Sources */,
+				5CFD126B2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift in Sources */,
 				5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */,
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C36EDFC2B8589C900D6CD4C /* Lecture.swift in Sources */,
@@ -1272,6 +1287,7 @@
 				5C5D47B52B7B28A80006DDC5 /* EditUserInfoViewModel.swift in Sources */,
 				5C9EF7FF2B8C26870085B5A3 /* DefaultLectureEnrollmentRepository.swift in Sources */,
 				5C1F2BE52B63793F0035415E /* BackCard.swift in Sources */,
+				5CFD12692BB115D1001B54E5 /* AttendanceStatusRepository.swift in Sources */,
 				5CEE58332BA7CA1A004264B6 /* EAttendanceViewModel.swift in Sources */,
 				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
 				5C3B11842B73141200256BF0 /* UserCard.swift in Sources */,
