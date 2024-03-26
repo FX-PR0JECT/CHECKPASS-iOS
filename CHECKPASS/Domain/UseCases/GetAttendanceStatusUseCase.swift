@@ -8,7 +8,7 @@
 import Combine
 
 protocol GetAttendanceStatusUseCase {
-    func execute(for lectureId: String) -> AnyPublisher<[String], Error>
+    func execute(for lectureId: String) -> AnyPublisher<[AttendanceStatuses], Error>
 }
 
 class DefaultGetAttendanceStatusUseCase {
