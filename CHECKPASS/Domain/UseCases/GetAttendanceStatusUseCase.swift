@@ -21,7 +21,7 @@ class DefaultGetAttendanceStatusUseCase {
 
 extension DefaultGetAttendanceStatusUseCase: GetAttendanceStatusUseCase {
     //MARK: - fetch attendance status for specific lecture
-    func execute(for lectureId: String) -> AnyPublisher<[String], Error> {
+    func execute(for lectureId: String) -> AnyPublisher<[AttendanceStatuses], Error> {
         let url = "http://localhost:8080/attendance/\(lectureId)"
         return repository.fetchStatus(url: url)
     }

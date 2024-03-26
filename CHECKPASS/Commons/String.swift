@@ -19,3 +19,10 @@ extension String {
         }
     }
 }
+
+extension String {
+    func subCharacter(at index: Int) -> Character {
+        let idx = self.index(self.startIndex, offsetBy: index)
+        return self[idx]
+    }
+}

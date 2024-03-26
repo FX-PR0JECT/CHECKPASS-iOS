@@ -8,5 +8,5 @@
 import Combine
 
 protocol AttendanceStatusRepository {
-    func fetchStatus(url: String) -> AnyPublisher<[String], Error>
+    func fetchStatus(url: String) -> AnyPublisher<[AttendanceStatuses], Error>
 }

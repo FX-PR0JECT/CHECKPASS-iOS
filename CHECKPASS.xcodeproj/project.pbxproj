@@ -82,13 +82,14 @@
 		5C7D97502B82ECF70066234F /* LectureEnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D974F2B82ECF70066234F /* LectureEnrollmentView.swift */; };
 		5C7D97522B82F6320066234F /* FilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D97512B82F6320066234F /* FilterButtons.swift */; };
 		5C7D97562B8312A90066234F /* LectureSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D97552B8312A90066234F /* LectureSearchViewModel.swift */; };
+		5C9220292BB260D30072C5A7 /* AttendanceLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9220282BB260D30072C5A7 /* AttendanceLegend.swift */; };
+		5C92202B2BB28E6B0072C5A7 /* AttendanceStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92202A2BB28E6B0072C5A7 /* AttendanceStatuses.swift */; };
 		5C93F0C52B60F50F005D576D /* LectureHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */; };
 		5C93F0C82B60F6A0005D576D /* SeeMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */; };
 		5C93F0CB2B60F796005D576D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CA2B60F796005D576D /* BoardView.swift */; };
 		5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */; };
 		5C93F0CF2B620F8A005D576D /* MainSubTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CE2B620F8A005D576D /* MainSubTitle.swift */; };
 		5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0D02B620FBC005D576D /* ShortcutIcon.swift */; };
-		5C93F0D32B6229D3005D576D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0D22B6229D3005D576D /* TestView.swift */; };
 		5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0D62B623420005D576D /* MainMediumCard.swift */; };
 		5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F022B50BDB9007862B1 /* SimpleUserInfoDTO.swift */; };
 		5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F042B50C13A007862B1 /* SimpleUserInfo.swift */; };
@@ -156,6 +157,9 @@
 		5CFD12692BB115D1001B54E5 /* AttendanceStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12682BB115D1001B54E5 /* AttendanceStatusRepository.swift */; };
 		5CFD126B2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD126A2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift */; };
 		5CFD126D2BB117A0001B54E5 /* AttendanceStatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD126C2BB117A0001B54E5 /* AttendanceStatusDTO.swift */; };
+		5CFD12722BB11F07001B54E5 /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12712BB11F07001B54E5 /* AttendanceStatusView.swift */; };
+		5CFD12742BB11F13001B54E5 /* AttendanceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12732BB11F13001B54E5 /* AttendanceStatusViewModel.swift */; };
+		5CFD12762BB11F60001B54E5 /* SingleWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12752BB11F60001B54E5 /* SingleWeek.swift */; };
 		D3CF7CB5E985BF68B861AA8C /* Pods_CHECKPASS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */; };
 		F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */; };
 /* End PBXBuildFile section */
@@ -251,13 +255,14 @@
 		5C7D974F2B82ECF70066234F /* LectureEnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentView.swift; sourceTree = "<group>"; };
 		5C7D97512B82F6320066234F /* FilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtons.swift; sourceTree = "<group>"; };
 		5C7D97552B8312A90066234F /* LectureSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureSearchViewModel.swift; sourceTree = "<group>"; };
+		5C9220282BB260D30072C5A7 /* AttendanceLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceLegend.swift; sourceTree = "<group>"; };
+		5C92202A2BB28E6B0072C5A7 /* AttendanceStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatuses.swift; sourceTree = "<group>"; };
 		5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHistoryList.swift; sourceTree = "<group>"; };
 		5C93F0C72B60F6A0005D576D /* SeeMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreView.swift; sourceTree = "<group>"; };
 		5C93F0CA2B60F796005D576D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
 		5C93F0CE2B620F8A005D576D /* MainSubTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSubTitle.swift; sourceTree = "<group>"; };
 		5C93F0D02B620FBC005D576D /* ShortcutIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutIcon.swift; sourceTree = "<group>"; };
-		5C93F0D22B6229D3005D576D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		5C93F0D62B623420005D576D /* MainMediumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMediumCard.swift; sourceTree = "<group>"; };
 		5C962F022B50BDB9007862B1 /* SimpleUserInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUserInfoDTO.swift; sourceTree = "<group>"; };
 		5C962F042B50C13A007862B1 /* SimpleUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUserInfo.swift; sourceTree = "<group>"; };
@@ -326,6 +331,9 @@
 		5CFD12682BB115D1001B54E5 /* AttendanceStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusRepository.swift; sourceTree = "<group>"; };
 		5CFD126A2BB116EE001B54E5 /* DefaultAttendanceStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAttendanceStatusRepository.swift; sourceTree = "<group>"; };
 		5CFD126C2BB117A0001B54E5 /* AttendanceStatusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusDTO.swift; sourceTree = "<group>"; };
+		5CFD12712BB11F07001B54E5 /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
+		5CFD12732BB11F13001B54E5 /* AttendanceStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusViewModel.swift; sourceTree = "<group>"; };
+		5CFD12752BB11F60001B54E5 /* SingleWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWeek.swift; sourceTree = "<group>"; };
 		7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS_CHECKPASSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -407,7 +415,6 @@
 				5C93F0CC2B61F7E0005D576D /* ShortcutsView.swift */,
 				5C93F0CE2B620F8A005D576D /* MainSubTitle.swift */,
 				5C93F0D02B620FBC005D576D /* ShortcutIcon.swift */,
-				5C93F0D22B6229D3005D576D /* TestView.swift */,
 				5C93F0D62B623420005D576D /* MainMediumCard.swift */,
 				5C1F2BDD2B6375610035415E /* MainView.swift */,
 				5CFACF5E2B886AD0003319C0 /* ShortcutCard.swift */,
@@ -471,6 +478,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5CFD126E2BB11EE0001B54E5 /* AttendanceStatus */,
 				5C2799F02B9FED9F0004CBF9 /* TimeTable */,
 				5C6819BF2B9AD5CE00B1AAC3 /* LectureListRow */,
 				5CBD3E1A2B96A6D000724669 /* BeaconAttendance */,
@@ -822,6 +830,7 @@
 				5C3B11892B735A6E00256BF0 /* DetailUserInfo.swift */,
 				5C3B118B2B739F7B00256BF0 /* User.swift */,
 				5C36EDFB2B8589C900D6CD4C /* Lecture.swift */,
+				5C92202A2BB28E6B0072C5A7 /* AttendanceStatuses.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -970,6 +979,33 @@
 				5C0CBAB12B9006EE0007849E /* RecentlyEnrolledLectureViewModel.swift */,
 				5CEE58322BA7CA1A004264B6 /* EAttendanceViewModel.swift */,
 				5CA2E0CA2BABB024000C5EDA /* AttendanceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5CFD126E2BB11EE0001B54E5 /* AttendanceStatus */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD12702BB11EEF001B54E5 /* ViewModel */,
+				5CFD126F2BB11EE9001B54E5 /* View */,
+			);
+			path = AttendanceStatus;
+			sourceTree = "<group>";
+		};
+		5CFD126F2BB11EE9001B54E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD12712BB11F07001B54E5 /* AttendanceStatusView.swift */,
+				5CFD12752BB11F60001B54E5 /* SingleWeek.swift */,
+				5C9220282BB260D30072C5A7 /* AttendanceLegend.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CFD12702BB11EEF001B54E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD12732BB11F13001B54E5 /* AttendanceStatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1164,8 +1200,10 @@
 				5C2124472B3CEB6700D237D4 /* PasswordInputView.swift in Sources */,
 				5CDBD8402B8580830052225C /* LectureRepository.swift in Sources */,
 				5C030D1D2B464738004B19AB /* SignUpStartView.swift in Sources */,
+				5CFD12762BB11F60001B54E5 /* SingleWeek.swift in Sources */,
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
 				5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */,
+				5CFD12722BB11F07001B54E5 /* AttendanceStatusView.swift in Sources */,
 				5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */,
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
@@ -1185,7 +1223,6 @@
 				5C144ADB2B3E41A9007E2E23 /* TermsAgreementView.swift in Sources */,
 				5C36EDFC2B8589C900D6CD4C /* Lecture.swift in Sources */,
 				5C6819C12B9AD5F400B1AAC3 /* BeaconIcon.swift in Sources */,
-				5C93F0D32B6229D3005D576D /* TestView.swift in Sources */,
 				5C0CBAB22B9006EE0007849E /* RecentlyEnrolledLectureViewModel.swift in Sources */,
 				5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */,
 				5C6308AA2B7D96BE0007DB95 /* DefaultEditUserInfoRepository.swift in Sources */,
@@ -1202,6 +1239,7 @@
 				5C9A2A662B3BF3A3006B176E /* UserInfoInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C6308A62B7D95180007DB95 /* EditUserInfoUseCase.swift in Sources */,
+				5C92202B2BB28E6B0072C5A7 /* AttendanceStatuses.swift in Sources */,
 				5CEAB2572B5E212D000423C3 /* DepartmentsDTO.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
 				5C5D47AB2B7AE06B0006DDC5 /* EditUserInfoView.swift in Sources */,
@@ -1263,6 +1301,7 @@
 				5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */,
 				5CAA86682B4B6BFA00357564 /* IdDuplicateCheckUseCase.swift in Sources */,
 				5C9EF7F92B8C11F80085B5A3 /* SearchedLectureListRow.swift in Sources */,
+				5CFD12742BB11F13001B54E5 /* AttendanceStatusViewModel.swift in Sources */,
 				5C0780D32B78644B00E7641B /* EditButton.swift in Sources */,
 				5C93F0C52B60F50F005D576D /* LectureHistoryList.swift in Sources */,
 				5C40F1A42B980B3E00BF6FDB /* LectureHistoryViewModel.swift in Sources */,
@@ -1289,6 +1328,7 @@
 				5C1F2BE52B63793F0035415E /* BackCard.swift in Sources */,
 				5CFD12692BB115D1001B54E5 /* AttendanceStatusRepository.swift in Sources */,
 				5CEE58332BA7CA1A004264B6 /* EAttendanceViewModel.swift in Sources */,
+				5C9220292BB260D30072C5A7 /* AttendanceLegend.swift in Sources */,
 				5C987CC02B44E534006A2580 /* DataSource.swift in Sources */,
 				5C3B11842B73141200256BF0 /* UserCard.swift in Sources */,
 				5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */,

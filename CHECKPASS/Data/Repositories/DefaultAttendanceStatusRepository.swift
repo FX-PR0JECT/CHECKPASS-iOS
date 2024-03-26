@@ -16,10 +16,26 @@ class DefaultAttendanceStatusRepository {
 }
 
 extension DefaultAttendanceStatusRepository: AttendanceStatusRepository {
-    func fetchStatus(url: String) -> AnyPublisher<[String], Error> {
+    func fetchStatus(url: String) -> AnyPublisher<[AttendanceStatuses], Error> {
         dataSource.sendGetRequest(to: url, resultType: AttendanceStatusDTO.self)
-            .map {
-                $0.resultSet
+            .map { DTO in
+                var statuses = [AttendanceStatuses]()
+                
+                DTO.resultSet.forEach { status in
+                    if status.count == 1 {    //String count: 1
+                        if let attendanceStatus = AttendanceStatus(rawValue: status) {
+                            statuses.append(AttendanceStatuses(firstStatus: attendanceStatus))
+                        }
+                    } else {    //String count: 2
+                        if let firstStatus = AttendanceStatus(rawValue: String(status.subCharacter(at: 0))),
+                           let secondStatus = AttendanceStatus(rawValue: String(status.subCharacter(at: 1))) {
+                            statuses.append(AttendanceStatuses(firstStatus: firstStatus,
+                                                               secondStatus: secondStatus))
+                        }
+                    }
+                }
+                
+                return statuses
             }
             .eraseToAnyPublisher()
     }
