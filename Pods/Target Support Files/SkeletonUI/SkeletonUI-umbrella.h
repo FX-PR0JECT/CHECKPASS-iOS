@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CHECKPASS_CHECKPASSUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CHECKPASS_CHECKPASSUITestsVersionString[];
+FOUNDATION_EXPORT double SkeletonUIVersionNumber;
+FOUNDATION_EXPORT const unsigned char SkeletonUIVersionString[];
 

@@ -1,0 +1,6 @@
+framework module SkeletonUI {
+  umbrella header "SkeletonUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

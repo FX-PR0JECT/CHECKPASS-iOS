@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD63C546B2157CB596A5D39F6A40AFB7"
-               BuildableName = "Pods_CHECKPASS_CHECKPASSUITests.framework"
-               BlueprintName = "Pods-CHECKPASS-CHECKPASSUITests"
+               BlueprintIdentifier = "6510766A9670BFA3B251E2A62446FC5D"
+               BuildableName = "SkeletonUI.framework"
+               BlueprintName = "SkeletonUI"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

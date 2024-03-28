@@ -9,17 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-CHECKPASS-CHECKPASSUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-CHECKPASS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-CHECKPASSTests.xcscheme</key>
+		<key>SkeletonUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

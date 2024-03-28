@@ -1,6 +1,0 @@
-framework module Pods_CHECKPASSTests {
-  umbrella header "Pods-CHECKPASSTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

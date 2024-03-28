@@ -1,16 +1,20 @@
 PODS:
   - BeaconSync (0.1.1)
+  - SkeletonUI (2.0.1)
 
 DEPENDENCIES:
   - BeaconSync (= 0.1.1)
+  - SkeletonUI
 
 SPEC REPOS:
   trunk:
     - BeaconSync
+    - SkeletonUI
 
 SPEC CHECKSUMS:
   BeaconSync: 0eebde275137c8d4fad9a0851b8348ef88dea359
+  SkeletonUI: 8d622a4dd755650bd5d50eed1e4180fa146c5d6b
 
-PODFILE CHECKSUM: ebed11c8fc93e4c973385d04bae69682676d36be
+PODFILE CHECKSUM: 7c5438498958591cffa66ef3f9dbbdbb540383d2
 
 COCOAPODS: 1.15.2
