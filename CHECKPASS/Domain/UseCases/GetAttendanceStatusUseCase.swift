@@ -8,7 +8,7 @@
 import Combine
 
 protocol GetAttendanceStatusUseCase {
-    func execute(for lectureId: String) -> AnyPublisher<[AttendanceStatuses], Error>
+    func execute(for lectureId: Int) -> AnyPublisher<[AttendanceStatuses], Error>
 }
 
 class DefaultGetAttendanceStatusUseCase {
@@ -21,7 +21,7 @@ class DefaultGetAttendanceStatusUseCase {
 
 extension DefaultGetAttendanceStatusUseCase: GetAttendanceStatusUseCase {
     //MARK: - fetch attendance status for specific lecture
-    func execute(for lectureId: String) -> AnyPublisher<[AttendanceStatuses], Error> {
+    func execute(for lectureId: Int) -> AnyPublisher<[AttendanceStatuses], Error> {
         let url = "http://localhost:8080/attendance/\(lectureId)"
         return repository.fetchStatus(url: url)
     }

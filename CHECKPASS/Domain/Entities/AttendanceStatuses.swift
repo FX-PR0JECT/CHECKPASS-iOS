@@ -12,7 +12,7 @@ struct AttendanceStatuses {
     let secondStatus: AttendanceStatus?
     
     var count: Int {
-        if let secondStatus {
+        if secondStatus != nil {
             return 2
         } else {
             return 1
