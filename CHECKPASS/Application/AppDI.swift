@@ -15,6 +15,14 @@ struct AppDI {
         return instance
     }
     
+    func getAttendanceStatusViewModel() -> DefaultAttendanceStatusViewModel {
+        let repository = DefaultAttendanceStatusRepository(dataSource: dataSource)
+        let usecase = DefaultGetAttendanceStatusUseCase(repository: repository)
+        let viewModel = DefaultAttendanceStatusViewModel(usecase: usecase)
+        
+        return viewModel
+    }
+    
     func getBeaconAttendanceViewModel() -> DefaultBeaconAttendanceViewModel {
         let attendanceRepository = DefaultAttendanceRepository(dataSource: dataSource),
             lectureRepository = DefaultLectureRepository(dataSource: dataSource)

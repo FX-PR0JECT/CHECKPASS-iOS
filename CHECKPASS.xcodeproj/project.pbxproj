@@ -161,7 +161,6 @@
 		5CFD12742BB11F13001B54E5 /* AttendanceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12732BB11F13001B54E5 /* AttendanceStatusViewModel.swift */; };
 		5CFD12762BB11F60001B54E5 /* SingleWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD12752BB11F60001B54E5 /* SingleWeek.swift */; };
 		D3CF7CB5E985BF68B861AA8C /* Pods_CHECKPASS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */; };
-		F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,8 +175,6 @@
 
 /* Begin PBXFileReference section */
 		025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EADD8BA6BBD1928CC068F60 /* Pods-CHECKPASSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.release.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.release.xcconfig"; sourceTree = "<group>"; };
-		2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		508C3A645432E702D7D6E398 /* Pods-CHECKPASS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.debug.xcconfig"; sourceTree = "<group>"; };
 		5C030D1C2B464738004B19AB /* SignUpStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStartView.swift; sourceTree = "<group>"; };
 		5C030D1E2B4648AA004B19AB /* JobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPicker.swift; sourceTree = "<group>"; };
@@ -336,7 +333,6 @@
 		5CFD12752BB11F60001B54E5 /* SingleWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWeek.swift; sourceTree = "<group>"; };
 		7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHECKPASS_CHECKPASSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASSTests.debug.xcconfig"; path = "Target Support Files/Pods-CHECKPASSTests/Pods-CHECKPASSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E157D41D8DB29693CDE33198 /* Pods-CHECKPASS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS.release.xcconfig"; path = "Target Support Files/Pods-CHECKPASS/Pods-CHECKPASS.release.xcconfig"; sourceTree = "<group>"; };
 		FA83AA761BB61BB9DB0C33A7 /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig"; path = "Target Support Files/Pods-CHECKPASS-CHECKPASSUITests/Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -355,7 +351,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F09C9050D3DBF0ABCF679A2B /* Pods_CHECKPASSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,8 +364,6 @@
 				E157D41D8DB29693CDE33198 /* Pods-CHECKPASS.release.xcconfig */,
 				7310786A5F01D061365E9377 /* Pods-CHECKPASS-CHECKPASSUITests.debug.xcconfig */,
 				FA83AA761BB61BB9DB0C33A7 /* Pods-CHECKPASS-CHECKPASSUITests.release.xcconfig */,
-				A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */,
-				1EADD8BA6BBD1928CC068F60 /* Pods-CHECKPASSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1015,7 +1008,6 @@
 			children = (
 				025138B160C6AEEFBDA5899E /* Pods_CHECKPASS.framework */,
 				91840597520D3519EB827890 /* Pods_CHECKPASS_CHECKPASSUITests.framework */,
-				2F3655F2AE07D0E981E5D6CC /* Pods_CHECKPASSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1049,7 +1041,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CAA867C2B4D144200357564 /* Build configuration list for PBXNativeTarget "CHECKPASSTests" */;
 			buildPhases = (
-				F75FC7D27B67100FB53CB8A7 /* [CP] Check Pods Manifest.lock */,
 				5CAA86722B4D144200357564 /* Sources */,
 				5CAA86732B4D144200357564 /* Frameworks */,
 				5CAA86742B4D144200357564 /* Resources */,
@@ -1158,28 +1149,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CHECKPASS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F75FC7D27B67100FB53CB8A7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CHECKPASSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1562,7 +1531,6 @@
 		};
 		5CAA867D2B4D144200357564 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7EC1467BD0B6DAF29B79659 /* Pods-CHECKPASSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1583,7 +1551,6 @@
 		};
 		5CAA867E2B4D144200357564 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EADD8BA6BBD1928CC068F60 /* Pods-CHECKPASSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SkeletonUI
 
 enum AttendanceStatus: String {
     case notEntered = "0"
@@ -29,17 +30,17 @@ enum AttendanceStatus: String {
 
 struct SingleWeek: View {
     private let week: Int
-    private let firstStatus: AttendanceStatus
+    private let firstStatus: AttendanceStatus?
     private let secondStatus: AttendanceStatus?
     
-    init(week: Int, firstStatus: AttendanceStatus, secondStatus: AttendanceStatus? = nil) {
+    init(week: Int, firstStatus: AttendanceStatus?, secondStatus: AttendanceStatus?) {
         self.week = week
         self.firstStatus = firstStatus
         self.secondStatus = secondStatus
     }
     
     var body: some View {
-        if let secondStatus {
+        if let firstStatus, let secondStatus {
             RoundedRectangle(cornerRadius: 10)
                 .fill(LinearGradient(stops: [Gradient.Stop(color: firstStatus.color, location: 0.5),
                                              Gradient.Stop(color: secondStatus.color, location: 0.5)],
@@ -51,7 +52,7 @@ struct SingleWeek: View {
                     Text("\(week)")
                         .foregroundColor(.white)
                 }
-        } else {
+        } else if let firstStatus {
             RoundedRectangle(cornerRadius: 10)
                 .fill(firstStatus.color)
                 .frame(width: UIScreen.main.bounds.width * 0.1,
@@ -60,6 +61,11 @@ struct SingleWeek: View {
                     Text("\(week)")
                         .foregroundColor(.white)
                 }
+        } else {
+            RoundedRectangle(cornerRadius: 10)
+                .skeleton(with: true, shape: .rounded(.radius(10, style: .continuous)))
+                .frame(width: UIScreen.main.bounds.width * 0.1,
+                       height: UIScreen.main.bounds.width * 0.1)
         }
     }
 }
