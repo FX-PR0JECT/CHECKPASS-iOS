@@ -44,6 +44,8 @@
 		5C31E7832B71FC7500F526DE /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C31E7822B71FC7500F526DE /* LogoutUseCase.swift */; };
 		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
+		5C33A2302BB64E8400876D44 /* LectureDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C33A22F2BB64E8400876D44 /* LectureDetail.swift */; };
+		5C33A2322BB687E400876D44 /* LectureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C33A2312BB687E400876D44 /* LectureInfo.swift */; };
 		5C36EDFC2B8589C900D6CD4C /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36EDFB2B8589C900D6CD4C /* Lecture.swift */; };
 		5C36EDFE2B858E4600D6CD4C /* LectureSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36EDFD2B858E4600D6CD4C /* LectureSearchUseCase.swift */; };
 		5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ADE802B6791C00001B3D8 /* WebView.swift */; };
@@ -213,6 +215,8 @@
 		5C31E7822B71FC7500F526DE /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		5C33A22F2BB64E8400876D44 /* LectureDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDetail.swift; sourceTree = "<group>"; };
+		5C33A2312BB687E400876D44 /* LectureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureInfo.swift; sourceTree = "<group>"; };
 		5C36EDFB2B8589C900D6CD4C /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		5C36EDFD2B858E4600D6CD4C /* LectureSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureSearchUseCase.swift; sourceTree = "<group>"; };
 		5C3ADE7A2B6772730001B3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -544,6 +548,8 @@
 			children = (
 				5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */,
 				5CD037372B6C71EB0036448A /* Sectionheader.swift */,
+				5C33A22F2BB64E8400876D44 /* LectureDetail.swift */,
+				5C33A2312BB687E400876D44 /* LectureInfo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1173,6 +1179,7 @@
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
 				5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */,
 				5CFD12722BB11F07001B54E5 /* AttendanceStatusView.swift in Sources */,
+				5C33A2322BB687E400876D44 /* LectureInfo.swift in Sources */,
 				5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */,
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				5C92202B2BB28E6B0072C5A7 /* AttendanceStatuses.swift in Sources */,
 				5CEAB2572B5E212D000423C3 /* DepartmentsDTO.swift in Sources */,
 				5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */,
+				5C33A2302BB64E8400876D44 /* LectureDetail.swift in Sources */,
 				5C5D47AB2B7AE06B0006DDC5 /* EditUserInfoView.swift in Sources */,
 				5C2124492B3CF68200D237D4 /* PasswordConfirmInputView.swift in Sources */,
 				5C36EDFE2B858E4600D6CD4C /* LectureSearchUseCase.swift in Sources */,

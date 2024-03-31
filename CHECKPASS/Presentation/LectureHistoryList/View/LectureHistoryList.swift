@@ -51,6 +51,7 @@ struct LectureHistoryList<T: LectureHistoryViewModel>: View {
                             ForEach(viewModel.history?[selectedSemester] ?? []) { lecture in
                                 NavigationLink(destination: {
                                     //Lecture Detail
+                                    LectureDetail(lecture: lecture)
                                 }, label: {
                                     SimpleLectureListRow(lecture,
                                                          for: .structure)

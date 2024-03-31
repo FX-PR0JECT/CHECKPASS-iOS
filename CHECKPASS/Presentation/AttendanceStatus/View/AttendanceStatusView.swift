@@ -19,6 +19,14 @@ struct AttendanceStatusView<T: AttendanceStatusViewModel>: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Text("출석현황")
+                    .bold()
+                    .font(.title3)
+                
+                Spacer()
+            }
+            
             ForEach(0..<2) { i in
                 HStack {
                     ForEach(0..<8) { j in
@@ -28,6 +36,9 @@ struct AttendanceStatusView<T: AttendanceStatusViewModel>: View {
                     }
                 }
             }
+            .padding(.bottom, 8)
+            
+            AttendanceLegend(pos: .trailing)
         }
         .onAppear {
             viewModel.fetchStatus(for: lectureId)
