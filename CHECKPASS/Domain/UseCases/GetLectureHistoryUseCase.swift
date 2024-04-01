@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 typealias History = [String: [Lecture]]
 
@@ -23,7 +24,8 @@ class DefaultGetLectureHistoryUseCase<T: LectureRepository> {
 
 extension DefaultGetLectureHistoryUseCase: GetLectureHistoryUseCase {
     func execute() -> AnyPublisher<History, Error> {
-        let url = "http://localhost:8080/enrollment/history"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/enrollment/history"
         
         return repository.fetchLectures(url: url)
             .map { history in

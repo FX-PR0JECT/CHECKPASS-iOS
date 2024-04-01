@@ -11,7 +11,7 @@ protocol EAttendanceViewModel {
     var input: String { get set }
     
     func verifyInput(_ input: String)
-    func executeForEAttendance()
+    func executeForEAttendance(lectureId: Int)
 }
 
 final class DefaultEAttendanceViewModel: AttendanceViewModel {
@@ -29,9 +29,9 @@ final class DefaultEAttendanceViewModel: AttendanceViewModel {
 }
 
 extension DefaultEAttendanceViewModel: EAttendanceViewModel {
-    func executeForEAttendance() {
+    func executeForEAttendance(lectureId: Int) {
         isProgress = true
-        usecase.executeForEAttendance(attendanceCode: input)
+        usecase.executeForEAttendance(byId: lectureId, attendanceCode: input)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isProgress = false
                 

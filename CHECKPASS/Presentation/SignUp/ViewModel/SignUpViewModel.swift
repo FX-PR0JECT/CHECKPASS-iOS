@@ -210,7 +210,7 @@ extension SignUpViewModel: SignUpVM {
     
     //MARK: - register for Student
     func executeUseCaseForStudent(_ data: Dictionary<String, String>) {
-        signUpUseCase.executeForStudent(data, colleges: colleges, departments: departments)
+        signUpUseCase.execute(for: .student, with: data, colleges: colleges, departments: departments)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -232,7 +232,7 @@ extension SignUpViewModel: SignUpVM {
     
     //MARK: - register for Staff & Professor
     func executeUseCaseForStaff(_ data: Dictionary<String, String>) {
-        signUpUseCase.executeForStaff(data, colleges: colleges, departments: departments)
+        signUpUseCase.execute(for: .staff, with: data, colleges: colleges, departments: departments)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:

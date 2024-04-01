@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol IdDuplicateCheckUseCase {
     func execute(_ data: String) -> AnyPublisher<APIResult, Error>
@@ -21,8 +22,9 @@ final class DefaultIdDuplicateCheckUseCase {
 
 extension DefaultIdDuplicateCheckUseCase: IdDuplicateCheckUseCase {
     func execute(_ data: String) -> AnyPublisher<APIResult, Error> {
-        let url: String = "http://localhost:8080/users/duplication/\(data)"    //API URL
-        return repository.fetchGetResponse(url: url)
+        let publicIP = Bundle.main.publicIP
+        let url: String = "http://\(publicIP)/users/duplication/\(data)"    //API URL
+        return repository.requestAuthentication(url: url)
             .eraseToAnyPublisher()
     }
 }

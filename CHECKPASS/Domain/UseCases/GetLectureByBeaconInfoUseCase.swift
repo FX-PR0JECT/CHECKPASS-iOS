@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 import CoreLocation
 
 protocol GetLectureByBeaconInfoUseCase {
@@ -24,7 +25,8 @@ extension DefaultGetLectureByBeaconInfoUseCase: GetLectureByBeaconInfoUseCase {
     func execute(by beacon: CLBeacon) -> AnyPublisher<[Lecture], Error> {
         let major = beacon.major.stringValue
         let minor = beacon.minor.stringValue
-        let url = "http://localhost:8080/lectures/beacon?major=\(major)&minor=\(minor)"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/lectures/beacon?major=\(major)&minor=\(minor)"
         
         return repository.fetchLectures(url: url)
             .map { lectures in

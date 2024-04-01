@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol LectureEnrollmentUseCase {
     func execute(lectureId: Int) -> AnyPublisher<APIResult, Error>
@@ -21,7 +22,8 @@ class DefaultLectureEnrollmentUseCase {
 
 extension DefaultLectureEnrollmentUseCase: LectureEnrollmentUseCase {
     func execute(lectureId: Int) -> AnyPublisher<APIResult, Error> {
-        let url = "http://localhost:8080/enrollment/\(lectureId)"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/enrollment/\(lectureId)"
         return repository.registerLecture(url: url)
     }
 }

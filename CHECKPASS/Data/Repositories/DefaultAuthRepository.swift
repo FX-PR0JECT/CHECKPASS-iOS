@@ -16,15 +16,15 @@ final class DefaultAuthRepository {
 }
 
 extension DefaultAuthRepository: AuthRepository {
-    func fetchPostResponse(params: Dictionary<String, String>? = nil, for classification: PostRequestUrl) -> AnyPublisher<APIResult, Error> {
-        return dataSource.sendPostRequest(with: params, to: classification, resultType: APIResultDTO.self)
+    func requestAuthentication(params: Dictionary<String, String>? = nil, to url: String) -> AnyPublisher<APIResult, Error> {
+        return dataSource.sendPostRequest(with: params, to: url, resultType: APIResultDTO.self)
             .map {
                 $0.toEntity()
             }
             .eraseToAnyPublisher()
     }
     
-    func fetchGetResponse(url: String) -> AnyPublisher<APIResult, Error> {
+    func requestAuthentication(url: String) -> AnyPublisher<APIResult, Error> {
         return dataSource.sendGetRequest(to: url, resultType: APIResultDTO.self)
             .map {
                 $0.toEntity()

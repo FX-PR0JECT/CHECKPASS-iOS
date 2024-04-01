@@ -6,14 +6,16 @@
 //
 
 import Combine
+import Foundation
 
 protocol AttendanceUseCase {
-    func executeForEAttendance(attendanceCode: String) -> AnyPublisher<APIResult, Error>
+    func executeForEAttendance(byId lectureId: Int, attendanceCode: String) -> AnyPublisher<APIResult, Error>
     func executeForBeaconAttendance(byId lectureCode: Int) -> AnyPublisher<APIResult, Error>
 }
 
 class DefaultAttendanceUseCase {
     private let repository: AttendanceRepository
+    private let publicIP = Bundle.main.publicIP
     
     init(repository: AttendanceRepository) {
         self.repository = repository
@@ -21,15 +23,15 @@ class DefaultAttendanceUseCase {
 }
 
 extension DefaultAttendanceUseCase: AttendanceUseCase {
-    func executeForEAttendance(attendanceCode: String) -> AnyPublisher<APIResult, Error> {
+    func executeForEAttendance(byId lectureId: Int, attendanceCode: String) -> AnyPublisher<APIResult, Error> {
         let attendanceCode = Int(attendanceCode) ?? 0000
         let params = ["attendanceCode": attendanceCode]
-        let url = "http://localhost:8080/attendance"
+        let url = "http://\(publicIP)/attendance/token/\(lectureId)"
         return repository.attend(with: params, to: url)
     }
     
     func executeForBeaconAttendance(byId lectureCode: Int) -> AnyPublisher<APIResult, Error> {
-        let url = "http://localhost:8080/attendance/\(lectureCode)"
+        let url = "http://\(publicIP)/attendance/\(lectureCode)"
         return repository.attend(to: url)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol GetRecentlyEnrolledLectureUseCase {
     func execute() -> AnyPublisher<[Lecture], Error>
@@ -21,7 +22,8 @@ class DefaultGetRecentlyEnrolledLectureUseCase<T: LectureRepository> {
 
 extension DefaultGetRecentlyEnrolledLectureUseCase: GetRecentlyEnrolledLectureUseCase {
     func execute() -> AnyPublisher<[Lecture], Error> {
-        let url = "http://localhost:8080/enrollment"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/enrollment"
         
         return repository.fetchLectures(url: url)
             .map { lectures in

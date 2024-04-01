@@ -8,16 +8,7 @@
 import Alamofire
 import Combine
 
-enum PostRequestUrl: String {
-    case signUpForStudent = "http://localhost:8080/users/studentSignup"
-    case signUpForStaff = "http://localhost:8080/users/professorSignup"
-    case signIn = "http://localhost:8080/login"
-    case logout = "http://localhost:8080/logout"
-    case eAttendance = "http://localhost:8080/attendance"
-}
-
 protocol DataSource {
-    func sendPostRequest<DTO: Codable>(with params: Parameters?, to url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendPostRequest<DTO: Codable>(with params: Parameters?, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendGetRequest<DTO: Codable>(to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
     func sendPatchRequest<DTO: Codable>(with params: Parameters, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error>
@@ -25,27 +16,6 @@ protocol DataSource {
 }
 
 extension DataSource {
-    //MARK: - request POST API
-    func sendPostRequest<DTO: Codable>(with params: Parameters? = nil, to url: PostRequestUrl, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
-        var dataRequest: DataRequest
-        
-        if let params = params {
-            dataRequest = AF.request(url.rawValue,
-                                     method: .post,
-                                     parameters: params,
-                                     encoding: JSONEncoding.default)
-        } else {
-            dataRequest = AF.request(url.rawValue, method: .post)
-        }
-        
-        return dataRequest.publishDecodable(type: resultType)    //decode and return Publisher
-                            .value()    //get value
-                            .mapError {
-                                return $0 as Error
-                            }
-                            .eraseToAnyPublisher()
-    }
-    
     //MARK: - request POST API for flexible pathvariable
     func sendPostRequest<DTO: Codable>(with params: Parameters? = nil, to url: String, resultType: DTO.Type) -> AnyPublisher<DTO, Error> {
         let dataRequest: DataRequest

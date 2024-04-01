@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol LogoutUseCase {
-    func executeForLogout() -> AnyPublisher<APIResult, Error>
+    func execute() -> AnyPublisher<APIResult, Error>
 }
 
 final class DefaultLogoutUseCase {
@@ -21,8 +21,10 @@ final class DefaultLogoutUseCase {
 }
 
 extension DefaultLogoutUseCase: LogoutUseCase {
-    func executeForLogout() -> AnyPublisher<APIResult, Error> {
-        return repository.fetchPostResponse(params: nil, for: .logout)
+    func execute() -> AnyPublisher<APIResult, Error> {
+        let publicIP = Bundle.main.bundleURL
+        let url = "http://\(publicIP)/logout"
+        return repository.requestAuthentication(params: nil, to: url)
             .map {
                 if $0.result {
                     UserDefaults.standard.removeObject(forKey: "id")

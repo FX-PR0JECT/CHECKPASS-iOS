@@ -90,7 +90,7 @@ extension AuthViewModel: AuthVM {
     }
     
     func executeLogout() {
-        logoutUseCase.executeForLogout()
+        logoutUseCase.execute()
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:

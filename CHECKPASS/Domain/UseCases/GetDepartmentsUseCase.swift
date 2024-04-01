@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol GetDepartmentsUseCase {
     func executeForColleges() -> AnyPublisher<Colleges, Error>
@@ -29,7 +30,9 @@ final class DefaultGetDepartmentsUseCase {
 extension DefaultGetDepartmentsUseCase: GetDepartmentsUseCase {
     func executeForColleges() -> AnyPublisher<Colleges, Error> {
         if let collegesRepository = collegesRepository {
-            return collegesRepository.fetchColleges()
+            let publicIP = Bundle.main.publicIP
+            let url = "http://\(publicIP)/viewElement/colleges"
+            return collegesRepository.fetchColleges(to: url)
         }
         
         return Fail<Colleges, GetDepartmentsUseCaseError>(error: .collegeRepositoryNil)
@@ -40,6 +43,8 @@ extension DefaultGetDepartmentsUseCase: GetDepartmentsUseCase {
     }
     
     func executeForDeparments(college: String) -> AnyPublisher<Departments, Error> {
-        return departmentsRepository.fetchDepartments(of: college)
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/viewElement/departments/\(college)"
+        return departmentsRepository.fetchDepartments(to: url)
     }
 }

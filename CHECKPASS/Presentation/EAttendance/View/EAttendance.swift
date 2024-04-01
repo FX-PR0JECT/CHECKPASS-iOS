@@ -101,7 +101,7 @@ struct EAttendance<T: AttendanceViewModel>: View {
                         Spacer()
                         
                         Button(action: {
-                            viewModel.executeForEAttendance()
+                            viewModel.executeForEAttendance(lectureId: lecture.id)
                         }, label: {
                             Text("출석하기")
                                 .padding(8)

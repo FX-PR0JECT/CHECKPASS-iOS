@@ -6,10 +6,15 @@
 //
 
 import Combine
+import Foundation
+
+enum SignUpType {
+    case student
+    case staff
+}
 
 protocol SignUpUseCase {
-    func executeForStudent(_ data: Dictionary<String, String>, colleges: Colleges?, departments: Departments?) -> AnyPublisher<APIResult, Error>
-    func executeForStaff(_ data: Dictionary<String, String>, colleges: Colleges?, departments: Departments?) -> AnyPublisher<APIResult, Error>
+    func execute(for type: SignUpType, with data: Dictionary<String, String>, colleges: Colleges?, departments: Departments?) -> AnyPublisher<APIResult, Error>
 }
 
 final class DefaultSignUpUseCase {
@@ -21,7 +26,7 @@ final class DefaultSignUpUseCase {
 }
 
 extension DefaultSignUpUseCase: SignUpUseCase {
-    func executeForStudent(_ data: Dictionary<String, String>, colleges: Colleges?, departments: Departments?) -> AnyPublisher<APIResult, Error> {
+    func execute(for type: SignUpType, with data: Dictionary<String, String>, colleges: Colleges?, departments: Departments?) -> AnyPublisher<APIResult, Error> {
         //transfer kor name to eng name
         guard let signUpCollege = data["signUpCollege"],
               let engCollege = colleges?[signUpCollege],
@@ -36,26 +41,16 @@ extension DefaultSignUpUseCase: SignUpUseCase {
         var replacedData = data
         replacedData["signUpCollege"] = engCollege
         replacedData["signUpDepartment"] = engDepartment
+        let publicIP = Bundle.main.publicIP
+        let url: String
         
-        return repository.fetchPostResponse(params: replacedData, for: .signUpForStudent)
-    }
-    
-    func executeForStaff(_ data: Dictionary<String, String>, colleges: Colleges?, departments: Departments?) -> AnyPublisher<APIResult, Error> {
-        //transfer kor name to eng name
-        guard let signUpCollege = data["signUpCollege"],
-              let engCollege = colleges?[signUpCollege],
-              let signUpDepartment = data["signUpDepartment"],
-              let engDepartment = departments?[signUpDepartment] else {
-            return Just(APIResult(result: false, code: -62, resultSet: "There is no eng name"))
-                .setFailureType(to: Error.self)
-                .eraseToAnyPublisher()
+        switch type {
+        case .student:
+            url = "http://\(publicIP)/users/studentSignup"
+        case .staff:
+            url = "http://\(publicIP)/users/professorSignup"
         }
         
-        var replacedData = data
-        replacedData["signUpCollege"] = engCollege
-        replacedData["signUpDepartment"] = engDepartment
-        
-        return repository.fetchPostResponse(params: replacedData, for: .signUpForStaff)
-            .eraseToAnyPublisher()
+        return repository.requestAuthentication(params: replacedData, to: url)
     }
 }

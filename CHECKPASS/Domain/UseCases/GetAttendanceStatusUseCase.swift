@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol GetAttendanceStatusUseCase {
     func execute(for lectureId: Int) -> AnyPublisher<[AttendanceStatuses], Error>
@@ -22,7 +23,8 @@ class DefaultGetAttendanceStatusUseCase {
 extension DefaultGetAttendanceStatusUseCase: GetAttendanceStatusUseCase {
     //MARK: - fetch attendance status for specific lecture
     func execute(for lectureId: Int) -> AnyPublisher<[AttendanceStatuses], Error> {
-        let url = "http://localhost:8080/attendance/\(lectureId)"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/attendance/\(lectureId)"
         return repository.fetchStatus(url: url)
     }
 }

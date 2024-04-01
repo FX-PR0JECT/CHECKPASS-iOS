@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol SignInUseCase {
     func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<APIResult, Error>
@@ -21,7 +22,9 @@ final class DefaultSignInUseCase {
 
 extension DefaultSignInUseCase: SignInUseCase {
     func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<APIResult, Error> {
-        return repository.fetchPostResponse(params: data, for: .signIn)
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/login"
+        return repository.requestAuthentication(params: data, to: url)
     }
     
     

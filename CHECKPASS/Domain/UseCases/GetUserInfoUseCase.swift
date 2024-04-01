@@ -35,7 +35,8 @@ extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
                 .eraseToAnyPublisher()
         }
         
-        let url = "http://localhost:8080/users/simple/\(userId)"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/users/simple/\(userId)"
         return repository.fetchSimpleUserInfo(url: url)
     }
     
@@ -47,7 +48,8 @@ extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
                 .eraseToAnyPublisher()
         }
         
-        let url = "http://localhost:8080/users/\(userId)"
+        let publicIP = Bundle.main.publicIP
+        let url = "http://\(publicIP)/users/\(userId)"
         return repository.fetchDetailedUserInfo(url: url)
             .flatMap { value -> AnyPublisher<User, Error> in
                 switch value {

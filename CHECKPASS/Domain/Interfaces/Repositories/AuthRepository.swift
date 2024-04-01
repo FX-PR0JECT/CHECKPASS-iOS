@@ -8,6 +8,6 @@
 import Combine
 
 protocol AuthRepository {
-    func fetchPostResponse(params: Dictionary<String, String>?, for classification: PostRequestUrl) -> AnyPublisher<APIResult, Error>
-    func fetchGetResponse(url: String) -> AnyPublisher<APIResult, Error>
+    func requestAuthentication(params: Dictionary<String, String>?, to url: String) -> AnyPublisher<APIResult, Error>
+    func requestAuthentication(url: String) -> AnyPublisher<APIResult, Error>
 }

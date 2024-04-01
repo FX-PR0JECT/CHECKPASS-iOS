@@ -8,5 +8,5 @@
 import Combine
 
 protocol CollegesRepository {
-    func fetchColleges() -> AnyPublisher<Colleges, Error>
+    func fetchColleges(to url: String) -> AnyPublisher<Colleges, Error>
 }
