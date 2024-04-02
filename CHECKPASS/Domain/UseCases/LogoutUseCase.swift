@@ -22,7 +22,7 @@ final class DefaultLogoutUseCase {
 
 extension DefaultLogoutUseCase: LogoutUseCase {
     func execute() -> AnyPublisher<APIResult, Error> {
-        let publicIP = Bundle.main.bundleURL
+        let publicIP = Bundle.main.publicIP
         let url = "http://\(publicIP)/logout"
         return repository.requestAuthentication(params: nil, to: url)
             .map {
