@@ -72,6 +72,8 @@ struct LectureDetail: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LectureDetail(lecture: Lecture.sampleData)
 }
+#endif

@@ -34,7 +34,7 @@ struct BeaconAttendanceList<T: AttendanceViewModel>: View {
                     ForEach(lectures) { lecture in
                         NavigationLink(destination: {
                             BeaconAttendance<T>(lecture: lecture)
-                                .environmentObject(viewModel)
+                                .environmentObject(self.viewModel)
                         }, label: {
                             SimpleLectureListRow(lecture, for: .radio)
                                 .padding([.top, .bottom])

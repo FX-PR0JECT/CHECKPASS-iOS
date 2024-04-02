@@ -46,7 +46,9 @@ struct AttendanceStatusView<T: AttendanceStatusViewModel>: View {
     }
 }
 
+#if DEBUG
 #Preview {
     AttendanceStatusView(lectureId: Lecture.sampleData.id,
                          viewModel: AppDI.shared().getAttendanceStatusViewModel())
 }
+#endif
