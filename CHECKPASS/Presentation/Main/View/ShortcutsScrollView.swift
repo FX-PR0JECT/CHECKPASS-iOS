@@ -55,7 +55,7 @@ struct ShortcutsScrollView: View {
                 
             }
             .buttonStyle(.borderless)
-            .padding()
+            .padding([.leading, .trailing, .bottom])
         }
         .navigationDestination(isPresented: $showHomePage, destination: {
             WebBrowserView("https://www.ut.ac.kr/kor.do", showWebPage: $showHomePage)
