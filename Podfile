@@ -6,7 +6,7 @@ target 'CHECKPASS' do
   use_frameworks!
 
   # Pods for CHECKPASS
-  pod 'BeaconSync', '0.1.1'
+  pod 'BeaconSync', '0.1.3'
   pod 'SkeletonUI'
 
 end

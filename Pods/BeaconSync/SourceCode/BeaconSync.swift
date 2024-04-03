@@ -18,6 +18,10 @@ public struct BeaconSync {
             .store(in: &cancellables)
     }
     
+    public func stopSync() {
+        beaconManager.stopUpdateLocation()
+    }
+    
     public func publishBeacons() -> AnyPublisher<[CLBeacon]?, Never> {
         return beaconManager.$beacons
             .eraseToAnyPublisher()

@@ -12,11 +12,10 @@ import CoreLocation
 
 final class ViewModel: ObservableObject {
     @Published var beacons: [CLBeacon]?
-    private var beaconSync: BeaconSync?
+    private lazy var beaconSync: BeaconSync = BeaconSync(for: "00000000-0000-0000-0000-000000000000")
     
-    func startScann() {
-        beaconSync = BeaconSync(for: "00000000-0000-0000-0000-000000000000")
-        beaconSync?.sync { [weak self] in
+    func sync() {
+        beaconSync.sync { [weak self] in
             self?.beacons = $0
         }
     }
