@@ -13,7 +13,7 @@ protocol BeaconAttendanceViewModel {
     var lectures: [Lecture]? { get set }
     
     func startScan()
-    func observeBeacons()
+    func stopScan()
     func attend(lectureId: Int)
 }
 
@@ -24,7 +24,7 @@ final class DefaultBeaconAttendanceViewModel: AttendanceViewModel {
     @Published var beacons: [CLBeacon]?
     @Published var lectures: [Lecture]?
     
-    private let beaconScanUseCase: BeaconScanUseCase
+    private var beaconScanUseCase: BeaconScanUseCase
     private let lectureUseCase: GetLectureByBeaconInfoUseCase
     private let attendanceUseCase: AttendanceUseCase
     private var cancellables = Set<AnyCancellable>()
@@ -39,16 +39,16 @@ final class DefaultBeaconAttendanceViewModel: AttendanceViewModel {
 }
 
 extension DefaultBeaconAttendanceViewModel: BeaconAttendanceViewModel {
+    //MARK: - start beaconc scan
     func startScan() {
         beaconScanUseCase.execute()
+        
+        beaconScanUseCase.subscribeBeacons()
             .sink(receiveValue: { [weak self] beacons in
                 self?.beacons = beacons
             })
             .store(in: &cancellables)
-    }
-    
-    func observeBeacons() {
-        //observing beacons property
+        
         $beacons
             .dropFirst()
             .sink(receiveValue: { [weak self] beacons in
@@ -57,6 +57,11 @@ extension DefaultBeaconAttendanceViewModel: BeaconAttendanceViewModel {
                 }
             })
             .store(in: &cancellables)
+    }
+    
+    //MARK: - stop beacons scan
+    func stopScan() {
+        beaconScanUseCase.abort()
     }
     
     private func executeForFetchingLecture(by beacon: CLBeacon) {
@@ -70,10 +75,12 @@ extension DefaultBeaconAttendanceViewModel: BeaconAttendanceViewModel {
                 }
             }, receiveValue: { [weak self] lectures in
                 //lectures is Array type that contains only one value
-                lectures.forEach { lecture in
-                    if self?.lectures?.contains(lecture) != true {
-                        self?.lectures?.append(lecture)
+                if let viewModelLectures = self?.lectures {
+                    if !viewModelLectures.contains(lectures[0]) {
+                        self?.lectures?.append(lectures[0])
                     }
+                } else {
+                    self?.lectures = [lectures[0]]
                 }
             })
             .store(in: &self.cancellables)

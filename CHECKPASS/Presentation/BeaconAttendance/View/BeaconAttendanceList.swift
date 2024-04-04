@@ -51,8 +51,14 @@ struct BeaconAttendanceList<T: AttendanceViewModel>: View {
         .navigationTitle("비콘출석")
         .onAppear {
             if let viewModel = viewModel as? BeaconAttendanceViewModel {
-                viewModel.observeBeacons()
                 viewModel.startScan()
+//                viewModel.subscribeBeacons()
+//                viewModel.observeBeacons()
+            }
+        }
+        .onDisappear {
+            if let viewModel = viewModel as? BeaconAttendanceViewModel {
+                viewModel.stopScan()
             }
         }
     }
