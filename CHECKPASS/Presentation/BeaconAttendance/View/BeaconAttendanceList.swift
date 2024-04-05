@@ -52,13 +52,6 @@ struct BeaconAttendanceList<T: AttendanceViewModel>: View {
         .onAppear {
             if let viewModel = viewModel as? BeaconAttendanceViewModel {
                 viewModel.startScan()
-//                viewModel.subscribeBeacons()
-//                viewModel.observeBeacons()
-            }
-        }
-        .onDisappear {
-            if let viewModel = viewModel as? BeaconAttendanceViewModel {
-                viewModel.stopScan()
             }
         }
     }

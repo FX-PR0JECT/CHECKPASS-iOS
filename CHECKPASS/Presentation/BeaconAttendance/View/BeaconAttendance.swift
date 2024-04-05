@@ -25,7 +25,28 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
                 
                 Text("(\(lecture.division))")
             }
-            .padding(.bottom, 30)
+            .padding(.bottom, 20)
+            
+            HStack {
+                VStack {
+                    LectureInfo(image: "person.fill", title: lecture.professorName)
+                    
+                    LectureInfo(image: "", title: "\(lecture.lectureGrade)학년")
+                }
+                
+                Spacer()
+                
+                VStack {
+                    LectureInfo(image: "building.columns.fill", title: lecture.lectureRoom)
+                    
+                    LectureInfo(image: "", title: "\(lecture.lectureGrades)학점")
+                }
+                
+                Spacer()
+            }
+            .foregroundColor(.gray)
+            
+            Divider()
             
             Button(action: {
                 if let viewModel = viewModel as? BeaconAttendanceViewModel {
@@ -34,11 +55,16 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
             }, label: {
                 BeaconAttendanceButtonLabel()
             })
+            .padding(.top)
             
             CurrentTimeView()
                 .padding()
             
             Divider()
+            
+            AttendanceStatusView(lectureId: lecture.id,
+                                 viewModel: AppDI.shared().getAttendanceStatusViewModel())
+            .padding(.top)
             
             Spacer()
         }

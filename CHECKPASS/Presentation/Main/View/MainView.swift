@@ -23,7 +23,9 @@ struct MainView<T: UserInfoVM, U: RecentlyEnrolledLectureViewModel>: View {
                 
                 HStack(spacing: 15) {
                     NavigationLink(destination: {
-                        BeaconAttendanceList(viewModel: AppDI.shared().getBeaconAttendanceViewModel())
+                        LazyView {
+                            BeaconAttendanceList(viewModel: AppDI.shared().getBeaconAttendanceViewModel())
+                        }
                     }, label: {
                         MainMediumCard(title: "비콘으로\n출석하기",
                                        image: "mobile",

@@ -86,6 +86,7 @@
 		5C7D97502B82ECF70066234F /* LectureEnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D974F2B82ECF70066234F /* LectureEnrollmentView.swift */; };
 		5C7D97522B82F6320066234F /* FilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D97512B82F6320066234F /* FilterButtons.swift */; };
 		5C7D97562B8312A90066234F /* LectureSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D97552B8312A90066234F /* LectureSearchViewModel.swift */; };
+		5C8124A02BBE8E2A00470D75 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81249F2BBE8E2A00470D75 /* LazyView.swift */; };
 		5C9220292BB260D30072C5A7 /* AttendanceLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9220282BB260D30072C5A7 /* AttendanceLegend.swift */; };
 		5C92202B2BB28E6B0072C5A7 /* AttendanceStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92202A2BB28E6B0072C5A7 /* AttendanceStatuses.swift */; };
 		5C93F0C52B60F50F005D576D /* LectureHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */; };
@@ -260,6 +261,7 @@
 		5C7D974F2B82ECF70066234F /* LectureEnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEnrollmentView.swift; sourceTree = "<group>"; };
 		5C7D97512B82F6320066234F /* FilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtons.swift; sourceTree = "<group>"; };
 		5C7D97552B8312A90066234F /* LectureSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureSearchViewModel.swift; sourceTree = "<group>"; };
+		5C81249F2BBE8E2A00470D75 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		5C9220282BB260D30072C5A7 /* AttendanceLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceLegend.swift; sourceTree = "<group>"; };
 		5C92202A2BB28E6B0072C5A7 /* AttendanceStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatuses.swift; sourceTree = "<group>"; };
 		5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHistoryList.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5C81249E2BBE8E1C00470D75 /* LazyView */,
 				5CFD126E2BB11EE0001B54E5 /* AttendanceStatus */,
 				5C2799F02B9FED9F0004CBF9 /* TimeTable */,
 				5C6819BF2B9AD5CE00B1AAC3 /* LectureListRow */,
@@ -689,6 +692,14 @@
 				5CC787DB2B8EB1B1005A3EA3 /* LectureEnrollmentViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C81249E2BBE8E1C00470D75 /* LazyView */ = {
+			isa = PBXGroup;
+			children = (
+				5C81249F2BBE8E2A00470D75 /* LazyView.swift */,
+			);
+			path = LazyView;
 			sourceTree = "<group>";
 		};
 		5C93F0C32B60F4E5005D576D /* LectureHistoryList */ = {
@@ -1219,6 +1230,7 @@
 				5C7D97562B8312A90066234F /* LectureSearchViewModel.swift in Sources */,
 				5CA2E0CB2BABB024000C5EDA /* AttendanceViewModel.swift in Sources */,
 				5C40F19A2B97EF5600BF6FDB /* EnrollmentHistoryDTO.swift in Sources */,
+				5C8124A02BBE8E2A00470D75 /* LazyView.swift in Sources */,
 				5C9A2A662B3BF3A3006B176E /* UserInfoInputView.swift in Sources */,
 				5CA5B1E52B3AB0DA00DD707C /* KeyboardVM.swift in Sources */,
 				5C6308A62B7D95180007DB95 /* EditUserInfoUseCase.swift in Sources */,
