@@ -1,5 +1,5 @@
 //
-//  LectureInfo.swift
+//  SingleLectureInfo.swift
 //  CHECKPASS
 //
 //  Created by 이정훈 on 3/29/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LectureInfo: View {
+struct SingleLectureInfo: View {
     let image: String
     let title: String
     
@@ -17,10 +17,10 @@ struct LectureInfo: View {
             
             Text(title)
         }
-        .font(.subheadline)
+        .font(.footnote)
     }
 }
 
 #Preview {
-    LectureInfo(image: "person.fill", title: "홍길동 교수님")
+    SingleLectureInfo(image: "person.fill", title: "홍길동 교수님")
 }

@@ -16,59 +16,63 @@ struct LectureDetail: View {
     
     var body: some View {
         List {
-            HStack(spacing: 3) {
-                Text(lecture.lectureName)
-                    .font(.title)
-                    .bold()
-                
-                Text("(\(lecture.division))")
-            }
-            .listRowSeparator(.hidden)
-            
-            VStack(alignment: .leading) {
-                Text("강의 정보")
-                    .font(.title3)
-                    .bold()
-                
-                GroupBox {
-                    VStack(alignment: .leading, spacing: 20) {
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading, spacing: 20) {
-                                LectureInfo(image: "person.circle.fill",
-                                            title: "\(lecture.professorName) 교수님")
-                                
-                                LectureInfo(image: "info.circle.fill",
-                                            title: lecture.lectureKind)
-                            }
-                            .padding(.trailing)
-                            
-                            VStack(alignment: .leading, spacing: 20) {
-                                LectureInfo(image: "building.columns.fill",
-                                            title: lecture.lectureRoom)
-                                
-                                LectureInfo(image: "graduationcap.fill",
-                                            title: "\(lecture.lectureGrades)학점")
-                            }
-                        }
-                        
-                        HStack(spacing: 50) {
-                            LectureInfo(image: "clock.fill",
-                                        title: lecture.alphaTimeCodes)
-                            
-                            Spacer()
-                        }
-                    }
-                    .padding([.top, .bottom])
+            Section(header: Text("강의정보").font(.title3).bold().foregroundColor(.black)) {
+                LectureInfoListRow(imageName: "square.fill.and.line.vertical.and.square.fill",
+                                   title: "분반",
+                                   content: lecture.division)
+                .alignmentGuide(.listRowSeparatorLeading) { _ in
+                    return 0
                 }
+                
+                LectureInfoListRow(imageName: "person.fill",
+                                   title: "교수명",
+                                   content: "\(lecture.professorName) 교수님")
+                .alignmentGuide(.listRowSeparatorLeading) { _ in
+                    return 0
+                }
+                
+                LectureInfoListRow(imageName: "clock.fill",
+                                   title: "강의 시간",
+                                   content: lecture.alphaTimeCodes)
+                .alignmentGuide(.listRowSeparatorLeading) { _ in
+                    return 0
+                }
+                
+                LectureInfoListRow(imageName: "building.columns.fill",
+                                   title: "강의실",
+                                   content: lecture.lectureRoom)
+                .alignmentGuide(.listRowSeparatorLeading) { _ in
+                    return 0
+                }
+                
+                LectureInfoListRow(imageName: "info.circle.fill",
+                                   title: "이수구분",
+                                   content: lecture.lectureKind)
+                .alignmentGuide(.listRowSeparatorLeading) { _ in
+                    return 0
+                }
+                
+                LectureInfoListRow(imageName: "graduationcap.fill",
+                                   title: "학점",
+                                   content: "\(lecture.lectureGrades)학점")
+                .alignmentGuide(.listRowSeparatorLeading) { _ in
+                    return 0
+                }
+                
+                LectureInfoListRow(imageName: "person.2.fill",
+                                   title: "수강인원",
+                                   content: "\(lecture.lectureCount)명")
             }
+            .listSectionSeparator(.hidden)
             
             AttendanceStatusView(lectureId: lecture.id,
                                  viewModel: AppDI.shared().getAttendanceStatusViewModel())
                 .listRowSeparator(.hidden)
+                .padding(.top)
         }
         .listStyle(.plain)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("강의정보")
+        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle(lecture.lectureName)
     }
 }
 
