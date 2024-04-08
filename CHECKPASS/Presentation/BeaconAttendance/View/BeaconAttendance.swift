@@ -27,24 +27,10 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
             }
             .padding(.bottom, 20)
             
-            HStack {
-                VStack {
-                    LectureInfo(image: "person.fill", title: lecture.professorName)
-                    
-                    LectureInfo(image: "", title: "\(lecture.lectureGrade)학년")
-                }
-                
-                Spacer()
-                
-                VStack {
-                    LectureInfo(image: "building.columns.fill", title: lecture.lectureRoom)
-                    
-                    LectureInfo(image: "", title: "\(lecture.lectureGrades)학점")
-                }
-                
-                Spacer()
-            }
-            .foregroundColor(.gray)
+            LectureInfo(lecture: lecture,
+                        spacing: 13)
+                .foregroundColor(.gray)
+                .padding(.bottom)
             
             Divider()
             

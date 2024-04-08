@@ -31,7 +31,7 @@ struct LectureInfo: View {
             }
             
             HStack {
-                LectureInfo(image: "clock.fill", title: lecture.alphaTimeCodes)
+                SingleLectureInfo(image: "clock.fill", title: lecture.alphaTimeCodes)
                 
                 Spacer()
             }

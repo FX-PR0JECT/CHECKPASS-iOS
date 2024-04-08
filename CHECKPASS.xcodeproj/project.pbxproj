@@ -47,7 +47,7 @@
 		5C32B24B2B352B090036CDF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24A2B352B090036CDF2 /* SignInView.swift */; };
 		5C32B24F2B352F4A0036CDF2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */; };
 		5C33A2302BB64E8400876D44 /* LectureDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C33A22F2BB64E8400876D44 /* LectureDetail.swift */; };
-		5C33A2322BB687E400876D44 /* LectureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C33A2312BB687E400876D44 /* LectureInfo.swift */; };
+		5C33A2322BB687E400876D44 /* SingleLectureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C33A2312BB687E400876D44 /* SingleLectureInfo.swift */; };
 		5C36EDFC2B8589C900D6CD4C /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36EDFB2B8589C900D6CD4C /* Lecture.swift */; };
 		5C36EDFE2B858E4600D6CD4C /* LectureSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36EDFD2B858E4600D6CD4C /* LectureSearchUseCase.swift */; };
 		5C3ADE812B6791C00001B3D8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ADE802B6791C00001B3D8 /* WebView.swift */; };
@@ -96,6 +96,8 @@
 		5C93F0CF2B620F8A005D576D /* MainSubTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0CE2B620F8A005D576D /* MainSubTitle.swift */; };
 		5C93F0D12B620FBC005D576D /* ShortcutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0D02B620FBC005D576D /* ShortcutIcon.swift */; };
 		5C93F0D72B623420005D576D /* MainMediumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93F0D62B623420005D576D /* MainMediumCard.swift */; };
+		5C942ED52BBF79C500C8AD65 /* LectureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C942ED42BBF79C500C8AD65 /* LectureInfo.swift */; };
+		5C942ED72BBF8E3D00C8AD65 /* LectureInfoListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C942ED62BBF8E3D00C8AD65 /* LectureInfoListRow.swift */; };
 		5C962F032B50BDB9007862B1 /* SimpleUserInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F022B50BDB9007862B1 /* SimpleUserInfoDTO.swift */; };
 		5C962F052B50C13A007862B1 /* SimpleUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C962F042B50C13A007862B1 /* SimpleUserInfo.swift */; };
 		5C987CB12B43824D006A2580 /* FindPwEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */; };
@@ -221,7 +223,7 @@
 		5C32B24A2B352B090036CDF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5C32B24E2B352F4A0036CDF2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		5C33A22F2BB64E8400876D44 /* LectureDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDetail.swift; sourceTree = "<group>"; };
-		5C33A2312BB687E400876D44 /* LectureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureInfo.swift; sourceTree = "<group>"; };
+		5C33A2312BB687E400876D44 /* SingleLectureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLectureInfo.swift; sourceTree = "<group>"; };
 		5C36EDFB2B8589C900D6CD4C /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		5C36EDFD2B858E4600D6CD4C /* LectureSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureSearchUseCase.swift; sourceTree = "<group>"; };
 		5C3ADE7A2B6772730001B3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -271,6 +273,8 @@
 		5C93F0CE2B620F8A005D576D /* MainSubTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSubTitle.swift; sourceTree = "<group>"; };
 		5C93F0D02B620FBC005D576D /* ShortcutIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutIcon.swift; sourceTree = "<group>"; };
 		5C93F0D62B623420005D576D /* MainMediumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMediumCard.swift; sourceTree = "<group>"; };
+		5C942ED42BBF79C500C8AD65 /* LectureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureInfo.swift; sourceTree = "<group>"; };
+		5C942ED62BBF8E3D00C8AD65 /* LectureInfoListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureInfoListRow.swift; sourceTree = "<group>"; };
 		5C962F022B50BDB9007862B1 /* SimpleUserInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUserInfoDTO.swift; sourceTree = "<group>"; };
 		5C962F042B50C13A007862B1 /* SimpleUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUserInfo.swift; sourceTree = "<group>"; };
 		5C987CB02B43824D006A2580 /* FindPwEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwEmailInput.swift; sourceTree = "<group>"; };
@@ -556,7 +560,7 @@
 				5C93F0C42B60F50F005D576D /* LectureHistoryList.swift */,
 				5CD037372B6C71EB0036448A /* Sectionheader.swift */,
 				5C33A22F2BB64E8400876D44 /* LectureDetail.swift */,
-				5C33A2312BB687E400876D44 /* LectureInfo.swift */,
+				5C942ED62BBF8E3D00C8AD65 /* LectureInfoListRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -955,6 +959,8 @@
 				5C04DC382B9EAEE30032EA78 /* BeaconAttendance.swift */,
 				5CFC206A2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift */,
 				5CFC206C2B9F0C0C00735328 /* CurrentTimeView.swift */,
+				5C33A2312BB687E400876D44 /* SingleLectureInfo.swift */,
+				5C942ED42BBF79C500C8AD65 /* LectureInfo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1197,7 +1203,7 @@
 				5C144ADD2B3E4221007E2E23 /* AgreementButton.swift in Sources */,
 				5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */,
 				5CFD12722BB11F07001B54E5 /* AttendanceStatusView.swift in Sources */,
-				5C33A2322BB687E400876D44 /* LectureInfo.swift in Sources */,
+				5C33A2322BB687E400876D44 /* SingleLectureInfo.swift in Sources */,
 				5C2799F62B9FF18D0004CBF9 /* TimeTableBlock.swift in Sources */,
 				5C3B11862B7339D900256BF0 /* DetailedUserInfoView.swift in Sources */,
 				5C9C5D322B4FB3F400F87F5F /* SignInUseCase.swift in Sources */,
@@ -1307,7 +1313,9 @@
 				5C030D1F2B4648AA004B19AB /* JobPicker.swift in Sources */,
 				5CEE58352BA7DB69004264B6 /* EAttendanceInput.swift in Sources */,
 				5C1F2BDE2B6375610035415E /* MainView.swift in Sources */,
+				5C942ED72BBF8E3D00C8AD65 /* LectureInfoListRow.swift in Sources */,
 				5C1F2BE32B63791C0035415E /* FrontCard.swift in Sources */,
+				5C942ED52BBF79C500C8AD65 /* LectureInfo.swift in Sources */,
 				5CFC206B2B9EBE6000735328 /* BeaconAttendanceButtonLabel.swift in Sources */,
 				5C21244B2B3CF7DC00D237D4 /* EmailInputView.swift in Sources */,
 				5CA2E0CD2BABBAFA000C5EDA /* GetLectureByBeaconInfoUseCase.swift in Sources */,

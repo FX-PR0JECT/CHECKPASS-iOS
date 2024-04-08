@@ -39,7 +39,7 @@ extension Lecture {
                 professorName: "홍길동",
                 lectureRoom: "미래융합정보관(220)",
                 alphaTimeCodes:
-                    "월 [1A, 1B, 2A, 2B, 3A],\n화 [2B, 3A, 3B, 4A]",
+                    "월 [1A, 1B, 2A, 2B, 3A]\n화 [2B, 3A, 3B, 4A]",
                 lectureTimes: [
                     "D0T0900H150",
                     "D1T1030H120"
