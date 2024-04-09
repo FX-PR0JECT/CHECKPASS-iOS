@@ -12,5 +12,11 @@ struct AttendanceStatusDTO: Codable {
     let state: String
     let code: Int
     let title: String
-    let resultSet: [String]
+    let resultSet: AttendanceStatusResultSet
+}
+
+// MARK: - ResultSet
+struct AttendanceStatusResultSet: Codable {
+    let lectureName: String
+    let attendList: [String]
 }

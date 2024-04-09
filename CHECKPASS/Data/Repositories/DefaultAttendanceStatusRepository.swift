@@ -21,7 +21,7 @@ extension DefaultAttendanceStatusRepository: AttendanceStatusRepository {
             .map { DTO in
                 var statuses = [AttendanceStatuses]()
                 
-                DTO.resultSet.forEach { status in
+                DTO.resultSet.attendList.forEach { status in
                     if status.count == 1 {    //String count: 1
                         if let attendanceStatus = AttendanceStatus(rawValue: status) {
                             statuses.append(AttendanceStatuses(firstStatus: attendanceStatus))
