@@ -24,8 +24,10 @@ class DefaultLectureSearchUseCase<T: LectureRepository> {
 extension DefaultLectureSearchUseCase: LectureSearchUseCase {
     func execute(lectureGrade: String?, lectureKind: String?, lectureGrades: String?,
                  lectureCode: String?, lectureName: String?, professorName: String?) -> AnyPublisher<[Lecture], Error> {
-        let publicIP = Bundle.main.publicIP
-        var url = "http://\(publicIP)/lectures/search?"
+//        let publicIP = Bundle.main.publicIP
+//        var url = "http://\(publicIP)/lectures/search?"
+        let domain = Bundle.main.domain
+        var url = "\(domain)/lectures/search?"
         
         if let lectureGrade {
             if String(url.last!) != "?" {

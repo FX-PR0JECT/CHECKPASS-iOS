@@ -22,8 +22,10 @@ final class DefaultIdDuplicateCheckUseCase {
 
 extension DefaultIdDuplicateCheckUseCase: IdDuplicateCheckUseCase {
     func execute(_ data: String) -> AnyPublisher<APIResult, Error> {
-        let publicIP = Bundle.main.publicIP
-        let url: String = "http://\(publicIP)/users/duplication/\(data)"    //API URL
+//        let publicIP = Bundle.main.publicIP
+//        let url: String = "http://\(publicIP)/users/duplication/\(data)"    //API URL
+        let domain = Bundle.main.domain
+        let url = "\(domain)/users/duplication/\(data)"
         return repository.requestAuthentication(url: url)
             .eraseToAnyPublisher()
     }

@@ -43,8 +43,10 @@ extension DefaultGetDepartmentsUseCase: GetDepartmentsUseCase {
     }
     
     func executeForDeparments(college: String) -> AnyPublisher<Departments, Error> {
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/viewElement/departments/\(college)"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/viewElement/departments/\(college)"
+        let domain = Bundle.main.domain
+        let url = "\(domain)/viewElement/departments/\(college)"
         return departmentsRepository.fetchDepartments(to: url)
     }
 }

@@ -23,8 +23,10 @@ class DefaultGetAttendanceStatusUseCase {
 extension DefaultGetAttendanceStatusUseCase: GetAttendanceStatusUseCase {
     //MARK: - fetch attendance status for specific lecture
     func execute(for lectureId: Int) -> AnyPublisher<[AttendanceStatuses], Error> {
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/attendance/\(lectureId)"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/attendance/\(lectureId)"
+        let domain = Bundle.main.domain
+        let url = "\(domain)/attendance/\(lectureId)"
         return repository.fetchStatus(url: url)
     }
 }

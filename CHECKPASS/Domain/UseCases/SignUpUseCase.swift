@@ -41,14 +41,17 @@ extension DefaultSignUpUseCase: SignUpUseCase {
         var replacedData = data
         replacedData["signUpCollege"] = engCollege
         replacedData["signUpDepartment"] = engDepartment
-        let publicIP = Bundle.main.publicIP
+//        let publicIP = Bundle.main.publicIP
+        let domain = Bundle.main.domain
         let url: String
         
         switch type {
         case .student:
-            url = "http://\(publicIP)/users/studentSignup"
+//            url = "http://\(publicIP)/users/studentSignup"
+            url = "\(domain)/users/studentSignup"
         case .staff:
-            url = "http://\(publicIP)/users/professorSignup"
+//            url = "http://\(publicIP)/users/professorSignup"
+            url = "\(domain)/users/professorSignup"
         }
         
         return repository.requestAuthentication(params: replacedData, to: url)

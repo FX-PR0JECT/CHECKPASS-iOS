@@ -35,13 +35,16 @@ extension DefaultEditUserInfoUseCase: EditUserInfoUseCase {
         }
         
         let url: String
-        let publicIP = Bundle.main.publicIP
+//        let publicIP = Bundle.main.publicIP
+        let domain = Bundle.main.domain
         
         switch type {
         case .student:
-            url = "http://\(publicIP)/users/student/\(userId)"
+//            url = "http://\(publicIP)/users/student/\(userId)"
+            url = "\(domain)/users/student/\(userId)"
         case .staff, .professor:
-            url = "http://\(publicIP)/users/professor/\(userId)"
+//            url = "http://\(publicIP)/users/professor/\(userId)"
+            url = "\(domain)/users/professor/\(userId)"
         }
         
         return repository.editUserInfo(url: url, params: data)

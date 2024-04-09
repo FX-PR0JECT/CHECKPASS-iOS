@@ -22,8 +22,10 @@ class DefaultLectureEnrollmentUseCase {
 
 extension DefaultLectureEnrollmentUseCase: LectureEnrollmentUseCase {
     func execute(lectureId: Int) -> AnyPublisher<APIResult, Error> {
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/enrollment/\(lectureId)"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/enrollment/\(lectureId)"
+        let domain = Bundle.main.domain
+        let url = "\(domain)/enrollment/\(lectureId)"
         return repository.registerLecture(url: url)
     }
 }

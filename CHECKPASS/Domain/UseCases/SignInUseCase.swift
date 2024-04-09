@@ -22,8 +22,10 @@ final class DefaultSignInUseCase {
 
 extension DefaultSignInUseCase: SignInUseCase {
     func executeForSignIn(data: Dictionary<String, String>) -> AnyPublisher<APIResult, Error> {
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/login"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/login"
+        let domain = Bundle.main.domain
+        let url = "\(domain)/login"
         return repository.requestAuthentication(params: data, to: url)
     }
     

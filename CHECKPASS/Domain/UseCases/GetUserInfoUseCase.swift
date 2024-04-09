@@ -15,6 +15,7 @@ protocol GetUserInfoUseCase {
 
 final class DefaultGetUserInfoUseCase {
     private let repository: UserRepository
+    private let domain = Bundle.main.domain
     
     init(repository: UserRepository) {
         self.repository = repository
@@ -35,8 +36,9 @@ extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
                 .eraseToAnyPublisher()
         }
         
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/users/simple/\(userId)"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/users/simple/\(userId)"
+        let url = "\(domain)/users/simple/\(userId)"
         return repository.fetchSimpleUserInfo(url: url)
     }
     
@@ -48,8 +50,9 @@ extension DefaultGetUserInfoUseCase: GetUserInfoUseCase {
                 .eraseToAnyPublisher()
         }
         
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/users/\(userId)"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/users/\(userId)"
+        let url = "\(domain)/users/\(userId)"
         return repository.fetchDetailedUserInfo(url: url)
             .flatMap { value -> AnyPublisher<User, Error> in
                 switch value {

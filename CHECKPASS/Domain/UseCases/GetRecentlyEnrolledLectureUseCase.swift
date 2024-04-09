@@ -22,8 +22,10 @@ class DefaultGetRecentlyEnrolledLectureUseCase<T: LectureRepository> {
 
 extension DefaultGetRecentlyEnrolledLectureUseCase: GetRecentlyEnrolledLectureUseCase {
     func execute() -> AnyPublisher<[Lecture], Error> {
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/enrollment"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/enrollment"
+        let domain = Bundle.main.domain
+        let url = "\(domain)/enrollment"
         
         return repository.fetchLectures(url: url)
             .map { lectures in

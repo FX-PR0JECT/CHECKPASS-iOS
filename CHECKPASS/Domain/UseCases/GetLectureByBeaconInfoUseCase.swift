@@ -25,8 +25,10 @@ extension DefaultGetLectureByBeaconInfoUseCase: GetLectureByBeaconInfoUseCase {
     func execute(by beacon: CLBeacon) -> AnyPublisher<[Lecture], Error> {
         let major = beacon.major.stringValue
         let minor = beacon.minor.stringValue
-        let publicIP = Bundle.main.publicIP
-        let url = "http://\(publicIP)/lectures/beacon?major=\(major)&minor=\(minor)"
+//        let publicIP = Bundle.main.publicIP
+//        let url = "http://\(publicIP)/lectures/beacon?major=\(major)&minor=\(minor)"
+        let domain = Bundle.main.domain
+        let url = "\(domain)/lectures/beacon?major=\(major)&minor=\(minor)"
         
         return repository.fetchLectures(url: url)
             .map { lectures in
