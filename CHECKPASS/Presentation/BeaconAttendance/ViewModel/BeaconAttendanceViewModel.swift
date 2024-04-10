@@ -9,11 +9,9 @@ import Combine
 import CoreLocation
 
 protocol BeaconAttendanceViewModel {
-    var beacons: [CLBeacon]? { get set }
     var lectures: [Lecture]? { get set }
     
     func startScan()
-    func stopScan()
     func attend(lectureId: Int)
 }
 
@@ -21,13 +19,13 @@ final class DefaultBeaconAttendanceViewModel: AttendanceViewModel {
     @Published var result: Bool?
     @Published var resultSet = ""
     @Published var isProgress = false
-    @Published var beacons: [CLBeacon]?
     @Published var lectures: [Lecture]?
     
     private var beaconScanUseCase: BeaconScanUseCase
     private let lectureUseCase: GetLectureByBeaconInfoUseCase
     private let attendanceUseCase: AttendanceUseCase
     private var cancellables = Set<AnyCancellable>()
+    private var beacons: [CLBeacon]?
     
     init(beaconScanUseCase: BeaconScanUseCase,
          lectureUseCase: GetLectureByBeaconInfoUseCase,
@@ -45,23 +43,19 @@ extension DefaultBeaconAttendanceViewModel: BeaconAttendanceViewModel {
         
         beaconScanUseCase.subscribeBeacons()
             .sink(receiveValue: { [weak self] beacons in
-                self?.beacons = beacons
-            })
-            .store(in: &cancellables)
-        
-        $beacons
-            .dropFirst()
-            .sink(receiveValue: { [weak self] beacons in
-                beacons?.forEach { beacon in
-                    self?.executeForFetchingLecture(by: beacon)
+                beacons.map {
+                    $0.forEach { beacon in
+                        if self?.beacons == nil {
+                            self?.beacons = [beacon]
+                            self?.executeForFetchingLecture(by: beacon)
+                        } else if self?.beacons?.contains(beacon) == false {
+                            self?.beacons?.append(beacon)
+                            self?.executeForFetchingLecture(by: beacon)
+                        }
+                    }
                 }
             })
             .store(in: &cancellables)
-    }
-    
-    //MARK: - stop beacons scan
-    func stopScan() {
-        beaconScanUseCase.abort()
     }
     
     private func executeForFetchingLecture(by beacon: CLBeacon) {

@@ -39,7 +39,9 @@ struct LectureInfo: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LectureInfo(lecture: Lecture.sampleData,
                       spacing: 10)
 }
+#endif
