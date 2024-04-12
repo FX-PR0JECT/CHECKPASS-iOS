@@ -46,8 +46,10 @@ struct SingleWeek: View {
                                              Gradient.Stop(color: secondStatus.color, location: 0.5)],
                                      startPoint: .zero,
                                      endPoint: .bottomTrailing))
-                .frame(width: UIScreen.main.bounds.width * 0.095,
-                       height: UIScreen.main.bounds.width * 0.095)
+//                .frame(width: UIScreen.main.bounds.width * 0.095,
+//                       height: UIScreen.main.bounds.width * 0.095)
+                .frame(maxWidth: .infinity)
+                .frame(height: UIScreen.main.bounds.width * 0.095)
                 .overlay {
                     Text("\(week)")
                         .foregroundColor(.white)
@@ -64,8 +66,10 @@ struct SingleWeek: View {
         } else {
             RoundedRectangle(cornerRadius: 10)
                 .skeleton(with: true, shape: .rounded(.radius(10, style: .continuous)))
-                .frame(width: UIScreen.main.bounds.width * 0.095,
-                       height: UIScreen.main.bounds.width * 0.095)
+//                .frame(width: UIScreen.main.bounds.width * 0.095,
+//                       height: UIScreen.main.bounds.width * 0.095)
+                .frame(maxWidth: .infinity)
+                .frame(height: UIScreen.main.bounds.width * 0.095)
         }
     }
 }

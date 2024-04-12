@@ -81,14 +81,17 @@ extension DefaultBeaconAttendanceViewModel: BeaconAttendanceViewModel {
     }
     
     func attend(lectureId: Int) {
+        isProgress.toggle()
+        
         attendanceUseCase.executeForBeaconAttendance(byId: lectureId)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
                     print("successfully request to attend by beacon information")
                 case .failure(let error):
                     print("DefaultBeaconAttendanceViewModel.executeAttedance(lectureCode:) error:", error)
                 }
+                self?.isProgress.toggle()
             }, receiveValue: { [weak self] in
                 self?.result = $0.result
                 self?.resultSet = $0.resultSet

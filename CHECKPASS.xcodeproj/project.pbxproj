@@ -139,6 +139,7 @@
 		5CCEC3862B709D1600460B4B /* EAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3852B709D1600460B4B /* EAttendance.swift */; };
 		5CCEC3882B709F0300460B4B /* CodeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEC3872B709F0300460B4B /* CodeInput.swift */; };
 		5CD037382B6C71EB0036448A /* Sectionheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD037372B6C71EB0036448A /* Sectionheader.swift */; };
+		5CD3FBA52BC6731F00C24791 /* Array+CLBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3FBA42BC6731F00C24791 /* Array+CLBeacon.swift */; };
 		5CD6E4F42B4E0CEA00C02305 /* SignUpUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */; };
 		5CDBD8402B8580830052225C /* LectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDBD83F2B8580830052225C /* LectureRepository.swift */; };
 		5CDBD8422B8580A80052225C /* DefaultLectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDBD8412B8580A80052225C /* DefaultLectureRepository.swift */; };
@@ -317,6 +318,7 @@
 		5CCEC3852B709D1600460B4B /* EAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAttendance.swift; sourceTree = "<group>"; };
 		5CCEC3872B709F0300460B4B /* CodeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInput.swift; sourceTree = "<group>"; };
 		5CD037372B6C71EB0036448A /* Sectionheader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sectionheader.swift; sourceTree = "<group>"; };
+		5CD3FBA42BC6731F00C24791 /* Array+CLBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+CLBeacon.swift"; sourceTree = "<group>"; };
 		5CD6E4F32B4E0CEA00C02305 /* SignUpUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseTest.swift; sourceTree = "<group>"; };
 		5CDBD83F2B8580830052225C /* LectureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRepository.swift; sourceTree = "<group>"; };
 		5CDBD8412B8580A80052225C /* DefaultLectureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLectureRepository.swift; sourceTree = "<group>"; };
@@ -901,6 +903,7 @@
 				5C0CBAB32B9018120007849E /* View.swift */,
 				5CFC206E2B9F0C8000735328 /* Date.swift */,
 				5C28408C2BB9583500F72CB7 /* CHECKPASS++Bundle.swift */,
+				5CD3FBA42BC6731F00C24791 /* Array+CLBeacon.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -1252,6 +1255,7 @@
 				5C987CC82B4521EF006A2580 /* AppDI.swift in Sources */,
 				5C2799F22B9FEDD00004CBF9 /* TimeTableGrid.swift in Sources */,
 				5C3B118A2B735A6E00256BF0 /* DetailUserInfo.swift in Sources */,
+				5CD3FBA52BC6731F00C24791 /* Array+CLBeacon.swift in Sources */,
 				5C9EF7FD2B8C26560085B5A3 /* LectureEnrollmentRepository.swift in Sources */,
 				5C1A37422B576A0900A0AE8A /* DefaultUserRepository.swift in Sources */,
 				5C40F1A02B98073E00BF6FDB /* GetLectureHistoryUseCase.swift in Sources */,

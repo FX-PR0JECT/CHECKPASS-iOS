@@ -14,45 +14,53 @@ struct BeaconAttendanceList<T: AttendanceViewModel>: View {
         _viewModel = ObservedObject(wrappedValue: viewModel)
     }
     var body: some View {
-        List {
-            Section(header: Sectionheader(header: "근처 강의실")) {
-                #if DEBUG
-                ForEach([Lecture.sampleData]) { lecture in
-                    NavigationLink(destination: {
-                        BeaconAttendance<T>(lecture: lecture)
-                            .environmentObject(viewModel)
-                    }, label: {
-                        SimpleLectureListRow(lecture, for: .radio)
-                            .padding([.top, .bottom])
-                    })
-                    .listRowSeparator(.hidden)
-                }
-                .listSectionSeparator(.visible, edges: .top)
-                #else
-                if let viewModel = viewModel as? BeaconAttendanceViewModel,
-                   let lectures = viewModel.lectures {
-                    ForEach(lectures) { lecture in
-                        NavigationLink(destination: {
-                            BeaconAttendance<T>(lecture: lecture)
-                                .environmentObject(self.viewModel)
-                        }, label: {
-                            SimpleLectureListRow(lecture, for: .radio)
-                                .padding([.top, .bottom])
-                        })
-                        .listRowSeparator(.hidden)
+        if let beaconAttendanceViewModel = viewModel as? BeaconAttendanceViewModel {
+            if let lectures = beaconAttendanceViewModel.lectures {
+                List {
+                    Section(header: Sectionheader(header: "근처 강의실")) {
+                        #if DEBUG
+                        ForEach([Lecture.sampleData]) { lecture in
+                            NavigationLink(destination: {
+                                BeaconAttendance<T>(lecture: lecture)
+                                    .environmentObject(viewModel)
+                            }, label: {
+                                SimpleLectureListRow(lecture, for: .radio)
+                                    .padding([.top, .bottom])
+                            })
+                            .listRowSeparator(.hidden)
+                        }
+                        .listSectionSeparator(.visible, edges: .top)
+                        #else
+                        ForEach(lectures) { lecture in
+                            NavigationLink(destination: {
+                                BeaconAttendance<T>(lecture: lecture)
+                                    .environmentObject(self.viewModel)
+                            }, label: {
+                                SimpleLectureListRow(lecture, for: .radio)
+                                    .padding([.top, .bottom])
+                            })
+                            .listRowSeparator(.hidden)
+                        }
+                        .listSectionSeparator(.visible, edges: .top)
+                        #endif
                     }
-                    .listSectionSeparator(.visible, edges: .top)
                 }
-                #endif
+                .listStyle(.plain)
+                .navigationBarTitleDisplayMode(.large)
+                .navigationTitle("비콘출석")
+            } else {
+                Image("FlagImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width * 0.6)
+                    .onAppear {
+                        beaconAttendanceViewModel.startScan()
+                    }
+                    .navigationBarTitleDisplayMode(.large)
+                    .navigationTitle("비콘출석")
             }
-        }
-        .listStyle(.plain)
-        .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("비콘출석")
-        .onAppear {
-            if let viewModel = viewModel as? BeaconAttendanceViewModel {
-                viewModel.startScan()
-            }
+        } else {
+            EmptyView()
         }
     }
 }
