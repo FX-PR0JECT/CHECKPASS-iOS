@@ -35,12 +35,12 @@ struct MainTabView<T: AuthVM, U: UserInfoVM, R: RecentlyEnrolledLectureViewModel
                     Text("내 강의")
                 }
             
-            BoardView()
-                .tabItem {
-                    Image(systemName: "ellipsis.message")
-                    
-                    Text("게시판")
-                }
+//            BoardView()
+//                .tabItem {
+//                    Image(systemName: "ellipsis.message")
+//                    
+//                    Text("게시판")
+//                }
             
             SeeMoreView<T, U>()
                 .environmentObject(authViewModel)

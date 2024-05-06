@@ -25,6 +25,7 @@ struct MainView<T: UserInfoVM, U: RecentlyEnrolledLectureViewModel>: View {
                     NavigationLink(destination: {
                         LazyView {
                             BeaconAttendanceList(viewModel: AppDI.shared().getBeaconAttendanceViewModel())
+                                .environmentObject(userInfoViewModel)
                         }
                     }, label: {
                         MainMediumCard(title: "비콘으로\n출석하기",

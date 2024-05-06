@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BeaconAttendance<T: AttendanceViewModel>: View {
     @EnvironmentObject private var viewModel: T
+    @EnvironmentObject private var userInfoViewModel: UserInfoViewModel
     
     private let lecture: Lecture
     
@@ -27,38 +28,41 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
                     CustomProgressView()
                 }
                 
-                List {
-                    LectureInfo(lecture: lecture,
-                                spacing: 13)
-                    .foregroundColor(.gray)
-                    .listRowSeparator(.hidden)
+                Color(red: 45 / 255, green: 45 / 255, blue: 47 / 255)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    BeaconAttendanceUserInfo(lecture: lecture)
+                        .padding([.leading, .trailing], 30)
                     
-                    Divider()
-                        .listRowSeparator(.hidden)
+                    CurrentTimeView()
+                        .padding(15)
+                        .foregroundColor(.white)
                     
                     Button(action: {
                         if let viewModel = viewModel as? BeaconAttendanceViewModel {
                             viewModel.attend(lectureId: lecture.id)
                         }
                     }, label: {
-                        BeaconAttendanceButtonLabel()
+                        Text("출석하기")
+                            .bold()
+                            .padding(8)
+                            .frame(maxWidth: .infinity)
                     })
-                    .buttonStyle(.borderless)
-                    .listRowSeparator(.hidden)
-                    
-                    CurrentTimeView()
-                        .listRowSeparator(.hidden)
-                    
-                    Divider()
-                        .listRowSeparator(.hidden)
-                    
-                    AttendanceStatusView(lectureId: lecture.id,
-                                         viewModel: AppDI.shared().getAttendanceStatusViewModel())
-                    .listRowSeparator(.hidden)
+                    .tint(Color(red: 47 / 255, green: 83 / 255, blue: 154 / 255))
+                    .buttonBorderShape(.roundedRectangle)
+                    .cornerRadius(30)
+                    .buttonStyle(.borderedProminent)
+                    .padding()
                 }
-                .listStyle(.plain)
-                .navigationBarTitleDisplayMode(.large)
-                .navigationTitle(lecture.lectureName)
+                .onAppear {
+                    if userInfoViewModel.detailedUserInfo == nil {
+                        userInfoViewModel.getDetailedUserInfo()
+                    }
+                }
+                .toolbar(.hidden, for: .tabBar)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("비콘출석")
             }
         }
     }
@@ -70,5 +74,6 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
         lecture: Lecture.sampleData
     )
     .environmentObject(AppDI.shared().getBeaconAttendanceViewModel())
+    .environmentObject(AppDI.shared().getUserInfoViewModel())
 }
 #endif
