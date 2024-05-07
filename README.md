@@ -1,5 +1,5 @@
 # ✅ CHECKPASS - iOS
-![](https://velog.velcdn.com/images/jeunghun2/post/77d2032d-68d6-4580-ad32-b35ac4f864cc/image.png)
+![](https://velog.velcdn.com/images/jeunghun2/post/befe13df-2a7e-448d-b49b-beda0460d356/image.png)
 Designed by [Freepik](https://www.freepik.com/)
 
 ## 💡 Topic
