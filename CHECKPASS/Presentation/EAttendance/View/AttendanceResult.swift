@@ -63,6 +63,7 @@ struct AttendanceResult<T: AttendanceViewModel>: View {
                 }
             }, label: {
                 Text("확인")
+                    .bold()
                     .padding(8)
                     .frame(maxWidth: .infinity)
             })

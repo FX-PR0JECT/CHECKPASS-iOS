@@ -43,13 +43,22 @@ struct EAttendance<T: AttendanceViewModel>: View {
                     .frame(width: 0)
                     
                     VStack(alignment: .leading) {
-                        HStack(spacing: 0) {
+                        HStack(spacing: 10) {
                             Text(lecture.lectureName)
-                                .font(.largeTitle)
-                                .bold()
                             
-                            Text("(\(lecture.division))")
+                            Text("\(lecture.division)")
                         }
+                        .padding(.bottom, 7)
+                        .font(.title)
+                        .bold()
+                        
+                        HStack(spacing: 5) {
+                            Image(systemName: "building.2.fill")
+                            
+                            Text(lecture.lectureRoom)
+                        }
+                        .foregroundColor(.gray)
+                        .font(.footnote)
                         .padding(.bottom, 30)
                         
                         HStack {
@@ -60,7 +69,7 @@ struct EAttendance<T: AttendanceViewModel>: View {
                                     .font(.title3)
                                     .bold()
                                 
-                                HStack(spacing: 25) {
+                                HStack(spacing: 30) {
                                     CodeInput(input: Binding(get: {
                                         viewModel.input
                                     }, set: { newValue in
@@ -93,17 +102,16 @@ struct EAttendance<T: AttendanceViewModel>: View {
                             Spacer()
                         }
                         
+                        Spacer()
+                        
                         CurrentTimeView()
                             .padding([.top, .bottom])
-                        
-                        Divider()
-                        
-                        Spacer()
                         
                         Button(action: {
                             viewModel.executeForEAttendance(lectureId: lecture.id)
                         }, label: {
                             Text("출석하기")
+                                .bold()
                                 .padding(8)
                                 .frame(maxWidth: .infinity)
                         })

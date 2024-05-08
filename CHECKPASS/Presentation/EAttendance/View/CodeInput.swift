@@ -18,13 +18,13 @@ struct CodeInput: View {
     }
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 15)
+        RoundedRectangle(cornerRadius: 13)
             .stroke(Color(red: 198 / 255, green: 198 / 255, blue: 198 / 255), lineWidth: 3)
-            .frame(width: UIScreen.main.bounds.width * 0.15,
-                   height: UIScreen.main.bounds.width * 0.18)
+            .frame(width: UIScreen.main.bounds.width * 0.13,
+                   height: UIScreen.main.bounds.width * 0.15)
             .overlay {
                 Text(getSpecificChars(input, pos: index))
-                    .font(.title)
+                    .font(.title2)
                     .bold()
             }
     }
