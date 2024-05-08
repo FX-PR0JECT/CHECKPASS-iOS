@@ -66,6 +66,7 @@
 		5C40F19C2B97F28A00BF6FDB /* DefaultHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40F19B2B97F28A00BF6FDB /* DefaultHistoryRepository.swift */; };
 		5C40F1A02B98073E00BF6FDB /* GetLectureHistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40F19F2B98073E00BF6FDB /* GetLectureHistoryUseCase.swift */; };
 		5C40F1A42B980B3E00BF6FDB /* LectureHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40F1A32B980B3E00BF6FDB /* LectureHistoryViewModel.swift */; };
+		5C4572172BE9A24F00E16D65 /* CheckPassLogoWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4572162BE9A24F00E16D65 /* CheckPassLogoWhite.swift */; };
 		5C4766DF2BA3CF4700AD75AC /* NoLectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4766DE2BA3CF4700AD75AC /* NoLectureView.swift */; };
 		5C4766E12BA3DFAA00AD75AC /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4766E02BA3DFAA00AD75AC /* CustomProgressView.swift */; };
 		5C52107D2BE8C2C6009A0610 /* BeaconAttendanceUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C52107C2BE8C2C6009A0610 /* BeaconAttendanceUserInfo.swift */; };
@@ -245,6 +246,7 @@
 		5C40F19B2B97F28A00BF6FDB /* DefaultHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHistoryRepository.swift; sourceTree = "<group>"; };
 		5C40F19F2B98073E00BF6FDB /* GetLectureHistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLectureHistoryUseCase.swift; sourceTree = "<group>"; };
 		5C40F1A32B980B3E00BF6FDB /* LectureHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHistoryViewModel.swift; sourceTree = "<group>"; };
+		5C4572162BE9A24F00E16D65 /* CheckPassLogoWhite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPassLogoWhite.swift; sourceTree = "<group>"; };
 		5C4766DE2BA3CF4700AD75AC /* NoLectureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLectureView.swift; sourceTree = "<group>"; };
 		5C4766E02BA3DFAA00AD75AC /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		5C52107C2BE8C2C6009A0610 /* BeaconAttendanceUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAttendanceUserInfo.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		5C32B2462B352AB90036CDF2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5C4572152BE9A22800E16D65 /* Logo */,
 				5C81249E2BBE8E1C00470D75 /* LazyView */,
 				5CFD126E2BB11EE0001B54E5 /* AttendanceStatus */,
 				5C2799F02B9FED9F0004CBF9 /* TimeTable */,
@@ -575,6 +578,14 @@
 				5C40F1A32B980B3E00BF6FDB /* LectureHistoryViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C4572152BE9A22800E16D65 /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				5C4572162BE9A24F00E16D65 /* CheckPassLogoWhite.swift */,
+			);
+			path = Logo;
 			sourceTree = "<group>";
 		};
 		5C561E712B33F3AD004C6501 = {
@@ -1231,6 +1242,7 @@
 				5C36EDFC2B8589C900D6CD4C /* Lecture.swift in Sources */,
 				5C6819C12B9AD5F400B1AAC3 /* BeaconIcon.swift in Sources */,
 				5C0CBAB22B9006EE0007849E /* RecentlyEnrolledLectureViewModel.swift in Sources */,
+				5C4572172BE9A24F00E16D65 /* CheckPassLogoWhite.swift in Sources */,
 				5C93F0CD2B61F7E0005D576D /* ShortcutsView.swift in Sources */,
 				5C6308AA2B7D96BE0007DB95 /* DefaultEditUserInfoRepository.swift in Sources */,
 				5C3CAA8C2BA910A500716800 /* AttendanceRepository.swift in Sources */,

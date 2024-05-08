@@ -37,7 +37,7 @@ struct BeaconAttendanceUserInfo: View {
                             Spacer()
                         }
                         .font(.subheadline)
-                        .padding(.bottom, 30)
+                        .padding(.bottom, UIScreen.main.bounds.height * 0.03)
                         .foregroundColor(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255))
                         
                         Image(systemName: "person.circle.fill")
@@ -52,18 +52,26 @@ struct BeaconAttendanceUserInfo: View {
                             .tracking(15)
                             .fontWeight(.heavy)
                             .font(.title2)
-                            .padding(.bottom, 30)
+                            .padding(.bottom, UIScreen.main.bounds.height * 0.04)
                         
                         VStack(alignment: .leading, spacing: 15) {
-                            HStack {
-                                Text("학번: \(String(userInfoViewModel.detailedUserInfo?.userId ?? 1234567))")
+                            HStack(spacing: -13) {
+                                Text("학번")
+                                    .tracking(13)
+                                
+                                Text(": \(String(userInfoViewModel.detailedUserInfo?.userId ?? 1234567))")
                                 
                                 Spacer()
                             }
                             
                             Text("단과대: \(userInfoViewModel.detailedUserInfo?.userCollege ?? "유저 단과대")")
                             
-                            Text("전공: \(userInfoViewModel.simpleUserInfo?.userDepartment ?? "유저 전공")")
+                            HStack(spacing: -13) {
+                                Text("전공")
+                                    .tracking(13)
+                                
+                                Text(": \(userInfoViewModel.simpleUserInfo?.userDepartment ?? "유저 전공")")
+                            }
                         }
                         .foregroundColor(Color(red: 97 / 255, green: 96 / 255, blue: 96 / 255))
                         
@@ -73,7 +81,7 @@ struct BeaconAttendanceUserInfo: View {
                     
                     ZStack {
                         Rectangle()
-                            .frame(height: UIScreen.main.bounds.height * 0.07)
+                            .frame(height: UIScreen.main.bounds.height * 0.06)
                             .ignoresSafeArea()
                             .clipShape(
                                 .rect(
@@ -86,14 +94,11 @@ struct BeaconAttendanceUserInfo: View {
                             .foregroundColor(Color(red: 47 / 255, green: 83 / 255, blue: 154 / 255))
                         
                         HStack {
-                            Image("CheckPassLogo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 150)
-                                .padding(.leading)
+                            CheckPassLogoWhite()
                             
                             Spacer()
                         }
+                        .padding(.leading)
                     }
                 }
             }

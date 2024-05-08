@@ -13,7 +13,7 @@ struct BeaconIcon: View {
     
     var body: some View {
         Circle()
-            .fill(.beaconIconBackground)
+            .fill(Color(red: 47 / 255, green: 83 / 255, blue: 154 / 255))
             .frame(width: 50, height: 50)
             .overlay {
                 Image(systemName: "dot.radiowaves.up.forward")

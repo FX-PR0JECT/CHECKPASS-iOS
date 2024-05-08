@@ -61,8 +61,13 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
                     }
                 }
                 .toolbar(.hidden, for: .tabBar)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("비콘출석")
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("비콘 출석")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                }
             }
         }
     }
