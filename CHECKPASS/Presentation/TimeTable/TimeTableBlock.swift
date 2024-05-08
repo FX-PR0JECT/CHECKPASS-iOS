@@ -21,7 +21,7 @@ struct TimeTableBlock: View {
                     VStack {
                         Text(title)
                             .font(.caption)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                         
                         Spacer()
                     }
@@ -36,14 +36,14 @@ struct TimeTableBlock: View {
 extension TimeTableBlock {
     private var backgroundColor: Color {
         let colors: [Color] = [
-            Color(red: 254 / 255, green: 234 / 255, blue: 233 / 255),
-            Color(red: 240 / 255, green: 232 / 255, blue: 232 / 255),
-            Color(red: 252 / 255, green: 238 / 255, blue: 220 / 255),
-            Color(red: 254 / 255, green: 248 / 255, blue: 209 / 255),
-            Color(red: 241 / 255, green: 249 / 255, blue: 208 / 255),
-            Color(red: 224 / 255, green: 241 / 255, blue: 233 / 255),
-            Color(red: 223 / 255, green: 237 / 255, blue: 241 / 255),
-            Color(red: 224 / 255, green: 232 / 255, blue: 245 / 255)
+            Color(red: 193 / 255, green: 120 / 255, blue: 106 / 255),
+            Color(red: 206 / 255, green: 150 / 255, blue: 99 / 255),
+            Color(red: 198 / 255, green: 169 / 255, blue: 103 / 255),
+            Color(red: 174 / 255, green: 200 / 255, blue: 123 / 255),
+            Color(red: 120 / 255, green: 172 / 255, blue: 123 / 255),
+            Color(red: 125 / 255, green: 178 / 255, blue: 166 / 255),
+            Color(red: 133 / 255, green: 116 / 255, blue: 188 / 255),
+            Color(red: 175 / 255, green: 132 / 255, blue: 199 / 255)
         ]
         
         return colors[lectureIndex]
