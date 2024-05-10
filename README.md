@@ -34,11 +34,11 @@ Designed by [Freepik](https://www.freepik.com/)
     <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/6914f83e-4263-4fe3-8ca0-6744d9072b2d" style="width: 30%; margin-right: 10px"/>
     <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/28644d7e-ea9d-47bf-93ed-3533a18cb5c4" style="width: 30%; margin-right: 10px"/>
 
-   <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/abe664c8-b045-4301-822f-c3650cd81e4e" style="width: 30%;">
+   <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/c043a10b-55ab-4e1d-ab12-e55bdd3c982c" style="width: 30%;">
 </div>
 
 <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-    <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/21390dd7-f842-4103-a517-88ef2957547c" style="width: 30%; margin-right: 10px"/>
+    <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/c043a10b-55ab-4e1d-ab12-e55bdd3c982c" style="width: 30%; margin-right: 10px"/>
 
    <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/9b93cff6-5b59-42e0-b25a-a007d2d632f5" style="width: 30%; margin-right: 10px">
 
@@ -46,9 +46,9 @@ Designed by [Freepik](https://www.freepik.com/)
 </div>
 
 <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-    <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/0fe0c7d9-7166-4290-909e-d5d1d48c82cf" style="width: 30%; margin-right: 10px"/>
+    <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/fef103b4-b664-428e-892c-f10e085b8da0" style="width: 30%; margin-right: 10px"/>
 
-   <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/0e20fc4c-454a-4414-ba82-65557750e4db" style="width: 30%; margin-right: 10px">
+   <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/cf3d99bc-74e3-4842-9bfe-bef1ef9c6226" style="width: 30%; margin-right: 10px">
 
    <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/5080ecb0-4b46-4973-9b20-b645a03b209a" style="width: 30%;"/>
 </div>
