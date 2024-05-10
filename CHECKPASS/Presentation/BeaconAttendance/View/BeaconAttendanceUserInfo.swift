@@ -105,8 +105,11 @@ struct BeaconAttendanceUserInfo: View {
     }
 }
 
+#if DEBUG
 #Preview {
+
     BeaconAttendanceUserInfo(lecture: Lecture.sampleData)
         .environmentObject(AppDI.shared().getBeaconAttendanceViewModel())
         .environmentObject(AppDI.shared().getUserInfoViewModel())
 }
+#endif

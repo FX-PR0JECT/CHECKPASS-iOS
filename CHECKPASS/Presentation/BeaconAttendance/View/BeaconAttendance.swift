@@ -68,6 +68,8 @@ struct BeaconAttendance<T: AttendanceViewModel>: View {
                             .foregroundColor(.white)
                     }
                 }
+                .navigationBarTitleDisplayMode(.inline)
+//                .navigationBarHidden(true)
             }
         }
     }

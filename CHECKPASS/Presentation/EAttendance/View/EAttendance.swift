@@ -43,23 +43,14 @@ struct EAttendance<T: AttendanceViewModel>: View {
                     .frame(width: 0)
                     
                     VStack(alignment: .leading) {
-                        HStack(spacing: 10) {
+                        HStack(spacing: 5) {
                             Text(lecture.lectureName)
                             
                             Text("\(lecture.division)")
                         }
-                        .padding(.bottom, 7)
+                        .padding(.bottom, 30)
                         .font(.title)
                         .bold()
-                        
-                        HStack(spacing: 5) {
-                            Image(systemName: "building.2.fill")
-                            
-                            Text(lecture.lectureRoom)
-                        }
-                        .foregroundColor(.gray)
-                        .font(.footnote)
-                        .padding(.bottom, 30)
                         
                         HStack {
                             Spacer()

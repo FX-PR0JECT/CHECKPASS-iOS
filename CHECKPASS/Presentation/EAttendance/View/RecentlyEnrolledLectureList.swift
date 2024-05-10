@@ -29,11 +29,11 @@ struct RecentlyEnrolledLectureList<T: RecentlyEnrolledLectureViewModel>: View {
                 }
             }
             .listStyle(.plain)
-            .navigationTitle("전자출결")
+            .navigationTitle("전자출석")
             .navigationBarTitleDisplayMode(.large)
         } else {
             NoLectureView()
-                .navigationTitle("전자출결")
+                .navigationTitle("전자출석")
                 .navigationBarTitleDisplayMode(.large)
         }
     }
