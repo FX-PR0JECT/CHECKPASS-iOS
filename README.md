@@ -34,7 +34,7 @@ Designed by [Freepik](https://www.freepik.com/)
     <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/6914f83e-4263-4fe3-8ca0-6744d9072b2d" style="width: 30%; margin-right: 10px"/>
     <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/28644d7e-ea9d-47bf-93ed-3533a18cb5c4" style="width: 30%; margin-right: 10px"/>
 
-   <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/c043a10b-55ab-4e1d-ab12-e55bdd3c982c" style="width: 30%;">
+   <img src="https://github.com/FX-PR0JECT/CHECKPASS-iOS/assets/103043741/3c4c79e6-cc33-4e8f-ba11-0423feb98b69" style="width: 30%;">
 </div>
 
 <div style="display: flex; justify-content: center; margin-bottom: 10px;">
